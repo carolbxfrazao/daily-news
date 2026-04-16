@@ -25,6 +25,8 @@
             --alert-border: #E8D498;
             --mib-bg: #EDF2FF;
             --mib-border: #A8BFE8;
+            --weekly-bg: #FFF0F5;
+            --weekly-border: #E8A8C8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -115,6 +117,11 @@
         .section-mib .section-header {
             background: var(--mib-bg);
             border-color: var(--mib-border);
+        }
+
+        .section-weekly .section-header {
+            background: var(--weekly-bg);
+            border-color: var(--weekly-border);
         }
 
         .section-header .icon {
@@ -291,6 +298,129 @@
             color: var(--text-light);
             font-style: italic;
             border-left: 3px solid var(--border);
+        }
+
+        /* Weekly report styles */
+        .weekly-summary {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+
+        .metric-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .metric-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E8E8E8;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.3s;
+        }
+
+        .pct-green { background: #27AE60; color: #27AE60; }
+        .pct-yellow { background: #F39C12; color: #D4880F; }
+        .pct-red { background: #E74C3C; color: #E74C3C; }
+
+        .progress-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .days-grid {
+            margin-bottom: 1.5rem;
+        }
+
+        .day-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .day-name {
+            width: 110px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .day-count {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .day-meta {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .status-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag-pipeline {
+            background: #F0F0F0;
+            color: var(--text);
+            font-size: 0.82rem;
+        }
+
+        .funnel {
+            margin-bottom: 1rem;
+        }
+
+        .funnel-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .funnel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .funnel-name {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .funnel-count {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
         }
 
         .empty-state {
@@ -680,6 +810,8 @@
             </div>
             </div>
         </section>
+
+        
     </div>
     <div class="footer">
         <p>Relatorio gerado automaticamente via Notion API</p>
