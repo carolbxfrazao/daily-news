@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 14 de Abril de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 14 de Abril de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. O Cérebro Materno em Contexto: Mudanças Fisiológicas Sistêmicas ao Longo da Gravidez</h3>
+<ul>
+<li><strong>Título do estudo:</strong> The Maternal Brain in Context: Systemic Physiological Changes Across Pregnancy</li>
+<li><strong>Data de Publicação:</strong> 2 de abril de 2026</li>
+<li><strong>Fonte:</strong> Annual Review of Neuroscience | DOI: 10.1146/annurev-neuro-102124-043515 | <a href="https://pubmed.ncbi.nlm.nih.gov/41926198/" target="_blank">Link PubMed</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Uma revisão abrangente que mostra como o corpo da gestante passa por adaptações fisiológicas profundas e coordenadas para sustentar o feto em desenvolvimento. O sistema nervoso se remodela durante a gravidez em correspondência com o aumento hormonal. Os autores (Grotzinger, Martínez-García, Miller, Stelzer, Collado e Jacobs) defendem uma perspectiva integrativa que examina como os sistemas endócrino, cardiovascular, microbioma e imunológico influenciam as mudanças cerebrais — tanto em gestações típicas quanto naquelas com complicações.</li>
+<li><strong>Implicação prática:</strong> A gravidez não muda "só o humor" — ela literalmente reconstrói circuitos cerebrais. Isso valida cientificamente por que gestantes sentem mudanças cognitivas e emocionais tão intensas, e reforça a necessidade de tratar a saúde materna de forma integrada (corpo + mente + sistema imune).</li>
+</ul>
+<h3>2. Segunda Gravidez Remodela o Cérebro de Forma Diferente da Primeira</h3>
+<ul>
+<li><strong>Título do estudo:</strong> The effects of a second pregnancy on women's brain structure and function</li>
+<li><strong>Data de Publicação:</strong> 2026</li>
+<li><strong>Fonte:</strong> Nature Communications | <a href="https://www.nature.com/articles/s41467-026-69370-8" target="_blank">Link Nature</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> O estudo usou ressonância magnética multimodal para mostrar que a segunda gravidez altera o cérebro da mãe de forma diferente da primeira. Na primeira gravidez, as regiões mais remodeladas foram as envolvidas em autoconsciência e leitura emocional do outro (adaptação ao papel materno). Na segunda gravidez, as mudanças maiores ocorreram nas redes de atenção dorsal e somatomotora — áreas ligadas à responsividade a estímulos externos, atenção direcionada a tarefas e demandas do ambiente. Ou seja: o cérebro se adapta para lidar com a complexidade de cuidar de um filho enquanto gesta outro.</li>
+<li><strong>Implicação prática:</strong> Mães de segunda viagem não estão "repetindo" a experiência — o cérebro está se ajustando de forma nova para atender demandas diferentes. Isso explica por que a segunda gravidez pode se sentir completamente diferente da primeira, tanto cognitiva quanto emocionalmente.</li>
+</ul>
+<h3>3. Como Gatilhos do Dia a Dia Moldam Hábitos Sem Você Perceber</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Dynamic changes in chloride homeostasis coordinate midbrain inhibitory network activity during reward learning</li>
+<li><strong>Data de Publicação:</strong> 9 de dezembro de 2025</li>
+<li><strong>Fonte:</strong> Nature Communications | <a href="https://www.sciencedaily.com/releases/2025/12/251210223635.htm" target="_blank">Link ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pesquisadores da Georgetown University Medical Center (Woo, Uprety, Reid et al.) descobriram que a proteína cerebral KCC2 tem um papel crucial na formação de hábitos. Quando os níveis de KCC2 diminuem, os neurônios de dopamina disparam mais rapidamente, fortalecendo novas associações de recompensa. Isso explica mecanicamente por que associações indesejadas se formam tão facilmente — como quando uma fumante que sempre combina café da manhã com cigarro descobre que apenas beber café já dispara uma fissura intensa.</li>
+<li><strong>Implicação prática:</strong> O cérebro não cria hábitos apenas por repetição — gatilhos ambientais mexem diretamente com a dopamina numa cascata que acontece abaixo do radar da consciência. Isso reforça a importância de projetar o ambiente (neuroarquitetura) e não depender só de força de vontade para mudar comportamentos.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Detox Digital e Minimalismo Digital</h3>
+<ul>
+<li><strong>Tema:</strong> Detox Digital — o que funciona vs. o que é mito</li>
+<li><strong>Por que está em alta:</strong> Em 2026, o "Digital Detox Weekend" virou tendência global. Mais de 70% dos adultos relatam se sentir sobrecarregados por demandas digitais. Empresas como Google e Salesforce já oferecem dias pagos de detox digital. Estudos mostram que uma semana sem redes sociais reduz ansiedade em 16%, depressão em 25% e insônia em 14%.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel desmistificando o "detox de dopamina" — o termo é enganoso (não se faz detox de um neurotransmissor natural), mas a estratégia de pausas estruturadas de estímulos altos funciona. Conectar com neuroarquitetura: como organizar o ambiente digital da mesma forma que organizamos o lar.</li>
+<li><strong>Gancho sugerido:</strong> "Detox de dopamina não existe. Mas isso aqui sim funciona — e a neurociência explica por quê."</li>
+<li><strong>Fontes:</strong> <a href="https://www.oneworldnews.com/joyousnews/digital-detox-2026/" target="_blank">Digital Detox 2026 - OneWorldNews</a> | <a href="https://www.crisistextline.org/blog/2026/03/26/dopamine-detox/" target="_blank">Crisis Text Line - Dopamine Detox</a> | <a href="https://go4news.online/the-global-surge-why-the-digital-detox-weekend-is-trending-worldwide-in-2026/" target="_blank">Global Surge Digital Detox</a></li>
+</ul>
+<h3>2. O Cérebro da Mãe Muda — E na Segunda Gravidez É Diferente</h3>
+<ul>
+<li><strong>Tema:</strong> Neurociência da maternidade e segunda gravidez</li>
+<li><strong>Por que está em alta:</strong> A publicação na Nature Communications sobre como a segunda gravidez remodela o cérebro de formas distintas da primeira está gerando repercussão em veículos como ScienceAlert e Technology Networks. É um tema que cruza maternidade + neurociência + identidade feminina — os três pilares do público do MIB.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou Reel pessoal — Carol está esperando Serena (segunda filha), então pode trazer o estudo com experiência própria. "Isso é o que está acontecendo com o MEU cérebro agora."</li>
+<li><strong>Gancho sugerido:</strong> "Na segunda gravidez, seu cérebro não repete o que fez na primeira. Ele muda de um jeito completamente diferente."</li>
+<li><strong>Fontes:</strong> <a href="https://www.nature.com/articles/s41467-026-69370-8" target="_blank">Nature Communications - Second Pregnancy Brain</a> | <a href="https://www.technologynetworks.com/neuroscience/news/a-second-pregnancy-rewires-the-brain-differently-than-the-first-409992" target="_blank">Technology Networks</a></li>
+</ul>
+<h3>3. Alta Performance Feminina Sustentável (Sem Burnout)</h3>
+<ul>
+<li><strong>Tema:</strong> Performance sustentável para mulheres — dados reais de 2026</li>
+<li><strong>Por que está em alta:</strong> Dados de 2026 mostram que mulheres brasileiras dedicam 21,3 horas semanais ao trabalho doméstico não remunerado (contra 11,7h dos homens). A pauta de saúde mental feminina virou prioridade estratégica em empresas. O conceito de performance sustentável ganha força: não é sobre fazer tudo sozinha, é sobre construir um sistema que funcione sem depender da sua exaustão.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel com dados reais + framework prático. Pode conectar com o Fluxo C.O.R.E. e com as aulas do MIB sobre fadiga decisória e gestão de energia.</li>
+<li><strong>Gancho sugerido:</strong> "Mulher brasileira trabalha 21 horas por semana de graça. E ainda chamam de falta de produtividade."</li>
+<li><strong>Fontes:</strong> <a href="https://vitalwork.com.br/mulheres-no-mercado-de-trabalho-em-2026-tendencias-e-impactos-para-as-empresas/" target="_blank">Vital Work - Mulheres no Mercado 2026</a> | <a href="https://tex.pro.br/saude-feminina-2026-o-guia-definitivo-para-o-equilibrio-entre-produtividade-e-bem-estar/" target="_blank">TEX - Saúde Feminina 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Huberman Lab: Saúde Hormonal e Fertilidade Feminina</h3>
+<p>Andrew Huberman publicou em 13/04/2026 o episódio "How Women Can Improve Their Fertility & Hormone Health" com a Dra. Natalie Crawford (OB-GYN). O episódio cobre otimização hormonal, congelamento de óvulos, marcadores AMH, microplásticos e suplementos-chave para vitalidade ao longo da vida. Tema com alto potencial de repercussão no nicho feminino.</p>
+<ul>
+<li><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab - All Episodes</a></li>
+</ul>
+<h3>2. Engenharia de Atenção nos Reels</h3>
+<p>Em 2026, o hook (gancho) deixou de ser sobre criatividade isolada — virou engenharia de atenção baseada em leitura de padrões comportamentais. Compartilhamentos se tornaram a métrica mais poderosa do algoritmo. Séries conectadas (6+ Reels interligados) estão dominando retenção e tempo de permanência no perfil.</p>
+<ul>
+<li><a href="https://rafaelterra.com.br/como-viralizar-reels-em-2026/" target="_blank">Rafael Terra - Como Viralizar Reels em 2026</a></li>
+<li><a href="https://rafaelterra.com.br/26-tendencias-marketing-instagram-2026/" target="_blank">Rafael Terra - 26 Tendências Instagram 2026</a></li>
+</ul>
+<h3>3. Autenticidade como Moeda de Troca</h3>
+<p>Vídeos com estética menos "produzida" estão ganhando destaque no Instagram Brasil. O algoritmo está priorizando conteúdo em primeira pessoa (POV) com ponto de vista claro e humano. Micro e nano influenciadores ganham relevância por entregarem autenticidade — o que se alinha perfeitamente ao estilo de comunicação de Carol.</p>
+<ul>
+<li><a href="https://portalmatogrosso.com.br/as-8-tendencias-dominantes-no-instagram-em-2026-engajamento-e-autenticidade-no-centro-da-estrategia/" target="_blank">Tendências Instagram 2026 - Portal Mato Grosso</a></li>
+</ul>
+<h3>4. Diary of a CEO: Saúde Cerebral e Óxido Nítrico</h3>
+<p>Episódio recente com Dr. Nathan Bryan sobre como hábitos orais cotidianos (enxaguante bucal, pasta de dente) podem estar prejudicando o microbioma oral e bloqueando a produção de óxido nítrico — impactando pressão arterial, circulação e performance cognitiva.</p>
+<ul>
+<li><a href="https://stevenbartlett.com/doac/" target="_blank">The Diary of a CEO</a></li>
+</ul>
+<h3>5. Procrastinação como Mecanismo de Alívio Emocional</h3>
+<p>Conteúdo sobre procrastinação segue em alta no Brasil, com abordagens mais sofisticadas: não é preguiça, é o cérebro buscando alívio emocional diante de tarefas aversivas. Envolve sistema de recompensa, ansiedade, perfeccionismo e estresse.</p>
+<ul>
+<li><a href="https://www.uai.com.br/uainoticias/2026/01/05/procrastinacao-explicada-sem-culpa-o-que-trava-o-foco-e-como-sair-do-ciclo/" target="_blank">UAI Notícias - Procrastinação Explicada</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <h3>"Detox de Dopamina" — usar com cuidado</h3>
+<p>O termo "dopamine detox" é neurologicamente impreciso. Dopamina é um neurotransmissor natural — não se faz "detox" dela. Uma revisão de literatura de 2024 confirma que a premissa literal é falsa, mas a estratégia subjacente (pausas estruturadas de estímulos altos) tem base comportamental. Carol pode usar o tema, mas deve corrigir o termo e explicar o mecanismo real.</p>
+<h3>Biohacking extremo</h3>
+<p>Tendência crescente de protocolos radicais (jejum prolongado, suplementação pesada, banho de gelo diário). Muito compartilhado por perfis masculinos de alta performance. Risco: não é baseado em evidência sólida para mulheres, e pode gerar expectativas irreais no público do MIB.</p>
+<h3>Conteúdo motivacional genérico</h3>
+<p>Frases como "levanta e vai", "acredite em você" e rotinas matinais de CEO continuam viralizando, mas são o oposto do posicionamento de Carol. O público do MIB quer entender o porquê — não ser empurrado por frases vazias.</p>
+<h3>Coaching como vilão</h3>
+<p>Crescente narrativa pejorativa sobre coaching nas redes. Carol defende coaching como ferramenta séria e científica — evitar entrar nesse debate polarizado sem contexto adequado.</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> O cérebro muda na segunda gravidez — e não é da mesma forma que na primeira</p>
+<p><strong>Formato:</strong> Reel (60-90 seg) + versão expandida para YouTube (5-7 min)</p>
+<p><strong>Gancho:</strong> "Na segunda gravidez, seu cérebro não repete o que fez na primeira. Ele muda de um jeito completamente diferente — e a ciência acabou de provar isso."</p>
+<p><strong>Desenvolvimento:</strong> Explicar que na primeira gravidez as mudanças cerebrais são nas áreas de autoconsciência e empatia (o cérebro se preparando para "ler" o bebê). Na segunda, as mudanças são nas redes de atenção e resposta a estímulos externos — porque agora o cérebro precisa cuidar de um filho enquanto gesta outro. Carol pode trazer sua experiência pessoal com Zoe e a gestação de Serena.</p>
+<p><strong>CTA:</strong> "Se você é mãe de segunda viagem — ou conhece uma — manda esse vídeo pra ela. Porque isso muda tudo na forma como a gente entende a maternidade."</p>
+<p><strong>Base científica:</strong> Nature Communications, 2026 — <a href="https://www.nature.com/articles/s41467-026-69370-8" target="_blank">Link</a></p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 14/04/2026 por assistente de pesquisa IA.<br>Todas as fontes científicas são verificáveis e revisadas por pares.</p>
+    </div>
+</body>
+</html>
