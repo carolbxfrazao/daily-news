@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio MIB — 16/04/2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+            --red: #D44B4B;
+            --orange: #D4884B;
+            --yellow: #D4B44B;
+            --green: #4B9B6B;
+            --blue: #4B7FD4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .header-logo {
+            height: 60px;
+            margin-bottom: 0.75rem;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        /* Frase motivacional */
+        .card-motivation {
+            border: none;
+            background: linear-gradient(135deg, #FFF5EC, #FFEEE5);
+            box-shadow: none;
+        }
+
+        .motivation-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--accent);
+            line-height: 1.8;
+        }
+
+        /* Checklist */
+        .card-checklist .card-header { background: #F5F0EB; }
+        .card-checklist .card-header h2 { color: var(--accent); }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: #FAFAF8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 0.9rem;
+        }
+
+        .check-item:hover {
+            background: #F0EDE8;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .check-item input:checked + span {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        /* Card types */
+        .card-overview .card-header { background: #F5F0EB; }
+        .card-alert .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header h2 { color: var(--red); }
+        .card-new .card-header { background: #ECF5FF; border-color: #98BAE8; }
+        .card-new .card-header h2 { color: var(--blue); }
+        .card-birthday .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-birthday .card-header h2 { color: var(--orange); }
+        .card-danger .card-header { background: #FFECEC; border-color: #E89898; }
+        .card-danger .card-header h2 { color: var(--red); }
+        .card-warning .card-header { background: #FFF5EC; border-color: #E8C098; }
+        .card-warning .card-header h2 { color: var(--orange); }
+        .card-caution .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-caution .card-header h2 { color: var(--yellow); }
+        .card-info .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-tasks .card-header { background: #ECFAF0; border-color: #98D4A8; }
+        .card-tasks .card-header h2 { color: var(--green); }
+        .card-success .card-header { background: #ECFAF0; border-color: #98D4A8; }
+        .card-success .card-header h2 { color: var(--green); }
+        .card-leads .card-header { background: #E8F0FF; border-color: #98B8E8; }
+        .card-leads .card-header h2 { color: var(--blue); }
+
+        /* Stats grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #F5F0EB;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .detail {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .action {
+            margin-top: 0.75rem;
+            padding: 0.6rem 1rem;
+            background: #F5F0EB;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .badge-red { background: var(--red); }
+        .badge-orange { background: var(--orange); }
+        .badge-yellow { background: #B89B3E; color: white; }
+        .badge-green { background: var(--green); }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        thead {
+            background: #F5F0EB;
+        }
+
+        th {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+
+        td {
+            padding: 0.6rem 0.75rem;
+            border-bottom: 1px solid #F5F0EB;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .status-todo { background: #F0F0F0; color: #666; }
+        .status-progress { background: #E0EDFF; color: #2B5FAD; }
+        .status-adjust { background: #F0E0FF; color: #7B2BAD; }
+
+        .overdue {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .today {
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        /* Funil de leads */
+        .funnel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .funnel-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.4rem 0.75rem;
+            background: #FAFAF8;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .funnel-count {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 1.5rem 1rem; }
+            .header h1 { font-size: 1.4rem; }
+            .container { padding: 0.75rem; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            table { font-size: 0.8rem; }
+            td, th { padding: 0.4rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://carolbxfrazao.github.io/daily-news/mib-logo.png" alt="MIB" class="header-logo">
+        <h1>Relatorio do Dia</h1>
+        <div class="subtitle">Quinta, 16/04/2026</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-motivation">
+        <div class="card-body" style="text-align:center; padding:1.5rem;">
+            <p class="motivation-text">Obrigada por ser tão dedicada, Lari. Você é peça-chave nesse projeto. 🧩💛</p>
+        </div>
+    </section>
+
+    <section class="card card-checklist">
+        <div class="card-header"><h2>Checklist do Dia</h2></div>
+        <div class="card-body"><div class="checklist"><label class="check-item"><input type="checkbox"><span>Responder comentários na plataforma</span></label><label class="check-item"><input type="checkbox"><span>Responder mensagens do celular do MIB</span></label><label class="check-item"><input type="checkbox"><span>On-boarding de alunas novas</span></label><label class="check-item"><input type="checkbox"><span>Disparos (WhatsApp e DM) para captação + atualização do CRM</span></label><label class="check-item"><input type="checkbox"><span>Postar aula MIB e mandar aviso no grupo</span></label></div></div>
+    </section>
+
+    <section class="card card-overview">
+        <div class="card-header"><h2>Resumo do Dia</h2></div>
+        <div class="card-body"><div class="stat-grid"><div class="stat"><span class="stat-number">33</span><span class="stat-label">Alunas ativas</span></div><div class="stat"><span class="stat-number">3</span><span class="stat-label">Pgto recusado</span></div><div class="stat"><span class="stat-number">14</span><span class="stat-label">Ausentes 21d+</span></div><div class="stat"><span class="stat-number">10</span><span class="stat-label">Tarefas pendentes</span></div></div></div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header"><h2>Pagamento Recusado (3)</h2></div>
+        <div class="card-body"><ul><li><strong>Bianca Costa </strong><span class="detail">(91) 93300-5259</span></li><li><strong>Jéssica Elaine Carvalho Seabra </strong><span class="detail">(91) 9938-63919</span></li><li><strong>Camila Andrade </strong><span class="detail">(91) 98827-5278</span></li></ul><p class="action">Entrar em contato para regularizar</p></div>
+    </section>
+
+    <section class="card card-new">
+        <div class="card-header"><h2>Onboarding Pendente (1)</h2></div>
+        <div class="card-body"><ul><li><strong>Letícia Villacorta</strong><span class="detail">+5591991588066</span></li></ul><p class="action">Iniciar boas-vindas + grupo WhatsApp</p></div>
+    </section>
+
+    <section class="card card-birthday">
+        <div class="card-header"><h2>Aniversariantes Hoje</h2></div>
+        <div class="card-body"><p style="color:var(--text-light); font-style:italic;">Nao existem aniversariantes hoje.</p></div>
+    </section>
+
+    <section class="card card-danger">
+        <div class="card-header"><h2>Ausentes 21+ dias (14)</h2></div>
+        <div class="card-body"><ul><li><strong>Arminda Moraes</strong><span class="badge badge-red">170d</span></li><li><strong>Janaina de Fátima Gusmão</strong><span class="badge badge-red">155d</span></li><li><strong>Fernanda Albuquerque</strong><span class="badge badge-red">127d</span></li><li><strong>Ana Clara Colares</strong><span class="badge badge-red">55d</span></li><li><strong>Itala Leal</strong><span class="badge badge-red">54d</span></li><li><strong>Michelle Mitre</strong><span class="badge badge-red">43d</span></li><li><strong>Josanielli Vieira Pinheiro</strong><span class="badge badge-red">43d</span></li><li><strong>Hanna Gama</strong><span class="badge badge-red">39d</span></li><li><strong>Juliana Pereira</strong><span class="badge badge-red">33d</span></li><li><strong>Bianca Costa </strong><span class="badge badge-red">28d</span></li><li><strong>Máyra Santos Oliveira</strong><span class="badge badge-red">28d</span></li><li><strong>Juliana Carolina de Souza Costa</strong><span class="badge badge-red">25d</span></li><li><strong>Bruna Rodrigues Aguiar Coelho</strong><span class="badge badge-red">23d</span></li><li><strong>Jamili Simões </strong><span class="badge badge-red">22d</span></li></ul><p class="action">Ligar para essas alunas</p></div>
+    </section>
+
+    <section class="card card-caution">
+        <div class="card-header"><h2>Ausentes 7 dias (3)</h2></div>
+        <div class="card-body"><ul><li><strong>Letícia Villacorta</strong><span class="badge badge-yellow">9d</span></li><li><strong>Thais de Melo Ramos</strong><span class="badge badge-yellow">8d</span></li><li><strong>Carolina Evangelista</strong><span class="badge badge-yellow">7d</span></li></ul></div>
+    </section>
+
+    <section class="card card-info">
+        <div class="card-header"><h2>Sem dados de acesso (11)</h2></div>
+        <div class="card-body"><ul><li>Jéssica Elaine Carvalho Seabra </li><li>Thalita Ximenes Pereira</li><li>Camila Andrade </li><li>Mary Hellen </li><li>Márcia Cristina de Pinho Couto</li><li>Maria Eduarda Santos</li><li>Ana Carla Aragão Dias Vieira</li><li>Adrielly Luiza</li><li>Mariana Cardoso</li><li>Edilma Diniz Cardoso</li><li>Letícia Villacorta</li></ul><p class="action">Nunca acessaram a plataforma</p></div>
+    </section>
+
+    <section class="card card-tasks">
+        <div class="card-header"><h2>Tarefas Pendentes (10)</h2></div>
+        <div class="card-body"><table><thead><tr><th>Tarefa</th><th>Status</th><th>Prazo</th></tr></thead><tbody><tr>
+                <td>Pesquisar Parcerias que esteja ligadas aos contéudos do MIB</td>
+                <td><span class="status-tag status-progress">Em andamento</span></td>
+                <td class="overdue">13/03</td>
+            </tr><tr>
+                <td>Trabalhar a Base do MIB (Agente de IA)</td>
+                <td><span class="status-tag status-progress">Em andamento</span></td>
+                <td class="overdue">13/03</td>
+            </tr><tr>
+                <td>Solicitação ao Marketing - Março</td>
+                <td><span class="status-tag status-progress">Em andamento</span></td>
+                <td class="overdue">31/03</td>
+            </tr><tr>
+                <td>NOVA ESTRATÉGIA COMERCIAL</td>
+                <td><span class="status-tag status-progress">Em andamento</span></td>
+                <td class="overdue">03/04</td>
+            </tr><tr>
+                <td>Ver retorno da Adriana Braga (Ex- aluna)- Resgata-la</td>
+                <td><span class="status-tag status-progress">Em andamento</span></td>
+                <td class="overdue">06/04</td>
+            </tr><tr>
+                <td>Atualizar foto de perfil das alunas no CRM</td>
+                <td><span class="status-tag status-todo">Não iniciada</span></td>
+                <td class="">17/04</td>
+            </tr><tr>
+                <td>Desafio Sprint MIB 2026 (Junho)</td>
+                <td><span class="status-tag status-progress">Em andamento</span></td>
+                <td class="">01/06</td>
+            </tr><tr>
+                <td>Atualizar a última mensagem do CRM. Atualize as OBS do CRM.</td>
+                <td><span class="status-tag status-todo">Não iniciada</span></td>
+                <td class=""></td>
+            </tr><tr>
+                <td>CINEMIB - Diabo veste prada</td>
+                <td><span class="status-tag status-todo">Não iniciada</span></td>
+                <td class=""></td>
+            </tr><tr>
+                <td>Agente MIB Terapeuta</td>
+                <td><span class="status-tag status-todo">Não iniciada</span></td>
+                <td class=""></td>
+            </tr></tbody></table></div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Gerado automaticamente — MIB Automacoes</p>
+    </div>
+</body>
+</html>
