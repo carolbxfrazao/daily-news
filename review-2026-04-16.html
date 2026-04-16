@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisao de Tarefas — 16 de abril de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #F4FAF6;
+            --card-bg: #FFFFFF;
+            --text: #1A2E22;
+            --text-light: #4A6B55;
+            --accent: #2D6A4F;
+            --accent-light: #52B788;
+            --accent-soft: #95D5B2;
+            --link: #1B7A4A;
+            --border: #D4E8DB;
+            --shadow: rgba(45, 106, 79, 0.08);
+
+            --review-bg: #E8F5EE;
+            --review-border: #95D5B2;
+            --alert-bg: #FFF8E8;
+            --alert-border: #E8D498;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-review .section-header {
+            background: var(--review-bg);
+            border-color: var(--review-border);
+        }
+
+        .section-alert .section-header {
+            background: var(--alert-bg);
+            border-color: var(--alert-border);
+        }
+
+        .section-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .section-body {
+            padding: 1.5rem;
+        }
+
+        .summary {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .task-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .task-card:hover {
+            box-shadow: 0 2px 8px var(--shadow);
+            border-color: var(--accent-soft);
+        }
+
+        .task-number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .task-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .task-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .task-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag-deadline {
+            background: #FFF0EC;
+            color: #C0392B;
+        }
+
+        .tag-date {
+            background: #E8F5EE;
+            color: var(--accent);
+        }
+
+        .tag-status {
+            background: var(--alert-bg);
+            color: #B8860B;
+        }
+
+        .task-link {
+            color: var(--link);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .task-link:hover {
+            border-bottom-color: var(--link);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--accent-light);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .empty-state::before {
+            content: '\2714';
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .stats { gap: 1rem; }
+            .stat-number { font-size: 1.5rem; }
+            .container { padding: 1rem; }
+            .section-body { padding: 1rem; }
+            .task-card { padding: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Revisao de Tarefas</h1>
+        <div class="subtitle">16 de abril de 2026</div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Pendente(s) de revisao</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Alerta(s) de publicacao</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section class="section section-review">
+            <div class="section-header">
+                <span class="icon">&#128203;</span>
+                <h2>Revisao de Conteudos</h2>
+            </div>
+            <div class="section-body">
+                <p class="summary">6 task(s) pendente(s) de revisao</p>
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <div class="task-title">[YOUTUBE] OS HÁBITOS DE ESTUDO DOS ALUNOS MAIS EFICAZES DO MUNDO [03/04/2026]</div>
+                    <div class="task-meta">
+                        <span class="tag tag-deadline">Deadline: 03/04/2026</span>
+                        <a href="https://www.notion.so/33992dc7b6bc8161bcc7fe789a456f92" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <div class="task-title">[MAPA MENTAL] AULA 39 | MIB [09/04/2026]</div>
+                    <div class="task-meta">
+                        <span class="tag tag-deadline">Deadline: 05/04/2026</span>
+                        <a href="https://www.notion.so/33d92dc7b6bc80a881b8c4d545f8b29f" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <div class="task-title">[CAPA] ACREDITE EM MUDANÇAS [07/04/2026]</div>
+                    <div class="task-meta">
+                        <span class="tag tag-deadline">Deadline: 07/04/2026</span>
+                        <a href="https://www.notion.so/33992dc7b6bc81f2a029c1772c7b4513" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <div class="task-title">[CAPA] Caderno de Orações: Você esqueceu o que Deus já fez por você? [12/04/2026]</div>
+                    <div class="task-meta">
+                        <span class="tag tag-deadline">Deadline: 08/04/2026</span>
+                        <a href="https://www.notion.so/33c92dc7b6bc8133b23eeb6668f577da" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">5</div>
+                <div class="task-content">
+                    <div class="task-title">[REELS/TIKTOK] ACREDITE EM MUDANÇAS [07/04/2026]</div>
+                    <div class="task-meta">
+                        <span class="tag tag-deadline">Deadline: 09/04/2026</span>
+                        <a href="https://www.notion.so/33992dc7b6bc812686b1d189c9587ac3" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">6</div>
+                <div class="task-content">
+                    <div class="task-title">[REELS/TIKTOK] Caderno de Orações: Você esqueceu o que Deus já fez por você? [12/04/2026]</div>
+                    <div class="task-meta">
+                        <span class="tag tag-deadline">Deadline: 10/04/2026</span>
+                        <a href="https://www.notion.so/33c92dc7b6bc81a19e31eacfe7c8e5e6" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="section section-alert">
+            <div class="section-header">
+                <span class="icon">&#9888;&#65039;</span>
+                <h2>Alertas de Publicacao</h2>
+            </div>
+            <div class="section-body">
+                <p class="summary">7 task(s) com publicacao nos proximos 3 dias e NAO programadas</p>
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <div class="task-title">Aula 40 | Identidade antes de hábito — por que sem autoconceito nenhuma mudança dura</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 16/04/2026</span>
+                        <span class="tag tag-status">Gravado</span>
+                        <a href="https://www.notion.so/32692dc7b6bc80bbad79ff379962e1a3" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <div class="task-title">[REEL/TIKTOK] CORTE YOUTUBE – COMO A IA PODE MUDAR SUA ROTINA (COM FILIPE FRAZÃO)</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 16/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/30a92dc7b6bc8117a0e0e33b398a9630" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <div class="task-title">[YOUTUBE] LIDERANÇA, IA E PRODUTIVIDADE: UMA CONVERSA COM FILIPE FRAZÃO</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 16/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/30a92dc7b6bc817fb924f18722b53d05" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <div class="task-title">[REEL/TIKTOK] PRODUTIVIDADE REAL</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 17/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/33692dc7b6bc8181861ef31cb1f4287a" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">5</div>
+                <div class="task-content">
+                    <div class="task-title">[STORIES] VENDA MIB – A MULHER QUE DOMINA SUA ROTINA, DOMINA SUA VIDA</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 17/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/30a92dc7b6bc81138548ee4c2ae71e23" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">6</div>
+                <div class="task-content">
+                    <div class="task-title">[CARROSSEL FOTOS] CHÁ DA SERENA</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 19/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/33a92dc7b6bc80aebe00e72bfbe4613a" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">7</div>
+                <div class="task-content">
+                    <div class="task-title">Planejamento de Contéudo - Maio</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 19/04/2026</span>
+                        <span class="tag tag-status">?</span>
+                        <a href="https://www.notion.so/30292dc7b6bc8004bebaf6355300a489" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </div>
+    <div class="footer">
+        <p>Relatorio gerado automaticamente via Notion API</p>
+    </div>
+</body>
+</html>
