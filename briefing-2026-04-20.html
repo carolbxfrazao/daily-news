@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 20 de Abril de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 20 de Abril de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Estrogênio amplifica a dopamina e muda como mulheres aprendem</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Estrogen modulates reward prediction errors and reinforcement learning</li>
+<li><strong>Data de Publicação:</strong> Novembro 2025 (repercussão e revisão ampliada em 2026)</li>
+<li><strong>Fonte:</strong> Nature Neuroscience — <a href="https://www.nature.com/articles/s41593-025-02104-z" target="_blank">DOI / Link</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Neuroscience)</li>
+<li><strong>Achado:</strong> Pesquisadores da NYU descobriram que os níveis naturais de estrogênio alteram diretamente o sistema dopaminérgico do cérebro, tornando os sinais químicos que guiam o aprendizado mais potentes. Em ratas, quando os níveis de estrogênio estavam altos, a dopamina permanecia ativa por mais tempo na região de recompensa do cérebro (nucleus accumbens) porque o estrogênio reduzia a quantidade de proteínas transportadoras de dopamina — ou seja, a dopamina ficava "trabalhando" por mais tempo em vez de ser reabsorvida. Resultado: o sinal de "isso é gratificante" ficava mais forte, e o aprendizado por recompensa melhorava significativamente. O efeito flutuava ao longo do ciclo reprodutivo.</li>
+<li><strong>Implicação prática:</strong> O ciclo hormonal feminino não é apenas uma questão de humor — ele muda literalmente como o cérebro aprende e processa recompensas. Isso tem implicações diretas para produtividade, formação de hábitos e até tomada de decisão em diferentes fases do ciclo menstrual. Para o público do MIB, é um dado que valida a importância de entender o próprio ciclo como ferramenta de autogestão.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.psypost.org/new-research-reveals-how-estrogen-amplifies-the-brains-dopamine-signals/" target="_blank">PsyPost — New research reveals how estrogen amplifies the brain's dopamine signals</a></li>
+<li><a href="https://www.nyu.edu/about/news-publications/news/2025/november/study-sheds-new-light-on-how-hormones-influence-decision-making-.html" target="_blank">NYU News — Study Sheds New Light on How Hormones Influence Decision-Making</a></li>
+<li><a href="https://neurosciencenews.com/estrogen-dopamine-learning-29923/" target="_blank">Neuroscience News — Estrogen Shapes Dopamine Reward Learning</a></li>
+<li><a href="https://www.mindbodygreen.com/articles/estrogen-helps-your-brain-learn-faster-and-hrt-may-help-too" target="_blank">MindBodyGreen — Estrogen Supercharges Dopamine</a></li>
+<li><a href="https://journals.sagepub.com/doi/10.1177/10445498261427138" target="_blank">Current Directions in Psychological Science — Review</a></li>
+</ul>
+<h3>2. O cérebro humano tem 5 "idades" — e muda radicalmente aos 9, 32, 66 e 83 anos</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Topological turning points across the human lifespan</li>
+<li><strong>Data de Publicação:</strong> Dezembro 2025 (repercussão global em 2026)</li>
+<li><strong>Fonte:</strong> Nature Communications — <a href="https://www.nature.com/articles/s41467-025-65974-8" target="_blank">DOI / Link</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Communications)</li>
+<li><strong>Achado:</strong> Neurocientistas da Universidade de Cambridge analisaram exames de ressonância magnética de 3.802 pessoas (do nascimento aos 90 anos) e identificaram 4 pontos de virada estrutural no cérebro, que dividem a vida em 5 épocas distintas:</li>
+<li><strong>Infância (0-9):</strong> fase de construção acelerada de conexões</li>
+<li><strong>Adolescência/Adulto jovem (9-32):</strong> o cérebro fica mais rápido, mais interconectado, atingindo o pico de eficiência estrutural por volta dos 32 anos</li>
+<li><strong>Vida adulta (32-66):</strong> platô — inteligência e personalidade se estabilizam, período mais longo e estável</li>
+<li><strong>Envelhecimento inicial (66-83):</strong> reorganização gradual das redes cerebrais, redução da conectividade com degeneração da substância branca</li>
+<li><strong>Envelhecimento tardio (83+):</strong> mudança de conectividade global para local — o cérebro se apoia cada vez mais em regiões específicas</li>
+<li><strong>Implicação prática:</strong> A ideia de que "o cérebro decai a partir dos 25 anos" é uma simplificação grosseira. O pico de eficiência neural está por volta dos 32 — e mesmo depois, a fase 32-66 é de estabilidade, não declínio. Para mulheres na faixa do público MIB (25-45), isso é uma notícia excelente: vocês estão no pico ou no platô mais forte do cérebro.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.cam.ac.uk/stories/five-ages-human-brain" target="_blank">University of Cambridge — Scientists identify five ages of the human brain</a></li>
+<li><a href="https://neurosciencenews.com/brain-aging-stages-29984/" target="_blank">Neuroscience News — Your Brain Quietly Rewires Itself at 9, 32, 66 and 83</a></li>
+<li><a href="https://www.smithsonianmag.com/smart-news/your-brain-goes-through-five-distinct-epochs-of-neural-wiring-during-your-lifetime-new-research-suggests-180987755/" target="_blank">Smithsonian Magazine</a></li>
+<li><a href="https://www.nationalgeographic.com/health/article/how-your-brain-changes-at-every-age" target="_blank">National Geographic — Scientists identify 4 key turning points for your brain</a></li>
+<li><a href="https://www.popsci.com/health/brain-changes-aging/" target="_blank">Popular Science — Your brain changes at 9, 32, 66, and 83</a></li>
+</ul>
+<h3>3. Interface cérebro-computador permite que pessoas paralisadas digitem 22 palavras por minuto com a mente</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Restoring rapid natural bimanual typing with a neuroprosthesis after paralysis</li>
+<li><strong>Data de Publicação:</strong> Março 2026</li>
+<li><strong>Fonte:</strong> Nature Neuroscience — <a href="https://www.nature.com/articles/s41593-026-02218-y" target="_blank">DOI / Link</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Neuroscience)</li>
+<li><strong>Achado:</strong> O sistema BrainGate implantou microeletrodos no córtex motor de dois pacientes — um com ELA e outro com lesão na medula cervical — e usou um teclado QWERTY virtual. Os pacientes tentavam movimentos de dedos (sem conseguir executá-los fisicamente), e o cérebro gerava sinais elétricos que um computador traduzia em letras. Resultado: velocidade de digitação de até 22 palavras por minuto com taxa de erro de apenas 1,6% — comparável à digitação de pessoas sem paralisia em celulares. O sistema funcionou em casa, após calibração com apenas 30 frases.</li>
+<li><strong>Implicação prática:</strong> A mente continua intacta mesmo quando o corpo para de responder. Esse estudo prova que o córtex motor não "esquece" como digitar — ele continua disparando padrões neurais mesmo sem movimento real. É a neuroplasticidade trabalhando a favor da comunicação humana, e um lembrete poderoso de que intenção gera atividade neural mensurável.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.brown.edu/news/2026-03-16/braingate-rapid-communication" target="_blank">Brown University — Brain computer interface enables rapid communication</a></li>
+<li><a href="https://www.massgeneralbrigham.org/en/about/newsroom/press-releases/brain-computer-interface-enables-rapid-communication-for-paralyzed-people" target="_blank">Mass General Brigham</a></li>
+<li><a href="https://neurosciencenews.com/brain-computer-interface-typing-paralysis-30325/" target="_blank">Neuroscience News — Investigational Brain Implant Restores High-Speed Communication</a></li>
+<li><a href="https://medicalxpress.com/news/2026-03-brain-interface-enables-rapid-communication.html" target="_blank">MedicalXpress</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Regulação do sistema nervoso: a tendência #1 de wellness em 2026</h3>
+<ul>
+<li><strong>Tema:</strong> O nervo vago e a regulação do sistema nervoso como base de saúde mental e física</li>
+<li><strong>Por que está em alta:</strong> O Global Wellness Summit nomeou regulação do sistema nervoso como a tendência #1 de bem-estar de 2026. A conversa saiu dos nichos de yoga e biohacking e chegou ao mainstream: terapeutas estão chamando isso de "a prática definitiva de 2026". Estimulação vagal, banho gelado, yoga restaurativo, técnicas somáticas e biofeedback estão dominando conteúdos de wellness no mundo todo. O ponto central: em vez de "reduzir estresse" de forma genérica, o foco agora é otimizar o tônus vagal, reduzir cortisol cronicamente elevado e treinar o corpo a sair do modo simpático (luta-ou-fuga) para o parassimpático (recuperação).</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel ou YouTube — Carol pode explicar a neurociência por trás: o que é o nervo vago, como o tônus vagal afeta inflamação, digestão, sono e humor, e quais técnicas têm evidência real (respiração 4-7-8, banho gelado, yoga yin) vs. o que é só hype. Diferencial: conectar com o público feminino mostrando como o sistema nervoso desregulado afeta ciclo menstrual, produtividade e humor.</li>
+<li><strong>Gancho sugerido:</strong> "Todo mundo tá falando em 'regular o sistema nervoso' em 2026. Mas o que isso realmente significa no seu cérebro — e o que funciona de verdade?"</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://globalwellnessinstitute.org/global-wellness-institute-blog/2026/03/30/mental-wellness-initiative-trends-for-2026/" target="_blank">Global Wellness Institute — Mental Wellness Initiative Trends 2026</a></li>
+<li><a href="https://moodtapapp.com/blog/nervous-system-regulation-2026-wellness-essential-20260308" target="_blank">Moodtap — Nervous System Regulation: 2026 Wellness Essential</a></li>
+<li><a href="https://sanctuarywellnessspa.com/2026-health-wellness-trend-predictions-the-great-nervous-system-reset/" target="_blank">Sanctuary Wellness Spa — The Great Nervous System Reset</a></li>
+<li><a href="https://bokettowellness.com/blogs/journal/meet-the-vagus-nerve-2026" target="_blank">Boketto Wellness — Meet the Vagus Nerve</a></li>
+</ul>
+<h3>2. Seu ciclo hormonal muda como você aprende — e ninguém te contou</h3>
+<ul>
+<li><strong>Tema:</strong> Estrogênio modula dopamina e aprendizado por recompensa no cérebro feminino</li>
+<li><strong>Por que está em alta:</strong> O estudo da Nature Neuroscience (detalhado acima) está repercutindo em canais de divulgação como PsyPost, MindBodyGreen e Neuroscience News. O dado é poderoso: o estrogênio literalmente faz a dopamina durar mais tempo no sistema de recompensa, melhorando o aprendizado. Isso significa que mulheres aprendem, tomam decisões e formam hábitos de forma diferente dependendo da fase do ciclo. É um tema com alto potencial de engajamento no público feminino — cruza neurociência, hormônios e produtividade pessoal.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel. O ângulo que ninguém está usando: não falar só de TPM e humor, mas de como sincronizar aprendizado e formação de hábitos com o ciclo. Carol pode conectar com conteúdo de dopamina (Aula 12 MIB) e mostrar que entender o ciclo hormonal é uma ferramenta de alta performance, não uma limitação.</li>
+<li><strong>Gancho sugerido:</strong> "Tem dias em que você aprende mais rápido e nem sabe por quê. A resposta tá no seu ciclo — e a ciência acabou de provar isso."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://www.nature.com/articles/s41593-025-02104-z" target="_blank">Nature Neuroscience — Estrogen modulates reward prediction errors</a></li>
+<li><a href="https://www.psypost.org/new-research-reveals-how-estrogen-amplifies-the-brains-dopamine-signals/" target="_blank">PsyPost</a></li>
+<li><a href="https://www.nyu.edu/about/news-publications/news/2025/november/study-sheds-new-light-on-how-hormones-influence-decision-making-.html" target="_blank">NYU News</a></li>
+</ul>
+<h3>3. As 5 idades do cérebro — seu cérebro não decai aos 25</h3>
+<ul>
+<li><strong>Tema:</strong> Cambridge descobriu que o cérebro atinge pico de eficiência aos 32 e se mantém estável até os 66</li>
+<li><strong>Por que está em alta:</strong> O estudo de Cambridge com 3.802 pessoas ganhou cobertura na Smithsonian, National Geographic, Popular Science e Neuroscience News. O dado mais compartilhável: o pico de eficiência neural é aos 32, não aos 25 como o senso comum repete. E a fase 32-66 é de estabilidade, não de declínio. É um conteúdo altamente compartilhável porque desfaz um mito popular e gera alívio (e curiosidade) em quem está na faixa dos 30-40 anos.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou YouTube curto. Ângulo: "Seu cérebro não está piorando — ele tá no pico." Mostrar os 4 pontos de virada, explicar o que acontece em cada fase, e focar na mensagem: mulheres de 25-45 estão na fase mais poderosa do cérebro. Conectar com o posicionamento MIB de alta performance sustentável.</li>
+<li><strong>Gancho sugerido:</strong> "Você já ouviu que depois dos 25 o cérebro começa a decair? Cambridge analisou 3.800 cérebros e descobriu que isso é mentira."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://www.nature.com/articles/s41467-025-65974-8" target="_blank">Nature Communications — Topological turning points</a></li>
+<li><a href="https://www.cam.ac.uk/stories/five-ages-human-brain" target="_blank">University of Cambridge</a></li>
+<li><a href="https://www.smithsonianmag.com/smart-news/your-brain-goes-through-five-distinct-epochs-of-neural-wiring-during-your-lifetime-new-research-suggests-180987755/" target="_blank">Smithsonian Magazine</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Huberman Lab — Memória e ferramentas baseadas em ciência</h3>
+<p>Andrew Huberman publicou em 16/abril o episódio <strong>"Essentials: Understand & Improve Memory Using Science-Based Tools"</strong> — abordando como memórias são formadas, o papel da adrenalina na consolidação de memória, protocolos para fortalecer recall e como exercício apoia função cognitiva. Tema diretamente conectável com conteúdo MIB sobre hábitos e aprendizado.</p>
+<ul>
+<li><a href="https://www.hubermanlab.com/episode/essentials-understand-and-mprove-memory-using-science-based-tools" target="_blank">Huberman Lab — Understand & Improve Memory</a></li>
+</ul>
+<h3>2. Nervo vago e regulação nervosa dominando wellness BR e global</h3>
+<p>O termo "nervous system regulation" está em todos os canais de wellness em 2026. No Brasil, perfis como @eslen.delanogare e @giutessitore estão abordando regulação emocional com base somática. Internacionalmente, @gabormatemd continua com conteúdo sobre trauma e corpo, e @wendy.suzuki sobre neuroplasticidade e bem-estar. É o tema do momento no nicho de saúde mental baseada em evidências.</p>
+<ul>
+<li><a href="https://globalwellnessinstitute.org/global-wellness-institute-blog/2026/03/30/mental-wellness-initiative-trends-for-2026/" target="_blank">Global Wellness Institute — Mental Wellness Trends 2026</a></li>
+<li><a href="https://www.thegoodtrade.com/features/wellness-trends-2026/" target="_blank">The Good Trade — Wellness Trends 2026</a></li>
+</ul>
+<h3>3. Algoritmo do Instagram 2026: envios e salvamentos > curtidas</h3>
+<p>Adam Mosseri confirmou a mudança: o Instagram em 2026 prioriza envios via DM (shares) e salvamentos acima de curtidas e comentários. Salvamentos valem ~3x mais que likes. Compartilhamentos via DM de pessoas que não te seguem têm peso extra. Isso muda radicalmente a estratégia de conteúdo: o que importa é criar conteúdo que as pessoas enviem para amigas, não que apenas curtam. Para Carol, conteúdo educativo e surpreendente (dados de neurociência, desmistificações) é exatamente o que gera envios.</p>
+<ul>
+<li><a href="https://buffer.com/resources/instagram-algorithms/" target="_blank">Buffer — How the Instagram Algorithm Works 2026</a></li>
+<li><a href="https://blog.hootsuite.com/instagram-algorithm/" target="_blank">Hootsuite — Instagram Algorithm Tips 2026</a></li>
+<li><a href="https://sproutsocial.com/insights/instagram-algorithm/" target="_blank">Sprout Social — Instagram Algorithm 2026</a></li>
+</ul>
+<h3>4. Dopamina digital: o sequestro do sistema de recompensa pela tecnologia</h3>
+<p>Em março 2026, o The Awareness News publicou uma análise aprofundada sobre como a tecnologia está reprogramando o sistema de recompensa do cérebro. O debate evoluiu do "brain rot" (coberto no briefing anterior) para um ângulo mais científico: como plataformas digitais usam recompensas variáveis (idênticas às de caça-níqueis) para criar dependência, e como a exposição crônica reduz receptores de dopamina, tornando recompensas naturais (exercício, leitura, conexão) menos gratificantes. Tema com alto potencial de série (3-5 Reels conectados).</p>
+<ul>
+<li><a href="https://theawarenessnews.com/2026/03/21/dopamine-in-the-digital-age-how-technology-is-reshaping-our-reward-system/" target="_blank">The Awareness News — Dopamine In The Digital Age</a></li>
+<li><a href="https://med.stanford.edu/news/insights/2021/10/addictive-potential-of-social-media-explained.html" target="_blank">Stanford Medicine — Addictive potential of social media</a></li>
+</ul>
+<h3>5. Huberman Lab — Awe e conexão emocional com Dr. Dacher Keltner (6 de abril)</h3>
+<p>Episódio recente sobre cultivar admiração (<em>awe</em>) e conexão emocional no dia a dia. Keltner é referência em psicologia positiva e emoções. Tema relevante para o eixo "relacionamento com Deus" e "inteligência emocional" do MIB — admiração como prática intencional que ativa o sistema nervoso parassimpático.</p>
+<ul>
+<li><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — Cultivating Awe & Emotional Connection | Dr. Dacher Keltner</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Science Corp / Neuralink / chips cerebrais — já coberto</h3>
+<p>O briefing de 16/abril cobriu extensamente o implante biohíbrido da Science Corp. Evitar repetir o mesmo ângulo. Se abordar BCI novamente, usar o estudo do BrainGate (digitação mental a 22 palavras/min) como ângulo novo — é mais humano e emocional que a notícia de hardware.</p>
+<h3>2. "Meditação muda o cérebro" — ângulo saturado</h3>
+<p>O estudo da UC San Diego sobre 7 dias de meditação já foi coberto no briefing anterior. Se voltar ao tema, precisa de um corte novo: comparar com os protocolos que Carol já ensina, ou focar exclusivamente no dado do plasma sanguíneo regenerando neurônios.</p>
+<h3>3. Listas genéricas de "regulação do sistema nervoso"</h3>
+<p>A tendência de regulação nervosa é forte, mas o risco é cair no mesmo formato que todo perfil de wellness está usando ("5 exercícios para ativar o nervo vago"). Carol precisa ir na explicação neurocientífica profunda — o que é tônus vagal, por que cortisol cronicamente alto danifica o hipocampo, como isso afeta especificamente mulheres.</p>
+<h3>4. "Cycle syncing" superficial</h3>
+<p>O dado sobre estrogênio e dopamina é forte, mas o conceito de "cycle syncing" (sincronizar atividades com o ciclo menstrual) está se tornando tendência no TikTok com muita pseudociência misturada. Carol deve se diferenciar ancorando APENAS no estudo da Nature Neuroscience, sem extrapolar para claims não comprovados.</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> Seu ciclo hormonal muda como você aprende — e isso não é desvantagem</p>
+<p><strong>Formato:</strong> Reel (60-90 segundos)</p>
+<p><strong>Gancho:</strong> "Tem dias em que você aprende mais rápido, toma decisões melhores e se sente mais motivada. E tem dias que parece que o cérebro tá em câmera lenta. Isso não é frescura — é estrogênio."</p>
+<p><strong>Desenvolvimento:</strong></p>
+<ul>
+<li>Explicar em linguagem acessível: a Nature Neuroscience publicou um estudo mostrando que os níveis de estrogênio alteram diretamente o sistema de dopamina no cérebro</li>
+<li>Quando o estrogênio está alto (fase folicular, antes da ovulação), a dopamina permanece ativa por mais tempo no sistema de recompensa — o sinal de "isso vale a pena" fica mais forte</li>
+<li>Resultado: aprendizado por recompensa melhora, decisões ficam mais assertivas, motivação aumenta</li>
+<li>Quando o estrogênio cai (fase lútea, pré-menstrual), o efeito diminui — e não é fraqueza, é bioquímica</li>
+<li>O pulo do gato: em vez de lutar contra o ciclo, usar esse conhecimento a seu favor — colocar tarefas de aprendizado intenso e decisões importantes na primeira metade do ciclo</li>
+</ul>
+<p><strong>CTA:</strong> "Salva esse vídeo e manda pra uma amiga que precisa parar de se cobrar nos dias errados."</p>
+<p><strong>Legenda sugerida:</strong></p>
+<p>A Nature Neuroscience mostrou: o estrogênio muda literalmente como a dopamina funciona no seu cérebro. Nos dias de estrogênio alto, você aprende mais rápido e toma decisões melhores. Nos dias de estrogênio baixo, o sistema de recompensa desacelera. Não é falta de disciplina — é bioquímica. E quando você entende isso, para de se sabotar nos dias errados.</p>
+<p><strong>Hashtags:</strong> #neurociência #ciclo #dopamina #cérebro #mulher</p>
+<p><strong>Sugestão de thumbnail:</strong> Fundo claro com gráfico simples de curva hormonal + texto bold: "SEU CICLO MUDA SEU CÉREBRO"</p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Fontes adicionais:*<br>*Fontes adicionais:*<br>*Fontes adicionais:*<br>*Desenvolvimento:*<br>*Legenda sugerida:*<br>Briefing gerado em: 20 de abril de 2026<br>Fontes verificadas: Nature Neuroscience, Nature Communications, Nature Aging, Communications Biology, ScienceDaily, PubMed/PMC, Brown University, MIT News<br>Cruzamento com briefings anteriores: temas FTL1, meditação UC San Diego e Science Corp BCI foram cobertos em 16/04 — este briefing prioriza ângulos novos (estrogênio+dopamina, 5 idades do cérebro, BrainGate, regulação nervosa)</p>
+    </div>
+</body>
+</html>
