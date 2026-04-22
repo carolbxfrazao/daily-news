@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 22 de Abril de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 22 de Abril de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Cientistas encontram um "dreno" escondido dentro do cérebro humano — e isso muda como pensamos sobre limpeza cerebral, sono e envelhecimento</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Meningeal lymphatic architecture and drainage dynamics surrounding the human middle meningeal artery</li>
+<li><strong>Data de Publicação:</strong> Publicado em iScience em abril de 2026 (repercussão forte entre 8 e 15 de abril)</li>
+<li><strong>Fonte:</strong> iScience (Cell Press) — <a href="https://www.cell.com/iscience/fulltext/S2589-0042(25" target="_blank">Meningeal lymphatic architecture and drainage dynamics surrounding the human middle meningeal artery</a>01954-6) | <a href="https://www.sciencedirect.com/science/article/pii/S2589004225019546" target="_blank">ScienceDirect</a> | <a href="https://www.eurekalert.org/news-releases/1104105" target="_blank">EurekAlert! — release oficial da MUSC</a></li>
+<li><strong>Status:</strong> Revisado por pares (iScience / Cell Press)</li>
+<li><strong>Achado:</strong> A equipe do Dr. Onder Albayram, da Medical University of South Carolina (MUSC), em parceria com a NASA, usou ressonância magnética em tempo real (tecnologia originalmente criada para estudar o cérebro de astronautas) para rastrear, pela primeira vez em humanos, o fluxo de líquido cefalorraquidiano ao longo da <strong>artéria meníngea média (AMM)</strong>. Descobriram um canal de drenagem linfática até agora não documentado: o fluido viaja lentamente pelas paredes dessa artéria, num padrão muito diferente do sangue, alcançando pico em 90 minutos. Os pesquisadores confirmaram — com imunofluorescência e citometria de massa — que o canal tem marcadores linfáticos (PROX1+, PDPN+, LYVE1+). Ou seja: o cérebro humano tem uma "rota de lixo" que a ciência não enxergava, e essa rota acompanha uma artéria que todo médico conhece há mais de 100 anos.</li>
+<li><strong>Implicação prática:</strong> Essa descoberta reforça o consenso crescente de que <strong>o cérebro precisa ser drenado — não só alimentado</strong>. O sistema glinfático (o "esgoto" que retira proteínas tóxicas como a beta-amiloide ligada ao Alzheimer) agora ganhou um novo componente humano mapeado. Isso dá peso clínico a hábitos que a neurociência já vinha recomendando: sono profundo (quando a drenagem acontece em volume máximo), posição de dormir (dormir de lado parece otimizar o fluxo), hidratação, e controle de pressão arterial. Para o público MIB: dormir pouco não é só "ficar cansada" — é deixar o cérebro literalmente sujo.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260408225934.htm" target="_blank">ScienceDaily — Scientists just found a hidden "drain" inside the human brain</a></li>
+<li><a href="https://www.psypost.org/neuroscientists-just-discovered-a-hidden-drainage-system-in-the-human-brain/" target="_blank">PsyPost — Neuroscientists just discovered a hidden drainage system in the human brain</a></li>
+<li><a href="https://www.earth.com/news/scientists-discover-a-hidden-drain-in-the-human-brain/" target="_blank">Earth.com — Scientists discover a hidden 'drain' that cleans the human brain</a></li>
+<li><a href="https://www.technologynetworks.com/neuroscience/news/previously-unrecognized-lymphatic-drainage-hub-identified-in-the-brain-406432" target="_blank">Technology Networks — Middle Meningeal Artery Identified in Brain Waste Clearance</a></li>
+<li><a href="https://web.musc.edu/about/news-center/2025/10/30/taking-out-the-trash" target="_blank">MUSC News Center — Taking Out the Trash</a></li>
+</ul>
+<h3>2. Cortisol embaralha o GPS interno do cérebro — a primeira prova direta em humanos de que estresse crônico destrói orientação e memória espacial</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Cortisol treatment impairs path integration and alters grid-like representations in the male human entorhinal cortex</li>
+<li><strong>Data de Publicação:</strong> 12 de março de 2026 (repercussão se consolidando em abril)</li>
+<li><strong>Fonte:</strong> PLOS Biology — <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003661" target="_blank">DOI: 10.1371/journal.pbio.3003661</a> | <a href="https://www.biorxiv.org/content/10.1101/2025.03.10.642344v2" target="_blank">bioRxiv — versão pré-print</a></li>
+<li><strong>Status:</strong> Revisado por pares (PLOS Biology)</li>
+<li><strong>Achado:</strong> Pesquisadores da Ruhr University Bochum (Osman Akan, Varnan Chandreswaran, Henry D. Soldan, Anne Bierbrauer, Nikolai Axmacher, Oliver T. Wolf e Christian J. Merz) fizeram um experimento elegante: administraram 20 mg de cortisol ou placebo a 40 participantes e, em seguida, pediram que eles fizessem uma tarefa de navegação virtual dentro de um scanner de ressonância magnética. Resultado: o grupo que recebeu cortisol cometeu muito mais erros de navegação, e as <strong>células grid do córtex entorrinal</strong> — que funcionam como o "GPS interno" do cérebro — tiveram seu padrão de disparo ficando indistinto, quase borrado. Quando o ambiente virtual não tinha pontos de referência, as células grid simplesmente pararam de funcionar direito. O cérebro tentou compensar ativando o núcleo caudado, mas o resultado final foi pior desempenho. É o primeiro estudo em humanos a mostrar, com imagem cerebral, que cortisol agudo desorganiza a arquitetura neural da orientação espacial.</li>
+<li><strong>Implicação prática:</strong> Isso tem peso clínico enorme. O córtex entorrinal é uma das primeiras regiões atacadas pelo Alzheimer, e estresse crônico é fator de risco documentado para demência. O estudo mostra o mecanismo: cortisol elevado → grid cells dessincronizadas → mapa interno confuso → esforço compensatório → desgaste. Para mulheres em alta carga (trabalho + maternidade + ministério + casa), isso explica por que "cabeça embaralhada" em fase de estresse não é frescura — é literalmente o cérebro navegando pior. O recado prático: reduzir cortisol crônico (sono, respiração, movimento, fronteiras) não é bem-estar genérico, é proteção da arquitetura neural que sustenta memória.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://neurosciencenews.com/cortisol-navigation-grid-cells-30311/" target="_blank">Neuroscience News — Cortisol Blurs the Brain's Internal Navigation Map</a></li>
+<li><a href="https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html" target="_blank">MedicalXpress — Lost under stress? Study shows cortisol can scramble the brain's internal map</a></li>
+<li><a href="https://www.psychreg.org/stress-hormone-cortisol-disrupts-brain-navigation-system-imaging-study-finds/" target="_blank">Psychreg — Stress Hormone Cortisol Disrupts Brain Navigation System</a></li>
+<li><a href="https://www.sflorg.com/2026/03/psy03152601.html" target="_blank">Scientific Frontline — How Stress Disrupts the Brain's Navigational System</a></li>
+<li><a href="https://www.miragenews.com/stress-derails-brains-navigation-system-1636780/" target="_blank">Mirage News — Stress Derails Brain's Navigation System</a></li>
+</ul>
+<h3>3. Bactérias do intestino produzem um açúcar que dispara ALS e demência — e a ciência descobriu como bloqueá-lo</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Inflammatory bacterial glycogen drives brain cell death in C9orf72-linked ALS and frontotemporal dementia</li>
+<li><strong>Data de Publicação:</strong> 8 de abril de 2026 (edição de abril de Cell Reports)</li>
+<li><strong>Fonte:</strong> Cell Reports — 2026; 45(2):116906 — <a href="https://case.edu/news/new-gut-brain-discovery-offers-hope-treating-als-and-dementia" target="_blank">Case Western Reserve University — New gut-brain discovery offers hope for treating ALS and dementia</a> | <a href="https://medicalxpress.com/news/2026-02-gut-brain-discovery-bacterial-sugar.html" target="_blank">MedicalXpress — release científico</a></li>
+<li><strong>Status:</strong> Revisado por pares (Cell Reports)</li>
+<li><strong>Achado:</strong> A equipe da Case Western Reserve University descobriu que certas bactérias do intestino produzem uma forma anômala de <strong>glicogênio</strong> — um açúcar armazenado no corpo — e esse açúcar bacteriano dispara resposta imunológica que mata neurônios, especificamente em quem tem predisposição genética para ELA (esclerose lateral amiotrófica) e demência frontotemporal. O dado impressionante: <strong>70% dos 23 pacientes com ELA/DFT estudados tinham níveis perigosos desse glicogênio inflamatório</strong>, contra apenas 1/3 de quem não tinha as doenças. Mais importante: em experimentos em modelo animal, os pesquisadores conseguiram reduzir esse açúcar bacteriano e <strong>melhorar a saúde cerebral + estender o tempo de vida</strong>. Ensaios clínicos em humanos devem começar em até um ano.</li>
+<li><strong>Implicação prática:</strong> Esse estudo entra na onda maior do eixo intestino-cérebro e adiciona um mecanismo molecular concreto. Não é mais "intestino influencia humor" no genérico — é bactéria específica → açúcar específico → morte de neurônio específica. Para o conteúdo MIB, isso permite falar sobre o eixo intestino-cérebro com base científica de ponta, não com achismo de influenciadora de "detox". Conecta diretamente com alimentação, fibras, fermentação, e com a ideia de que inflamação sistêmica crônica (incluindo intestinal) alimenta deterioração cerebral. É também a primeira evidência forte para explicar por que genética sozinha não decide quem adoece — o ambiente interno do intestino decide.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260408225944.htm" target="_blank">ScienceDaily — Scientists discover hidden gut trigger behind ALS and dementia</a></li>
+<li><a href="https://scitechdaily.com/gut-bacteria-discovery-could-change-how-doctors-treat-als-and-dementia/" target="_blank">SciTechDaily — Gut Bacteria Discovery Could Change How Doctors Treat ALS and Dementia</a></li>
+<li><a href="https://www.earth.com/news/gut-bacteria-produce-sugar-that-may-trigger-brain-cell-damage/" target="_blank">Earth.com — Gut bacteria produce sugar that may trigger brain cell damage</a></li>
+<li><a href="https://www.genengnews.com/topics/drug-discovery/als-and-dementia-linked-to-bacterial-sugar-via-gut-brain-axis/" target="_blank">GEN — ALS and Dementia Linked to Bacterial Sugar via Gut–Brain Axis</a></li>
+<li><a href="https://knowridge.com/2026/04/a-hidden-gut-signal-may-decide-who-gets-als-or-dementia/" target="_blank">KnowRidge — A hidden gut signal may decide who gets ALS or dementia</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Seu cérebro tem um ralo — e ele só abre quando você dorme direito"</h3>
+<ul>
+<li><strong>Tema:</strong> A nova descoberta da MUSC/NASA sobre o sistema de drenagem cerebral e por que sono profundo é o único momento em que o cérebro se limpa de verdade</li>
+<li><strong>Por que está em alta:</strong> A publicação em iScience (Cell Press) e o release da MUSC viralizaram em ScienceDaily, Earth.com, PsyPost e Technology Networks entre 8 e 15 de abril. O fato de o estudo ter sido feito com tecnologia da NASA originalmente usada para astronautas adicionou camada de apelo. A conversa sobre sistema glinfático, que Huberman, Wendy Suzuki e Gabor Maté já vinham explicando, acaba de ganhar um mecanismo anatômico novo e visível em humanos. Há espaço claro para ser a primeira criadora brasileira a traduzir isso bem.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel denso (8–10 slides) ou vídeo no YouTube (6–8 min). Explicar: (1) o cérebro tem um sistema de "lixo" chamado glinfático, (2) ele funciona majoritariamente durante o sono profundo, (3) acabaram de descobrir que uma artéria que todo médico já conhecia faz parte dessa rota, (4) isso confirma cientificamente o que já dizemos: dormir mal <strong>suja o cérebro</strong> (literalmente — acumula beta-amiloide, a mesma proteína associada ao Alzheimer). Conectar com comportamentos concretos: hora de dormir regular, dormir de lado (estudos mostram que essa posição otimiza a drenagem), hidratação, e evitar álcool antes de deitar (prejudica o sono profundo).</li>
+<li><strong>Gancho sugerido:</strong> "O seu cérebro tem um ralo. Ele só abre enquanto você dorme. E se você não dorme direito, sua cabeça acumula lixo — e isso não é figura de linguagem, é ciência."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://www.cell.com/iscience/fulltext/S2589-0042(25" target="_blank">Cell Press iScience — paper original</a>01954-6)</li>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260408225934.htm" target="_blank">ScienceDaily</a></li>
+<li><a href="https://www.eurekalert.org/news-releases/1104105" target="_blank">EurekAlert! — release MUSC</a></li>
+<li><a href="https://www.earth.com/news/scientists-discover-a-hidden-drain-in-the-human-brain/" target="_blank">Earth.com</a></li>
+</ul>
+<h3>2. "Estresse não atrapalha só o humor — ele desliga o GPS do seu cérebro"</h3>
+<ul>
+<li><strong>Tema:</strong> Cortisol, células grid e o mecanismo neurológico por trás da "mente confusa" em fase de sobrecarga</li>
+<li><strong>Por que está em alta:</strong> O estudo da Ruhr University Bochum em PLOS Biology (12/mar) está ganhando tração entre canais de divulgação (Neuroscience News, MedicalXpress, Psychreg, Mirage News). É a primeira evidência em humanos, com imagem cerebral, de que <strong>cortisol agudo literalmente borra a arquitetura de navegação do cérebro</strong>. Isso conversa diretamente com o movimento de "nervous system regulation" que está dominando TikTok (230 mil vídeos com #nervoussystemhealing), mas com muito mais peso científico. Oportunidade de Carol se posicionar no topo desse tema com rigor, não só com linguagem "calming".</li>
+<li><strong>Ângulo para Carol:</strong> Reel (60–90s) + complemento em carrossel. O insight contraintuitivo: aquela sensação de "não sei mais onde estou" em semana caótica <strong>não é frescura</strong> — é o córtex entorrinal sendo sabotado pelo cortisol. Mostrar que o mesmo mecanismo que aparece em Alzheimer no longo prazo aparece em estresse agudo no curto prazo. Diferencial MIB: em vez de "respira que passa", oferecer a explicação científica (grid cells, entorrinal, cortisol) e daí sim ancorar as práticas que funcionam (sono, respiração longa, fronteiras). Conecta também com o pilar de vida ministerial: a mulher em burnout espiritual não é "desobediente", é bioquimicamente sobrecarregada.</li>
+<li><strong>Gancho sugerido:</strong> "Você esquece onde estacionou o carro. Esquece por que entrou na cozinha. Não é idade. É cortisol — e ele está literalmente apagando o GPS do seu cérebro."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003661" target="_blank">PLOS Biology — paper original</a></li>
+<li><a href="https://neurosciencenews.com/cortisol-navigation-grid-cells-30311/" target="_blank">Neuroscience News</a></li>
+<li><a href="https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html" target="_blank">MedicalXpress</a></li>
+<li><a href="https://www.psychreg.org/stress-hormone-cortisol-disrupts-brain-navigation-system-imaging-study-finds/" target="_blank">Psychreg</a></li>
+</ul>
+<h3>3. "Seu intestino decide se seu cérebro adoece — e a ciência acabou de mostrar a molécula"</h3>
+<ul>
+<li><strong>Tema:</strong> Eixo intestino-cérebro, glicogênio bacteriano inflamatório, e o fim do debate sobre "se microbioma importa"</li>
+<li><strong>Por que está em alta:</strong> A descoberta da Case Western Reserve em Cell Reports (abril/26) viralizou em ScienceDaily, SciTechDaily, GEN, Earth.com, KnowRidge e outros nos últimos 14 dias. O dado de que 70% dos pacientes com ELA/DFT tinham níveis perigosos desse açúcar bacteriano é o tipo de estatística que gera conversa. E vem no momento em que o mercado de "detox de intestino" está saturado de pseudociência — Carol pode usar o estudo real para descolar da narrativa de "chá desintoxicante" e trazer o mecanismo científico.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube (7–10 min) ou série de carrossel em 3 partes. Parte 1: "o seu intestino conversa com seu cérebro — mas não do jeito que o Instagram te contou". Parte 2: como bactérias específicas produzem açúcar que inflama neurônios. Parte 3: o que a ciência realmente aponta como proteção hoje (fibras, alimentos fermentados naturais, redução de ultraprocessados, sono — e NÃO detox de 3 dias). Diferencial: posicionar-se como a criadora que explica o eixo intestino-cérebro com <strong>mecanismo molecular</strong>, não com mística.</li>
+<li><strong>Gancho sugerido:</strong> "Todo mundo te fala pra cuidar do intestino, mas ninguém te explica o motivo. A ciência acabou de mostrar: uma bactéria específica produz um açúcar que pode matar neurônio. E você provavelmente está alimentando essa bactéria todo dia."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://case.edu/news/new-gut-brain-discovery-offers-hope-treating-als-and-dementia" target="_blank">Case Western Reserve University — release oficial</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260408225944.htm" target="_blank">ScienceDaily</a></li>
+<li><a href="https://scitechdaily.com/gut-bacteria-discovery-could-change-how-doctors-treat-als-and-dementia/" target="_blank">SciTechDaily</a></li>
+<li><a href="https://www.genengnews.com/topics/drug-discovery/als-and-dementia-linked-to-bacterial-sugar-via-gut-brain-axis/" target="_blank">GEN — Genetic Engineering & Biotechnology News</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Huberman Lab + Dr. Marc Brackett — regulação emocional vira ciência aplicada (20/abr)</h3>
+<p>O episódio de 2h25 lançado em 20 de abril segue no topo do ranking de podcasts de ciência. Brackett, fundador do Yale Center for Emotional Intelligence, apresenta o modelo <strong>RULER</strong> (Recognize, Understand, Label, Express, Regulate — Reconhecer, Entender, Nomear, Expressar, Regular). Discute como a socialização de emoções na infância molda o adulto, diferenças entre homens e mulheres, e ferramentas diárias de regulação. Conecta diretamente com pilar MIB de inteligência emocional.</p>
+<ul>
+<li><a href="https://www.hubermanlab.com/episode/how-to-better-regulate-your-emotions-marc-brackett" target="_blank">Huberman Lab — How to Better Regulate Your Emotions | Dr. Marc Brackett</a></li>
+<li><a href="https://marcbrackett.com/" target="_blank">Marc Brackett — site oficial</a></li>
+<li><a href="https://marcbrackett.com/ruler/" target="_blank">RULER Framework</a></li>
+</ul>
+<h3>2. Science Corp — implante cerebral biohíbrido vivo em humano pela primeira vez (meados de abril)</h3>
+<p>A Science Corp, comandada por Max Hodak (ex-cofundador da Neuralink), anunciou que colocou um sensor cortical biohíbrido em paciente humano em Yale New Haven Hospital. Diferencial: chip do tamanho de uma ervilha com 520 eletrodos, projetado para receber neurônios cultivados em laboratório que se conectam aos neurônios reais do paciente. Está revivendo a conversa pública sobre neurotecnologia — oportunidade para Carol explicar o que está em jogo (e o que é só hype).</p>
+<ul>
+<li><a href="https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/" target="_blank">TechCrunch — Max Hodak's Science Corp. is preparing to place its first sensor in a human brain</a></li>
+<li><a href="https://spectrum.ieee.org/brain-computer-interface-2671151260" target="_blank">IEEE Spectrum — Science Corp's Biohybrid BCI Adds Neurons to the Brain</a></li>
+<li><a href="https://science.xyz/technologies/biohybrid/" target="_blank">Science Corp — página da tecnologia biohíbrida</a></li>
+</ul>
+<h3>3. "Nervous system regulation" vira o grande tema de wellness de 2026</h3>
+<p>O Global Wellness Summit apontou <strong>neurowellness</strong> como tendência-chave do ano. Na prática: cresce o discurso de regular o sistema nervoso (parassimpático, tônus vagal, coerência cardíaca) em vez de só "reduzir estresse". #nervoussystemhealing já tem 230 mil vídeos no TikTok. Tema em alta, com alto risco de virar bolha de produtos sem evidência — espaço para Carol entrar com recorte científico sério.</p>
+<ul>
+<li><a href="https://www.globalwellnesssummit.com/trendium/neurowellness-one-of-the-biggest-wellness-trends-of-2026/" target="_blank">Global Wellness Summit — Neurowellness 2026</a></li>
+<li><a href="https://www.globalwellnesssummit.com/trendium/the-trend-in-the-news-april-2026/" target="_blank">Global Wellness Summit — The Trend in the News (April 2026)</a></li>
+<li><a href="https://editorialge.com/nervous-system-regulation-2026/" target="_blank">Editorial Age — Nervous System Regulation: 2026's Best Way to End Burnout</a></li>
+</ul>
+<h3>4. FDA e neurotecnologia — Neuralink, INBRAIN e Synchron disputam o "primeiro BCI comercial"</h3>
+<p>Neuralink anunciou produção em alta escala e Blindsight (implante para cegos) com início de testes em humanos neste semestre. Synchron segue com o Stentrode via sistema vascular. INBRAIN (grafeno cortical) finalizou recrutamento em abril. Tema continua quente no nicho tech/ciência, com cobertura em STAT, Fierce Biotech, IEEE Spectrum e Nature.</p>
+<ul>
+<li><a href="https://spectrum.ieee.org/new-technology-2026" target="_blank">IEEE Spectrum — New Technology in 2026: Brain Chips and Space Missions</a></li>
+<li><a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">Fierce Biotech — Neuralink to kick-start 'high-volume production' of brain-computer interface devices</a></li>
+<li><a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT — Neuralink's big vision collides with reality of brain implants</a></li>
+</ul>
+<h3>5. Exercício cognitivo de 10 horas reduz risco de demência em 25% — 20 anos depois</h3>
+<p>O braço do estudo ACTIVE (Johns Hopkins + NIH), publicado em fevereiro, segue repercutindo em NPR, CNN e Psychology Today. O ponto inédito: <strong>não é qualquer treino mental</strong> que funciona. O "speed of processing" (treino de velocidade de processamento) é o único que mostrou o efeito protetor durante 20 anos de acompanhamento. Memória e raciocínio, não. Gancho forte para conteúdo sobre "como treinar o cérebro de verdade".</p>
+<ul>
+<li><a href="https://www.hopkinsmedicine.org/news/newsroom/news-releases/2026/02/cognitive-speed-training-linked-to-lower-dementia-incidence-up-to-20-years-later" target="_blank">Johns Hopkins Medicine — Cognitive Speed Training Linked to Lower Dementia Incidence Up To 20 Years Later</a></li>
+<li><a href="https://www.nih.gov/news-events/news-releases/cognitive-speed-training-over-weeks-may-delay-diagnosis-dementia-over-decades" target="_blank">NIH — Cognitive speed training over weeks may delay the diagnosis of dementia over decades</a></li>
+<li><a href="https://www.npr.org/2026/02/18/nx-s1-5716010/brain-training-exercise-cut-dementia-risk-decades" target="_blank">NPR — This brain-training exercise may cut dementia risk for decades</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Detox de cortisol" / "menu anti-cortisol" viral no TikTok</h3>
+<p>O estudo do cortisol + grid cells vai atrair uma onda de vídeos do tipo "5 alimentos que acabam com o cortisol" ou "o smoothie anti-estresse". <strong>Cuidado:</strong> não existe "detox de cortisol" — cortisol é hormônio vital (sem ele, a pessoa morre). O que existe é redução de estresse crônico e regulação do eixo HPA. Carol pode usar o ruído para se diferenciar: explicar o que o cortisol faz de útil, quando ele vira problema, e por que "eliminar" cortisol é impossível e perigoso.</p>
+<h3>2. "Devices de VNS" vendidos como solução mágica</h3>
+<p>A enxurrada de aparelhos de estimulação vagal não invasiva (Nuropod, Pulsetto, outros) está crescendo muito rápido. A ciência ainda é preliminar para uso doméstico — revisões sistemáticas apontam efeitos modestos e variação grande entre estudos. Alerta: evitar endossar aparelhos específicos sem evidência robusta. Pode falar do nervo vago e de práticas validadas (respiração lenta, canto, exposição ao frio, exercício), mas com rigor.</p>
+<h3>3. "Microbioma resolve tudo" — onda pós-estudo ALS/DFT</h3>
+<p>A descoberta do Case Western vai ser usada para vender probiótico genérico. A realidade: o estudo identificou bactérias específicas e um mecanismo molecular em pacientes com predisposição genética para ELA/DFT. Não autoriza a narrativa de "tome probiótico e evita demência". Abordar com nuance: sim, o eixo intestino-cérebro importa; não, um potinho de kefir não vira escudo anti-Alzheimer.</p>
+<h3>4. "Neurociência do parto/maternidade" — onda superficial em plataformas brasileiras</h3>
+<p>Está crescendo no Brasil uma onda de conteúdo sobre "o cérebro da mãe" e "neurociência da maternidade" — parte séria, parte pseudociência travestida. Tema relevante para MIB, mas demanda cuidado: muita narrativa que romantiza a "programação cerebral materna" e minimiza a exaustão real das mães. Carol pode ser voz de equilíbrio aqui.</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> Esqueceu por que entrou no quarto? Não é idade — é cortisol</p>
+<p><strong>Formato:</strong> Reel de 45–60 segundos</p>
+<p><strong>Gancho:</strong> "Você esquece onde pôs a chave. Esquece o nome daquela pessoa. Entra na cozinha e não lembra pra quê. Antes de marcar neurologista, olha seu nível de estresse dos últimos 30 dias."</p>
+<p><strong>Desenvolvimento:</strong></p>
+<ul>
+<li>Explicar, em uma frase, as grid cells como "GPS do cérebro"</li>
+<li>Mostrar o dado do estudo da Ruhr Bochum (40 pessoas, 20 mg de cortisol → erros de navegação + células grid borradas)</li>
+<li>A virada: cortisol crônico faz isso <strong>toda semana</strong> no seu cérebro</li>
+<li>Fechamento: "Não é menopausa, não é idade, não é preguiça. É bioquímica. E tem solução — mas não é no gole de green juice."</li>
+</ul>
+<p><strong>CTA:</strong> "Salva esse vídeo pra quando você esquecer de novo. E me conta nos comentários: qual o dia mais caótico da sua semana?"</p>
+<p><strong>Fonte científica:</strong> <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3003661" target="_blank">PLOS Biology — Cortisol treatment impairs path integration</a></p>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Observações finais sobre o briefing de hoje</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li>Três descobertas escolhidas priorizam <strong>novidade científica</strong> não coberta no briefing de 21/04 (spray nasal, sono + GH, dopamina/energia).</li>
+<li>Todas têm fonte revisada por pares disponível em link direto.</li>
+<li>Há forte conexão com pilares MIB: sono profundo (drenagem cerebral), sobrecarga feminina (cortisol/grid cells), alimentação real (eixo intestino-cérebro).</li>
+<li>O alerta de ruído foi desenhado para Carol antecipar ondas que vão aparecer nos próximos 7–14 dias em português.</li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Fontes adicionais:*<br>*Fontes adicionais:*<br>*Fontes adicionais:*<br>*Desenvolvimento:*</p>
+    </div>
+</body>
+</html>
