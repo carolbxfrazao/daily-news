@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 23 de Abril de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 23 de Abril de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Os "ajudantes" do cérebro têm seu próprio sistema de conversa — e ninguém sabia disso até ontem</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Astrocyte communication networks span across the brain (estudo publicado pela equipe de Cooper, Liddelow e Chao do NYU Langone)</li>
+<li><strong>Data de Publicação:</strong> 22 de abril de 2026 (publicado ontem em <em>Nature</em>)</li>
+<li><strong>Fonte:</strong> Nature — release oficial: <a href="https://nyulangone.org/news/brain-support-cells-form-previously-unknown-network" target="_blank">Brain Support Cells Form Previously Unknown Network — NYU Langone News</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature)</li>
+<li><strong>Achado:</strong> A equipe da Dra. Melissa Cooper, com os co-seniores Shane A. Liddelow e Moses V. Chao (NYU Langone Health), usou vírus inofensivos como "rastreadores de rede" para mapear pela primeira vez como <strong>astrócitos</strong> — as células em forma de estrela que sempre foram tratadas como meras "células de suporte" dos neurônios — se comunicam entre si através de junções comunicantes (gap junctions). A descoberta: astrócitos formam <strong>redes organizadas e específicas</strong> que atravessam o cérebro inteiro, conectando regiões que os neurônios não conectam. E essas redes são dinâmicas — quando os pesquisadores aparavam os bigodes dos camundongos, os caminhos da região que processa o tato dos bigodes se reorganizavam e se conectavam a outros parceiros astrocitários. Cooper resumiu: <em>"astrocytes, which are usually viewed as merely support cells, are also running their own widespread signaling pathway"</em>.</li>
+<li><strong>Implicação prática:</strong> Isso muda como pensamos sobre cognição. Por décadas, neurociência foi sinônimo de neurônio. Agora há evidência direta de que <strong>metade do cérebro está rodando uma rede paralela de comunicação que ninguém estava monitorando</strong>. Para o público MIB, isso ajuda a desconstruir a narrativa simplista de "tudo é dopamina, tudo é serotonina" — o cérebro é mais complexo, e por isso as estratégias de regulação emocional não podem se reduzir a um único neurotransmissor. Também abre janela para entender melhor Alzheimer, Parkinson e neurodegeneração — doenças onde os astrócitos têm papel crescente.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.nature.com/neuro/articles?year=2026" target="_blank">Nature — busca de artigos 2026 da Nature Neuroscience</a></li>
+<li><a href="https://www.sciencedaily.com/news/mind_brain/" target="_blank">ScienceDaily — Mind & Brain News</a></li>
+<li><a href="https://www.quantamagazine.org/once-thought-to-support-neurons-astrocytes-turn-out-to-be-in-charge-20260130/" target="_blank">Quanta Magazine — Once Thought To Support Neurons, Astrocytes Turn Out To Be in Charge</a></li>
+</ul>
+<h3>2. O cérebro tem um botão escondido que diz "para de comer" — e quem aperta não é o neurônio, é o astrócito</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Tanycyte-derived lactate activates astrocytic HCAR1 to modulate glutamatergic signaling and POMC neuron excitability</li>
+<li><strong>Data de Publicação:</strong> 6 de abril de 2026</li>
+<li><strong>Fonte:</strong> PNAS (Proceedings of the National Academy of Sciences) — release oficial: <a href="https://cmns.umd.edu/news-events/news/ricardo-araneda-finds-missing-link-how-brain-regulates-appetite" target="_blank">University of Maryland — New Study Finds a Missing Link in How the Brain Regulates Appetite</a> | <a href="https://medicalxpress.com/news/2026-04-link-brain-appetite.html" target="_blank">MedicalXpress</a> | <a href="https://www.eurekalert.org/news-releases/1122997" target="_blank">EurekAlert!</a></li>
+<li><strong>Status:</strong> Revisado por pares (PNAS)</li>
+<li><strong>Achado:</strong> Quase dez anos de trabalho colaborativo entre o laboratório do Dr. Ricardo Araneda (University of Maryland) e o da Dra. María de los Ángeles García-Robles (Universidade de Concepción, Chile) acabaram de revelar a peça que faltava no quebra-cabeças do controle do apetite. Quando você termina uma refeição, a glicose ativa células chamadas <strong>tanícitos</strong>, que processam o açúcar e liberam <strong>lactato</strong> no tecido cerebral próximo. Esse lactato bate em um receptor chamado <strong>HCAR1</strong> que fica nos astrócitos. Quando o lactato se liga, o astrócito é ativado e libera glutamato — um mensageiro químico que vai estimular os <strong>neurônios POMC</strong>, que são o "centro de saciedade" do hipotálamo. Ou seja: a sensação de "tô satisfeita" depende de uma cadeia astrócito → glutamato → neurônio que ninguém tinha mapeado antes.</li>
+<li><strong>Implicação prática:</strong> Isso é gigante para entender obesidade, comer emocional e por que algumas pessoas "não sentem" saciedade direito. O lactato sempre foi tratado como subproduto inútil do metabolismo. Agora descobrimos que ele é <strong>mensageiro de saciedade</strong>. Para o público MIB, isso ajuda a sair da culpa de "eu não tenho força de vontade" e entender que existe arquitetura química regulando o sinal de "para". Quando o sono está ruim, quando o estresse está alto, quando a comida ultraprocessada confunde os tanícitos — esse sistema falha. E não é caráter, é circuito. Pode ser também alvo terapêutico complementar a Ozempic.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260406192811.htm" target="_blank">ScienceDaily — Scientists discover hidden brain switch that tells you to stop eating</a></li>
+<li><a href="https://biology.umd.edu/news/new-study-finds-missing-link-how-brain-regulates-appetite" target="_blank">University of Maryland — Department of Biology</a></li>
+<li><a href="https://nautil.us/is-this-brain-cell-the-key-to-controlling-appetite-1279621" target="_blank">Nautilus — Is This Brain Cell the Key to Controlling Appetite?</a></li>
+</ul>
+<h3>3. Sete dias de meditação intensiva mudam o cérebro e o sangue — e a ciência mediu</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Neural and molecular changes during a mind-body reconceptualization, meditation, and open label placebo healing intervention</li>
+<li><strong>Data de Publicação:</strong> 7 de abril de 2026</li>
+<li><strong>Fonte:</strong> Communications Biology (grupo Nature) — <a href="https://www.nature.com/articles/s42003-025-09088-3" target="_blank">DOI: 10.1038/s42003-025-09088-3</a> | release oficial: <a href="https://today.ucsd.edu/story/meditation-retreat-rapidly-reprograms-body-and-mind" target="_blank">UC San Diego — Meditation Retreat Rapidly Reprograms Body and Mind</a></li>
+<li><strong>Status:</strong> Revisado por pares (Communications Biology)</li>
+<li><strong>Achado:</strong> Pesquisadores liderados por Alex Jinich-Diamant (primeiro autor) e Hemal H. Patel (sênior) na UC San Diego acompanharam 20 adultos saudáveis em um retiro residencial de 7 dias com cerca de <strong>33 horas de meditação guiada</strong> mais palestras e práticas de cura em grupo (conduzido por Joe Dispenza). Mediram cérebro e sangue antes e depois. Resultados: (1) <strong>atividade caiu nas regiões ligadas a "ruído mental interno"</strong>, sugerindo cérebro mais eficiente; (2) os padrões de atividade cerebral pós-retiro <strong>se assemelham aos induzidos por substâncias psicodélicas</strong>; (3) sinais inflamatórios E anti-inflamatórios subiram juntos — uma resposta imune <strong>balanceada e adaptativa</strong>; (4) plasma sanguíneo coletado depois do retiro <strong>estimulou neurônios em laboratório a estender conexões novas</strong> (neuroplasticidade direta); (5) quem relatou experiências místicas mais intensas teve mais coordenação entre regiões cerebrais.</li>
+<li><strong>Implicação prática:</strong> Aqui há terreno delicado e potente ao mesmo tempo. Joe Dispenza tem leitura controversa em meios científicos — mas o estudo em si é da UC San Diego, peer-reviewed, em revista do grupo Nature. A leitura honesta: práticas intensivas de meditação produzem mudanças biológicas mensuráveis em uma semana. Para o público MIB, isso ancora cientificamente a defesa de práticas contemplativas regulares (oração, silêncio, respiração) como <strong>disciplina de cérebro</strong>, não como hábito místico desconectado. Importante: o estudo não diz que 7 dias resolvem tudo — diz que 7 dias <strong>iniciam mudança mensurável</strong>. Isso conversa com a tradição cristã de retiros e de jejum/silêncio.</li>
+</ul>
+<p><strong>Fontes adicionais:</strong></p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260406192913.htm" target="_blank">ScienceDaily — Scientists say 7 days of meditation can rewire your brain</a></li>
+<li><a href="https://neurosciencenews.com/meditation-brain-immune-system-29905/" target="_blank">Neuroscience News — Meditation Retreat Sparks Rapid Brain & Immune System Changes</a></li>
+<li><a href="https://scitechdaily.com/researchers-discover-intensive-meditation-retreat-rewires-the-brain-and-blood-in-just-7-days/" target="_blank">SciTechDaily — Researchers Discover Intensive Meditation Retreat Rewires the Brain and Blood in Just 7 Days</a></li>
+<li><a href="https://www.euronews.com/health/2026/04/08/just-seven-days-of-meditation-can-rewire-your-brain-study-suggests" target="_blank">Euronews — Just seven days of meditation can rewire your brain, study suggests</a></li>
+<li><a href="https://www.psypost.org/researchers-find-surprising-biological-changes-after-just-7-days-of-meditation-and-healing-rituals/" target="_blank">PsyPost — Researchers find surprising biological changes after just 7 days of meditation and healing rituals</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Você não pensa só com neurônios — e a ciência acabou de provar"</h3>
+<ul>
+<li><strong>Tema:</strong> A descoberta da NYU Langone publicada ontem (22/abr) na <em>Nature</em> mostrando que astrócitos têm rede de comunicação própria, espalhada pelo cérebro inteiro. É a notícia de neurociência <strong>mais nova</strong> disponível agora — janela de 24h para Carol ser uma das primeiras criadoras brasileiras a traduzir.</li>
+<li><strong>Por que está em alta:</strong> Saiu ontem na <em>Nature</em>, o release oficial do NYU Langone foi distribuído ao mesmo tempo, e os canais de divulgação científica internacional (ScienceDaily, MedicalXpress) estão começando a publicar. No Brasil, ainda não há tradução. Janela de 48–72h para dominar o tema antes que neurovox, reservatoriodedopamina e mverzaro publiquem.</li>
+<li><strong>Ângulo para Carol:</strong> Reel curto (45–60s) ou carrossel de 6 slides. Estrutura: (1) gancho — "Você sempre ouviu que o cérebro é feito de neurônios. Mentira pela metade." (2) astrócitos representam quase metade das células cerebrais (3) eram considerados "suporte" — agora descobriram que conversam entre si em rede própria (4) implicação: cognição é mais distribuída do que se pensava (5) por que isso importa pra você: as estratégias simplistas de "domar a dopamina" são incompletas, o cérebro tem mais camadas (6) CTA pra masterclass do MIB sobre regulação emocional ou conteúdo aprofundado.</li>
+<li><strong>Gancho sugerido:</strong> "Olha que interessante: ontem, na revista Nature, descobriram que metade das suas células cerebrais conversa entre si por uma rede que ninguém tinha visto. E isso muda tudo o que a gente fala sobre regular emoção e foco."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://nyulangone.org/news/brain-support-cells-form-previously-unknown-network" target="_blank">NYU Langone — release oficial</a></li>
+<li><a href="https://www.nature.com/neuro/articles?year=2026" target="_blank">Nature — artigos 2026</a></li>
+<li><a href="https://www.quantamagazine.org/once-thought-to-support-neurons-astrocytes-turn-out-to-be-in-charge-20260130/" target="_blank">Quanta Magazine — Once Thought To Support Neurons, Astrocytes Turn Out To Be in Charge</a></li>
+</ul>
+<h3>2. "Saciedade não é força de vontade — é química, e a ciência mapeou o caminho"</h3>
+<ul>
+<li><strong>Tema:</strong> A descoberta da U Maryland publicada na PNAS (6/abr) sobre a cadeia tanícito → lactato → astrócito → neurônio POMC que produz a sensação de "para de comer".</li>
+<li><strong>Por que está em alta:</strong> A repercussão começou em ScienceDaily, MedicalXpress, Nautilus e VegOut. O tema "comer emocional" é um dos pilares mais consumidos pelo público feminino do MIB. Há demanda desesperada por conteúdo que <strong>não culpa, explica</strong>. Esse estudo entrega uma narrativa biológica clara que tira o peso moral do "eu não consigo parar".</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 8 slides ou YouTube curto (5–7 min). Estrutura: (1) gancho que questiona a culpa — "você não tem 'falta de força de vontade'", (2) explicar a sequência: glicose → tanícito → lactato → astrócito → glutamato → neurônio POMC (sempre traduzindo: "esse circuito decide quando você sente que comeu o suficiente"), (3) o que sabota o circuito: sono ruim, ultraprocessado, cortisol crônico, (4) o que protege: comer com atenção, fibras, açúcar lento, descanso, (5) virar a chave — "saciedade é arquitetura, não caráter".</li>
+<li><strong>Gancho sugerido:</strong> "Tá? Presta atenção: existe um circuito específico no seu cérebro que decide quando você se sente satisfeita. E não, ele não tem nada a ver com força de vontade. A ciência acabou de mapear cada peça desse caminho — e isso muda como a gente pensa em compulsão."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://cmns.umd.edu/news-events/news/ricardo-araneda-finds-missing-link-how-brain-regulates-appetite" target="_blank">University of Maryland — release oficial</a></li>
+<li><a href="https://medicalxpress.com/news/2026-04-link-brain-appetite.html" target="_blank">MedicalXpress</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260406192811.htm" target="_blank">ScienceDaily</a></li>
+<li><a href="https://www.eurekalert.org/news-releases/1122997" target="_blank">EurekAlert!</a></li>
+</ul>
+<h3>3. "Sete dias de silêncio e oração mudam seu cérebro — e isso está em revista da Nature"</h3>
+<ul>
+<li><strong>Tema:</strong> O estudo da UC San Diego em <em>Communications Biology</em> (07/abr) que mediu mudanças cerebrais e sanguíneas após 7 dias de meditação intensiva. Ângulo de Carol: ler a ciência sem o pacote místico do retiro estudado, e devolver para a tradição cristã de jejum, silêncio e oração contemplativa.</li>
+<li><strong>Por que está em alta:</strong> Repercussão grande em ScienceDaily, Neuroscience News, SciTechDaily, PsyPost, Euronews. O nome "Joe Dispenza" gera tração de algoritmo (positiva e negativa). Carol pode pegar o estudo, separar do empacotamento esotérico, e usá-lo para defender a disciplina contemplativa de matriz cristã com base científica de revista peer-reviewed.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60s OU YouTube médio (8–12 min). No reel: foco no número (33h em 7 dias muda neuroplasticidade, inflamação e atividade cerebral medível). No YouTube: contexto mais amplo — a tradição cristã sempre soube disso (retiros monásticos, jejum, lectio divina), e a ciência está apenas medindo o que místicos sabiam há 2 mil anos. Mencionar com naturalidade que <strong>silêncio + oração + comunidade</strong> entregam, em uma semana, mudanças biológicas mensuráveis. Não é mística, é arquitetura cerebral respondendo a estímulo deliberado.</li>
+<li><strong>Gancho sugerido:</strong> "Olha: pesquisadores mediram o cérebro e o sangue de 20 pessoas antes e depois de 7 dias de meditação intensiva. Em uma semana — uma — a inflamação se reorganizou, a atividade cerebral mudou, e o plasma do sangue passou a estimular crescimento de neurônios em laboratório. A ciência tá só medindo o que monge cristão já fazia em retiro há séculos."</li>
+<li><strong>Fontes:</strong></li>
+<li><a href="https://www.nature.com/articles/s42003-025-09088-3" target="_blank">Communications Biology — DOI</a></li>
+<li><a href="https://today.ucsd.edu/story/meditation-retreat-rapidly-reprograms-body-and-mind" target="_blank">UC San Diego — release oficial</a></li>
+<li><a href="https://neurosciencenews.com/meditation-brain-immune-system-29905/" target="_blank">Neuroscience News</a></li>
+<li><a href="https://www.psypost.org/researchers-find-surprising-biological-changes-after-just-7-days-of-meditation-and-healing-rituals/" target="_blank">PsyPost</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Huberman Lab — episódio de hoje (23/abr) sobre neurociência da linguagem com Erich Jarvis</h3>
+<p>Andrew Huberman lançou hoje (23/abr) episódio com Dr. Erich Jarvis sobre <strong>circuitos cerebrais da fala, evolução da linguagem, gagueira e por que movimento molda como falamos e pensamos</strong>. O ângulo "movimento e fala se conectam no cérebro" é raro e gera curiosidade. Carol pode ouvir os primeiros 30s para captar a estrutura de gancho do Huberman.</p>
+<ul>
+<li><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></li>
+<li><a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a></li>
+</ul>
+<h3>2. Nervous system regulation continua dominando feeds globais</h3>
+<p>A trend de "nervous system regulation" segue forte em abril/26, com aumento de buscas e conteúdo sobre nervo vago, breathwork, somatic movement e cold therapy. O Global Wellness Summit confirma que <strong>neurowellness é uma das maiores tendências de 2026</strong>. Brecha para Carol: trazer rigor científico onde a maioria está postando coisas vagas.</p>
+<ul>
+<li><a href="https://www.globalwellnesssummit.com/trendium/neurowellness-one-of-the-biggest-wellness-trends-of-2026/" target="_blank">Global Wellness Summit — Neurowellness</a></li>
+<li><a href="https://www.dazeddigital.com/beauty/article/69413/1/everyone-trying-regulate-their-nervous-system-tapping-tiktok-meditation" target="_blank">Dazed — Regulating your nervous system is so hot right now</a></li>
+<li><a href="https://www.globalwellnesssummit.com/trendium/the-trend-in-the-news-april-2026/" target="_blank">Global Wellness Summit — abril 2026</a></li>
+</ul>
+<h3>3. "Dopamine detox" e "rawdogging boredom" — Gen Z e atenção</h3>
+<p>Crescimento de vídeos no TikTok onde criadores se gravam <strong>sentados em tédio por uma hora "para consertar o span de atenção"</strong>, com hashtag #dopaminedetox. Tema vem do Eslen Delanogare e Reservatório de Dopamina no Brasil — Carol pode entrar com ângulo mais maduro: detox de dopamina virou meme, mas a ciência diz outra coisa (e a ciência é mais útil que o meme).</p>
+<ul>
+<li><a href="https://www.idsnews.com/article/2026/02/opinion-rawdogging-boredom-tiktok-trends-gen-z-iu-bloomington-indiana" target="_blank">Indiana Daily Student — Gen Zen discovers the neuroscience of attention</a></li>
+<li><a href="https://netpsychology.org/tiktok-and-attention-span/" target="_blank">NetPsychology — TikTok Attention Span: How It Rewires Your Brain (2026)</a></li>
+</ul>
+<h3>4. Neuralink terceiro paciente Brad Smith e nova rivalidade Science Corp</h3>
+<p>Brad Smith — primeiro com ELA a receber Neuralink — segue ganhando cobertura agora com integração de IA generativa (Grok) que devolveu sua voz natural. Em paralelo, Science Corporation (do ex-presidente da Neuralink, Max Hodak) anunciou em 14/abr que vai começar testes humanos com sensor biohíbrido (520 eletrodos do tamanho de uma ervilha, <strong>sobre</strong> o córtex em vez de dentro dele). Ângulo: o futuro próximo de interfaces cérebro-máquina não é mais ficção. Carol pode aproveitar para discutir limites éticos, possibilidades, e o que isso significa pra mente humana.</p>
+<ul>
+<li><a href="https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/" target="_blank">TechCrunch — Max Hodak's Science Corp</a></li>
+<li><a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News — Neuralink's big vision collides with reality</a></li>
+<li><a href="https://www.foxnews.com/health/paralyzed-man-als-third-receive-neuralink-implant-can-type-brain" target="_blank">Fox News — Paralyzed man with ALS is third to receive Neuralink implant</a></li>
+</ul>
+<h3>5. Neurônios artificiais conversando com células cerebrais reais (Northwestern)</h3>
+<p>Estudo da Northwestern publicado em <em>Nature Nanotechnology</em> (15/abr) demonstrou neurônios artificiais impressos que <strong>disparam sinais elétricos com timing biológico</strong> e ativam circuitos neurais reais em tecido cerebral de camundongo. Pode virar ponte entre IA e cérebro, mas ainda longe de aplicação. Útil para Carol como pano de fundo de qualquer conteúdo sobre "futuro da mente humana".</p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260417225020.htm" target="_blank">ScienceDaily — Artificial neurons successfully communicate with living brain cells</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Joe Dispenza — separar o estudo do "personagem"</h3>
+<p>O estudo da UC San Diego é sério (Communications Biology, peer-reviewed). Mas o retiro estudado foi conduzido pelo Joe Dispenza, figura controversa que mistura ciência com afirmações pseudocientíficas (cura por intenção, "campos quânticos"). Carol <strong>deve falar do estudo</strong>, mas <strong>não deve endossar Dispenza</strong>. Mencionar a metodologia (UC San Diego, peer-reviewed) e tirar a leitura mística — devolver para a tradição cristã de retiros e disciplinas espirituais.</p>
+<h3>2. "Nervous system regulation" virou guarda-chuva confuso</h3>
+<p>A trend mistura coisas com base científica forte (sono, respiração diafragmática, exposição ao frio limitada) com mitologias do nervo vago (estimuladores de nervo vago caseiros sem evidência, "exercícios de vagal toning" sem rigor). Carol não deve entrar nessa onda do jeito que tá sendo postada — entra com <strong>rigor</strong> e separando o que tem evidência do que é placebo elaborado.</p>
+<h3>3. "Detox de dopamina" — termo banalizado e cientificamente impreciso</h3>
+<p>Não existe "detox de dopamina" no sentido literal. O que existe é <strong>redução de estímulos hiper-recompensadores</strong> que recalibra a sensibilidade do sistema de recompensa. Carol pode usar o tema, mas <strong>explicando o que de fato acontece</strong> em vez de validar o termo solto. Eslen Delanogare e Mverzaro já fazem essa correção — Carol pode citar e aprofundar.</p>
+<h3>4. Astrócitos ainda não chegaram em humanos</h3>
+<p>A descoberta da NYU é em camundongos. Carol pode (e deve) divulgar, mas precisa ser honesta: <em>"foi feito em camundongos, e a próxima etapa é confirmar em humanos"</em>. Sem isso, vira sensacionalismo.</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Formato:</strong> Reel de 45–60s para Instagram</p>
+<p><strong>Tema:</strong> A descoberta da NYU sobre astrócitos (publicada ontem)</p>
+<p><strong>Estrutura:</strong></p>
+<p>1. <strong>Gancho (0–3s):</strong> "Quando você pensa que tá pensando, não é só seu neurônio trabalhando."</p>
+<p>2. <strong>Desenvolvimento (3–40s):</strong> Ontem, na revista <em>Nature</em>, pesquisadores do NYU Langone descobriram que os astrócitos — células cerebrais que sempre foram chamadas de "células de suporte" — têm uma rede de comunicação <strong>própria</strong>, organizada, que atravessa o cérebro inteiro. Eles conversam entre si por canais que ninguém tinha mapeado antes. E quando o ambiente muda, essa rede se reorganiza. Ou seja: metade das células do seu cérebro está rodando uma conversa paralela. <strong>MAS</strong> — isso muda como pensamos em saúde mental, regulação emocional e Alzheimer. Os astrócitos não são coadjuvantes. Eles são protagonistas.</p>
+<p>3. <strong>CTA (40–60s):</strong> "Por isso eu defendo tanto: regulação emocional não se resolve só com 'controle de pensamento'. O cérebro é mais distribuído do que isso. Salva esse vídeo, manda pra alguém que ainda acha que é só dopamina, e me conta nos comentários: o que mais te surpreendeu? Até a próxima."</p>
+<p><strong>Hashtags sugeridas:</strong> #neurociencia #astrocitos #cerebro #saudemental #performancesustentavel</p>
+<p><strong>Fonte primária para pin no perfil:</strong> <a href="https://nyulangone.org/news/brain-support-cells-form-previously-unknown-network" target="_blank">NYU Langone — release oficial</a></p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Fontes adicionais:*<br>*Fontes adicionais:*<br>*Fontes adicionais:*<br>*Estrutura:*<br>Briefing gerado em 23/04/2026 com base em buscas dos últimos 30 dias em PubMed, Nature, PNAS, Communications Biology, NYU Langone, UC San Diego, University of Maryland, Northwestern University, ScienceDaily, MedicalXpress, Neuroscience News, Quanta Magazine, TechCrunch e Huberman Lab.</p>
+    </div>
+</body>
+</html>
