@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisao de Tarefas — 28 de abril de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #F4FAF6;
+            --card-bg: #FFFFFF;
+            --text: #1A2E22;
+            --text-light: #4A6B55;
+            --accent: #2D6A4F;
+            --accent-light: #52B788;
+            --accent-soft: #95D5B2;
+            --link: #1B7A4A;
+            --border: #D4E8DB;
+            --shadow: rgba(45, 106, 79, 0.08);
+
+            --review-bg: #E8F5EE;
+            --review-border: #95D5B2;
+            --alert-bg: #FFF8E8;
+            --alert-border: #E8D498;
+            --mib-bg: #EDF2FF;
+            --mib-border: #A8BFE8;
+            --weekly-bg: #FFF0F5;
+            --weekly-border: #E8A8C8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-review .section-header {
+            background: var(--review-bg);
+            border-color: var(--review-border);
+        }
+
+        .section-alert .section-header {
+            background: var(--alert-bg);
+            border-color: var(--alert-border);
+        }
+
+        .section-mib .section-header {
+            background: var(--mib-bg);
+            border-color: var(--mib-border);
+        }
+
+        .section-weekly .section-header {
+            background: var(--weekly-bg);
+            border-color: var(--weekly-border);
+        }
+
+        .section-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .section-body {
+            padding: 1.5rem;
+        }
+
+        .summary {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .task-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .task-card:hover {
+            box-shadow: 0 2px 8px var(--shadow);
+            border-color: var(--accent-soft);
+        }
+
+        .task-number {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .task-number-mib {
+            background: #4A6FA5;
+        }
+
+        .task-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .task-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.4rem;
+        }
+
+        .task-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .tag-deadline {
+            background: #FFF0EC;
+            color: #C0392B;
+        }
+
+        .tag-no-deadline {
+            background: #F0F0F0;
+            color: #888;
+        }
+
+        .tag-date {
+            background: #E8F5EE;
+            color: var(--accent);
+        }
+
+        .tag-status {
+            background: var(--alert-bg);
+            color: #B8860B;
+        }
+
+        .tag-status-mib {
+            background: #EDF2FF;
+            color: #4A6FA5;
+        }
+
+        .tag-resp {
+            background: #F0E6FF;
+            color: #6B4FA5;
+        }
+
+        .tag-prio-alta {
+            background: #FFF0EC;
+            color: #C0392B;
+        }
+
+        .tag-prio-media, .tag-prio-média {
+            background: var(--alert-bg);
+            color: #B8860B;
+        }
+
+        .tag-prio-baixa {
+            background: #E8F5EE;
+            color: var(--accent);
+        }
+
+        .task-link {
+            color: var(--link);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .task-link:hover {
+            border-bottom-color: var(--link);
+        }
+
+        /* Activity indicators */
+        .activity-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .activity-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .activity-green .activity-dot { background: #27AE60; }
+        .activity-green .activity-label { color: #27AE60; }
+
+        .activity-yellow .activity-dot { background: #F39C12; }
+        .activity-yellow .activity-label { color: #D4880F; }
+
+        .activity-red .activity-dot { background: #E74C3C; }
+        .activity-red .activity-label { color: #E74C3C; }
+
+        .last-comment {
+            margin-top: 0.4rem;
+            padding: 0.5rem 0.75rem;
+            background: #F8F9FA;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            font-style: italic;
+            border-left: 3px solid var(--border);
+        }
+
+        /* Weekly report styles */
+        .weekly-summary {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+
+        .metric-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .metric-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E8E8E8;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.3s;
+        }
+
+        .pct-green { background: #27AE60; color: #27AE60; }
+        .pct-yellow { background: #F39C12; color: #D4880F; }
+        .pct-red { background: #E74C3C; color: #E74C3C; }
+
+        .progress-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .days-grid {
+            margin-bottom: 1.5rem;
+        }
+
+        .day-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .day-name {
+            width: 110px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .day-count {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .day-meta {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .status-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag-pipeline {
+            background: #F0F0F0;
+            color: var(--text);
+            font-size: 0.82rem;
+        }
+
+        .funnel {
+            margin-bottom: 1rem;
+        }
+
+        .funnel-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .funnel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .funnel-name {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .funnel-count {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--accent-light);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .empty-state::before {
+            content: '\2714';
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .stats { gap: 1rem; }
+            .stat-number { font-size: 1.5rem; }
+            .container { padding: 1rem; }
+            .section-body { padding: 1rem; }
+            .task-card { padding: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Revisao de Tarefas</h1>
+        <div class="subtitle">28 de abril de 2026</div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Revisao Carol</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">9</div>
+                <div class="stat-label">Alertas publicacao</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Tasks MIB</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Paradas/sem update</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section class="section section-review">
+            <div class="section-header">
+                <span class="icon">&#128203;</span>
+                <h2>Revisao de Conteudos</h2>
+            </div>
+            <div class="section-body">
+                <div class="empty-state">Nenhuma task pendente de revisao. Tudo em dia!</div>
+            </div>
+        </section>
+
+        <section class="section section-alert">
+            <div class="section-header">
+                <span class="icon">&#9888;&#65039;</span>
+                <h2>Alertas de Publicacao</h2>
+            </div>
+            <div class="section-body">
+                <p class="summary">9 task(s) com publicacao nos proximos 3 dias e NAO programadas</p>
+            <div class="task-card">
+                <div class="task-number">1</div>
+                <div class="task-content">
+                    <div class="task-title">[REEL/TIKTOK] EMOÇÕES</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 28/04/2026</span>
+                        <span class="tag tag-status">Gravado</span>
+                        <a href="https://www.notion.so/33692dc7b6bc811f84b4f76793a67f80" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">2</div>
+                <div class="task-content">
+                    <div class="task-title">[STORIES] VENDA MIB — ABRIL ACABOU. O QUE VOCÊ VAI FAZER COM ISSO?</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 28/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/33492dc7b6bc81179c23eba4116eb2e3" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">3</div>
+                <div class="task-content">
+                    <div class="task-title">[ESTÁTICO] ABRIL ME ENSINOU QUE PRESENÇA VALE MAIS QUE PERFEIÇÃO</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 29/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/33492dc7b6bc81f3b878c526aa5e7f8d" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">4</div>
+                <div class="task-content">
+                    <div class="task-title">[STORIES] VENDA MIB – VOCÊ TÁ NO PILOTO AUTOMÁTICO E NEM PERCEBE</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 29/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/30a92dc7b6bc81ccac1eeb6d1143613a" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">5</div>
+                <div class="task-content">
+                    <div class="task-title">Aula 42 | Quem você realmente quer ser?</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 30/04/2026</span>
+                        <span class="tag tag-status">Gravado</span>
+                        <a href="https://www.notion.so/32692dc7b6bc8069951dfe1700d3ae73" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">6</div>
+                <div class="task-content">
+                    <div class="task-title">[REELS/TIKTOK] CORTE YOUTUBE — DEIXA ELES</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 30/04/2026</span>
+                        <span class="tag tag-status">Conteúdo aprovado</span>
+                        <a href="https://www.notion.so/33a92dc7b6bc8191af30cdebcffe3888" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">7</div>
+                <div class="task-content">
+                    <div class="task-title">[YOUTUBE] DEIXA ELES: A TEORIA QUE VAI DEVOLVER SUA PAZ MENTAL E ENERGIA</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 30/04/2026</span>
+                        <span class="tag tag-status">Conteúdo aprovado</span>
+                        <a href="https://www.notion.so/33492dc7b6bc81fc93a3dcfbbbf7e803" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">8</div>
+                <div class="task-content">
+                    <div class="task-title">[STORIES] VÍDEO NOVO — DEIXA ELES</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 30/04/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/33a92dc7b6bc81d7acf5f754c01f2e87" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            <div class="task-card">
+                <div class="task-number">9</div>
+                <div class="task-content">
+                    <div class="task-title">[CARROSSEL FOTOS] CHÁ DA SERENA</div>
+                    <div class="task-meta">
+                        <span class="tag tag-date">Publicacao: 01/05/2026</span>
+                        <span class="tag tag-status">Roteiro pronto</span>
+                        <a href="https://www.notion.so/33a92dc7b6bc80aebe00e72bfbe4613a" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="section section-mib">
+            <div class="section-header">
+                <span class="icon">&#128221;</span>
+                <h2>Tasks MIB — Acompanhamento</h2>
+            </div>
+            <div class="section-body">
+                <p class="summary">10 task(s) pendente(s) no MIB</p>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">1</div>
+                <div class="task-content">
+                    <div class="task-title">Trabalhar a Base do MIB (Agente de IA)</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Carol Frazão</span>
+                        <span class="tag tag-status-mib">Em andamento</span>
+                        <span class="tag tag-prio-média">Média</span>
+                        <span class="tag tag-deadline">Prazo: 13/03/2026</span>
+                        <a href="https://www.notion.so/26592dc7b6bc80b08cc3d9ecc9966037" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-yellow">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Parada ha 47 dias</span>
+                    </div>
+                    <div class="last-comment">&ldquo;Aguardando o posicionamento do Filipe para começar a usar o agente de IA&rdquo;</div>
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">2</div>
+                <div class="task-content">
+                    <div class="task-title">Solicitação ao Marketing - Março</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Em andamento</span>
+                        
+                        <span class="tag tag-deadline">Prazo: 31/03/2026</span>
+                        <a href="https://www.notion.so/32292dc7b6bc802189ecf0299156a404" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-yellow">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Parada ha 13 dias</span>
+                    </div>
+                    <div class="last-comment">&ldquo;Fazer a revisão!&rdquo;</div>
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">3</div>
+                <div class="task-content">
+                    <div class="task-title">NOVA ESTRATÉGIA COMERCIAL</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Carol Frazão</span>
+                        <span class="tag tag-status-mib">Em andamento</span>
+                        <span class="tag tag-prio-alta">Alta</span>
+                        <span class="tag tag-deadline">Prazo: 03/04/2026</span>
+                        <a href="https://www.notion.so/33592dc7b6bc8096ba2afc4e9b23f89e" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">4</div>
+                <div class="task-content">
+                    <div class="task-title">Criar uma solução para a pessoa comprar  o mês inteiro: 📝</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Não iniciada</span>
+                        
+                        <span class="tag tag-deadline">Prazo: 21/04/2026</span>
+                        <a href="https://www.notion.so/34492dc7b6bc802b8fb1dd3e1a3f8bce" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">5</div>
+                <div class="task-content">
+                    <div class="task-title">Planejamento de Maio</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Em andamento</span>
+                        <span class="tag tag-prio-alta">Alta</span>
+                        <span class="tag tag-deadline">Prazo: 28/04/2026</span>
+                        <a href="https://www.notion.so/34f92dc7b6bc8049b79dce97cd72cb00" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">6</div>
+                <div class="task-content">
+                    <div class="task-title">Contatar a Larissa Brito e a Jennyfer Gomes no segundo semestre</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Não iniciada</span>
+                        
+                        <span class="tag tag-deadline">Prazo: 01/08/2026</span>
+                        <a href="https://www.notion.so/35092dc7b6bc80c4aa4cc81be2ca3929" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">7</div>
+                <div class="task-content">
+                    <div class="task-title">Aprofundar nessa orientação</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Não iniciada</span>
+                        
+                        <span class="tag tag-no-deadline">Sem prazo</span>
+                        <a href="https://www.notion.so/34492dc7b6bc80d2b655dab6e1f698a7" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">8</div>
+                <div class="task-content">
+                    <div class="task-title">Estudar sobre Pix Automático</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Não iniciada</span>
+                        
+                        <span class="tag tag-no-deadline">Sem prazo</span>
+                        <a href="https://www.notion.so/34492dc7b6bc8028a6f0c2ba94bf25d0" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">9</div>
+                <div class="task-content">
+                    <div class="task-title">Estudar sobre Infraestrutura de cobrança</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Larissa Camila</span>
+                        <span class="tag tag-status-mib">Não iniciada</span>
+                        
+                        <span class="tag tag-no-deadline">Sem prazo</span>
+                        <a href="https://www.notion.so/34492dc7b6bc801bb933d953b8f81535" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="task-card task-card-mib">
+                <div class="task-number task-number-mib">10</div>
+                <div class="task-content">
+                    <div class="task-title">Agente MIB Terapeuta</div>
+                    <div class="task-meta">
+                        <span class="tag tag-resp">Carol Frazão</span>
+                        <span class="tag tag-status-mib">Não iniciada</span>
+                        
+                        <span class="tag tag-no-deadline">Sem prazo</span>
+                        <a href="https://www.notion.so/34392dc7b6bc80f18d90fa155a5f58e6" target="_blank" class="task-link">Abrir no Notion</a>
+                    </div>
+                    <div class="activity-bar activity-red">
+                        <span class="activity-dot"></span>
+                        <span class="activity-label">Sem atualizacao</span>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        </section>
+
+        
+    </div>
+    <div class="footer">
+        <p>Relatorio gerado automaticamente via Notion API</p>
+    </div>
+</body>
+</html>
