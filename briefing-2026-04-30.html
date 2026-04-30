@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-04-30</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-04-30</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Microglia (sistema imune do cérebro) ligam o gatilho da ansiedade — Universidade de Utah / laboratório Capecchi</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Calcium signaling in Hoxb8 microglia regulates anxiety and obsessive-compulsive behavior</em></li>
+<li><strong>Data de Publicação:</strong> 29 de abril de 2026 (publicado em <em>Molecular Psychiatry</em>)</li>
+<li><strong>Fonte:</strong> <a href="https://uofuhealth.utah.edu/newsroom/news/2026/04/anxiety-regulated-key-signal-brain-immune-cells" target="_blank">University of Utah Health — Anxiety Regulated by Key Signal in Brain Immune Cells</a> | <a href="https://attheu.utah.edu/health-medicine/research-in-mice-reveals-brain-cells-that-drive-and-prevent-anxiety/" target="_blank">@theU — Research in mice reveals brain cells that drive—and prevent—anxiety</a> | <a href="https://medicalxpress.com/news/2026-04-calcium-surges-brain-immune-cells.html" target="_blank">Medical Xpress — Calcium surges in brain immune cells may switch anxiety on and off</a> | <a href="https://www.newswise.com/articles/anxiety-regulated-by-key-signal-in-brain-immune-cells/?sc=c132" target="_blank">Newswise</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Molecular Psychiatry</em>, grupo Nature)</li>
+<li><strong>Achado:</strong> O laboratório de Mario Capecchi (Nobel de 2007) usou um microscópio miniaturizado do tamanho de meia unha para observar pela primeira vez <strong>dentro do cérebro de camundongos vivos</strong> o que acontece com as microglias — células imunes do cérebro — durante crises de ansiedade. Descoberta-chave: picos de <strong>cálcio</strong> dentro de uma população específica chamada Hoxb8 microglia funcionam como o "interruptor" que liga comportamento ansioso e compulsivo. Quando o cálcio sobe, o animal ansioso se grooming até ferir-se. Quando o sinal é silenciado, a ansiedade desaparece. Ou seja: ansiedade não é só circuito de neurônio — é também imunologia cerebral.</li>
+<li><strong>Implicação prática:</strong> Para a mulher MIB, isso muda o quadro. A ansiedade que a paralisa não é "fraqueza emocional" nem só "pensamento ruminante" — é também sinalização imune dentro do cérebro. Reforça por que práticas que reduzem inflamação sistêmica (sono, alimentação anti-inflamatória, respiração lenta, oração contemplativa) atuam diretamente no mecanismo, não só no sintoma. Abre a estrada pra Carol falar de ansiedade de mulher cristã com base biológica de ponta, sem cair no espiritual místico nem no "vai na terapia e pronto".</li>
+</ul>
+<h3>2. Cortisol embaralha o mapa interno do cérebro — Ruhr-Universität Bochum</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Acute cortisol administration disrupts grid-cell representations in the human entorhinal cortex during virtual navigation</em></li>
+<li><strong>Data de Publicação:</strong> 12 de março de 2026 (online em <em>PLOS Biology</em>) — divulgação intensa em abril 2026</li>
+<li><strong>Fonte:</strong> <a href="https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html" target="_blank">Medical Xpress — Lost under stress? Cortisol can scramble the brain's internal map</a> | <a href="https://journals.plos.org/plosbiology/" target="_blank">PLOS Biology — base de dados</a> | <a href="https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2026.1680116/full" target="_blank">Frontiers in Neurology — Sex-specific effect of cortisol on cerebral glucose metabolism</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>PLOS Biology</em>)</li>
+<li><strong>Achado:</strong> 40 pessoas fizeram uma navegação em ambiente virtual dentro do scanner de ressonância. Metade recebeu uma dose de cortisol antes; a outra, placebo. Resultado: o grupo do cortisol <strong>performou pior</strong> e a atividade das <em>grid cells</em> (células-grade, no córtex entorrinal — o GPS interno do cérebro) ficou borrada, indistinta. A descoberta complementar: em mulheres, cortisol crônico se associa a <strong>menor volume cerebral total</strong> e mudanças microestruturais no córtex frontal e occipital. E a resposta de despertar de cortisol já é mais alta em mulheres deprimidas.</li>
+<li><strong>Implicação prática:</strong> A sensação de "estou perdida, não consigo me organizar, não sei mais por onde começar" da mulher em estresse alto não é drama. É grid cell embaralhada. Cortisol cronicamente elevado <strong>literalmente desliga</strong> o sistema cerebral que mantém você orientada no espaço, no tempo e na própria rotina. Antes de qualquer plano de produtividade, a mulher em burnout silencioso precisa de redução de cortisol — sono, exposição matinal ao sol, respiração lenta, prática contemplativa. Sem isso, todo plano de organização vira papel rasgado.</li>
+</ul>
+<h3>3. Creatina (dose única) protege a cognição em privação de sono — e mulheres se beneficiam MAIS que homens</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Single-Dose Creatine Reduces Sleep Deprivation-Induced Deterioration in Cognitive Performance</em></li>
+<li><strong>Data de Publicação:</strong> 21 de abril de 2026 (publicado em <em>Nutrients</em> / divulgação Nutraingredients)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nutraingredients.com/Article/2026/04/21/single-dose-creatine-may-support-cognition-in-sleep-deprivation-study/" target="_blank">Nutraingredients — Single-dose creatine may support cognition in sleep deprivation</a> | <a href="https://www.mdpi.com/2072-6643/18/8/1192" target="_blank">MDPI Nutrients — Single-Dose Creatine Reduces Sleep Deprivation-Induced Deterioration in Cognitive Performance</a> | <a href="https://www.nature.com/articles/s41598-024-54249-9" target="_blank">Nature — Single dose creatine improves cognitive performance during sleep deprivation</a> | <a href="https://www.sciencedirect.com/science/article/pii/S3050624726000033" target="_blank">ScienceDirect — Creatine supplementation and brain health (review 2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares — ensaio clínico randomizado, crossover, duplo-cego</li>
+<li><strong>Achado:</strong> 29 adultos saudáveis receberam dose única de <strong>0,2 g/kg de creatina monohidratada</strong> ou placebo antes de 21h de privação de sono. Fizeram testes cognitivos seriados durante a noite virada. Resultado: o grupo da creatina <strong>manteve performance cognitiva</strong> enquanto o grupo placebo despencou. <strong>Achado mais forte para Carol:</strong> as <strong>mulheres se beneficiaram mais que os homens</strong> em tarefas de <strong>lógica, linguagem e vigilância psicomotora</strong> (Psychomotor Vigilance Test). Mecanismo: privação de sono drena fosfato de alta energia no cérebro; creatina reabastece e mantém o córtex pré-frontal funcional.</li>
+<li><strong>Implicação prática:</strong> A creatina deixou de ser "suplemento de academia" e virou ferramenta cognitiva — especialmente para mulher em fase de sono ruim (gestação, pós-parto, ciclo de exaustão, fase pré-menstrual com insônia). Carol pode falar disso sem cair em hype: é dose modesta (0,2g/kg = ~13g pra mulher de 65kg, dose única em emergência), não é dopamina, não é estimulante, é literalmente combustível pra mitocôndria neuronal. Tema com altíssima possibilidade de viralizar — virtualmente ninguém no nicho feminino BR tá traduzindo esse dado.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Tema: Creatina é ferramenta cognitiva pra mulher cansada — e funciona mais nelas que neles</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Estudo de 21/04/2026 mostrou que dose única de creatina protege cognição em privação de sono <strong>com efeito maior em mulheres</strong> (lógica, linguagem, vigilância). Imprensa de nutrição já pegou (Nutraingredients, MDPI). Grande "Year of Brain Health" do Salk Institute em 2026 traz creatina junto com sono, exercício e nutrição como pilar. Janela de oportunidade enorme: tema saiu da bolha bodybuilder, ainda não chegou no nicho de mulher cristã/MIB no BR. Carol seria das primeiras a traduzir com rigor.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel + Reel + (opcional) YouTube de 8 min como pilar. Possível tese: <strong>"Por que sua sogra te falar pra tomar mais café tá errado — e o que a ciência mostra que funciona pra mulher dormindo mal."</strong></li>
+<li><strong>Gancho sugerido:</strong> "Olha que interessante: saiu agora um estudo que mostrou que mulher dormindo mal, se tomar uma dose única de creatina, protege o cérebro de despencar. E aqui vai o pulo do gato — o efeito é <strong>maior</strong> nas mulheres do que nos homens. Isso muda tudo no que a gente tá falando aqui."</li>
+<li><strong>Fontes:</strong> <a href="https://www.nutraingredients.com/Article/2026/04/21/single-dose-creatine-may-support-cognition-in-sleep-deprivation-study/" target="_blank">Nutraingredients — Single-dose creatine may support cognition in sleep deprivation</a> | <a href="https://www.mdpi.com/2072-6643/18/8/1192" target="_blank">MDPI Nutrients — Estudo completo</a> | <a href="https://www.salk.edu/science/2026-the-salk-institutes-year-of-brain-health-research/" target="_blank">Salk Institute — 2026 Year of Brain Health</a></li>
+</ul>
+<h3>2. Tema: Ansiedade é também imunologia — descoberta que muda como mulher cristã vai falar de transtorno</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Estudo de 29/04/2026 (literalmente ontem) do laboratório de Mario Capecchi (Nobel) na Universidade de Utah mostrou que microglias — células imunes do cérebro — controlam o "interruptor" da ansiedade através de cálcio. Reposicionamento radical: ansiedade tem braço imunológico, não é só circuito neuronal. Conecta diretamente com inflamação, intestino-cérebro (estudo Stanford de Christoph Thaiss em abril) e práticas anti-inflamatórias da rotina cristã (jejum intermitente, sono, alimentação real, oração contemplativa).</li>
+<li><strong>Ângulo para Carol:</strong> Aula MIB de 15-20 min ou YouTube longo de 8-10 min. Tema central de pilar — não periférico. Pode virar parte da fundação científica pra um módulo sobre ansiedade da mulher cristã.</li>
+<li><strong>Gancho sugerido:</strong> "Eu sei que você já ouviu mil vezes que ansiedade é 'circuito do medo no cérebro'. Mas saiu uma pesquisa nova, do laboratório de um Nobel, que muda essa história. A ansiedade que te paralisa não tá só nos neurônios. Tá no sistema imunológico <strong>dentro</strong> do seu cérebro. E olha o que isso significa pra forma como a gente trata isso."</li>
+<li><strong>Fontes:</strong> <a href="https://uofuhealth.utah.edu/newsroom/news/2026/04/anxiety-regulated-key-signal-brain-immune-cells" target="_blank">University of Utah Health — Anxiety Regulated by Key Signal in Brain Immune Cells</a> | <a href="https://attheu.utah.edu/health-medicine/research-in-mice-reveals-brain-cells-that-drive-and-prevent-anxiety/" target="_blank">@theU — Brain cells that drive and prevent anxiety</a> | <a href="https://medicalxpress.com/news/2026-04-calcium-surges-brain-immune-cells.html" target="_blank">Medical Xpress</a></li>
+</ul>
+<h3>3. Tema: Cortisol embaralha seu GPS mental — explicação biológica do "tô perdida"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Estudo da Ruhr-Universität Bochum (PLOS Biology, mar/2026) mostrou que cortisol agudo <strong>embaralha as grid cells</strong> do córtex entorrinal — o GPS interno do cérebro. Combina com dado de Spring Health 2026 (74% de funcionários em burnout, 96% das mulheres com pressão alta/extrema) e gap de gênero da Gallup mais que dobrou desde 2019. Emocional bate forte: dá nome biológico pra sensação de "tô completamente perdida na minha rotina, não sei mais por onde começar". Não é drama — é grid cell apagada.</li>
+<li><strong>Ângulo para Carol:</strong> Reel + Carrossel. Pode virar o tipo de conteúdo que viraliza por reconhecimento — "isso aí é exatamente o que eu sinto e nunca tinha nome".</li>
+<li><strong>Gancho sugerido:</strong> "Sabe aquela sensação de que você acordou e simplesmente não sabe mais por onde começar? Você abre o caderno, abre o celular, e tudo embola na cabeça? Não é preguiça. Não é falta de disciplina. É grid cell. E eu vou te explicar o que isso é em 60 segundos."</li>
+<li><strong>Fontes:</strong> <a href="https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html" target="_blank">Medical Xpress — Cortisol scramble brain map</a> | <a href="https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2026.1680116/full" target="_blank">Frontiers — Sex-specific cortisol effect on brain</a> | <a href="https://www.springhealth.com/blog/employee-burnout-statistics-why-burnout-is-workforce-risk" target="_blank">Spring Health — Burnout Statistics 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — "Male Roles, Obligations and Options for Building a Fulfilling Life" com Scott Galloway (NYU, 27/04/2026):</strong> Episódio recente focado em masculinidade, propósito e vida resiliente. Não é tema da Carol diretamente, mas Galloway é um mestre em provocação direta — vale ouvir para coletar ângulos sobre relação masculino-feminino, propósito e carreira que Carol pode adaptar para o público feminino MIB. → <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a> | <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></p>
+<p>2. <strong>Huberman Lab — "Essentials: The Neuroscience of Speech, Language & Music" com Dr. Erich Jarvis (23/04/2026):</strong> Discute circuitos cerebrais da fala, evolução, gagueira e por que o movimento molda como falamos e pensamos. Material de qualidade pra Carol cruzar com ângulo de "comunicação feminina autoritativa" + neurociência. → <a href="https://www.hubermanlab.com/guest-episodes" target="_blank">Huberman Lab — Guest Episodes</a></p>
+<p>3. <strong>Stanford Medicine — Eixo intestino-cérebro reversível (Thaiss lab, abril 2026):</strong> Continua repercutindo na imprensa científica. Estudo mostra que estimular nervo vago em camundongos idosos reverte declínio cognitivo a níveis de jovens. Conecta com o estudo de microglia + ansiedade (mesmo princípio de inflamação imunológica afetando cérebro). → <a href="https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html" target="_blank">Stanford Medicine — Gut-brain cognitive decline</a> | <a href="https://www.advisory.com/daily-briefing/2026/04/07/gut-cognitive-decline" target="_blank">Advisory.com — Gut health and brain</a></p>
+<p>4. <strong>Detox digital reverte 10 anos de declínio cognitivo:</strong> Pesquisa 2026 mostrou que <strong>2 semanas</strong> de redução de uso de smartphone trouxeram melhoria em atenção sustentada equivalente a "reverter 10 anos de envelhecimento cognitivo" naquele domínio. Tema explodindo no nicho wellness internacional, ainda subexplorado no BR feminino. Janela aberta para trend hijacking BR (@lucasranngel, @rafaelkraisch). → <a href="https://easternherald.com/2026/04/09/social-media-detox-2026-brain-health-addiction/" target="_blank">Eastern Herald — Social Media Detox 2026: Brain Damage Reversed?</a> | <a href="https://www.detox.com/news/digital-detox-may-reverse-a-decade-of-cognitive-decline/" target="_blank">Detox.com — Digital Detox May Reverse Cognitive Decline</a> | <a href="https://www.dexerto.com/tiktok/new-study-reveals-tiktok-instagram-content-actually-rots-your-brain-3285565/" target="_blank">Dexerto — TikTok and Instagram content 'rots' your brain</a></p>
+<p>5. <strong>Friction-maxxing continua firme</strong> (segunda semana de tração) — termo cunhado por Kathryn Jezer-Morton segue rendendo. Dados novos: Gen Z relatando abandono de smartphone. Tema ideal para Carol fechar série de conteúdos sobre disciplina estruturada. → <a href="https://www.nssgclub.com/en/lifestyle/44254/friction-maxxing-meaning-trend-2026" target="_blank">nss G-Club — Friction-maxxing meaning trend 2026</a> | <a href="https://www.purewow.com/family/friction-maxxing-trend" target="_blank">PureWow — Friction-Maxxing Trend</a> | <a href="https://www.techloy.com/gen-zs-are-abandoning-smartphones-for-an-analogue-trend-called-friction-maxxing/" target="_blank">Techloy — Gen Zs abandoning smartphones for friction maxxing</a></p>
+<p>6. <strong>Neuroexpert (@neuroexpert) e nicho neurociência BR continuam crescendo:</strong> 97K seguidores, foco em neurociência aplicada a negócios. Aposta forte de Carol é manter o ângulo <strong>mulher cristã + neurociência prática</strong>, terreno virtualmente vazio no BR. → <a href="https://www.instagram.com/neuroexpert/" target="_blank">Instagram — @neuroexpert</a> | <a href="https://www.instagram.com/bruna.dimantas/" target="_blank">Instagram — @bruna.dimantas</a> | <a href="https://www.instagram.com/eslen.delanogare/" target="_blank">Instagram — @eslen.delanogare</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Type 3 diabetes" virando suplemento mágico:</strong> Termo "diabetes do cérebro" para Alzheimer já tá rendendo onda de cápsulas pra "resistência insulínica cerebral". O caminho da Carol é mecanismo (insulina, inflamação, vagus, sono), nunca produto. (<a href="https://www.myglu.org/diabetes-basics/type-3-diabetes/" target="_blank">Type 3 Diabetes 2026 — myglu</a>)</li>
+</ul>
+<ul>
+<li><strong>"Desintoxicação dopaminérgica" como protocolo místico:</strong> Artigo brasileiro em alta chama de "necessidade clínica de sobrevivência cognitiva" — é exagero retórico. Premissa cientificamente errada (não existe "detox de dopamina"; o que reduz é a saturação de receptores). Se Carol tocar, deve <strong>desmontar o termo</strong> e oferecer a explicação correta (downregulação de receptor D2, não "intoxicação"). (<a href="https://umaseostras.com.br/desintoxicacao-dopaminergica-2026-protocolo-foco-ambicao/" target="_blank">Umas e Ostras — Desintoxicação Dopaminérgica 2026</a> — exemplo do tipo de conteúdo a desmontar)</li>
+</ul>
+<ul>
+<li><strong>Influencers de saúde mental sem rigor científico:</strong> Já está virando moda no BR misturar neurociência com física quântica e espiritualidade prática. <strong>Vermelho gritante de pseudociência.</strong> Carol nunca deve emparelhar — o diferencial dela é exatamente ser a voz cristã com <strong>rigor científico real</strong>. (<a href="https://revistaquestaodeciencia.com.br/artigo/2026/01/16/influencers-de-saude-mental-se-espalham-nas-redes-sociais" target="_blank">Questão de Ciência — A ameaça dos influencers de saúde mental</a>)</li>
+</ul>
+<ul>
+<li><strong>"75 Hard / 75 Smart" e desafios de pseudo-disciplina:</strong> Continuam viralizando. Mesmo a versão "smart" carrega mentalidade all-or-nothing. Neurociência (KCC2, sistema de recompensa) mostra que isso é contraprodutivo pra hábito sustentável. Usar como <strong>contraste</strong>, nunca endosso.</li>
+</ul>
+<ul>
+<li><strong>Frases motivacionais sobre "mulher de alta performance":</strong> Saturadíssimas. O diferencial da Carol está em <strong>engenharia</strong>: BDNF, microglia, grid cells, creatina, cortisol. Nunca em "você consegue!".</li>
+</ul>
+<ul>
+<li><strong>"Brain rot" como pânico moral sem dado:</strong> Vai aparecer muito conteúdo dramático sem ciência. Carol deve fazer o oposto — citar dado concreto de redução de matéria cinzenta, dado do gap de atenção, e a evidência de <strong>reversibilidade</strong> em 2 semanas (que é o gancho positivo).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> Creatina pra mulher cansada — não é coisa de academia, é combustível neuronal</li>
+<li><strong>Formato:</strong> Reel de 60-75s, voz direta, plano fechado no rosto, estilo Tay Dantas — sem cortes excessivos, ritmo firme</li>
+<li><strong>Gancho:</strong> "Saiu um estudo agora — abril de 2026 — que tá silencioso aí na imprensa, mas eu vou te trazer com muito carinho. Mulher dormindo mal, em fase de exaustão — que é praticamente todo mundo aqui, né? — se tomar <strong>uma dose única de creatina</strong>, mantém o cérebro funcionando. E olha o pulo do gato: o efeito é <strong>maior nas mulheres</strong> do que nos homens. Em testes de lógica e linguagem, a gente teve mais ganho. Por quê? Porque privação de sono drena fosfato de alta energia do cérebro — é como se a sua mitocôndria ficasse no vermelho. A creatina reabastece. Não é dopamina, não é estimulante, não vicia. É combustível celular. E é dose modesta — 0,2 grama por quilo, então uma mulher de 65kg toma uns 13g em emergência. Antes que alguém venha falar 'mas e os efeitos colaterais?': a creatina monohidratada é uma das substâncias <strong>mais estudadas</strong> da história da nutrição esportiva. E ela tava o tempo todo na geladeira do bodybuilder, enquanto a gente fingia que problema de mulher cansada era 'falta de fé'. Não é. É ATP."</li>
+<li><strong>CTA:</strong> "Salva e me conta nos comentários: quem aqui tá em fase de sono ruim e nunca tinha ouvido falar disso?"</li>
+<li><strong>Hashtags sugeridas:</strong> #neurociência #creatina #mulhercristã #altaperformance #mentalidadeinabalável</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Fontes consultadas</h2>
+        </div>
+        <div class="card-body">
+            <h3>Descobertas científicas — destaques do dia</h3>
+<ul>
+<li>University of Utah Health — Anxiety Regulated by Key Signal in Brain Immune Cells (29/04/2026) — https://uofuhealth.utah.edu/newsroom/news/2026/04/anxiety-regulated-key-signal-brain-immune-cells</li>
+<li>@theU (Utah) — Brain cells that drive and prevent anxiety — https://attheu.utah.edu/health-medicine/research-in-mice-reveals-brain-cells-that-drive-and-prevent-anxiety/</li>
+<li>Medical Xpress — Calcium surges in brain immune cells switch anxiety — https://medicalxpress.com/news/2026-04-calcium-surges-brain-immune-cells.html</li>
+<li>Newswise — Anxiety Regulated by Brain Immune Cells — https://www.newswise.com/articles/anxiety-regulated-by-key-signal-in-brain-immune-cells/?sc=c132</li>
+<li>Medical Xpress — Cortisol scrambles brain's internal map (PLOS Biology) — https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html</li>
+<li>Frontiers in Neurology — Sex-specific effect of cortisol on cerebral glucose metabolism — https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2026.1680116/full</li>
+<li>Nutraingredients — Single-dose creatine may support cognition in sleep deprivation (21/04/2026) — https://www.nutraingredients.com/Article/2026/04/21/single-dose-creatine-may-support-cognition-in-sleep-deprivation-study/</li>
+<li>MDPI Nutrients — Single-Dose Creatine Reduces Sleep Deprivation Cognitive Deterioration — https://www.mdpi.com/2072-6643/18/8/1192</li>
+<li>Nature Scientific Reports — Single dose creatine improves cognitive performance during sleep deprivation — https://www.nature.com/articles/s41598-024-54249-9</li>
+<li>ScienceDirect — Creatine supplementation and brain health (review 2026) — https://www.sciencedirect.com/science/article/pii/S3050624726000033</li>
+</ul>
+<h3>Eixo intestino-cérebro e gerontologia cognitiva</h3>
+<ul>
+<li>Stanford Medicine — Enhancing gut-brain communication reversed cognitive decline — https://med.stanford.edu/news/all-news/2026/03/gut-brain-cognitive-decline.html</li>
+<li>Frontiers in Neuroscience — Pharmacological interventions targeting gut-brain axis (abril 2026) — https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1806532/full</li>
+<li>Advisory.com — Can your gut health affect your brain? — https://www.advisory.com/daily-briefing/2026/04/07/gut-cognitive-decline</li>
+<li>Science.org — Gut-brain vagal axis governs mesolimbic dopamine — https://www.science.org/doi/10.1126/sciadv.adz0828</li>
+</ul>
+<h3>Neuroplasticidade e descobertas recentes (Eixo 1)</h3>
+<ul>
+<li>Quanta Magazine — A New Type of Neuroplasticity (BTSP) — https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/</li>
+<li>ScienceDirect — The neuroplastic brain: current breakthroughs and emerging frontiers — https://www.sciencedirect.com/science/article/pii/S0006899325002021</li>
+<li>PubMed — Neuroplastic brain breakthroughs — https://pubmed.ncbi.nlm.nih.gov/40280532/</li>
+<li>ScienceDaily — Groundbreaking study uncovers how our brain learns — https://www.sciencedaily.com/releases/2025/04/250417144912.htm</li>
+<li>Mass General Brigham — 2026 predictions for neuroscience and neurology — https://www.massgeneralbrigham.org/en/about/newsroom/articles/2026-predictions-about-neurology</li>
+<li>Salk Institute — 2026 Year of Brain Health Research — https://www.salk.edu/science/2026-the-salk-institutes-year-of-brain-health-research/</li>
+<li>Frontiers — Serotonergic glial interactions in brain circuit remodeling (2026) — https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1782246/full</li>
+</ul>
+<h3>Sono, memória e córtex pré-frontal</h3>
+<ul>
+<li>Medical Xpress — Brain replays past emotional experiences during sleep — https://medicalxpress.com/news/2026-04-brain-replays-emotional.html</li>
+<li>ScienceDirect — Memory consolidation during sleep: a facilitator of new learning — https://www.sciencedirect.com/science/article/pii/S0028393225002556</li>
+<li>UCLA Health — Deep-brain stimulation during sleep strengthens memory — https://www.uclahealth.org/news/release/deep-brain-stimulation-during-sleep-strengthens-memory</li>
+<li>Brain & Behavior Research Foundation — Researchers map prefrontal cortex (2026) — https://bbrfoundation.org/content/researchers-map-prefrontal-cortex-new-way-focuses-how-it-actually-functions</li>
+<li>Nature Neuropsychopharmacology — Visual attention and noradrenaline release in mPFC (2026) — https://www.nature.com/articles/s41386-026-02404-3</li>
+<li>Nature Neuroscience — A prefrontal cortex map based on single-neuron activity — https://www.nature.com/articles/s41593-025-02190-z</li>
+<li>Medical Xpress — Brain activity maps challenge traditional descriptions of PFC — https://medicalxpress.com/news/2026-01-brain-traditional-descriptions-prefrontal-cortex.html</li>
+</ul>
+<h3>Neurotecnologia (Eixo 2)</h3>
+<ul>
+<li>Applying AI — Transforming Brain-Computer Interfaces: Neuralink's 2026 Breakthroughs — https://applyingai.com/2026/04/transforming-brain-computer-interfaces-neuralinks-2026-breakthroughs-and-market-dynamics/</li>
+<li>Neuralink — Updates oficiais — https://neuralink.com/updates/</li>
+<li>Fox News — Neuralink high-volume production 2026 — https://www.foxnews.com/health/elon-musk-shares-plan-mass-produce-brain-implants-paralysis-neurological-disease</li>
+<li>TechCrunch — Max Hodak's Science Corp first sensor in human brain — https://techcrunch.com/2026/04/14/max-hodaks-science-corp-is-preparing-to-place-its-first-sensor-in-a-human-brain/</li>
+<li>Nature — A brain implant that could rival Neuralink's enters clinical trials — https://www.nature.com/articles/d41586-025-03849-0</li>
+<li>STAT — Neuralink's big vision collides with reality — https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/</li>
+<li>ScienceDaily — New brain-like chip could slash AI energy use by 70% — https://www.sciencedaily.com/releases/2026/04/260422044633.htm</li>
+</ul>
+<h3>Hábitos, dopamina, performance (Eixo 3)</h3>
+<ul>
+<li>ScienceDaily — How everyday cues shape your habits (KCC2) — https://www.sciencedaily.com/releases/2025/12/251210223635.htm</li>
+<li>The Transmitter — Dopamine neurons signal default behavior — https://www.thetransmitter.org/neurobiology/some-dopamine-neurons-signal-default-behaviors-to-reinforce-habits/</li>
+<li>GlobalRPH — The Science Of Habit Formation (abril 2026) — https://globalrph.com/2026/04/the-science-of-habit-formation-how-to-rewire-your-brain-for-change/</li>
+<li>Gwork — Habit Formation in the Workplace 2026 — https://gwork.io/blog/science-of-habit-formation-workplace/</li>
+</ul>
+<h3>Burnout, mulher de alta performance, cortisol (Eixo 4)</h3>
+<ul>
+<li>Spring Health — 12 Employee Burnout Statistics 2026 — https://www.springhealth.com/blog/employee-burnout-statistics-why-burnout-is-workforce-risk</li>
+<li>Cerevity — Therapy for High-Achieving Women 2026 — https://cerevity.com/therapy-for-high-achieving-women-addressing-burnout-perfectionism-and-impostor-syndrome-2026/</li>
+<li>Breaking AC — Why High Achievers Burn Out (28/04/2026) — https://breakingac.com/news/2026/apr/28/why-high-achievers-burn-out-and-how-to-prevent-it-before-it-costs-you-your-health/</li>
+<li>Sovereign Therapy Coaching — Burnout in High-Achieving Women Leaders Isn't About Overwork — https://sovereigntherapycoaching.com/insight-blogs/burnout-in-high-achieving-women-leaders-isnt-about-overwork</li>
+<li>Medicine Journal (Lippincott) — Impact of burnout and mental health in women leadership 2026 — https://journals.lww.com/md-journal/fulltext/2026/01300/exploring_the_impact_of_burnout_and_mental_health.9.aspx</li>
+</ul>
+<h3>Sono, hormônios, mulher</h3>
+<ul>
+<li>Frontiers in Sleep — Sleep in women: hormonal influences and sex differences — https://www.frontiersin.org/journals/sleep/articles/10.3389/frsle.2023.1271827/full</li>
+<li>npj Women's Health — Circadian rhythms as health indicator in women's aging — https://www.nature.com/articles/s44294-025-00057-z</li>
+</ul>
+<h3>Smartphone, brain rot, detox digital</h3>
+<ul>
+<li>Eastern Herald — Social Media Detox 2026: Brain Damage Reversed? — https://easternherald.com/2026/04/09/social-media-detox-2026-brain-health-addiction/</li>
+<li>Detox.com — Digital Detox May Reverse a Decade of Cognitive Decline — https://www.detox.com/news/digital-detox-may-reverse-a-decade-of-cognitive-decline/</li>
+<li>Dexerto — TikTok & Instagram content 'rots' your brain — https://www.dexerto.com/tiktok/new-study-reveals-tiktok-instagram-content-actually-rots-your-brain-3285565/</li>
+<li>Men's Journal — TikTok and Instagram Study on Human Brain — https://www.mensjournal.com/news/tiktok-instagram-study-human-brain-impact</li>
+</ul>
+<h3>Tendências culturais e digitais</h3>
+<ul>
+<li>nss G-Club — Friction-maxxing meaning trend 2026 — https://www.nssgclub.com/en/lifestyle/44254/friction-maxxing-meaning-trend-2026</li>
+<li>PureWow — Friction-Maxxing Trend — https://www.purewow.com/family/friction-maxxing-trend</li>
+<li>Techloy — Gen Zs abandoning smartphones for friction maxxing — https://www.techloy.com/gen-zs-are-abandoning-smartphones-for-an-analogue-trend-called-friction-maxxing/</li>
+<li>New Engen — Instagram Trends April 2026 — https://newengen.com/insights/instagram-trends/</li>
+<li>SocialBee — The latest Instagram trends (29/04/2026) — https://socialbee.com/blog/instagram-trends/</li>
+<li>Ramdam — TikTok Trends April 2026 — https://www.ramd.am/blog/trends-tiktok</li>
+<li>Nature — Science influencers going viral on TikTok — https://www.nature.com/articles/d41586-026-00472-5</li>
+<li>Rafael Terra — Algoritmo do Instagram 2026 — https://rafaelterra.com.br/guia-algoritmo-instagram-2026/</li>
+<li>Portal Publicitário — Mudança das redes sociais em 2026 — https://portalpublicitario.com.br/tendencias-redes-sociais-2026-fim-viralizacao/</li>
+</ul>
+<h3>Ansiedade, microglia, saúde mental (Eixo 4)</h3>
+<ul>
+<li>News-Medical — Cognitive worries in Parkinson's linked to anxiety/depression (21/04/2026) — https://www.news-medical.net/news/20260421/Study-links-cognitive-worries-in-Parkinsone28099s-to-anxiety-and-depression.aspx</li>
+<li>Frontiers in Psychiatry — Neuroimaging biomarkers for anxiety in emerging adults (2026) — https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1722529/full</li>
+<li>bioRxiv — Anxiety impairs reward learning, N3 sleep recalibrates — https://www.biorxiv.org/content/10.64898/2026.01.01.696994v1</li>
+</ul>
+<h3>Podcasts e criadores de referência</h3>
+<ul>
+<li>Huberman Lab — Podcast — https://www.hubermanlab.com/podcast</li>
+<li>Huberman Lab — All Episodes — https://www.hubermanlab.com/all-episodes</li>
+<li>Huberman Lab — Guest Episodes — https://www.hubermanlab.com/guest-episodes</li>
+<li>Huberman Lab — Newsletter — https://www.hubermanlab.com/newsletter</li>
+<li>The Diary of a CEO (Steven Bartlett) — https://stevenbartlett.com/doac/</li>
+<li>Instagram — @bruna.dimantas — https://www.instagram.com/bruna.dimantas/</li>
+<li>Instagram — @eslen.delanogare — https://www.instagram.com/eslen.delanogare/</li>
+<li>Instagram — @neuroexpert — https://www.instagram.com/neuroexpert/</li>
+</ul>
+<h3>Alertas de ruído (verificação cruzada)</h3>
+<ul>
+<li>Umas e Ostras — Desintoxicação Dopaminérgica 2026 (exemplo de pseudoclínico) — https://umaseostras.com.br/desintoxicacao-dopaminergica-2026-protocolo-foco-ambicao/</li>
+<li>Questão de Ciência — A ameaça dos influencers de saúde mental — https://revistaquestaodeciencia.com.br/artigo/2026/01/16/influencers-de-saude-mental-se-espalham-nas-redes-sociais</li>
+<li>Público (PT) — Conspirações e desinformação na medicina integrativa — https://www.publico.pt/2026/04/26/ciencia/noticia/conspiracoes-desinformacao-inspiram-estrela-medicina-integrativa-2172410</li>
+<li>Healthcare Readers — Is Biohacking a Healthy Trend or Dangerous Experiment 2026 — https://healthcarereaders.com/insights/biohacking</li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
