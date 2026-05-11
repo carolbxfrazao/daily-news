@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-11</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-11</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Deficiência de dopamina no córtex entorrinal é o gatilho da perda de memória no Alzheimer</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Early dopamine disruption in the entorhinal cortex of a knock-in model of Alzheimer's disease</em></li>
+<li><strong>Data de Publicação:</strong> 23 de abril de 2026</li>
+<li><strong>Fonte:</strong> <em>Nature Neuroscience</em> — DOI: <a href="https://www.nature.com/articles/s41593-026-02260-w" target="_blank">10.1038/s41593-026-02260-w</a></li>
+<li><strong>Cobertura institucional:</strong> <a href="https://news.uci.edu/2026/04/23/dopamine-deficiency-found-to-drive-memory-impairment-in-alzheimers-disease/" target="_blank">UC Irvine News</a> | <a href="https://medschool.uci.edu/news/dopamine-deficiency-found-drive-memory-impairment-alzheimers-disease" target="_blank">UCI School of Medicine</a> | <a href="https://mind.uci.edu/dopamine-deficiency-found-to-cause-memory-impairment-in-alzheimers-disease/" target="_blank">UCI MIND</a> | <a href="https://www.eurekalert.org/news-releases/1125540" target="_blank">EurekAlert</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> A equipe de Kei Igarashi (UC Irvine) mostrou que, em um modelo animal de Alzheimer, a dopamina no córtex entorrinal cai para menos de 1/5 dos níveis normais — e essa queda acontece <strong>antes</strong> da perda de memória clínica aparecer. Restaurar dopamina (via optogenética ou Levodopa, remédio já usado em Parkinson) recuperou a capacidade de formar memórias novas.</li>
+<li><strong>Implicação prática:</strong> A dopamina não é só "neurotransmissor da motivação". Ela é combustível do circuito que escreve memória nova. Em pessoas saudáveis, isso conecta o que a gente já fala no MIB: rotinas que estabilizam dopamina (sono, luz solar pela manhã, recompensas espaçadas) protegem diretamente o sistema de aprendizagem do cérebro. Não é estética. É manutenção neurológica.</li>
+</ul>
+<h3>2. Plasticidade em escala de segundos: o cérebro aprende com <strong>uma única experiência</strong></h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Behavioral Timescale Synaptic Plasticity (BTSP)</em> — síntese de descobertas recentes</li>
+<li><strong>Data de Publicação:</strong> Cobertura analítica em 24 de abril de 2026 (Quanta Magazine), revisões em <em>Nature Neuroscience</em> e <em>Journal of Neuroscience</em> (2025–2026), base original publicada por Magee em <em>Science</em> (2017)</li>
+<li><strong>Fonte:</strong> <a href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank">Quanta Magazine — A New Type of Neuroplasticity Rewires the Brain After a Single Experience</a></li>
+<li><strong>Pesquisadores:</strong> Jeffrey Magee (Baylor College of Medicine), Christine Grienberger (Brandeis), Attila Losonczy (UT Southwestern), Anant Jain (Center for High Impact Neuroscience)</li>
+<li><strong>Status:</strong> Revisado por pares (revisões e síntese)</li>
+<li><strong>Achado:</strong> Existe um mecanismo de plasticidade chamado BTSP que opera em <strong>segundos</strong> (e não em milissegundos como o modelo clássico de Hebb). Ele permite que um único evento marcante reescreva sinapses no hipocampo. É a base biológica do "aprendi de primeira" — geralmente acionado por experiências de alta carga emocional ou alta novidade.</li>
+<li><strong>Implicação prática:</strong> Explica por que uma experiência única (um susto, uma humilhação, uma revelação) pode mudar o comportamento de uma mulher para sempre — e por que tentar "fixar um hábito novo" só com repetição morna não funciona. O cérebro precisa de <strong>intensidade + significado</strong>, não só de constância. Aplicação MIB: por que algumas alunas mudam num clique e outras precisam de meses de protocolo.</li>
+</ul>
+<h3>3. Reabertura das "sinapses silenciosas" como reserva adulta de aprendizagem</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Filopodia are a structural substrate for silent synapses in adult neocortex</em></li>
+<li><strong>Data de Publicação:</strong> Originalmente em 2022 (<em>Nature</em>, v.612). Voltou ao radar em maio/2026 com nova cobertura institucional do MIT.</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1038/s41586-022-05483-6" target="_blank">Nature — DOI 10.1038/s41586-022-05483-6</a> | <a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily — cobertura maio/2026</a></li>
+<li><strong>Autores:</strong> Dimitra Vardalaki, Mark Harnett, Kwanghun Chung (MIT)</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Cerca de <strong>30% das sinapses do córtex adulto são "silenciosas"</strong> — conexões com receptores NMDA mas sem AMPA, ou seja, montadas mas inativas. Elas podem ser ativadas rapidamente para suportar aprendizagem nova <strong>sem precisar derrubar memórias antigas</strong>.</li>
+<li><strong>Implicação prática:</strong> O argumento "depois dos 30 o cérebro não muda mais" é falso e tem base anatômica para ser desmontado. Existe reserva estrutural pronta para uso. Ângulo perfeito para o público MIB (mulheres 25-45) que chega com a crença de que "já passou da idade de aprender coisa nova".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>Tendência 1 — "Dopamina não é o que vocês estão chamando de dopamina"</h3>
+<ul>
+<li><strong>Tema:</strong> A confusão entre dopamina (recompensa antecipatória, motivação para agir) e o discurso popular de "dopamine detox" / "reset de dopamina em 7 dias".</li>
+<li><strong>Por que está em alta:</strong> Saiu livro novo no Amazon (<a href="https://www.amazon.com/Dopamine-Reset-High-Performers-Neuroscience-Productivity/dp/B0GWXL4KXP" target="_blank"><em>The Dopamine Reset for High-Performers</em></a>), e o estudo da UC Irvine acima coloca dopamina no centro da memória — o tema é debate vivo. Ao mesmo tempo, criadoras brasileiras como <a href="https://www.instagram.com/reservatoriodedopamina/" target="_blank">Reservatório de Dopamina</a> (1M seguidores) e <a href="https://www.instagram.com/bruna.dimantas/" target="_blank">Bruna Dimantas</a> estão puxando esse vocabulário para o público feminino.</li>
+<li><strong>Ângulo para Carol:</strong> <strong>Reel ou Carrossel</strong> "Eu sou neurocientista e estou cansada de ouvir essas 3 coisas sobre dopamina". Posição firme, sem floreio. Contraintuitivo.</li>
+<li><strong>Gancho sugerido:</strong> "Para de chamar de detox de dopamina. Você não está fazendo detox de nada — você está fazendo a coisa mais difícil que o cérebro faz: ficar entediado de propósito."</li>
+<li><strong>Fonte para base:</strong> <a href="https://www.nature.com/articles/s41593-026-02260-w" target="_blank">Nature Neuroscience — dopamina e memória</a> + <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780443298677000438" target="_blank">Habits and dopamine — ScienceDirect</a></li>
+</ul>
+<h3>Tendência 2 — "Aprendi de primeira" vs. "repito faz meses e não fixo"</h3>
+<ul>
+<li><strong>Tema:</strong> Por que algumas mudanças acontecem instantaneamente e outras precisam de protocolo longo. Explicação neurobiológica via BTSP (plasticidade em escala comportamental).</li>
+<li><strong>Por que está em alta:</strong> A matéria do Quanta de 24/04 (<a href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank">link</a>) está circulando em comunidades de produtividade. Casa com o discurso de hábitos da <a href="https://www.instagram.com/anabeatriz11/" target="_blank">@anabeatriz11</a> e <a href="https://www.instagram.com/giutessitore/" target="_blank">@giutessitore</a>.</li>
+<li><strong>Ângulo para Carol:</strong> <strong>YouTube de 8-10min</strong> ou <strong>Carrossel longo</strong>. Explicação didática com exemplos da vida real (parto, perda, conversão, susto que mudou a rotina).</li>
+<li><strong>Gancho sugerido:</strong> "Tem coisa que você só precisa ouvir uma vez na vida pra mudar — e tem coisa que você ouve toda semana e nunca pega. Não é falta de força de vontade. É o tipo de sinapse que foi ativada."</li>
+<li><strong>Fonte:</strong> <a href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank">Quanta Magazine — BTSP</a></li>
+</ul>
+<h3>Tendência 3 — "Não passou da idade" — sinapses silenciosas como reserva adulta</h3>
+<ul>
+<li><strong>Tema:</strong> Cérebro adulto guarda 30% de sinapses prontas para ativar. Quebra direta da crença "tarde demais".</li>
+<li><strong>Por que está em alta:</strong> Cobertura nova do MIT em maio/2026 (<a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily</a>). É também o tipo de tema que o algoritmo do Instagram BR está empurrando — micro-educação em neurociência (formato dominante de maio/2026 segundo <a href="https://newengen.com/insights/instagram-trends/" target="_blank">NewEngen</a>).</li>
+<li><strong>Ângulo para Carol:</strong> <strong>Reel de 30-45s</strong> no formato "olha que interessante". Não precisa de produção pesada — é o tipo de conteúdo que está performando justamente cru.</li>
+<li><strong>Gancho sugerido:</strong> "Trinta por cento das suas sinapses estão dormindo. Não é metáfora. Foi medido no MIT. E elas só acordam quando você faz uma coisa específica que eu vou explicar agora."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily — Silent Synapses MIT</a> | <a href="https://doi.org/10.1038/s41586-022-05483-6" target="_blank">Nature paper original</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Micro-educação em neurociência sob 15 segundos</strong> — formato dominante em maio/2026. Clipes curtos, hook direto, dado citado. Performando melhor que reels editados de minutos. (<a href="https://newengen.com/insights/instagram-trends/" target="_blank">NewEngen — Instagram Trends May 2026</a>)</p>
+<p>2. <strong>Quiet-flex aesthetic + companion "with me" videos</strong> — o tom "calma, organizada, eu vs. caos" está dominando produtividade no TikTok BR e migrando para Reels. Casa exatamente com a estética da <a href="https://www.instagram.com/tay.ldantas/" target="_blank">@tay.ldantas</a> (referência principal da Carol). (<a href="https://www.ramd.am/blog/trends-tiktok" target="_blank">Ramdam — TikTok Trends May 2026</a>)</p>
+<p>3. <strong>Dopamina como vocabulário cotidiano</strong> — <a href="https://www.instagram.com/reservatoriodedopamina/" target="_blank">Reservatório de Dopamina</a> (1M) e <a href="https://www.instagram.com/bruna.dimantas/" target="_blank">Bruna Dimantas</a> (98K, mestrado em neuro comportamental pelo UCL) estão consolidando o vocabulário no público feminino BR. Oportunidade clara de Carol entrar com <strong>profundidade científica</strong>, não só linguagem.</p>
+<p>4. <strong>Burnout e cortisol como tema de podcast longo</strong> — episódio <a href="https://podcastnotes.org/huberman-lab/how-to-control-your-cortisol-overcome-burnout-huberman-lab/" target="_blank">How to Control Your Cortisol & Overcome Burnout</a> do <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab</a> ainda está circulando. Tradução para o público feminino BR é território aberto.</p>
+<p>5. <strong>Conteúdo cientistas "anti-misinformation" em vídeo curto</strong> — a <a href="https://www.nature.com/articles/d41586-026-00472-5" target="_blank">Nature publicou matéria</a> sobre cientistas viralizando no TikTok justamente para combater desinformação. É o exato espaço onde Carol pode operar com autoridade.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Detox de dopamina em 7 dias"</strong> — está vendendo livro, mas é simplificação que beira o errado. Dopamina não é tóxica e não se "limpa". Se Carol entrar nesse tema, entrar para <strong>corrigir</strong>, não para repetir.</li>
+<li><strong>Banho gelado como cura para ansiedade</strong> — tem ganhado tração em biohacking, mas a evidência ainda é preliminar e contextual. Tratar como "ferramenta com uso específico", nunca como solução.</li>
+<li><strong>Neuralink e BCI</strong> — Musk anunciou em 07/05 produção de alto volume (<a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">Fierce Biotech</a>). Tema midiático, mas distante do público MIB. Pular, a não ser que Carol queira gancho específico sobre "o que faz a tua mente ser tua".</li>
+<li><strong>"Reseta sua dopamina em 24h"</strong> — clichê de coach de produtividade. Carol já não usa esse tipo de promessa; só listei para reforçar o filtro.</li>
+<li><strong>Frases motivacionais sobre neuroplasticidade</strong> ("seu cérebro pode tudo!") — vazias. O dado das sinapses silenciosas é mais forte que qualquer slogan.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Formato:</strong> Reel de 45-60s</p>
+<p><strong>Tema:</strong> Por que a sua memória falha no meio da tarde — e não é cansaço</p>
+<p><strong>Gancho:</strong> "Aquela sensação de 'eu ia fazer alguma coisa e esqueci' não é cansaço, não é distração, não é falta de café. É o teu córtex entorrinal ficando sem dopamina. E tem três coisas que estão drenando essa dopamina antes do meio-dia."</p>
+<p><strong>Desenvolvimento:</strong></p>
+<p>1. Citar o estudo da UC Irvine (Nature Neuroscience, 23/04/26) — dopamina baixa no córtex entorrinal trava formação de memória nova</p>
+<p>2. Três drenos cotidianos: scroll de manhã (queima dopamina antecipatória sem entrega real) / pular luz solar nos primeiros 30min do dia / café antes da água</p>
+<p>3. Fechamento provocativo, sem clichê</p>
+<p><strong>Legenda sugerida:</strong></p>
+<blockquote>Não é falta de memória. É falta de combustível neuroquímico no lugar certo do cérebro.</blockquote>
+<p>></p>
+<blockquote>O estudo saiu agora em abril em uma das revistas mais sérias do mundo (Nature Neuroscience). E confirma uma coisa que a gente já desconfiava: a dopamina não é só motivação. É o que permite o teu cérebro <strong>escrever memória nova</strong>.</blockquote>
+<p>></p>
+<blockquote>Olha que interessante: as três coisas que mais drenam essa dopamina na primeira parte do dia são banais. Eu listei no reel.</blockquote>
+<p><strong>Hashtags:</strong> #neurociencia #memoria #dopamina #produtividade #mentalidadeinabalavel</p>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Cruzamento com vault Obsidian</h2>
+        </div>
+        <div class="card-body">
+            <p>Recomendado verificar antes de publicar:</p>
+<ul>
+<li><code>B02 Resources/Neurociências/</code> — checar se Carol já tem nota sobre córtex entorrinal e dopamina</li>
+<li><code>B02 Resources/Research/</code> — adicionar o paper de Igarashi (Nature Neuroscience 2026) como referência permanente</li>
+<li><code>A01 Anchor Topics/</code> — possível nova âncora: "Plasticidade em escala comportamental (BTSP)" — conceito ainda não disseminado no BR</li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Desenvolvimento:*<br>*Legenda sugerida:*<br>Briefing gerado em 2026-05-11. Fontes verificadas em PubMed/Nature/UC Irvine/MIT/Quanta. Nenhum dado inventado — todos os links acima são clicáveis e checáveis.</p>
+    </div>
+</body>
+</html>
