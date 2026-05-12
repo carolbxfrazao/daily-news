@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-12</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-12</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Micróglia apagam memórias de medo "podando" sinapses — extinção do trauma tem mecanismo celular (Nature Neuroscience)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Microglia-dependent regulation of fear memory extinction</em></li>
+<li><strong>Autores:</strong> Liu Y., Wo J., Kramer E.E. e colegas</li>
+<li><strong>Data de Publicação:</strong> Maio de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-026-02286-0" target="_blank">Nature Neuroscience — DOI 10.1038/s41593-026-02286-0</a> | <a href="https://www.nature.com/neuro/articles?year=2026" target="_blank">Sumário — Articles in 2026 Nature Neuroscience</a> | <a href="https://www.biorxiv.org/content/10.64898/2026.05.05.722833v1" target="_blank">Versão pré-print no bioRxiv — Microglial pruning of extinction-ensemble synapses</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Nature Neuroscience</em>)</li>
+<li><strong>Achado:</strong> Por décadas, micróglia foram tratadas como "células de limpeza" do cérebro — sistema imune, função secundária. O estudo de Liu et al. muda essa moldura. Durante a <strong>extinção de uma memória de medo</strong> (o processo neural que faz uma fobia ou trauma perder força), as micróglia migram ativamente para os neurônios que codificam aquela memória (chamados <em>engram neurons</em>) no giro denteado do hipocampo. Lá, elas fazem <strong>duas coisas distintas</strong>: (1) interagem com o corpo celular do neurônio e o silenciam temporariamente, e (2) <strong>engolfam fisicamente as sinapses</strong> ligadas àquela memória, remodelando o circuito. Quando os pesquisadores impediram esse recrutamento, a extinção do medo <strong>desacelerou</strong> — ou seja, o animal continuava reagindo com pânico ao gatilho. Sem micróglia ativa, não tem cura de trauma.</li>
+<li><strong>Implicação prática:</strong> Trauma e medo condicionado não somem porque a pessoa "decidiu superar". Existe uma <strong>célula específica</strong> que precisa fisicamente desmontar a sinapse antiga para que a extinção aconteça. Isso conecta com tudo o que o MIB já trabalha: rotinas que <strong>inflamam cronicamente</strong> o cérebro (sono fragmentado, dieta ultra-processada, álcool, glicemia em montanha-russa) <strong>atrapalham a função microglial</strong>. A mulher que tenta "soltar o passado" mas tá vivendo em modo combate fisiológico não consegue — não é falta de fé nem fraqueza, é micróglia comprometida. Cuidar do corpo é parte do processo de cura emocional. Não é metáfora.</li>
+</ul>
+<h3>2. O entupimento do "sistema de esgoto" do cérebro começa antes do Alzheimer aparecer (Nature Neuroscience, 05/05/2026)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Amyloid-β-driven glymphatic dysfunction in Alzheimer's disease model mice is driven by Ca²⁺-mediated increases in astrocytic cholesterol</em></li>
+<li><strong>Autores:</strong> Zhang e colegas</li>
+<li><strong>Data de Publicação:</strong> 5 de maio de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-026-02261-9" target="_blank">Nature Neuroscience — DOI 10.1038/s41593-026-02261-9</a> | <a href="https://www.nature.com/articles/s41593-026-02310-3" target="_blank">Nature Neuroscience — News & Views: Astrocytic cholesterol jams brain clearance in AD</a> | <a href="https://medicalxpress.com/news/2026-04-excessive-cholesterol-astrocytes-linked-cognitive.html" target="_blank">MedicalXpress — Excessive cholesterol in astrocytes linked to cognitive decline (04/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> O cérebro tem um sistema de "esgoto" próprio chamado <strong>sistema glinfático</strong> — uma rede de canais que escoa proteínas tóxicas (incluindo a beta-amiloide do Alzheimer) durante o sono profundo. O estudo mostra que, em modelo animal de Alzheimer, a beta-amiloide dispara cálcio dentro dos astrócitos (células gliais que sustentam o tecido neural), e esse cálcio aumenta a <strong>síntese de colesterol</strong> dentro dessas células. Colesterol em excesso re-localiza a proteína AQP4 (aquaporina-4) — o "cano" do sistema glinfático — para dentro dos lisossomos, <strong>entupindo a drenagem</strong>. O resultado: o cérebro para de limpar lixo metabólico e a beta-amiloide se acumula em ciclo vicioso. Suprimir a produção de colesterol astrocítico (com atorvastatina ou silenciamento gênico) <strong>restaurou</strong> a drenagem e melhorou a cognição.</li>
+<li><strong>Implicação prática:</strong> Não é diagnóstico clínico ainda, mas o mecanismo confirma uma tese que a Carol já trabalha: <strong>sono profundo é manutenção predial do cérebro</strong>, não luxo. O sistema glinfático opera principalmente no estágio NREM3 (sono profundo de ondas lentas), que é a primeira parte da noite que <strong>álcool, tela à noite e cortisol alto destroem primeiro</strong>. E entra também na lógica de <strong>colesterol e cérebro</strong>: o demônio aqui não é colesterol no sangue, é desregulação metabólica que afeta a glia cerebral. Conexão com nutrição e gordura saudável segue válida, mas o alvo é o <strong>sono e a glicemia estável</strong>, não estatina pra todo mundo.</li>
+</ul>
+<h3>3. Revisão consolidada das "sinapses silenciosas" como reserva neural de aprendizagem (MIT, Nature, com cobertura nova em 04/05/2026)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Filopodia are a structural substrate for silent synapses in adult neocortex</em> (Vardalaki, Chung, Harnett — paper original) — com cobertura consolidada em maio de 2026 em revisão de <em>Annual Review of Neuroscience</em> (Silent Synapses in the Adult Brain).</li>
+<li><strong>Data de Publicação:</strong> Paper original em <em>Nature</em> (2022); revisão consolidada e cobertura nova em 04 de maio de 2026 (ScienceDaily)</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily — MIT scientists discover millions of "silent synapses" in the adult brain (04/05/2026)</a> | <a href="https://news.mit.edu/2022/silent-synapses-brain-1130" target="_blank">MIT News — Silent synapses are abundant in the adult brain</a> | <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-112723-032924?TRACK=RSS" target="_blank">Annual Reviews — Silent Synapses in the Adult Brain</a> | <a href="https://scitechdaily.com/super-bizarre-neuroscientists-discover-that-adult-brain-is-filled-with-millions-of-silent-synapses/" target="_blank">SciTechDaily — Adult Brain Filled With Millions of Silent Synapses</a> | <a href="https://bcs.mit.edu/news/silent-synapses-are-abundant-adult-brain" target="_blank">MIT BCS — Silent synapses abundant in adult brain</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature, Annual Review of Neuroscience)</li>
+<li><strong>Achado:</strong> Aproximadamente <strong>30% das sinapses no córtex adulto são "silenciosas"</strong> — conexões neurais que existem fisicamente mas estão eletricamente inativas porque têm receptor NMDA mas não AMPA. Quando o cérebro precisa aprender algo novo, ele <strong>ativa essas conexões dormentes</strong> em vez de reescrever sinapses maduras (que já guardam memórias importantes). É como ter uma reserva de tomadas vazias na parede esperando um aparelho ser plugado. A revisão consolidada de 2026 (<em>Annual Reviews</em>) coloca o achado original em contexto mais amplo: o cérebro adulto <strong>não está fechado pra aprender</strong> — ele tem uma arquitetura biológica desenhada exatamente para isso.</li>
+<li><strong>Implicação prática:</strong> A frase "depois dos 25 anos o cérebro não muda mais" é falsa em base celular. Tem <strong>bilhão de tomadas vagas</strong> na sua cabeça. O que muda com a idade não é capacidade de aprender — é a <strong>velocidade de ativação</strong> dessas sinapses, que depende de sono profundo, atividade física aeróbica (que libera BDNF) e exposição a estímulos novos com atenção sustentada. Para a mulher MIB de 35-45 que pensa "tarde demais pra mim", o achado responde: arquitetura tá lá. Falta combustível (dopamina + BDNF) e contexto de aprendizagem (atenção sem celular, descanso).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Tema: Autocontrole não é músculo, é caixa de ferramentas — o erro do "marshmallow test" e o que realmente prediz disciplina (Huberman + Kentaro Fujita, 11/05/2026)</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Episódio Huberman publicado <strong>ontem (11/05/2026)</strong> com Kentaro Fujita (Ohio State, professor de psicologia social, referência em pesquisa de autocontrole). Está em <strong>primeiras 24h de circulação</strong> no nicho. O episódio desmonta dois mitos pesados: (1) o teste do marshmallow não mede força de caráter — mede <strong>confiança no ambiente</strong>; criança que cresceu em casa instável aprende que adiar recompensa é otário e pega o doce logo; (2) "força de vontade" como músculo único é modelo errado — autocontrole é <strong>conjunto de ferramentas distintas</strong> (distanciamento psicológico, reformulação cognitiva, mudança de contexto, conexão com propósito). Mistura perfeita para a Carol traduzir.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 8 slides + Reel de 60s. Pode virar série de 3 reels desmontando cada mito. Tese central: <strong>"Você não falha por falta de força de vontade. Você falha porque tá usando UMA ferramenta pra problema que pede CINCO."</strong> Conecta com a tradição cristã de discernimento — sabedoria como ferramenta plural, não força bruta.</li>
+<li><strong>Gancho sugerido:</strong> "Vou te falar uma coisa que pode mudar como você se enxerga. Saiu ontem do forno um material novo do Huberman com um pesquisador da Ohio State que estuda autocontrole há vinte anos. E ele desmonta uma coisa que a gente repete há décadas. Aquele teste do marshmallow, da criança que esperou pra ganhar dois doces — sabe? Lembraram? A interpretação clássica era 'ela tem mais autocontrole, vai ter melhor vida'. Errado. O que esse teste mede de verdade é se a criança <strong>confia no ambiente</strong> dela. Em casa instável, esperar é burrice. E sabe o que mais? Autocontrole adulto <strong>não é um músculo só</strong>. São cinco. E todo mundo passa a vida treinando o errado."</li>
+<li><strong>Fontes:</strong> <a href="https://www.hubermanlab.com/episode/master-self-control-overcome-procrastination-kentaro-fujita" target="_blank">Huberman Lab — Master Self Control & Overcome Procrastination Dr. Kentaro Fujita (11/05/2026)</a> | <a href="https://www.youtube.com/watch?v=e89rVf4Pf0k" target="_blank">YouTube — Kentaro Fujita episode</a> | <a href="http://fujita.socialpsychology.org/" target="_blank">Kentaro Fujita — Ohio State perfil</a> | <a href="https://journals.sagepub.com/doi/abs/10.1177/2372732220941242" target="_blank">Smarter, Not Harder — Fujita, Orvell, Kross 2020 (toolbox approach)</a></li>
+</ul>
+<h3>2. Tema: "Cortisol face" é viral — e a maior parte do que tá circulando é desinformação clínica grave</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> "Cortisol face" virou tendência <strong>#1 de wellness</strong> no TikTok em maio. Vídeos com milhões de visualizações afirmam que rosto inchado = cortisol alto e vendem desde "morning cocktails" até suplementos "anticortisol". Time Magazine publicou em 23/04/2026 um material grande desmontando 9 mitos sobre cortisol. <strong>A ciência diz quase o oposto da tendência</strong>: (1) "moon face" verdadeira só acontece em <strong>Síndrome de Cushing</strong>, condição rara que demanda cortisol cronicamente altíssimo por meses; (2) <strong>burnout crônico geralmente cursa com cortisol BAIXO</strong>, não alto — o eixo HPA exausto desliga; (3) "adrenal fatigue" <strong>não existe como diagnóstico médico</strong>; (4) nenhum suplemento "cortisol-lowering" tem evidência de baixar cortisol no sangue. Janela de ouro pra Carol entrar <strong>antes</strong> que o nicho cristão feminino brasileiro replique o erro.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel longo de educação (10 slides) + Reel de gancho direto. Não é "tudo é mentira" — é <strong>calibrar</strong>. Estresse crônico é real, cortisol cronicamente desregulado é real. Mas o <strong>diagnóstico via espelho</strong> e o suplemento de R$200 não vão resolver. O ângulo cristão entra suave: cuidado do corpo como mordomia, sem virar histeria estética.</li>
+<li><strong>Gancho sugerido:</strong> "Olha que interessante — e com muito carinho. Tem um termo viralizando há semanas chamado 'cortisol face'. A promessa é simples: seu rosto tá inchado porque seu cortisol tá alto, e basta tomar esse suplemento, esse coquetel, essa rotina, que o rosto desincha e a vida resolve. Eu vou te falar o que a <em>Time Magazine</em> publicou em abril, com base em endocrinologista de Harvard, e o que a <em>Cleveland Clinic</em> tá colocando há anos: na maior parte das vezes que mulher adulta entra em burnout, o cortisol dela <strong>não está alto. Está baixo</strong>. E é por isso que aquele suplemento não te ajuda — você não tem o problema que ele promete resolver. Eu vou te mostrar o que sustenta o eixo do estresse de verdade. E não envolve gastar R$200 por mês."</li>
+<li><strong>Fontes:</strong> <a href="https://time.com/article/2026/04/23/cortisol-myths-debunked-stress-hormone-facts/" target="_blank">Time Magazine — 9 Myths About the 'Stress Hormone' Cortisol (23/04/2026)</a> | <a href="https://www.bodyspec.com/blog/post/cortisol_face_the_science_behind_the_tiktok_trend" target="_blank">BodySpec — Cortisol Face: The Science Behind TikTok Trend</a> | <a href="https://dermatology.smhs.gwu.edu/news/what-cortisol-face-and-why-tiktok-obsessed-it" target="_blank">GWU Dermatology — What is cortisol face and why is TikTok obsessed</a> | <a href="https://www.archyde.com/the-cortisol-craze-how-social-media-is-turning-a-stress-hormone-into-a-health-myth/" target="_blank">Archyde — The Cortisol Craze: How Social Media Is Turning a Stress Hormone into a Health Myth</a> | <a href="https://www.iflscience.com/cortisol-is-the-stress-hormone-really-the-health-villain-its-made-out-to-be-75242" target="_blank">IFLScience — Cortisol: Is The "Stress Hormone" Really The Health Villain?</a> | <a href="https://www.communityminds.com/resources/the-wellness-influencer-myth-why-your-cortisol-levels-probably-arent-the-problem/" target="_blank">Community Minds — Wellness Influencer Cortisol Myth</a> | <a href="https://resources.healthgrades.com/pro/cortisol-face-tiltok-patient-questions" target="_blank">Healthgrades — Cortisol Face: Questions Patients Ask</a></li>
+</ul>
+<h3>3. Tema: "Nothing-maxxing" — a virada cultural de não fazer nada como ato neurocientífico (Default Mode Network)</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Geração Z impulsionando <strong>#nothingmaxxing</strong> no TikTok internacional desde abril, com cobertura forte no BR via Gizmodo (publicação <strong>11/05/2026 — ontem</strong>) e veículos europeus. A premissa é deitar, encarar o teto ou olhar pela janela <strong>sem celular, sem podcast, sem playlist</strong> — apenas existência. A neurociência respaldando é a <strong>Default Mode Network (DMN)</strong> — rede que ativa quando você não está focada em tarefa externa e é responsável por autorreflexão, criatividade, processamento emocional e consolidação de identidade. O incômodo é parte do processo: os primeiros 20-30 min são desconforto e culpa, depois o sistema nervoso desacelera. Tema <strong>maduro pra Carol cruzar com tradição contemplativa cristã</strong> — descanso como mandamento, contemplação como prática espiritual. Ainda quase virgem no nicho neuro+cristão BR.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel afetivo (8 slides) com a tese e o protocolo + Reel de 45-60s gancho. <strong>Conexão original e forte com fé</strong>: oração contemplativa (Lectio Divina, oração da quietude) é literalmente DMN ativada com intenção. Diferencial que nenhum dos perfis seculares tem.</li>
+<li><strong>Gancho sugerido:</strong> "Olha só — uma das tendências que mais cresce em 2026 no TikTok internacional chama 'nothing-maxxing'. A ideia é simples: deitar, olhar pro teto, e não fazer nada. Sem celular, sem podcast, sem playlist 'pra acalmar'. Só você e o silêncio. E sabe o que a neurociência tá mostrando? Que tem uma rede no seu cérebro chamada <strong>Default Mode Network</strong> que <strong>só liga quando você desliga</strong>. É ela que processa memória, identidade, autorreflexão, criatividade. A mulher que vive correndo nunca chega na própria cabeça. E sabe o que mais? Essa prática tem outro nome, que vem antes da neurociência por dois mil anos. Chama oração contemplativa. Chama silêncio diante de Deus. E não é coincidência que a ciência tá redescobrindo o que mística cristã sempre soube."</li>
+<li><strong>Fontes:</strong> <a href="https://www.gizmodo.com.br/nothing-maxxing-a-geracao-z-esta-transformando-o-nao-fazer-nada-em-uma-resposta-radical-contra-o-excesso-de-estimulos-e-a-obsessao-por-produtividade-53219" target="_blank">Gizmodo Brasil — Nothing-maxxing: Geração Z transformando o não fazer nada (11/05/2026)</a> | <a href="https://www.spectator.com.au/2026/03/nothing-maxxing/" target="_blank">The Spectator — Nothing maxxing</a> | <a href="https://www.psypost.org/inside-the-bored-brain-unlocking-the-power-of-the-default-mode-network/" target="_blank">PsyPost — Inside the bored brain: Default Mode Network</a> | <a href="https://www.bcbrainwellness.ca/blog/the-science-of-doing-nothing-how-the-default-mode-network-helps-you-recharge" target="_blank">BC Brain Wellness — The Science of Doing Nothing</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/25938726/" target="_blank">PubMed — The brain's default mode network</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3553600/" target="_blank">PMC — Default Network and Adaptive Role in Internal Mentation</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — Kentaro Fujita sobre autocontrole (11/05/2026):</strong> Episódio fresquinho, ontem. Primeira semana de circulação significa <strong>3-4 reels-âncora possíveis</strong> se Carol pegar 30-40 min do material. Fujita fala devagar, com base científica forte e zero motivação rasa. → <a href="https://www.hubermanlab.com/episode/master-self-control-overcome-procrastination-kentaro-fujita" target="_blank">Huberman Lab — Master Self Control Episode</a> | <a href="https://www.youtube.com/watch?v=e89rVf4Pf0k" target="_blank">YouTube vídeo completo</a> | <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab Podcast hub</a></p>
+<p>2. <strong>Cortisol face / "cortisol mocktails" — wellness mais viral do TikTok BR em maio:</strong> Vídeos com milhões de visualizações vendendo coquetéis matinais que "baixam cortisol". O backlash científico já começou nos EUA (Time, IFLScience, Cleveland Clinic) mas ainda não chegou em força no BR. Janela para Carol entrar com <strong>autoridade científica desmontando o produto</strong> sem perder ternura. → <a href="https://time.com/article/2026/04/23/cortisol-myths-debunked-stress-hormone-facts/" target="_blank">Time — 9 Myths About Cortisol</a> | <a href="https://www.tiktok.com/discover/cortisol-face-trend" target="_blank">TikTok — Cortisol Face Trend hub</a> | <a href="https://wwd.com/beauty-industry-news/wellness/tiktok-trend-cortisol-face-1236487849/" target="_blank">WWD — TikTok Wellness Trend Cortisol Face</a> | <a href="https://thetab.com/2026/04/03/heres-the-viral-cortisol-spike-meme-explained-and-the-dark-reason-its-all-over-tiktok" target="_blank">The Tab — Viral cortisol spike meme explained</a></p>
+<p>3. <strong>Nothing-maxxing entrou no BR via Gizmodo ontem (11/05/2026):</strong> Tendência ainda nas semanas iniciais de tração no Instagram BR. Tema <strong>completamente compatível com voz da Carol</strong> — descanso como ciência + contemplação como prática. → <a href="https://www.gizmodo.com.br/nothing-maxxing-a-geracao-z-esta-transformando-o-nao-fazer-nada-em-uma-resposta-radical-contra-o-excesso-de-estimulos-e-a-obsessao-por-produtividade-53219" target="_blank">Gizmodo BR — Nothing-maxxing</a> | <a href="https://abcnews.com/video/131392243/" target="_blank">ABC News — Video What to know about nothing-maxxing</a></p>
+<p>4. <strong>Micróglia e cura emocional (paper Liu 2026 ainda intacto no BR):</strong> Conceito de <strong>célula imune escultora de memória</strong> é virgem no Instagram brasileiro. Reservatorio de Dopamina, NeuroVox e Bruna Dimantas ainda não tocaram. Janela para Carol entrar com narrativa de <strong>trauma + corpo</strong> com base celular, não psicológica e mística. → <a href="https://www.nature.com/articles/s41593-026-02286-0" target="_blank">Nature Neuroscience — Microglia fear memory extinction</a> | <a href="https://www.instagram.com/reservatoriodedopamina/" target="_blank">Instagram — @reservatoriodedopamina</a> | <a href="https://www.instagram.com/neurovox/" target="_blank">Instagram — @neurovox</a> | <a href="https://www.instagram.com/bruna.dimantas/" target="_blank">Instagram — @bruna.dimantas</a></p>
+<p>5. <strong>Criadores BR — quem manteve consistência em maio:</strong> <a href="https://www.instagram.com/reservatoriodedopamina/" target="_blank">@reservatoriodedopamina</a> (1M) lançou aula gratuita "Mude Seu 2026" — sinal de que o nicho tá pivotando pra <strong>temas de virada/recomeço</strong> no segundo trimestre. <a href="https://www.instagram.com/neurovox/" target="_blank">@neurovox</a> firme em neurociência aplicada. <a href="https://www.instagram.com/giutessitore/" target="_blank">@giutessitore</a> e <a href="https://www.instagram.com/anabeatriz11/" target="_blank">@anabeatriz11</a> dominando o nicho <strong>mulher+produtividade+neuro secular</strong>. <a href="https://www.instagram.com/tay.ldantas/" target="_blank">@tay.ldantas</a> continua referência visual e de tom. O espaço <strong>mulher + neurociência rigorosa + voz cristã sóbria</strong> segue praticamente vazio.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Cortisol cocktails" e suplementos "anticortisol":</strong> Crescimento exponencial em maio. Compostos como ashwagandha, magnésio glicinato e l-teanina têm <strong>alguma evidência preliminar pra estresse subjetivo</strong>, mas <strong>nenhum baixa cortisol sérico mensurável</strong> em adulto saudável. O suplemento mais vendido nesse nicho é placebo embalado. Se Carol abordar: explicar mecanismo de stress (eixo HPA, modulação parasimpática) e devolver pra rotina (sono, respiração, oração, jejum atencional). (<a href="https://time.com/article/2026/04/23/cortisol-myths-debunked-stress-hormone-facts/" target="_blank">Time — 9 Myths About Cortisol</a> | <a href="https://www.communityminds.com/resources/the-wellness-influencer-myth-why-your-cortisol-levels-probably-arent-the-problem/" target="_blank">Community Minds — Wellness Influencer Cortisol Myth</a> | <a href="https://synergenxhealth.com/debunking-viral-hormone-trends-fact-vs-hype/" target="_blank">Synergenx — Debunking Viral Hormone Myths</a>)</li>
+</ul>
+<ul>
+<li><strong>"Adrenal fatigue" voltou a circular:</strong> Termo <strong>sem reconhecimento médico</strong>. Revisão sistemática (BMC Endocrine Disorders) não encontrou evidência para a entidade. O que existe é <strong>insuficiência adrenal verdadeira</strong> (doença de Addison), condição grave, rara e diagnosticada com cortisol matinal + teste de estímulo com ACTH. Conteúdo que vende "kit para tratar fadiga adrenal" é venda de placebo, na melhor das hipóteses. (<a href="https://time.com/article/2026/04/23/cortisol-myths-debunked-stress-hormone-facts/" target="_blank">Time — Cortisol Myths</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4313581/" target="_blank">PMC — Burnout and Hypocortisolism</a>)</li>
+</ul>
+<ul>
+<li><strong>Hype Neuralink — robô cirúrgico universal (07/05/2026):</strong> Musk anunciou robô capaz de alcançar qualquer parte do cérebro + alta escala de produção em 2026. Realidade clínica em maio/2026: <strong>~21 pacientes implantados</strong>, todos com paralisia severa. Não é tecnologia pra mulher saudável querer agora. Carol pode tocar <strong>só se entrar pelo eixo ético</strong> — uso médico legítimo vs. fantasia transumanista. Cuidado com a narrativa "em breve todo mundo terá chip". Não é o caso. (<a href="https://yourstory.com/2026/05/neuralink-surgical-robot-brain-interface-2026" target="_blank">YourStory — Neuralink surgical robot 2026</a> | <a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News — Neuralink vs. reality of brain implants</a> | <a href="https://www.healthcaremea.com/2026/05/08/oman-investment-authority-invests-in-neuralink-as-brain-computer-interface-trials-progress/" target="_blank">HealthCare MEA — Oman Investment Authority Neuralink (08/05/2026)</a>)</li>
+</ul>
+<ul>
+<li><strong>"Cortisol face" como diagnóstico via espelho:</strong> O rosto inchado de manhã em mulher saudável é, na maior parte dos casos, <strong>retenção hídrica multifatorial</strong> — sódio na noite anterior, ciclo menstrual, álcool, sono ruim, posição na cama. Não é cortisol disparado. Endocrinologistas estão alertando que pacientes estão <strong>pedindo exame de cortisol sem indicação clínica</strong>, gastando dinheiro e ansiedade. Se Carol abordar: o caminho é mecanismo + sono profundo + glicemia, não diagnóstico via TikTok. (<a href="https://dermatology.smhs.gwu.edu/news/what-cortisol-face-and-why-tiktok-obsessed-it" target="_blank">GWU Dermatology — Cortisol face TikTok</a> | <a href="https://resources.healthgrades.com/pro/cortisol-face-tiltok-patient-questions" target="_blank">Healthgrades — Cortisol Face Patient Questions</a>)</li>
+</ul>
+<ul>
+<li><strong>"Detox de dopamina" continua reaparecendo:</strong> Tema cíclico desde 2019. Permanece <strong>errado conceitualmente</strong> — dopamina não baixa quando você evita prazer. O que existe é <strong>dessensibilização de receptor D2</strong> com sobreestimulação crônica. Se Carol tocar: nunca endossar como prática mística, sempre desmontar o nome e dar o caminho correto (downregulação de receptor + jejum atencional + rotina dopaminérgica saudável).</li>
+</ul>
+<ul>
+<li><strong>Frases motivacionais "alta performance feminina" em pico de saturação em maio:</strong> O algoritmo continua recompensando "você consegue!" e "acorde às 4h, transforme sua vida". Sustentar a linha <strong>engenharia neural</strong> (DMN, micróglia, glinfático, pré-frontal) é diferencial competitivo, mesmo quando o feed pune no curto prazo. Sustenta autoridade no longo prazo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Seu rosto não tá inchado porque seu cortisol tá alto" — desmonte do mito viral</li>
+<li><strong>Formato:</strong> Reel de 45-60s + carrossel de aprofundamento (8 slides)</li>
+<li><strong>Gancho (Reel):</strong> "Olha, com muito carinho, eu preciso te falar uma coisa. Aquele termo 'cortisol face' que tá viralizando em todo lugar — rosto inchado igual a cortisol alto, toma esse coquetel matinal de R$60 e desincha — sabe? Tem dois problemas grandes. Um: rosto inchado de manhã em mulher saudável geralmente <strong>não é cortisol</strong>. É sódio, é álcool da noite anterior, é ciclo menstrual, é sono ruim. Dois — e olha que interessante — quando mulher adulta entra de verdade em burnout crônico, o cortisol dela geralmente <strong>não tá alto. Tá baixo</strong>. A <em>Time Magazine</em> publicou em abril, com endocrinologista de Harvard, listando nove mitos sobre cortisol, e esse era o número um. Então sabe esse suplemento que você tá pensando em comprar? Provavelmente não vai te ajudar. Você não tem o problema que ele promete resolver. O que sustenta o seu eixo de estresse de verdade são três coisas, e nenhuma custa R$200 por mês. Salva esse vídeo, e nos próximos vou destrinchar."</li>
+<li><strong>CTA:</strong> "Salva e me conta nos comentários — você já comprou algum desses suplementos por causa do TikTok?"</li>
+<li><strong>Hashtags sugeridas:</strong> #neurociência #cortisol #estresse #mentalidadeinabalável #mulhercristã</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Cruzamento com vault Obsidian (sugestões)</h2>
+        </div>
+        <div class="card-body">
+            <p>Recomendado antes de publicar:</p>
+<ul>
+<li><code>B02 Resources/Neurociências/</code> — verificar se já tem nota sobre <strong>eixo HPA e cortisol</strong> + <strong>micróglia</strong>; se não tiver, vale criar a partir dos papers de hoje</li>
+<li><code>B02 Resources/Research/</code> — arquivar paper de Liu et al. (Nature Neuroscience 2026, DOI 10.1038/s41593-026-02286-0) e o paper glinfático (DOI 10.1038/s41593-026-02261-9) como referências permanentes</li>
+<li><code>B02 Resources/Saúde mental/</code> — possível nova âncora: "Mitos populares sobre cortisol e o eixo HPA" — tema fica relevante por anos</li>
+<li><code>A01 Anchor Topics/</code> — possível nova âncora: "Default Mode Network e contemplação cristã" — cruzamento original</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Fontes consultadas</h2>
+        </div>
+        <div class="card-body">
+            <h3>Eixo 1 — Neurociência e descobertas recentes</h3>
+<ul>
+<li>Nature Neuroscience — Microglia-dependent regulation of fear memory extinction (Liu et al., DOI 10.1038/s41593-026-02286-0) — https://www.nature.com/articles/s41593-026-02286-0</li>
+<li>bioRxiv — Microglial pruning of extinction-ensemble synapses preserves fear memory (pré-print 05/05/2026) — https://www.biorxiv.org/content/10.64898/2026.05.05.722833v1</li>
+<li>Nature Neuroscience — Articles in 2026 — https://www.nature.com/neuro/articles?year=2026</li>
+<li>ScienceDaily — MIT scientists discover millions of silent synapses in adult brain (04/05/2026) — https://www.sciencedaily.com/releases/2026/05/260504211848.htm</li>
+<li>MIT News — Silent synapses are abundant in the adult brain — https://news.mit.edu/2022/silent-synapses-brain-1130</li>
+<li>Annual Reviews — Silent Synapses in the Adult Brain (revisão consolidada) — https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-112723-032924?TRACK=RSS</li>
+<li>SciTechDaily — Adult Brain Filled With Millions of Silent Synapses — https://scitechdaily.com/super-bizarre-neuroscientists-discover-that-adult-brain-is-filled-with-millions-of-silent-synapses/</li>
+<li>MIT BCS — Silent synapses abundant adult brain — https://bcs.mit.edu/news/silent-synapses-are-abundant-adult-brain</li>
+<li>LiveScience — Brain memory center doesn't start as blank slate — https://www.livescience.com/health/neuroscience/the-brains-memory-center-doesnt-start-as-a-blank-slate-study-suggests</li>
+<li>ScienceDirect — The neuroplastic brain: current breakthroughs — https://www.sciencedirect.com/science/article/pii/S0006899325002021</li>
+<li>PubMed — The neuroplastic brain: current breakthroughs — https://pubmed.ncbi.nlm.nih.gov/40280532/</li>
+</ul>
+<h3>Eixo 2 — Neurociência + Tecnologia</h3>
+<ul>
+<li>YourStory — Neuralink surgical robot 2026 (07/05/2026) — https://yourstory.com/2026/05/neuralink-surgical-robot-brain-interface-2026</li>
+<li>HealthCare MEA — Oman Investment Authority invests in Neuralink (08/05/2026) — https://www.healthcaremea.com/2026/05/08/oman-investment-authority-invests-in-neuralink-as-brain-computer-interface-trials-progress/</li>
+<li>STAT News — Neuralink vs. reality of brain implants — https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/</li>
+<li>Fox News — Neuralink high-volume brain implant production 2026 — https://www.foxnews.com/health/elon-musk-shares-plan-mass-produce-brain-implants-paralysis-neurological-disease</li>
+<li>The Debrief — Neuralink Set to Launch High-Volume Brain Implant Production — https://thedebrief.org/neuralink-set-to-launch-high-volume-brain-implant-production-as-competitors-weigh-in/</li>
+<li>Neuralink — Updates oficial — https://neuralink.com/updates/</li>
+<li>Neuralink — Pioneering Brain Computer Interfaces — https://neuralink.com/</li>
+<li>Followin — Neuralink 2026 Roadmap Technical Breakdown — https://followin.io/en/feed/22356475</li>
+<li>BreezyScroll — Neuralink Robot Any Part of Human Brain — https://www.breezyscroll.com/technology-news/elon-musks-neuralink-is-building-a-robot-that-can-reach-any-part-of-the-human-brain</li>
+</ul>
+<h3>Eixo 3 — Hábitos, dopamina, performance</h3>
+<ul>
+<li>Huberman Lab — Master Self Control & Overcome Procrastination, Dr. Kentaro Fujita (11/05/2026) — https://www.hubermanlab.com/episode/master-self-control-overcome-procrastination-kentaro-fujita</li>
+<li>YouTube — Kentaro Fujita Huberman episode — https://www.youtube.com/watch?v=e89rVf4Pf0k</li>
+<li>Whatfinger Lifehacks — Master Self Control Fujita (11/05/2026) — https://lifehacks.whatfinger.com/2026/05/11/master-self-control-overcome-procrastination-dr-kentaro-fujita/</li>
+<li>Kentaro Fujita — Ohio State perfil acadêmico — http://fujita.socialpsychology.org/</li>
+<li>Smarter Not Harder — Fujita Orvell Kross 2020 (toolbox approach to self-control) — https://journals.sagepub.com/doi/abs/10.1177/2372732220941242</li>
+<li>PubMed — On conceptualizing self-control as more than effortful inhibition of impulses (Fujita) — https://pubmed.ncbi.nlm.nih.gov/21685152/</li>
+<li>Science Times — Exploring Habit Formation Science (15/04/2026) — https://www.sciencetimes.com/articles/61654/20260415/exploring-habit-formation-science-learn-how-your-brain-builds-breaks-routines.htm</li>
+<li>Thryve Digest — Habit Formation Process in 2026 — https://thryvedigest.com/lifestyle/habit-formation-process-2026/</li>
+<li>ScienceDaily — Everyday cues secretly shape your habits (12/2025) — https://www.sciencedaily.com/releases/2025/12/251210223635.htm</li>
+<li>GlobalRPH — The Science of Habit Formation (04/2026) — https://globalrph.com/2026/04/the-science-of-habit-formation-how-to-rewire-your-brain-for-change/</li>
+<li>Northwestern Feinberg News — Dopamine circuits in habit formation — https://news.feinberg.northwestern.edu/2022/08/24/investigating-the-role-of-dopamine-circuits-in-habit-formation/</li>
+</ul>
+<h3>Eixo 4 — Saúde mental, wellness, biohacking, cortisol</h3>
+<ul>
+<li>Time Magazine — 9 Myths About the Stress Hormone Cortisol (23/04/2026) — https://time.com/article/2026/04/23/cortisol-myths-debunked-stress-hormone-facts/</li>
+<li>AOL — 9 Myths Stress Hormone Cortisol — https://www.aol.com/articles/9-myths-stress-hormone-cortisol-191219198.html</li>
+<li>IFLScience — Cortisol: Is The Stress Hormone Really The Health Villain? — https://www.iflscience.com/cortisol-is-the-stress-hormone-really-the-health-villain-its-made-out-to-be-75242</li>
+<li>Community Minds — Wellness Influencer Myth Cortisol — https://www.communityminds.com/resources/the-wellness-influencer-myth-why-your-cortisol-levels-probably-arent-the-problem/</li>
+<li>Archyde — The Cortisol Craze on Social Media — https://www.archyde.com/the-cortisol-craze-how-social-media-is-turning-a-stress-hormone-into-a-health-myth/</li>
+<li>Synergenx Health — Debunking Viral Hormone Myths — https://synergenxhealth.com/debunking-viral-hormone-trends-fact-vs-hype/</li>
+<li>BodySpec — Cortisol Face: The Science Behind TikTok Trend — https://www.bodyspec.com/blog/post/cortisol_face_the_science_behind_the_tiktok_trend</li>
+<li>GWU Dermatology — What is cortisol face and why is TikTok obsessed — https://dermatology.smhs.gwu.edu/news/what-cortisol-face-and-why-tiktok-obsessed-it</li>
+<li>WWD — TikTok Wellness Trend Cortisol Face — https://wwd.com/beauty-industry-news/wellness/tiktok-trend-cortisol-face-1236487849/</li>
+<li>Healthgrades — Cortisol Face: Questions Patients Ask — https://resources.healthgrades.com/pro/cortisol-face-tiltok-patient-questions</li>
+<li>The Tab — Viral cortisol spike meme explained — https://thetab.com/2026/04/03/heres-the-viral-cortisol-spike-meme-explained-and-the-dark-reason-its-all-over-tiktok</li>
+<li>MM+M Online — Cortisol face TikTok face puffiness stress — https://www.mmm-online.com/home/channel/what-is-cortisol-face-tiktok-videos-relate-face-puffiness-to-stress/</li>
+<li>Empower by Dottir — Stress Cortisol HIIT for Women's Health — https://empowerbydottir.com/blogs/empower-edit/stress-cortisol-hiit-debunking-the-myths-for-women-s-health</li>
+<li>MindSpire — Debunking Cortisol Face Independent — https://sona.help/blogs/news/stress-can-have-a-huge-impact-on-our-faces</li>
+<li>Autoimmune Nutrition Clinic — High Cortisol Burnout Chronic Stress 2026 — https://theautoimmunitynutritionist.com/2026/01/31/high-cortisol-burnout-and-chronic-stress-do-you-actually-need-a-cortisol-detox/</li>
+<li>Frontiers Psychology — Chronic stress and clinical burnout (scoping review) — https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2025.1712340/full</li>
+<li>PMC — Burnout and Hypocortisolism Matter of Severity — https://pmc.ncbi.nlm.nih.gov/articles/PMC4313581/</li>
+<li>ScopeWeekly — Overwhelmed Stressed Burnout Cortisol Google Searches 2026 — https://www.scopeweekly.com/2026/04/overwhelmed-stressed-burnout-cortisol-levels-what-google-searches-reveal-about-americans-in-2026</li>
+<li>Interconnected Earth — Stress Burnout Fatigue Surging Systems — https://interconnectedearth.com/stress-burnout-and-fatigue-are-surging/</li>
+</ul>
+<h3>Eixo 5 — Tendências Instagram/TikTok/YouTube</h3>
+<ul>
+<li>Gizmodo Brasil — Nothing-maxxing Gen Z (11/05/2026) — https://www.gizmodo.com.br/nothing-maxxing-a-geracao-z-esta-transformando-o-nao-fazer-nada-em-uma-resposta-radical-contra-o-excesso-de-estimulos-e-a-obsessao-por-produtividade-53219</li>
+<li>The Spectator — Nothing maxxing (03/2026) — https://www.spectator.com.au/2026/03/nothing-maxxing/</li>
+<li>ABC News — Video What to know about nothing-maxxing — https://abcnews.com/video/131392243/</li>
+<li>Dailyhunt — What is nothing-maxxing Gen Z explained — https://m.dailyhunt.in/news/india/english/indiatimes-epaper-indtimes/what+is+nothingmaxxing+gen+zs+ultimate+doing+nothing+era+explained-newsid-n709619879</li>
+<li>PsyPost — Inside the bored brain Default Mode Network — https://www.psypost.org/inside-the-bored-brain-unlocking-the-power-of-the-default-mode-network/</li>
+<li>BC Brain Wellness — Science of Doing Nothing Default Mode Network — https://www.bcbrainwellness.ca/blog/the-science-of-doing-nothing-how-the-default-mode-network-helps-you-recharge</li>
+<li>Psychology Today — Default Mode Network — https://www.psychologytoday.com/us/basics/default-mode-network</li>
+<li>TikTok — Cortisol Face Trend hub — https://www.tiktok.com/discover/cortisol-face-trend</li>
+<li>TikTok — Low Cortisol Meme Dance — https://www.tiktok.com/en/trending/detail/low-cortisol-meme-dance-goes-viral</li>
+<li>Meio & Mensagem — TikTok elege curiosidade e realidade 2026 — https://www.meioemensagem.com.br/midia/tiktok-elege-curiosidade-e-realidade-como-tendencias-de-2026</li>
+<li>Portal Publicitário — Adeus Viral 2026 — https://portalpublicitario.com.br/tendencias-redes-sociais-2026-fim-viralizacao/</li>
+<li>Huberman Lab — Podcast hub — https://www.hubermanlab.com/podcast</li>
+<li>Huberman Lab — All Episodes — https://www.hubermanlab.com/all-episodes</li>
+<li>Instagram — @reservatoriodedopamina — https://www.instagram.com/reservatoriodedopamina/</li>
+<li>Reservatório de Dopamina — Mude Seu 2026 (aula gratuita) — https://reservatoriodedopamina.com.br/aula-gratuita-metas-2026</li>
+<li>Instagram — @neurovox — https://www.instagram.com/neurovox/</li>
+<li>Instagram — @bruna.dimantas — https://www.instagram.com/bruna.dimantas/</li>
+<li>Instagram — @giutessitore — https://www.instagram.com/giutessitore/</li>
+<li>Instagram — @anabeatriz11 — https://www.instagram.com/anabeatriz11/</li>
+<li>Instagram — @tay.ldantas — https://www.instagram.com/tay.ldantas/</li>
+</ul>
+<h3>Eixo 6 — Ciência recente (Nature / PubMed / Stanford)</h3>
+<ul>
+<li>Nature Neuroscience — Amyloid-β-driven glymphatic dysfunction in AD (Zhang et al., DOI 10.1038/s41593-026-02261-9, 05/05/2026) — https://www.nature.com/articles/s41593-026-02261-9</li>
+<li>Nature Neuroscience — Astrocytic cholesterol jams brain clearance in AD (News & Views) — https://www.nature.com/articles/s41593-026-02310-3</li>
+<li>MedicalXpress — Excessive cholesterol in astrocytes linked to cognitive decline (04/2026) — https://medicalxpress.com/news/2026-04-excessive-cholesterol-astrocytes-linked-cognitive.html</li>
+<li>Nature Reviews Neuroscience — Articles in 2026 — https://www.nature.com/nrn/articles?year=2026</li>
+<li>Nature Reviews Neuroscience — Composing cognition via neural subspaces — https://www.nature.com/articles/s41583-025-01018-w</li>
+<li>ScienceDirect — Your brain on nature: scoping review of nature exposure — https://www.sciencedirect.com/science/article/abs/pii/S0149763426000205</li>
+<li>ScienceDaily — Genetic study new way to treat ADHD (12/2025) — https://sciencedaily.com/releases/2025/12/251225035342.htm</li>
+<li>ScienceDaily — Scientists may have found how to reverse memory loss aging brains (11/2025) — https://www.sciencedaily.com/releases/2025/11/251105050720.htm</li>
+<li>Harvard Chemistry — Tracking how learning memories formed (05/2025) — https://www.chemistry.harvard.edu/news/2025/05/new-research-tracking-precisely-how-learning-memories-are-formed</li>
+<li>CU Anschutz — New Study Key Mechanism Learning and Memory — https://news.cuanschutz.edu/news-stories/new-study-uncovers-key-mechanism-behind-learning-and-memory</li>
+<li>MedicalXpress — Brain reveals sequentially molecular timers (11/2025) — https://medicalxpress.com/news/2025-11-brain-reveals-sequentially-molecular-timers.html</li>
+<li>PMC — Systems memory consolidation during sleep — https://pmc.ncbi.nlm.nih.gov/articles/PMC12576410/</li>
+<li>Nature — Augmenting hippocampal–prefrontal synchrony enhances memory consolidation — https://www.nature.com/articles/s41593-023-01324-5</li>
+<li>ScienceDirect — Does overnight memory consolidation support next-day learning — https://www.sciencedirect.com/science/article/pii/S0010027725001817</li>
+<li>PubMed — Brain default mode network — https://pubmed.ncbi.nlm.nih.gov/25938726/</li>
+<li>PMC — Default Network Adaptive Role in Internal Mentation — https://pmc.ncbi.nlm.nih.gov/articles/PMC3553600/</li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-05-12. Fontes verificadas em Nature Neuroscience, MIT, Annual Reviews, Time Magazine, Huberman Lab, IFLScience, Cleveland Clinic, GWU Dermatology e veículos de tendência (Gizmodo BR, WWD, ABC News). Nenhum dado inventado. Diferenciação consciente do briefing de ontem (2026-05-11): saímos de BTSP/UCI/Halpern para entrar em micróglia/glinfático/Fujita/cortisol/nothing-maxxing.</p>
+    </div>
+</body>
+</html>
