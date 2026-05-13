@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-13</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-13</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. BTSP: o cérebro reconfigura sinapses depois de uma única experiência</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Behavioral timescale synaptic plasticity: properties, elements and functions"</li>
+<li><strong>Data de Publicação:</strong> Abril/2026 (review)</li>
+<li><strong>Fonte:</strong> Nature Neuroscience — https://www.nature.com/articles/s41593-026-02214-2 / cobertura Quanta Magazine 24/abr/2026 — https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/</li>
+<li><strong>Status:</strong> Revisão por pares (Nature Neuroscience) + segunda revisão no Journal of Neuroscience</li>
+<li><strong>Achado:</strong> A plasticidade clássica ("neurônios que disparam juntos, se conectam") funciona em milissegundos. A nova BTSP (Behavioral Timescale Synaptic Plasticity) age em janelas de vários segundos e permite que o cérebro grave uma memória nova com uma única experiência marcante. Ela é disparada por "plateau potentials" dendríticos no hipocampo (área CA1) e cria células de lugar e representações não espaciais (ex.: olfato) em um único ensaio.</li>
+<li><strong>Implicação prática:</strong> Reforça a base neurocientífica de algo que a Carol já fala — não é sobre repetição infinita, é sobre intensidade emocional e contexto. Uma experiência forte (uma decisão, uma quebra, um insight) pode literalmente reorganizar circuito de aprendizagem em segundos. Isso ajuda a explicar por que momentos definidores marcam mais do que rotinas mornas — e como criar "experiências marcantes" propositais para fixar hábitos novos.</li>
+</ul>
+<h3>2. Sono N3 recalibra a forma como o cérebro aprende sob ansiedade</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Anxiety Selectively Impairs Reward Learning Under Uncertainty, While N3 Sleep Recalibrates It"</li>
+<li><strong>Data de Publicação:</strong> Janeiro/2026</li>
+<li><strong>Fonte:</strong> bioRxiv — https://www.biorxiv.org/content/10.64898/2026.01.01.696994v1</li>
+<li><strong>Status:</strong> Pré-print (não revisado por pares ainda — sinalizar isso no conteúdo)</li>
+<li><strong>Achado:</strong> Ansiedade prejudica especificamente a aprendizagem baseada em recompensa quando o ambiente é incerto. Mais sono profundo (N3) na noite seguinte reduz a taxa de aprendizado distorcida e melhora a acumulação de evidências — ou seja, o sono profundo "reseta" a forma como o cérebro pondera o que importa.</li>
+<li><strong>Implicação prática:</strong> Mulher ansiosa não está "burra" nem "sem foco" — o circuito de recompensa dela está computando errado por causa da incerteza. E o conserto não é mais esforço diurno, é mais sono profundo. Conecta direto com o pilar de alta performance sustentável do MIB.</li>
+</ul>
+<h3>3. Falhas de atenção pós-privação de sono são "micro-sonecas" cerebrais</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Attentional failures after sleep deprivation are locked to joint neurovascular, pupil and cerebrospinal fluid flow dynamics"</li>
+<li><strong>Data de Publicação:</strong> 2025/2026</li>
+<li><strong>Fonte:</strong> Nature Neuroscience — https://www.nature.com/articles/s41593-025-02098-8</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Quando você está privada de sono e "trava" no meio de uma tarefa, o cérebro está literalmente entrando em pequenos episódios tipo-sono — com alterações de atividade cortical, pupila e até fluxo de líquido cefalorraquidiano. Não é desatenção: é o cérebro forçando microintervalos de manutenção.</li>
+<li><strong>Implicação prática:</strong> Argumento concreto contra o discurso de "dormir menos e produzir mais". A falha de foco não é fraqueza moral — é fisiologia obrigando o sistema a parar. Ótimo material contra hustle culture com base científica.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Cérebro de Pipoca" — o termo que viralizou no Brasil em maio</h3>
+<ul>
+<li><strong>Tema:</strong> O que o consumo de vídeos curtos faz com o sistema dopaminérgico e a atenção sustentada.</li>
+<li><strong>Por que está em alta:</strong> Termo "cérebro de pipoca" estourou em portais brasileiros (InfoMoney, Terra, Wareline) nas últimas semanas. Linguagem acessível + ansiedade coletiva sobre Reels/TikTok = altíssimo engajamento.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel com 7 sinais de que seu cérebro está em "modo pipoca" + reel rápido com "o que acontece no seu cérebro quando você abre o celular sem motivo".</li>
+<li><strong>Gancho sugerido:</strong> "Se você pega o celular, abre, fecha e abre de novo sem motivo nenhum — não é falta de foco. É o que a neurociência chama de cérebro de pipoca. Te explico em 60 segundos."</li>
+<li><strong>Fonte:</strong> https://www.infomoney.com.br/saude/cerebro-de-pipoca-o-que-e-o-fenomeno-causado-pelo-excesso-de-estimulos-digitais/ e https://terrabrasilnoticias.com/2026/05/cerebro-de-pipoca-como-a-neurociencia-explica-o-impacto-dos-videos-curtos</li>
+</ul>
+<h3>2. "Nothing-maxxing" — não fazer nada como prática neurocientífica</h3>
+<ul>
+<li><strong>Tema:</strong> Tendência da Geração Z de cultivar momentos de inatividade total. A neurociência valida via Default Mode Network — a rede cerebral que ativa autorreflexão, imaginação e consolidação de memória quando você não está focada em nada externo.</li>
+<li><strong>Por que está em alta:</strong> Reportagens internacionais e brasileiras estão pegando o termo. É contraintuitivo (vai contra hustle culture) e tem base científica sólida — combinação que a Carol comunica bem.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou YouTube curto desmistificando "ócio produtivo" com a neurociência da Default Mode Network. Possível tese: você não precisa de mais um app de produtividade, precisa de 20 minutos olhando pra parede.</li>
+<li><strong>Gancho sugerido:</strong> "A geração Z descobriu uma coisa que a neurociência já sabia há 20 anos: o seu cérebro precisa de tédio pra funcionar direito. E não, isso não é preguiça."</li>
+<li><strong>Fonte:</strong> https://www.gizmodo.com.br/nothing-maxxing-a-geracao-z-esta-transformando-o-nao-fazer-nada-em-uma-resposta-radical-contra-o-excesso-de-estimulos-e-a-obsessao-por-produtividade-53219</li>
+</ul>
+<h3>3. "Currículo pessoal" — a trend do TikTok que a neurociência aprova</h3>
+<ul>
+<li><strong>Tema:</strong> Trend de listar competências, marcos e aprendizados pessoais (não profissionais) em um documento. A ciência mostra que isso ativa autorreferência cortical, consolida identidade e melhora autoeficácia.</li>
+<li><strong>Por que está em alta:</strong> Trend recente do TikTok 2026 que casa com o público MIB (mulheres 25–45 buscando clareza de identidade). Fácil de adaptar para carrossel.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "Faça seu currículo pessoal: 7 perguntas que reorganizam quem você é" — material para a comunidade MIB executar.</li>
+<li><strong>Gancho sugerido:</strong> "Você tem um currículo profissional. Mas você sabe escrever um currículo pessoal? A neurociência mostra por que isso muda como você se vê."</li>
+<li><strong>Fonte:</strong> https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — "Master Self Control & Overcome Procrastionation" com Dr. Kentaro Fujita (11/maio/2026):</strong> Episódio fresco sobre autocontrole e procrastinação com base em psicologia experimental. Material direto para a Carol traduzir em reel sobre por que "força de vontade" é o jeito errado de pensar o problema. https://www.hubermanlab.com/all-episodes</p>
+<p>2. <strong>Huberman Lab — "Tools to Bolster Your Mental Health & Confidence" com Dr. Paul Conti (4/maio/2026):</strong> Episódio recente sobre saúde mental e confiança — encaixa no pilar "Vida da Mulher Cristã" + "Inteligência emocional". https://www.hubermanlab.com/all-episodes</p>
+<p>3. <strong>"Dopamine Detox" como tendência global de 2026:</strong> Conteúdos sobre redução intencional de estímulos rápidos estão crescendo no Brasil. Criadores como @reservatoriodedopamina e @neurovox podem estar surfando a onda — vale conferir últimas postagens deles para ângulos novos. https://www.diabeteshealthfoundation.org/dopamine-detox/</p>
+<p>4. <strong>Saúde mental como prioridade nacional:</strong> Estudo recente (CNN Brasil) mostra que 67% dos brasileiros vão priorizar saúde mental em 2026 — número alto, com janela aberta para conteúdo de educação neurocientífica para um público que está procurando. https://www.cnnbrasil.com.br/saude/saude-mental-e-prioridade-para-brasileiros-em-2026-aponta-estudo/</p>
+<p>5. <strong>"Focused calm" como novo ideal de performance (substituindo hustle):</strong> Pesquisa de mercado de biohacking 2026 mostra 41% dos consumidores buscando suplementos para "calma focada" — não para virar a noite trabalhando. Carol pode capitalizar contrastando o ideal antigo (cortisol alto, hustle) com o novo (sistema nervoso regulado, performance sustentável). https://growlycore.com/biohacking-statistics-market-growth/</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Dopamine detox" virou clichê superficial:</strong> Muito conteúdo brasileiro tratando como "ficar 1 dia sem celular = resetar dopamina". Neurociência não funciona assim — dopamina não "esvazia e enche". Se a Carol tocar no tema, fazer com cuidado: explicar que não é "detox de dopamina", é redução de estimulação supranormal. Caso contrário, vira mais um clichê de wellness.</li>
+<li><strong>"Cérebro de pipoca" também pode virar pânico moral:</strong> Vários portais BR estão usando o termo de forma alarmista (apocalipse cognitivo). Carol precisa pegar o tema com mão firme: descrever o mecanismo sem aterrorizar.</li>
+<li><strong>Neuralink/BCI:</strong> Tema quente (alta produção 2026 anunciada), mas distante da realidade do público MIB. Não recomendado — só se houver ângulo muito específico tipo "o que isso ensina sobre o seu cérebro hoje". Fonte: https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices</li>
+<li><strong>"Janeiro Branco" continua sendo tema explorado por concorrentes:</strong> Já passou e foi muito coberto. Não voltar agora.</li>
+<li><strong>Palavras-cliché para evitar nos roteiros:</strong> "detox mental", "modo turbo do cérebro", "destrave sua mente". O público MIB está cansado disso.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> "Você não tem falta de foco. Você tem cérebro de pipoca."</p>
+<p><strong>Formato:</strong> Reel de 60–75 segundos (Instagram + TikTok)</p>
+<p><strong>Gancho de abertura (3s):</strong></p>
+<blockquote>"Se você abre o celular, fecha, abre de novo e nem sabe o que estava procurando — não é falta de foco. Tem nome científico pra isso e te conto em 60 segundos."</blockquote>
+<p><strong>Estrutura sugerida:</strong></p>
+<p>1. <strong>(0–3s)</strong> Gancho acima.</p>
+<p>2. <strong>(3–15s)</strong> Nomeia o fenômeno: "cérebro de pipoca" — atenção pulando de estímulo em estímulo sem se aprofundar em nada.</p>
+<p>3. <strong>(15–35s)</strong> Explica o mecanismo, traduzido: cada vídeo curto libera uma pequena dose do neurotransmissor da motivação. Isso treina o cérebro a esperar recompensa rápida — e qualquer tarefa que exija paciência vira insuportável.</p>
+<p>4. <strong>(35–55s)</strong> <strong>MAS</strong> — não é destino. O cérebro tem plasticidade. Três coisas que reorganizam isso: (a) ler 20 min sem celular ao lado, (b) deixar o tédio existir entre tarefas, (c) silenciar notificações por blocos.</p>
+<p>5. <strong>(55–75s)</strong> <strong>PORTANTO</strong> — fechamento direto: "Foco não se compra com app. Se reconquista tirando o cérebro do regime de doses rápidas. Salva esse vídeo pra lembrar."</p>
+<p><strong>CTA:</strong> Salvar + comentar "quero ver mais".</p>
+<p><strong>Hashtags (5):</strong> #neurociência #cérebrodepipoca #atenção #altaperformancesustentável #mentalidadeinabalável</p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Gancho de abertura (3s):*<br>*Estrutura sugerida:*<br>Briefing gerado em 2026-05-13. Fontes principais consultadas: Nature Neuroscience, Quanta Magazine, bioRxiv, Huberman Lab, Gizmodo Brasil, InfoMoney, CNN Brasil, HR Portugal.</p>
+    </div>
+</body>
+</html>
