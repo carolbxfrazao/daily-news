@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-14</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-14</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Meta-análise confirma: vídeo curto reduz atenção e autocontrole de forma mensurável</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Short-form video use and cognitive, mental health outcomes: a meta-analysis of 71 studies"</li>
+<li><strong>Data de Publicação:</strong> 2026 (publicação na Psychological Bulletin / American Psychological Association)</li>
+<li><strong>Fonte:</strong> Psychological Bulletin (APA) — cobertura jornalística NBC News https://www.nbcnews.com/health/health-news/brain-rot-research-short-form-video-consumption-rcna245739 e análise científica https://mindmapjournal.com/facts-and-studies/health-and-brain-studies/brain-rot-what-the-science-says-and-how-to-fight-back/</li>
+<li><strong>Status:</strong> Revisada por pares (meta-análise — 71 estudos, 98.000+ participantes)</li>
+<li><strong>Achado:</strong> Consumo pesado de vídeos curtos está associado a queda mensurável de atenção sustentada, controle inibitório (capacidade de não agir por impulso) e a sintomas elevados de ansiedade, estresse, depressão e solidão. O efeito é consistente em adolescentes e adultos. O mecanismo neural identificado: o córtex pré-frontal (área de planejamento, foco e decisão) fatiga quando os receptores de dopamina são repetidamente superestimulados, fazendo a pessoa ficar menos capaz de manter pensamento longo e mais sensível à recompensa imediata.</li>
+<li><strong>Implicação prática:</strong> Não é mais "achismo". É a maior meta-análise já feita sobre o tema, com peso de revisão APA. A Carol pode usar isso como base científica formal pra qualquer conteúdo sobre foco, atenção e celular — e desbancar a defensiva "isso é exagero, é só um vídeo". A correlação não é causal, mas o tamanho amostral já obriga repensar consumo.</li>
+</ul>
+<h3>2. Cérebro continua se desenvolvendo até os 32 anos — não para aos 25</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Análise de neuroimagem em mais de 4 mil pessoas sobre janelas de desenvolvimento cerebral</li>
+<li><strong>Data de Publicação:</strong> Fevereiro/2026 (cobertura recente em maio/2026)</li>
+<li><strong>Fonte:</strong> Nature Communications via ScienceDaily https://www.sciencedaily.com/releases/2026/02/260218031606.htm + cobertura PT-BR https://www.jetss.com.br/2026/05/02/seu-cerebro-para-de-aprender-aos-25-ciencia-revela-a-verdade-e-surpreende-muita-gente/</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Estudo derruba o mito do "cérebro pronto aos 25". Identificou que a substância branca (responsável pela comunicação entre áreas cerebrais) continua se reorganizando significativamente até por volta dos 32 anos, com fases distintas de transformação. Aprendizagem, regulação emocional e tomada de decisão complexa amadurecem em janelas múltiplas — não em um único marco.</li>
+<li><strong>Implicação prática:</strong> Material direto para o público MIB (mulheres 25–45). Combate o discurso "se eu não virei minha vida aos 25, já era". Reforça a tese da Carol de que adulto também tem janela de reorganização — e que disciplina nessa faixa muda estrutura cerebral, não só hábito.</li>
+</ul>
+<h3>3. Dopamina pré-frontal define se você "escolhe esforço" — e dá pra mexer com isso</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Dopamine in the caudate nucleus and willingness to choose effortful cognitive tasks"</li>
+<li><strong>Data de Publicação:</strong> Fevereiro/2026 (referenciado em coberturas recentes)</li>
+<li><strong>Fonte:</strong> Stanford / Wu Tsai Neurosciences Institute https://neuroscience.stanford.edu/news/will-work-dopamine-why-effort-motivates-us / contextualização Nature https://www.nature.com/articles/d41586-026-00836-x</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pessoas com mais dopamina no caudado (parte do estriado) escolhem espontaneamente tarefas mentais difíceis — focam no ganho. Pessoas com menos dopamina nessa área ficam paralisadas pelo custo: a tarefa parece "muito cara" cognitivamente. Não é falta de força de vontade — é diferença real de neuroquímica decisória. A revisão complementar da Nature reforça que o papel da dopamina foi simplificado demais ("hormônio do prazer") e que ela funciona como sinal de antecipação de esforço, não de recompensa em si.</li>
+<li><strong>Implicação prática:</strong> Argumento poderoso contra culpabilização: quando a mulher do MIB diz "eu não tenho força de vontade", o que muitas vezes está acontecendo é estriado em baixa por privação de sono, estresse crônico ou uso pesado de tela. Conserto: dormir, reduzir estímulo supranormal (vídeo curto, notificação), exposição a luz de manhã. Tudo isso modula o sistema dopaminérgico pré-frontal.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. NR-1: a lei da saúde mental no trabalho entra em vigor dia 26/maio</h3>
+<ul>
+<li><strong>Tema:</strong> A partir de 26 de maio de 2026, empresas brasileiras são obrigadas a identificar e gerenciar riscos psicossociais (estresse, burnout, assédio) no ambiente de trabalho — atualização da NR-1.</li>
+<li><strong>Por que está em alta:</strong> Janela legal abrindo em 12 dias. Mulheres concentram 60% dos casos de burnout no Brasil, 66,67% das mulheres em alta gestão estão em burnout completo (pesquisa Telavita). Carol está em posição privilegiada — neurociência aplicada + público feminino em alta performance. Pico de busca garantido na próxima semana.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "O que muda na sua semana de trabalho a partir de 26/maio (e o que isso revela sobre burnout feminino)" ou reel "Por que 6 em cada 10 mulheres em cargo de liderança estão em burnout — e o que o cérebro tem a ver com isso".</li>
+<li><strong>Gancho sugerido:</strong> "A partir do dia 26, a sua empresa é obrigada por lei a cuidar da sua saúde mental. Olha que interessante o que isso revela sobre o estado do cérebro feminino no Brasil."</li>
+<li><strong>Fonte:</strong> https://www.migalhas.com.br/quentes/448486/nr-1-a-partir-de-maio-empresas-devem-monitorar-riscos-a-saude-mental + dados https://movimentomulher360.com.br/noticias/burnout-atinge-mulheres-na-alta-gestao/ + https://muitainformacao.com.br/saude/mulheres-lideram-casos-de-burnout-e-afastamentos-no-brasil-especialistas-apontam-desigualdade-como-gatilho-silencioso/</li>
+</ul>
+<h3>2. "Brain rot": agora tem meta-análise APA — não é mais opinião de mãe</h3>
+<ul>
+<li><strong>Tema:</strong> A American Psychological Association publicou meta-análise de 71 estudos confirmando que vídeo curto fatiga o córtex pré-frontal. Tendência global em alta com pico recente em maio/2026.</li>
+<li><strong>Por que está em alta:</strong> Saiu cobertura forte essa semana (Nspirement 13/maio, Dexerto, Hollywood Reporter sobre "antídoto" de filme experimental). Termo já tem tração em PT-BR como "cérebro de pipoca" — mas agora tem peso científico bem maior do que se tinha há um mês.</li>
+<li><strong>Ângulo para Carol:</strong> Reel curto reagindo à meta-análise — "saiu o maior estudo já feito sobre o que TikTok faz com o seu cérebro, e o resultado não é bonito". Ângulo neurocientífico, sem alarmismo: explicar fadiga pré-frontal sem virar pânico moral.</li>
+<li><strong>Gancho sugerido:</strong> "Saiu o maior estudo já feito sobre o efeito de vídeo curto no cérebro. 71 estudos, 98 mil pessoas. E o resultado é sério — mas não pelo motivo que você está pensando."</li>
+<li><strong>Fonte:</strong> https://www.nbcnews.com/health/health-news/brain-rot-research-short-form-video-consumption-rcna245739 + https://nspirement.com/2026/05/13/brain-rot-iwhat-the-internets-most-viral-content-may-be-doing-to-your-mind.html + https://mindmapjournal.com/facts-and-studies/health-and-brain-studies/brain-rot-what-the-science-says-and-how-to-fight-back/</li>
+</ul>
+<h3>3. "Eu tenho terapia" — o formato do Instagram que virou bandeira de autocuidado</h3>
+<ul>
+<li><strong>Tema:</strong> Format POV "sorry I can't today, I have therapy" (BR: "hoje não posso, tenho terapia") está pegando — corta da frase para o que a pessoa REALMENTE faz pra se recuperar. Trend nasceu no TikTok e migrou para Instagram em maio/2026.</li>
+<li><strong>Por que está em alta:</strong> Formato em alta listado pela New Engen e Ramdam como trend Instagram maio/2026. Conecta diretamente com a NR-1, com a alta de busca por saúde mental e com o público feminino do MIB. Fácil de adaptar com estilo Carol — sem clichê motivacional.</li>
+<li><strong>Ângulo para Carol:</strong> Reel no formato, mas com cara MIB. "Não posso hoje, tenho terapia" → corta pra cena dela orando, lendo, andando, ou bloqueio de horário no calendário. Tese: terapia não é o único lugar onde a sua mente se recupera — disciplinas espirituais e silêncio entram nessa conta também.</li>
+<li><strong>Gancho sugerido:</strong> "Hoje não posso, tenho terapia. Mas e nos outros seis dias da semana? Olha o que a neurociência diz que conta como cuidado real do cérebro."</li>
+<li><strong>Fonte:</strong> https://newengen.com/insights/instagram-trends/ + https://www.ramd.am/blog/trends-instagram</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — episódio novo HOJE (14/maio/2026): "Neuroscience of Aggression"</strong> — Como hormônios, genes e ambiente moldam comportamento agressivo, com ferramentas para regulação. Ângulo possível para Carol: regulação emocional feminina — diferença entre raiva legítima (sinal) e reatividade descontrolada (sintoma). Material fresco no mesmo dia do briefing. https://www.hubermanlab.com/all-episodes</p>
+<p>2. <strong>Huberman Lab — "Master Self Control & Overcome Procrastination" com Dr. Kentaro Fujita (11/maio):</strong> Episódio sobre autocontrole baseado em psicologia experimental. Casa com a tendência da NR-1 e do burnout. https://www.hubermanlab.com/all-episodes</p>
+<p>3. <strong>"AI Flash filter" do Instagram — trend visual de maio/2026:</strong> Filtro novo do IG transforma foto comum em "flash de digicam anos 2000". Está dominando Stories. Ângulo possível: vídeo de carrossel usando o filtro como ironia ("o cérebro feminino quando finge que está bem"). Fonte de trend: https://newengen.com/insights/instagram-trends/</p>
+<p>4. <strong>Estudo do cérebro até os 32 anos viralizou em portais BR essa semana</strong> — JETSS e outros portais brasileiros estão pegando o tema. Ângulo MIB: derruba a desculpa do "já passou do meu tempo". https://www.jetss.com.br/2026/05/02/seu-cerebro-para-de-aprender-aos-25-ciencia-revela-a-verdade-e-surpreende-muita-gente/</p>
+<p>5. <strong>Saúde mental como prioridade declarada de 67% dos brasileiros em 2026</strong> — Estudo CNN Brasil ainda quente, com janela aberta para conteúdo educacional neurocientífico. Não é só intenção: NR-1 entra em vigor essa quinzena, conectando intenção a obrigação legal. https://www.cnnbrasil.com.br/saude/saude-mental-e-prioridade-para-brasileiros-em-2026-aponta-estudo/</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Brain rot" pode virar pânico moral:</strong> Mesma armadilha do "cérebro de pipoca" da semana passada. Vários portais já estão alarmistas. Carol deve abordar o tema com a meta-análise APA na mão, mas sem virar profeta do apocalipse cognitivo. O dado não é que "TikTok te destrói" — é que uso pesado correlaciona com queda de atenção. Diferença importante.</li>
+<li><strong>NR-1 como conteúdo "jurídico-burocrático":</strong> Risco de virar repasse seco de portaria. Não é o tom da Carol. Pegar a NR-1 pela porta da neurociência (por que 60% das mulheres estão em burnout, o que o cérebro feminino faz diferente sob estresse crônico) — não pela porta do compliance.</li>
+<li><strong>"Dopamine detox" / "detox mental":</strong> Ainda em alta, ainda problemático cientificamente. Dopamina não esvazia. Já alertado na semana passada — mantém na lista.</li>
+<li><strong>Neuralink + "robô cirúrgico":</strong> Notícia de 7/maio/2026 sobre nova versão do robô cirúrgico está circulando. Tema fora do escopo do MIB. Só usar se houver ângulo bem específico tipo "o que a tecnologia revela sobre como o cérebro feminino funciona hoje" — caso contrário, distância. https://yourstory.com/2026/05/neuralink-surgical-robot-brain-interface-2026</li>
+<li><strong>Trend "frontal lobe isn't fully developed yet":</strong> Virou meme para justificar má decisão. Cuidado — Carol pode achar engraçado, mas o tom MIB é responsabilização com acolhimento, não escapismo neurocientífico. Não usar como gancho positivo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> "6 em cada 10 mulheres em cargo de liderança estão em burnout — e a lei vai te avisar a partir de segunda-que-vem"</p>
+<p><strong>Formato:</strong> Carrossel Instagram (8 telas) + reel curto de 45s usando dado-âncora</p>
+<p><strong>Gancho de abertura (3s — reel):</strong></p>
+<blockquote>"Olha que interessante. Você sabia que a partir do dia 26 a sua empresa é obrigada por lei a cuidar da sua saúde mental? E olha o motivo: 67% das mulheres na alta gestão deste país estão em burnout completo. Te explico em 45 segundos."</blockquote>
+<p><strong>Estrutura do carrossel (Instagram):</strong></p>
+<p>1. <strong>Capa:</strong> "67% das mulheres em alta gestão estão em burnout. Olha o que entrou em vigor essa semana."</p>
+<p>2. <strong>Tela 2:</strong> Dado-âncora — pesquisa Telavita, 4.440 profissionais. 60% dos diagnósticos de burnout no Brasil são de mulheres.</p>
+<p>3. <strong>Tela 3:</strong> O que é NR-1 (de forma humana, não jurídica): a lei agora exige que riscos psicossociais sejam monitorados como riscos físicos.</p>
+<p>4. <strong>Tela 4:</strong> Por que mulher é mais afetada — jornada tripla, expectativa cultural de "dar conta", córtex pré-frontal sob estresse crônico processa diferente do masculino (fonte: meta-análise PFC e ansiedade).</p>
+<p>5. <strong>Tela 5:</strong> O que isso muda na prática — sua empresa precisa avaliar carga, assédio, jornada e estresse. Você pode pedir esse plano.</p>
+<p>6. <strong>Tela 6:</strong> O que NÃO conserta — "respira fundo", "faça uma pausa de 5 minutos". A neurociência mostra que estresse crônico exige reorganização estrutural: sono, controle de demanda, regulação de cortisol.</p>
+<p>7. <strong>Tela 7:</strong> O que efetivamente conserta — sono profundo (N3) recalibra o circuito de aprendizagem sob ansiedade; redução de estímulo supranormal; limites reais com tecnologia.</p>
+<p>8. <strong>Tela 8 (CTA):</strong> "Salva esse post pra mostrar pra sua equipe — e me conta nos comentários: você sabia que isso virou lei?"</p>
+<p><strong>Hashtags (5):</strong> #saúdemental #neurociência #burnout #NR1 #mentalidadeinabalável</p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Gancho de abertura (3s — reel):*<br>*Estrutura do carrossel (Instagram):*<br>Briefing gerado em 2026-05-14. Fontes principais consultadas: Psychological Bulletin (APA), Nature Communications, Stanford Wu Tsai Neurosciences Institute, Nature, Huberman Lab, Migalhas, Movimento Mulher 360, NBC News, JETSS, CNN Brasil, New Engen Instagram Trends.</p>
+    </div>
+</body>
+</html>
