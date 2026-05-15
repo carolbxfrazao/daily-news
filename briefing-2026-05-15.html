@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-15</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-15</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Ums", pausas e tropeços de fala revelam o estado da função executiva — novo estudo</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Disfluências de fala como marcador comportamental de função executiva</li>
+<li><strong>Data de Publicação:</strong> 13/maio/2026 (cobertura recente)</li>
+<li><strong>Fonte:</strong> Cobertura ScienceDaily — https://www.sciencedaily.com/news/mind_brain/neuroscience/ + contexto em Journal of Neuroscience — https://www.jneurosci.org/</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pesquisadores mostraram que padrões de fala cotidianos — pausas, "ums", "éhs" e momentos em que a pessoa "patina" pra achar a palavra certa — estão diretamente ligados à função executiva (a capacidade do cérebro de planejar, focar, inibir e trocar de tarefa). Quanto mais disfluências em fala espontânea, maior a chance de queda em medidas objetivas de atenção sustentada e memória de trabalho. O cérebro literalmente "trava" quando o córtex pré-frontal está sobrecarregado.</li>
+<li><strong>Implicação prática:</strong> Material direto e diferente — Carol pode mostrar que <strong>a forma como a pessoa fala já entrega o estado do cérebro dela</strong>. Mulher em burnout não está "esquecida" ou "boba": o pré-frontal está em modo de economia. Bom contraponto à culpabilização ("não consigo nem falar direito hoje") com explicação neurocientífica.</li>
+</ul>
+<h3>2. Sistema glinfático e o "dormi mas acordei cansada" — finalmente uma explicação cerebral</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Acúmulo de toxinas no sistema glinfático e fadiga cognitiva ao despertar</li>
+<li><strong>Data de Publicação:</strong> Maio/2026 (cobertura PT-BR ampla)</li>
+<li><strong>Fonte:</strong> Cobertura PT-BR UAI — https://www.uai.com.br/uainoticias/2026/05/03/voce-dorme-mas-acorda-cansado-a-ciencia-descobriu-o-que-pode-estar-por-tras-disso/ + revisão Nature Reviews Neuroscience — https://www.nature.com/articles/nrn915</li>
+<li><strong>Status:</strong> Revisado por pares (revisões e estudos de neuroimagem)</li>
+<li><strong>Achado:</strong> A "névoa mental ao acordar" está sendo associada à neuroinflamação por acúmulo de toxinas no <strong>sistema glinfático</strong> — uma rede de limpeza do cérebro que funciona quase exclusivamente durante o <strong>sono profundo (N3)</strong>. Quando o sono profundo é raso, fragmentado ou curto, o líquido cefalorraquidiano não circula direito e detritos metabólicos (incluindo proteínas inflamatórias) ficam acumulados. Resultado: corpo descansou, mas o cérebro não "lavou" — daí o cansaço cognitivo pela manhã.</li>
+<li><strong>Implicação prática:</strong> Resposta científica forte para uma queixa universal do público MIB ("dormi 8h e acordei zerada"). Não é frescura — é falta de <strong>N3</strong>, não falta de tempo na cama. Carol pode conectar isso com hábitos: álcool antes de dormir, tela na cama, ansiedade não regulada — tudo isso destrói o sono profundo. A solução não é "dormir mais", é "dormir melhor" — e a neurociência tem mecanismo claro pra justificar isso.</li>
+</ul>
+<h3>3. Um único evento marcante pode reconfigurar o cérebro — descoberta de um novo tipo de neuroplasticidade</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Behavioral Timescale Synaptic Plasticity (BTSP) — plasticidade em escala comportamental</li>
+<li><strong>Data de Publicação:</strong> Abril/2026 (cobertura aprofundada Quanta Magazine)</li>
+<li><strong>Fonte:</strong> Quanta Magazine — https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/ + revisão geral ScienceDirect — https://www.sciencedirect.com/science/article/pii/S0006899325002021</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Neurocientistas descreveram um novo mecanismo de neuroplasticidade que opera numa escala de <strong>segundos</strong> — tempo suficiente para o cérebro registrar e aprender de uma <strong>única experiência</strong>. Diferente da plasticidade clássica (que precisa de muitas repetições), a BTSP permite que um evento marcante, vivido uma só vez, reconfigure conexões sinápticas e fique "gravado" no comportamento. É a base neural daquilo que a gente chama coloquialmente de "experiência divisora de águas".</li>
+<li><strong>Implicação prática:</strong> Argumento forte contra dois discursos: (1) "preciso fazer 21 dias pra criar hábito" — nem sempre; e (2) "uma situação só não muda nada" — muda sim, e tem nome neurocientífico. Ângulo MIB: experiências de fé, momentos de oração marcantes, decisões importantes — tudo isso pode estar usando BTSP. Não é mística, é mecanismo cerebral real.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. NR-1 entra em vigor em 11 dias — pico de busca por "burnout no trabalho" garantido</h3>
+<ul>
+<li><strong>Tema:</strong> A obrigatoriedade legal de empresas brasileiras gerenciarem riscos psicossociais começa <strong>26/maio/2026</strong>. Mulheres concentram <strong>60% dos casos de burnout</strong> no Brasil e são <strong>63,8% dos afastamentos por transtornos mentais</strong> entre 2023 e 2025.</li>
+<li><strong>Por que está em alta:</strong> Janela legal a 11 dias. Toda imprensa BR vai cobrir entre 20 e 26/maio. Carol em posição privilegiada com o público feminino em alta performance — antes que vire pauta seca de RH.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "Por que o cérebro feminino é o mais afetado pelo burnout — e o que muda no seu trabalho a partir de 26/maio". Pegar pela <strong>neurociência do estresse crônico no cérebro feminino</strong>, não pela porta jurídica.</li>
+<li><strong>Gancho sugerido:</strong> "Em 11 dias, a sua empresa é obrigada por lei a cuidar da sua saúde mental. E o motivo de essa lei existir tem nome — e tem CEP feminino."</li>
+<li><strong>Fonte:</strong> https://www.cartacapital.com.br/do-micro-ao-macro/mulheres-ganham-21-menos-burnout-desigualdade/ + https://movimentomulher360.com.br/noticias/mulheres-lideram-os-casos-de-burnout-revela-pesquisa/ + https://amatra1.org.br/noticias/afastamentos-por-burnout-quintuplicam-em-quatro-anos-e-acompanham-avanco-dos-transtornos-mentais-no-trabalho</li>
+</ul>
+<h3>2. Procrastinação ganhou episódio Huberman — janela perfeita pra desbancar o "tô preguiçosa"</h3>
+<ul>
+<li><strong>Tema:</strong> Huberman lançou em 11/maio episódio com Dr. Kentaro Fujita sobre <strong>autocontrole e procrastinação</strong> baseado em psicologia experimental. Tema continuará em alta nas próximas semanas — todo perfil de produtividade vai pegar referência.</li>
+<li><strong>Por que está em alta:</strong> Conteúdo fresco de uma das maiores referências mundiais em neurociência aplicada. Tema casa com a NR-1, com burnout feminino e com Mente Organizada. Mas a maioria dos perfis BR vai cair no "5 dicas pra parar de procrastinar" raso. Espaço pra Carol pegar pela porta certa.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel — "Procrastinação não é preguiça: é <strong>conflito entre dois sistemas cerebrais</strong>". Pegar a tese central do Fujita (distância psicológica, autocontrole como visão de longo prazo) e traduzir pra mulher que adia oração, treino, planejamento.</li>
+<li><strong>Gancho sugerido:</strong> "Procrastinar não é falta de disciplina. A neurociência mostra que é o seu cérebro escolhendo o EU de agora em vez do EU de daqui a uma hora. E olha que interessante o que isso tem a ver com a sua semana."</li>
+<li><strong>Fonte:</strong> https://www.hubermanlab.com/all-episodes + https://www.hubermanlab.com/podcast</li>
+</ul>
+<h3>3. "Smile lines" — trend de Reel que casa com a tese MIB de envelhecimento bem-vivido</h3>
+<ul>
+<li><strong>Tema:</strong> Novo formato de Reel em alta em maio/2026: "você já tem linhas de expressão com só [idade] — obrigada, eu trabalhei muito por elas", com cortes para momentos que justificaram cada uma. Reframing direto de envelhecimento como evidência de vida vivida.</li>
+<li><strong>Por que está em alta:</strong> Listado pela New Engen como um dos formatos mais fortes de maio/2026. Estética de mulher real, anti-filter, anti-procedimento estético desesperado — alinha perfeito com público MIB.</li>
+<li><strong>Ângulo para Carol:</strong> Reel próprio no formato — mas com cortes que mostram disciplinas reais (oração, treino, leitura, maternidade, igreja). Fugir do clichê "viagens" — entrar pelo que realmente forma o caráter, com peso espiritual sem ser sermão.</li>
+<li><strong>Gancho sugerido:</strong> "Eu tenho linha de expressão com 30 e poucos. Obrigada, mas eu trabalhei muito por cada uma delas — e o que veio depois é o que ninguém mostra."</li>
+<li><strong>Fonte:</strong> https://newengen.com/insights/instagram-trends/ + https://www.msn.com/en-us/news/other/instagram-reels-trends-for-may-2026-spotlight-list-mood-and-film-inspired-formats/gm-GMA9456222</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — "Neuroscience of Aggression" (14/maio):</strong> Como hormônios, genes e ambiente moldam comportamento agressivo. Ferramentas práticas mencionadas: luz solar, terapia de calor, ashwagandha, acetil-L-carnitina. Ângulo para Carol: regulação emocional feminina, diferença entre raiva legítima e reatividade hormonal (TPM, perimenopausa). https://www.hubermanlab.com/all-episodes</p>
+<p>2. <strong>Huberman Lab — "Master Self Control & Overcome Procrastination" com Dr. Kentaro Fujita (11/maio):</strong> Episódio com Fujita sobre psicologia do autocontrole. Tema explode esta semana. https://www.hubermanlab.com/podcast</p>
+<p>3. <strong>Estudo: psilocibina causa neuroplasticidade duradoura em humanos (uma dose, semanas de efeito) —</strong> Medical News Today com cobertura forte essa semana. Tema delicado pro público MIB (Carol não defende substâncias), mas pode ser usado pela porta da <strong>prova de que o cérebro responde a experiências marcantes</strong> (gancho com BTSP). https://www.medicalnewstoday.com/articles/one-dose-psilocybin-reshape-brain-activity-support-mental-health-study-neuroplasticity</p>
+<p>4. <strong>Tay Dantas (referência audiovisual principal da Carol) — 1M de seguidores, conteúdo de marca pessoal feminina e autoridade.</strong> Observar formato dos últimos posts pra calibrar ritmo de edição e estética. https://www.instagram.com/tay.ldantas/</p>
+<p>5. <strong>Wendy Suzuki + Huberman + Diary of a CEO continuam dominando a curva longa.</strong> Vale checar conteúdos publicados de hoje na faixa de tema "estresse + mulher + cérebro". https://www.hubermanlab.com/ + https://podcasts.apple.com/us/podcast/huberman-lab/id1545953110</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Psilocibina/psicodélicos como "neuroplasticidade rápida":</strong> Tema entrando forte em maio/2026 (Medical News Today essa semana). Não é o terreno da Carol. Se for tocar, é pelo lado da pergunta — "o que faz uma experiência marcante reconfigurar o cérebro?" — e responder com BTSP, oração, terapia, jejum, retiro espiritual. Não promover substância.</li>
+<li><strong>"Detox de dopamina":</strong> Continua circulando, continua cientificamente errado. Dopamina não esvazia. Atenção: o título do episódio do Fujita vai ser usado por perfis pra reciclar essa narrativa essa semana — Carol pode aproveitar pra desbancar com base científica.</li>
+<li><strong>NR-1 como pauta de RH/jurídica:</strong> Quanto mais perto de 26/maio, mais conteúdo seco de "5 obrigações da NR-1". Não é tom MIB. Carol entra pela <strong>neurociência feminina do estresse crônico</strong>, não pela portaria.</li>
+<li><strong>"Aos 25 o cérebro está pronto" — variantes da semana passada:</strong> Já cobrimos ontem. Não repetir, mas se aparecer comentário do público, ter a resposta na ponta (substância branca até os 32).</li>
+<li><strong>Trend "frontal lobe undeveloped":</strong> Continua viral como meme de justificativa. Tom MIB é responsabilização com acolhimento — não escapismo neurocientífico. Manter distância.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> Por que mulher em burnout começa a "engasgar" pra falar (e o que isso revela do cérebro).</p>
+<p><strong>Formato:</strong> Reel curto (45-60s).</p>
+<p><strong>Gancho:</strong> "Reparou que quando você está exausta, você esquece palavras simples, dá pausa no meio da frase, fala 'né, sabe, tipo' o tempo todo? Não é frescura. O seu cérebro está te entregando."</p>
+<p><strong>Desenvolvimento:</strong> Conectar com o estudo de disfluências de fala como marcador de função executiva. Mostrar que o pré-frontal em modo de economia trava primeiro na linguagem — e isso é sinal precoce de sobrecarga, não burrice. Fechar com a NR-1 chegando em 11 dias e o que a mulher pode fazer <strong>antes</strong> de virar afastamento.</p>
+<p><strong>CTA:</strong> "Se você se reconheceu, salva esse vídeo. Eu volto pra falar do que tem na frente quando o cérebro entra nesse estado."</p>
+<p><strong>Fonte de apoio:</strong> https://www.sciencedaily.com/news/mind_brain/neuroscience/ + https://www.cartacapital.com.br/do-micro-ao-macro/mulheres-ganham-21-menos-burnout-desigualdade/</p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
