@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-18</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-18</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Plasticidade Sináptica em Escala Comportamental (BTSP) — o cérebro reescreve memória em uma única experiência</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Behavioral timescale synaptic plasticity: properties, elements and functions</em></li>
+<li><strong>Data de Publicação:</strong> Abril/2026 (review publicada em Nature Neuroscience)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-026-02214-2" target="_blank">Nature Neuroscience — artigo da review</a> | Cobertura jornalística: <a href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank">A New Type of Neuroplasticity Rewires the Brain After a Single Experience — Quanta Magazine, 24/04/2026</a> | Contexto: <a href="https://www.jneurosci.org/content/45/46/e1332252025" target="_blank">Journal of Neuroscience — BTSP: A Burst in the Field of Learning and Memory</a></li>
+<li><strong>Status:</strong> Revisão sistemática (Nature Neuroscience) + artigos originais revisados por pares</li>
+<li><strong>Achado:</strong> Existe um tipo de plasticidade sináptica chamado BTSP que opera em janelas de <strong>segundos</strong> (não milissegundos, como a regra clássica de Hebb). Um único potencial de platô dendrítico, combinado com uma experiência relevante, é suficiente para criar uma nova memória — aprendizado "de uma tacada só" (one-shot learning). A descoberta foi confirmada em hipocampo de mamíferos e está sendo replicada em humanos.</li>
+<li><strong>Implicação prática:</strong> O dito popular "uma experiência marcante muda a vida" tem base neural concreta. Para conteúdo: explica por que momentos emocionais intensos (parto, terapia, retiro espiritual, perda) instalam padrões mentais duradouros em uma única vez — e por que repetição diária e ritual também funcionam por outra via.</li>
+</ul>
+<h3>2. Estresse crônico bloqueia mecanismo de "autolimpeza" cerebral e abre porta para depressão</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Stress dynamically modulates neuronal autophagy to gate depression onset</em></li>
+<li><strong>Data de Publicação:</strong> 2026 (Nature)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41586-025-08807-4" target="_blank">Nature — artigo completo</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature)</li>
+<li><strong>Achado:</strong> Estresse agudo <strong>ativa</strong> a autofagia neuronal (mecanismo pelo qual o neurônio "recicla" componentes danificados), mas estresse crônico <strong>suprime</strong> esse processo, principalmente na habênula lateral — região-chave do circuito de aversão. Quando a autofagia falha ali, instala-se o quadro depressivo. Reativar a autofagia produziu efeito antidepressivo rápido em modelos animais.</li>
+<li><strong>Implicação prática:</strong> Há diferença biológica concreta entre "estar sob pressão" e "estar exausta cronicamente". A primeira pode até fortalecer; a segunda corrói. O recado para mulheres em ciclos de sobrecarga: tempo de pausa real não é luxo, é manutenção de um processo bioquímico.</li>
+</ul>
+<h3>3. Hormônios femininos remodelam o sistema de recompensa — estrógeno potencializa sinal de dopamina</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Pesquisa sobre <strong>estrogen e sinalização dopaminérgica de recompensa</strong> (linha de estudos consolidada em 2025–2026)</li>
+<li><strong>Data de Publicação:</strong> Resumo da literatura recente em <a href="https://www.sciencetimes.com/articles/61654/20260415/exploring-habit-formation-science-learn-how-your-brain-builds-breaks-routines.htm" target="_blank">Habit Formation Science 2026 — ScienceTimes (15/04/2026)</a> e <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780443298677000438" target="_blank">Habits and dopamine — ScienceDirect</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Estrogênio fortalece a resposta dos neurônios dopaminérgicos a recompensas — ou seja, o mesmo estímulo (treino, conquista, comida) gera sinal de motivação <strong>mais intenso</strong> em fases do ciclo com estrógeno alto, e <strong>mais apagado</strong> em fases de queda. Outro achado paralelo: uma proteína chamada KCC2 modula essa intensidade — quando cai, os neurônios disparam mais forte e o hábito gruda mais rápido (mecanismo também envolvido em vícios).</li>
+<li><strong>Implicação prática:</strong> A motivação feminina <strong>não é constante</strong> — é uma curva neuroquímica. Tentar instalar hábitos sempre com a mesma intensidade ignora a biologia. Faz mais sentido modular a exigência conforme a fase do ciclo, em vez de culpar a "falta de disciplina".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Tendência do currículo pessoal" — TikTok 2026 com base em neurociência</h3>
+<ul>
+<li><strong>Tema:</strong> Personal curriculum / currículo pessoal (montar um "plano de estudos" próprio do que se quer aprender no semestre — neurociência, espiritualidade, finanças, maternidade etc.)</li>
+<li><strong>Por que está em alta:</strong> Trend viral no TikTok global em 2026, com endosso de neurocientistas e especialistas em produtividade. Sai do "metas de Ano Novo" e entra em "currículo de aprendizagem ativa". Tema sob medida para o público MIB.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60–90s + carrossel "como montar seu currículo pessoal de inabalável".</li>
+<li><strong>Gancho sugerido:</strong> <em>"Existe uma tendência viral no TikTok que parece besteira, mas tem cinco neurocientistas apoiando. É o oposto da lista de metas que a gente faz e abandona em fevereiro."</em></li>
+<li><strong>Fonte:</strong> <a href="https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/" target="_blank">HR Portugal — A mais recente tendência do TikTok para 2026 chama-se "currículo pessoal" (Sapo)</a></li>
+</ul>
+<h3>2. Burnout silencioso feminino em 2026 — "achatamento emocional" no lugar da ansiedade visível</h3>
+<ul>
+<li><strong>Tema:</strong> O novo padrão de burnout em mulheres — 60% relatam que o estresse mudou de forma. Em vez de crise de ansiedade, é apatia, desconexão, "estar funcionando, mas vazia".</li>
+<li><strong>Por que está em alta:</strong> Dado de 2026: 75% das mulheres relatam burnout (vs 58% dos homens), e o sintoma dominante agora é o "flat affect" — apatia emocional. Tema cruza com depressão silenciosa, sobrecarga mental e o achado científico nº 2 (autofagia/habênula).</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 6–8 min ou carrossel longo — "Você não está cansada, está em burnout silencioso".</li>
+<li><strong>Gancho sugerido:</strong> <em>"Se você acorda funcionando no automático, entrega tudo, sorri nas reuniões — e à noite sente que não sentiu nada o dia inteiro, presta atenção. Isso tem nome novo na ciência."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.budgetandthebees.com/the-2026-burnout-pattern-why-women-are-reporting-these-5-new-symptoms/" target="_blank">Budget and the Bees — The 2026 Burnout Pattern: Why Women Are Reporting These 5 New Symptoms</a> | <a href="https://www.southdenvertherapy.com/blog/womens-mental-health-statistics" target="_blank">South Denver Therapy — Women's Mental Health Statistics 2026</a> | <a href="https://phys.org/news/2026-04-hidden-workload-burnout-unpaid-worsen.html" target="_blank">phys.org — The hidden workload behind burnout (04/2026)</a></li>
+</ul>
+<h3>3. Neuralink entra em "produção em massa" — o cérebro virou hardware</h3>
+<ul>
+<li><strong>Tema:</strong> Em 2026 a Neuralink passa para produção em alto volume do chip cerebral, com procedimento cirúrgico quase totalmente automatizado. Concorrentes (Synchron, etc.) entram em ensaios clínicos.</li>
+<li><strong>Por que está em alta:</strong> Cobertura intensa em Nature, Fierce Biotech, MDDI. Pacientes paralisados já controlam cursor, jogam e se comunicam apenas com o pensamento. Provoca debate ético-espiritual forte — sob medida para o ângulo "mulher cristã + ciência" da Carol.</li>
+<li><strong>Ângulo para Carol:</strong> Reel provocativo de 60s ou YouTube curto — "Em 2026 o cérebro virou hardware. Como a gente, mulher de fé, pensa sobre isso?"</li>
+<li><strong>Gancho sugerido:</strong> <em>"O Elon Musk anunciou produção em massa de chip cerebral em 2026. E eu fiquei pensando: como uma mulher de fé encara isso, sem virar terraplanista e sem virar fã clube?"</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/d41586-025-03849-0" target="_blank">Nature — A brain implant that could rival Neuralink's enters clinical trials</a> | <a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">Fierce Biotech — Neuralink to kick-start high-volume production</a> | <a href="https://www.mddionline.com/digital-health/elon-musk-s-neuralink-to-ramp-up-bci-device-production-in-2026" target="_blank">MDDI — Neuralink to Ramp Up BCI Production in 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — episódio publicado HOJE (18/05/2026):</strong> <em>How to Overcome Social Anxiety | Dr. Nick Epley</em>. Tese central: pequenas interações diárias com estranhos elevam saúde física e mental. Ângulo perfeito para um Reel da Carol sobre "por que conversar com a moça do caixa é neurociência aplicada". <a href="https://www.hubermanlab.com/podcast" target="_blank">Episódio no Huberman Lab</a></p>
+<p>2. <strong>Autocontrole e procrastinação</strong> — Huberman publicou em 11/05/2026 com o Dr. Kentaro Fujita: <em>Master Self Control & Overcome Procrastination</em>. Tema que sempre rende para o nicho MIB. <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></p>
+<p>3. <strong>Saúde da mulher + menopausa</strong> está oficialmente entre os três pilares do wellness 2026, segundo o Global Wellness Summit. Tema ainda subexplorado por criadoras brasileiras cristãs. <a href="https://www.globalwellnesssummit.com/2026trends/" target="_blank">Global Wellness Summit — 2026 Trends</a></p>
+<p>4. <strong>"Cérebro e movimento"</strong> viralizando: cada vez que você contrai a musculatura abdominal, o cérebro literalmente "balança" dentro do crânio — descoberta recente que está rodando como reel de curiosidade. <a href="https://www.sciencedaily.com/news/mind_brain/neuroscience/" target="_blank">ScienceDaily — Neuroscience News</a></p>
+<p>5. <strong>"Pausas e ums na fala"</strong> — estudo recente mostra que as hesitações na fala revelam função executiva. Ótimo para carrossel de neurociência aplicada à comunicação. <a href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank">Quanta Magazine — Neuroplasticity 2026</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Dopamine detox" / "jejum de dopamina":</strong> continua viralizando em 2026 com promessas tipo "passe 7 dias sem celular e resetará seu cérebro". A neurociência <strong>desmonta</strong> essa narrativa: dopamina não acumula nem se esgota como uma bateria, e não dá pra "detoxificar" um neurotransmissor que regula motivação, aprendizagem e até detecção de ameaça. O próprio criador do conceito (Cameron Sepah) diz que o nome foi escolhido por marketing. Se Carol quiser abordar, o ângulo correto é <strong>desmontando a moda</strong>, não endossando. Fontes: <a href="https://www.health.harvard.edu/blog/dopamine-fasting-misunderstanding-science-spawns-a-maladaptive-fad-2020022618917" target="_blank">Harvard Health — Dopamine fasting: misunderstanding science spawns a maladaptive fad</a> | <a href="https://www.psypost.org/neuroscientists-challenge-dopamine-detox-trend-with-evidence-from-avoidance-learning/" target="_blank">PsyPost — Neuroscientists challenge "dopamine detox" trend</a> | <a href="https://www.the-scientist.com/debunking-the-dopamine-detox-trend-72036" target="_blank">The Scientist — Debunking the Dopamine Detox Trend</a></li>
+<li><strong>"Faça X por 21 dias e seu cérebro muda":</strong> a literatura de BTSP (descoberta nº 1) mostra que o cérebro pode mudar em <strong>uma única</strong> experiência marcante — ou levar <strong>meses</strong> para padrões automáticos. O número mágico "21 dias" segue sem base científica. Evitar reproduzir.</li>
+<li><strong>Frases motivacionais sobre dopamina ("a dopamina do treino", "minha dopamina hoje"):</strong> o vocabulário virou meme. Recomenda-se traduzir como "neurotransmissor da motivação" e fugir do clichê, conforme regra do perfil de estilo MIB.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> "Existe um tipo de plasticidade que muda o cérebro em UMA experiência só — e a ciência acabou de provar"</p>
+<p><strong>Formato:</strong> Reel de 60–75s.</p>
+<p><strong>Gancho:</strong> <em>"Tem um estudo de 2026 que provou uma coisa que eu sempre suspeitei: uma única experiência forte pode reescrever uma parte do seu cérebro pra sempre. Não precisa de 21 dias, não precisa de hábito repetido. Olha que interessante."</em></p>
+<p><strong>Desenvolvimento (MAS / PORTANTO):</strong> Existe uma nova forma de plasticidade chamada BTSP. Diferente do que a gente aprendeu, ela age em segundos. <strong>MAS</strong> isso não é mágica — ela só dispara quando o cérebro está em estado de atenção plena e emoção significativa. <strong>PORTANTO</strong> o que muda você não é o tempo que você fica fazendo algo, é a <strong>qualidade de presença</strong> no momento que você faz. Uma oração consciente vale por cinquenta orações no automático. Uma conversa profunda com sua filha vale por meses de "tá tudo bem?".</p>
+<p><strong>CTA:</strong> "Salva esse vídeo pra lembrar antes da próxima conversa importante."</p>
+<p><strong>Hashtags sugeridas:</strong> #neurociencia #cerebro #mentalidadeinabalavel #autoconhecimento #mulherdefé</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Fontes consolidadas (verificação rápida)</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Neurociência básica e BTSP:</strong></p>
+<ul>
+<li><a href="https://www.nature.com/articles/s41593-026-02214-2" target="_blank">Nature Neuroscience — BTSP review 2026</a></li>
+<li><a href="https://www.quantamagazine.org/a-new-type-of-neuroplasticity-rewires-the-brain-after-a-single-experience-20260424/" target="_blank">Quanta Magazine — Single Experience Rewires Brain (24/04/2026)</a></li>
+<li><a href="https://www.jneurosci.org/content/45/46/e1332252025" target="_blank">Journal of Neuroscience — BTSP</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/40280532/" target="_blank">PubMed — Neuroplastic brain: current breakthroughs</a></li>
+</ul>
+<p><strong>Estresse, depressão e habênula:</strong></p>
+<ul>
+<li><a href="https://www.nature.com/articles/s41586-025-08807-4" target="_blank">Nature — Stress modulates neuronal autophagy</a></li>
+<li><a href="https://www.nature.com/articles/s41380-025-03085-y" target="_blank">Molecular Psychiatry — Central-peripheral neuroimmune dynamics in stress</a></li>
+</ul>
+<p><strong>Hábitos, dopamina e estrógeno:</strong></p>
+<ul>
+<li><a href="https://www.sciencetimes.com/articles/61654/20260415/exploring-habit-formation-science-learn-how-your-brain-builds-breaks-routines.htm" target="_blank">ScienceTimes — Habit Formation Science 2026</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2025/12/251210223635.htm" target="_blank">ScienceDaily — Everyday cues secretly shape habits</a></li>
+<li><a href="https://globalrph.com/2026/04/the-science-of-habit-formation-how-to-rewire-your-brain-for-change/" target="_blank">GlobalRPH — The Science Of Habit Formation 2026</a></li>
+</ul>
+<p><strong>Neurotecnologia / BCIs:</strong></p>
+<ul>
+<li><a href="https://neuralink.com/" target="_blank">Neuralink — site oficial</a></li>
+<li><a href="https://thedebrief.org/neuralink-set-to-launch-high-volume-brain-implant-production-as-competitors-weigh-in/" target="_blank">The Debrief — Neuralink high-volume production 2026</a></li>
+<li><a href="https://3zebras.com/science/brain-computer-interface-2026-neuralink-synchron-update/15397/" target="_blank">3Zebras — BCI 2026: Neuralink, Synchron, and Real Progress</a></li>
+</ul>
+<p><strong>Saúde mental feminina e burnout:</strong></p>
+<ul>
+<li><a href="https://bleumag.com/lifestyle/5-mental-health-trends-for-2026-closing-the-gap-to-access-and-care" target="_blank">Bleu Mag — Top Mental Health Trends 2026</a></li>
+<li><a href="https://www.trackinghappiness.com/mental-health-statistics-2026-navigating-the-new-normal/" target="_blank">Tracking Happiness — Mental Health Statistics 2026</a></li>
+<li><a href="https://voob.us/womensleadershipminneapolis/story.php?id=women-recover-from-burnout-before-it-breaks-a-strategic-guide-for-2026" target="_blank">Voob — Women Recover From Burnout 2026</a></li>
+</ul>
+<p><strong>Tendências de conteúdo e referências:</strong></p>
+<ul>
+<li><a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a></li>
+<li><a href="https://open.spotify.com/episode/5OkWNFjBMAKMMlQuSZYkyz" target="_blank">Modern Wisdom — Reclaim Your Brain in 2026 (Huberman)</a></li>
+<li><a href="https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/" target="_blank">HR Portugal — Currículo Pessoal trend 2026</a></li>
+<li><a href="https://www.globalwellnesssummit.com/2026trends/" target="_blank">Global Wellness Summit — 2026 Trends</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Gancho:** *"Tem um estudo de 2026 que provou uma coisa que eu sempre suspeitei: uma única experiência forte pode reescrever uma parte do seu cérebro pra sempre. Não precisa de 21 dias, não precisa de hábito repetido. Olha que interessante."<br>*Neurociência básica e BTSP:*<br>*Estresse, depressão e habênula:*<br>*Hábitos, dopamina e estrógeno:*<br>*Neurotecnologia / BCIs:*<br>*Saúde mental feminina e burnout:*<br>*Tendências de conteúdo e referências:*</p>
+    </div>
+</body>
+</html>
