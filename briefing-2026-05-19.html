@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-05-19</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-05-19</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Sinapses silenciosas": 30% do córtex adulto está dormindo, esperando você aprender algo novo</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Silent Synapses in the Adult Brain</em> (review consolidada na Annual Review of Neuroscience 2026) — derivado do achado original do MIT publicado em <em>Nature</em>.</li>
+<li><strong>Data de Publicação:</strong> Cobertura científica recente em maio/2026 (ScienceDaily — 04/05/2026 e veículos BR em 13/05/2026)</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily — MIT scientists discover millions of "silent synapses" in the adult brain (04/05/2026)</a> | <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-112723-032924" target="_blank">Annual Reviews — Silent Synapses in the Adult Brain</a> | <a href="https://scitechdaily.com/surprising-discovery-mit-neuroscientists-find-that-adult-brain-is-filled-with-millions-of-silent-synapses/" target="_blank">SciTechDaily — MIT Neuroscientists Find Adult Brain Filled With "Silent Synapses"</a> | Cobertura BR: <a href="https://www.uai.com.br/diversao/2026/05/13/cientistas-descobrem-conexoes-escondidas-no-cerebro-adulto-e-isso-pode-mudar-o-aprendizado/" target="_blank">UAI — Cientistas descobrem conexões "escondidas" no cérebro adulto (13/05/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature original + review na Annual Review of Neuroscience)</li>
+<li><strong>Achado:</strong> Cerca de <strong>30% das sinapses do córtex adulto são "silenciosas"</strong> — conexões dormentes que existem fisicamente mas não disparam. Quando aprendizado relevante aparece, elas são <strong>ativadas rapidamente</strong> e passam a formar memórias novas, sem reescrever por cima das memórias antigas. Isso desmonta o dogma de que o cérebro adulto teria capacidade plástica limitada e abre uma "reserva neural" para aprendizagem ao longo da vida.</li>
+<li><strong>Implicação prática:</strong> A frase "depois dos 30 já era pra aprender" é cientificamente falsa. Existe substrato físico esperando ser ativado — o que falta normalmente não é cérebro, é estímulo, atenção sustentada e contexto relevante. Argumento poderoso para a mulher que travou em alguma área da vida porque "já é tarde".</li>
+</ul>
+<h3>2. Empatia como ritmo cerebral: orexina e oscilações teta no córtex cingulado anterior</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Empathy and prosocial behavior powered by orexin-driven theta oscillations</em></li>
+<li><strong>Data de Publicação:</strong> Fevereiro/2026, com cobertura analítica e divulgação científica seguindo até maio/2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.science.org/doi/10.1126/science.aea7140" target="_blank">Science — artigo original</a> | <a href="https://pubmed.ncbi.nlm.nih.gov/41712718/" target="_blank">PubMed</a> | <a href="https://mindblog.dericbownds.net/2026/03/empathy-as-brain-rhythm-orexin-theta.html?m=1" target="_blank">MindBlog — Empathy as a Brain Rhythm (03/2026)</a> | <a href="https://techfinder.stanford.edu/technology/neural-oscillation-based-detection-and-modulation-empathy-neuropsychiatric-treatment" target="_blank">Stanford Tech Finder — Neural oscillation-based detection of empathy</a></li>
+<li><strong>Status:</strong> Revisado por pares (Science)</li>
+<li><strong>Achado:</strong> Equipe de Stanford (Jae Gon Kim e cols.) identificou um circuito específico: projeções de neurônios de <strong>orexina</strong> do hipotálamo lateral até o <strong>córtex cingulado anterior (ACC)</strong> ativam ondas <strong>teta</strong> que sustentam empatia afetiva e comportamento pró-social (ajudar o outro). Quando bloqueada essa via, o animal vê o sofrimento alheio mas <strong>não se mobiliza</strong>. Quando ativada, há aumento da resposta empática e do gesto de ajudar.</li>
+<li><strong>Implicação prática:</strong> A empatia não é só "ser uma pessoa boa" — é uma <strong>assinatura cerebral</strong> que depende de orexina (mesma molécula ligada à vigília, atenção e motivação). Cansaço crônico e sono ruim reduzem orexina — ou seja, exaustão derruba a capacidade de sentir junto. Explica em base biológica por que mães e cuidadoras exaustas se sentem "endurecidas" mesmo amando os filhos.</li>
+</ul>
+<h3>3. Sono não consolida memória "no geral" — ele consolida onde você treinou</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Increased Sleep Spindles in Regions Engaged during Motor Learning Predict Memory Consolidation</em> (Martin Sjøgård, Dimitrios Mylonas e equipe — Mass General Hospital / Harvard Medical School)</li>
+<li><strong>Data de Publicação:</strong> Journal of Neuroscience, vol. 45 (com cobertura recente e estudo follow-up via bioRxiv em 08/05/2026)</li>
+<li><strong>Fonte:</strong> <a href="https://www.jneurosci.org/content/45/34/e0381252025" target="_blank">Journal of Neuroscience — Sleep spindles & motor learning</a> | <a href="https://www.psypost.org/harvard-scientists-pinpoint-how-sleep-stabilizes-memory-in-fascinating-neuroscience-breakthrough/" target="_blank">PsyPost — Harvard scientists pinpoint how sleep stabilizes memory</a> | <a href="https://www.biorxiv.org/content/10.64898/2026.05.08.723823v1" target="_blank">bioRxiv — Sleep Spindle-Locked Targeted Memory Reactivation (08/05/2026)</a> | <a href="https://www.nature.com/articles/s41539-025-00383-6" target="_blank">npj Science of Learning — Modulating sleep spindle stimulation</a></li>
+<li><strong>Status:</strong> Revisado por pares (Journal of Neuroscience) + pré-print recente complementar</li>
+<li><strong>Achado:</strong> Os <strong>sleep spindles</strong> (rajadas de atividade cerebral durante o sono não-REM leve) <strong>não acontecem aleatórios pelo cérebro</strong>. Eles se concentram exatamente nas regiões corticais que foram usadas durante o aprendizado do dia. Quanto mais densidade de spindles na área treinada, melhor o desempenho no dia seguinte. Estudo usou EEG + magnetoencefalografia em soneca pós-tarefa motora.</li>
+<li><strong>Implicação prática:</strong> Soneca <strong>depois</strong> de estudar/treinar não é preguiça — é parte do processo de gravação. E "dormir mais" no geral não substitui dormir <strong>logo depois</strong> do esforço cognitivo ou físico. Vale para quem quer aprender algo novo, quem treina musculação, quem está reorganizando rotinas.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Brain rot" agora tem ciência: meta-análise com 98 mil pessoas confirma alteração cerebral por vídeo curto</h3>
+<ul>
+<li><strong>Tema:</strong> Meta-análise de 2026 (Psychological Bulletin) com 71 estudos e mais de 98.000 participantes confirma: uso pesado de Reels/TikTok/Shorts está associado a <strong>queda mensurável de atenção, controle inibitório e memória de trabalho</strong>, com mudanças neurais em áreas de controle executivo e recompensa.</li>
+<li><strong>Por que está em alta:</strong> A American Psychological Association reconheceu o "brain rot" como fenômeno mensurável. Está virando manchete em maio/2026 em Men's Journal, Dexerto, NBC News. O público feminino de produtividade está absorvendo o tema agora.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel + Reel de 60s — "o que a ciência descobriu sobre brain rot e por que isso é problema sério pra mulher que quer alta performance".</li>
+<li><strong>Gancho sugerido:</strong> <em>"Saiu uma meta-análise com quase cem mil pessoas mostrando que o Reels tá literalmente desorganizando uma parte específica do seu cérebro. E olha, eu não tô falando isso pra demonizar rede social — eu vivo de rede social. Mas tem nuance aqui que muda tudo."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.mensjournal.com/news/tiktok-instagram-study-human-brain-impact" target="_blank">Men's Journal — TikTok Instagram Study Reveals Impact on Human Brain</a> | <a href="https://www.nbcnews.com/health/health-news/brain-rot-research-short-form-video-consumption-rcna245739" target="_blank">NBC News — Brain rot research short-form video</a> | <a href="https://www.thefocalpoints.com/p/study-tiktok-instagram-and-youtube" target="_blank">The Focal Points — Study: TikTok, Instagram, YouTube Shorts induce measurable brain rot</a> | <a href="https://nspirement.com/2026/05/13/brain-rot-iwhat-the-internets-most-viral-content-may-be-doing-to-your-mind.html" target="_blank">Nspirement — Brain Rot: What Viral Content Is Doing to Your Mind (13/05/2026)</a> | <a href="https://www.dexerto.com/tiktok/new-study-reveals-tiktok-instagram-content-actually-rots-your-brain-3285565/" target="_blank">Dexerto — Study reveals TikTok Instagram content rots brain</a></li>
+</ul>
+<h3>2. "Seu cérebro não para de aprender aos 25" — mito viral sendo desmontado em duas frentes</h3>
+<ul>
+<li><strong>Tema:</strong> Junção poderosa de duas descobertas: (1) o estudo de 02/2026 do ScienceDaily mostrando que conexões cerebrais continuam evoluindo até os 30 e mais; (2) as sinapses silenciosas do córtex adulto, viralizando agora em maio/2026 em sites brasileiros.</li>
+<li><strong>Por que está em alta:</strong> O clichê do TikTok "frontal lobe isn't developed until 25" caiu por terra em 2026. Veículos BR (JETSS, UAI) estão publicando isso na primeira semana de maio. Tema perfeito pra mulher 30+ do MIB que carrega culpa por "ter perdido o tempo de aprender".</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 7–10 min ou carrossel longo — "O cérebro depois dos 30 não trava. Mas precisa de três coisas que ninguém te explicou."</li>
+<li><strong>Gancho sugerido:</strong> <em>"Olha, eu cresci ouvindo que depois dos 25 o cérebro 'fecha'. E descobri que isso é mito. Cientistas do MIT acabaram de mostrar que existem milhões de conexões dormentes no cérebro adulto — e elas só esperam o estímulo certo. Vou te explicar o que ativa e o que abafa."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/02/260218031606.htm" target="_blank">ScienceDaily — Brain development may continue into your 30s (18/02/2026)</a> | <a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily — Silent synapses adult brain (04/05/2026)</a> | <a href="https://www.jetss.com.br/2026/05/02/seu-cerebro-para-de-aprender-aos-25-ciencia-revela-a-verdade-e-surpreende-muita-gente/" target="_blank">JETSS — Seu cérebro para de aprender aos 25? (02/05/2026)</a> | <a href="https://www.uai.com.br/diversao/2026/05/13/cientistas-descobrem-conexoes-escondidas-no-cerebro-adulto-e-isso-pode-mudar-o-aprendizado/" target="_blank">UAI — Conexões "escondidas" no cérebro adulto (13/05/2026)</a> | <a href="https://www.intelligentliving.co/adult-brain-synapses-reserve-learn/" target="_blank">Intelligent Living — Silent Synapses Reserve System</a></li>
+</ul>
+<h3>3. Cortisol alto destrói cérebro feminino mais do que masculino — efeito estilo "Alzheimer precoce"</h3>
+<ul>
+<li><strong>Tema:</strong> Pesquisa consolidada mostra que cortisol cronicamente elevado degrada memória, atenção e organização visual — e o efeito é <strong>significativamente mais forte em mulheres</strong>. Marcadores cerebrais associados ao risco de Alzheimer aparecem mais cedo em mulheres com cortisol alto.</li>
+<li><strong>Por que está em alta:</strong> Tema cruza com burnout feminino (75% das mulheres em burnout em 2026), com o achado de 2026 sobre cortisol endometrial em infertilidade, e com o pico de interesse no público "saúde da mulher" desde o Global Wellness Summit. É um ângulo concreto e biológico que justifica a urgência de cuidar do estresse — sem clichê motivacional.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 75s ou carrossel — "O que o cortisol faz no cérebro feminino que ele não faz tão forte no masculino".</li>
+<li><strong>Gancho sugerido:</strong> <em>"Tem uma coisa que a ciência descobriu sobre cortisol que mudou meu jeito de olhar pro estresse das mulheres. Não é mimimi, não é fraqueza. É bioquímica desigual mesmo. E tem um detalhe sobre Alzheimer que ninguém te conta."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.scientificamerican.com/article/ldquo-stress-hormone-rdquo-cortisol-linked-to-early-toll-on-thinking-ability/" target="_blank">Scientific American — Cortisol Linked to Early Toll on Thinking Ability</a> | <a href="https://www.mdpi.com/2073-4409/12/23/2726" target="_blank">MDPI — Cortisol in Chronic Stress and Neurodegenerative Disease</a> | <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10918173/" target="_blank">PMC — Sex-specific associations of serum cortisol with brain biomarkers of Alzheimer's risk</a> | <a href="https://www.nature.com/articles/s41598-026-41233-8" target="_blank">Scientific Reports 2026 — Endometrial cortisol level and infertility</a> | <a href="https://wisewomanwellness.com/why-stress-affects-women-differently-the-hormone-and-cortisol-connection" target="_blank">Wise Woman Wellness — Why Stress Affects Women Differently</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — episódio de 14/05/2026:</strong> <em>Essentials: Understanding & Controlling Aggression</em>. Provoca debate forte sobre regulação emocional, mães cansadas, e o famoso "explodir com a família". Ângulo MIB: carrossel "Por que a ciência diz que sua raiva à noite não é falha de caráter — e o que faz ela parar". <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></p>
+<p>2. <strong>Stanford recebe doação de US$ 90 milhões para pesquisa de "resiliência cerebral no envelhecimento"</strong> — Wu Tsai Neurosciences Institute (Knight Initiative). Tema que vai aparecer em pauta de longevidade nos próximos meses. <a href="https://news.stanford.edu/stories/2026/05/gift-knight-brain-resilience-aging-research" target="_blank">Stanford Report — Gift advances brain resilience research (05/2026)</a></p>
+<p>3. <strong>Brain rot como tema viral em redes BR</strong> — após a meta-análise, há onda de Reels com "o que tô fazendo pra parar de scrollar". Para Carol, o ângulo correto é técnico-científico, não moralizante. <a href="https://uk.finance.yahoo.com/news/tiktok-instagram-usage-leading-brain-153926216.html" target="_blank">APA / Yahoo Finance — TikTok Instagram brain rot</a></p>
+<p>4. <strong>Trend "currículo pessoal" continua aquecida</strong> — agora com endosso de neurocientistas em maio/2026. Ainda há espaço pra Carol entrar com versão dela ("currículo da inabalável: o que vou aprender nos próximos 90 dias"). <a href="https://www.inc.com/jessica-stillman/neuroscience-says-you-need-a-personal-curriculum-for-2026/91276869" target="_blank">Inc. — Neuroscience Says You Need a Personal Curriculum for 2026</a></p>
+<p>5. <strong>Síndrome do burnout silencioso continua dominando feed feminino BR</strong> — gancho perfeito pra associar com o achado novo de cortisol diferencial sexual. <a href="https://www.southdenvertherapy.com/blog/womens-mental-health-statistics" target="_blank">South Denver Therapy — Women's Mental Health Statistics 2026</a> | <a href="https://www.budgetandthebees.com/the-2026-burnout-pattern-why-women-are-reporting-these-5-new-symptoms/" target="_blank">Budget and the Bees — The 2026 Burnout Pattern</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Depois dos 25 (ou 30) seu cérebro para de aprender":</strong> mito derrubado em duas frentes científicas em 2026 (silent synapses do MIT + estudo de desenvolvimento cerebral até os 30 e além). Se for usar esse tema, é pra <strong>desmontar</strong>, não reproduzir. <a href="https://www.sciencedaily.com/releases/2026/02/260218031606.htm" target="_blank">ScienceDaily — Brain development continues into 30s</a></li>
+<li><strong>"Pare de usar rede social e seu cérebro se recupera em X dias":</strong> narrativa simplista que está pegando carona no brain rot. A meta-análise mostra associação, não cura mágica. Detox de 7 dias <strong>não reseta</strong> o cérebro — recuperação cognitiva exige mudança sustentada de hábito, não interrupção pontual.</li>
+<li><strong>"Dopamine detox" continua circulando</strong> — mantém o alerta de ontem. A própria fonte original (Cameron Sepah) admitiu que o termo foi marketing. Se Carol falar do tema, é para desmontar, não endossar. <a href="https://www.health.harvard.edu/blog/dopamine-fasting-misunderstanding-science-spawns-a-maladaptive-fad-2020022618917" target="_blank">Harvard Health — Dopamine fasting: misunderstanding science</a></li>
+<li><strong>"Cortisol é vilão, zere seu cortisol":</strong> narrativa biohacker exagerada. Cortisol é necessário para vida — o problema é cronicidade, não presença. Cuidado para não reproduzir o tom "elimine o cortisol" — o correto é "regular o pico crônico".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> "30% do seu cérebro adulto está dormindo. E o jeito que ele acorda muda tudo."</p>
+<p><strong>Formato:</strong> Reel de 60–75s ou carrossel de 7 slides.</p>
+<p><strong>Gancho:</strong> <em>"Olha que interessante. O MIT descobriu que 30% das conexões do seu cérebro adulto estão silenciosas — tipo dormentes mesmo, esperando ser ativadas. E isso muda completamente aquela frase que a gente cresceu ouvindo de que 'depois dos 30 a gente não aprende mais como antes'."</em></p>
+<p><strong>Desenvolvimento (MAS / PORTANTO):</strong> Existem milhões de sinapses silenciosas no córtex adulto. Quando você se dispõe a aprender algo novo — um idioma, um instrumento, uma área de estudo — essas sinapses <strong>acordam</strong> rapidamente, sem precisar reescrever por cima das memórias antigas. <strong>MAS</strong> elas não acordam sozinhas. Não acorda por motivação aleatória, não acorda por força de vontade. Acordam por <strong>estímulo consistente + atenção plena + contexto que faça sentido pra sua vida</strong>. <strong>PORTANTO</strong> se você travou em alguma área — escrever, falar em público, estudar Bíblia, qualquer coisa — não é seu cérebro que tá fechado. É que o estímulo não chegou no formato certo ainda.</p>
+<p><strong>CTA:</strong> "Comenta aqui uma coisa que você quer aprender e tá achando que é tarde."</p>
+<p><strong>Hashtags sugeridas:</strong> #neurociencia #cerebroadulto #mentalidadeinabalavel #aprenderdenovo #mulheresde30</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Fontes consolidadas (verificação rápida)</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Sinapses silenciosas e aprendizado adulto:</strong></p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/05/260504211848.htm" target="_blank">ScienceDaily — MIT silent synapses (04/05/2026)</a></li>
+<li><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-neuro-112723-032924" target="_blank">Annual Reviews — Silent Synapses in the Adult Brain</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/02/260218031606.htm" target="_blank">ScienceDaily — Brain development continues into 30s (18/02/2026)</a></li>
+<li><a href="https://www.uai.com.br/diversao/2026/05/13/cientistas-descobrem-conexoes-escondidas-no-cerebro-adulto-e-isso-pode-mudar-o-aprendizado/" target="_blank">UAI — Conexões "escondidas" no cérebro adulto (13/05/2026)</a></li>
+<li><a href="https://www.jetss.com.br/2026/05/02/seu-cerebro-para-de-aprender-aos-25-ciencia-revela-a-verdade-e-surpreende-muita-gente/" target="_blank">JETSS — Seu cérebro para de aprender aos 25? (02/05/2026)</a></li>
+</ul>
+<p><strong>Empatia, orexina, oscilações teta:</strong></p>
+<ul>
+<li><a href="https://www.science.org/doi/10.1126/science.aea7140" target="_blank">Science — Empathy and prosocial behavior powered by orexin-driven theta oscillations</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/41712718/" target="_blank">PubMed — Orexin theta empathy</a></li>
+<li><a href="https://techfinder.stanford.edu/technology/neural-oscillation-based-detection-and-modulation-empathy-neuropsychiatric-treatment" target="_blank">Stanford Tech Finder — Empathy detection technology</a></li>
+</ul>
+<p><strong>Sono, memória e sleep spindles:</strong></p>
+<ul>
+<li><a href="https://www.jneurosci.org/content/45/34/e0381252025" target="_blank">Journal of Neuroscience — Sleep spindles & motor learning</a></li>
+<li><a href="https://www.psypost.org/harvard-scientists-pinpoint-how-sleep-stabilizes-memory-in-fascinating-neuroscience-breakthrough/" target="_blank">PsyPost — Harvard sleep spindles motor memory</a></li>
+<li><a href="https://www.biorxiv.org/content/10.64898/2026.05.08.723823v1" target="_blank">bioRxiv — Sleep Spindle-Locked Targeted Memory Reactivation (08/05/2026)</a></li>
+<li><a href="https://www.nature.com/articles/s41539-025-00383-6" target="_blank">npj Science of Learning — Modulating sleep spindle stimulation</a></li>
+</ul>
+<p><strong>Brain rot e vídeo curto:</strong></p>
+<ul>
+<li><a href="https://www.nbcnews.com/health/health-news/brain-rot-research-short-form-video-consumption-rcna245739" target="_blank">NBC News — Brain rot research short-form video</a></li>
+<li><a href="https://www.mensjournal.com/news/tiktok-instagram-study-human-brain-impact" target="_blank">Men's Journal — TikTok Instagram impact on human brain</a></li>
+<li><a href="https://www.thefocalpoints.com/p/study-tiktok-instagram-and-youtube" target="_blank">The Focal Points — Measurable brain rot study</a></li>
+<li><a href="https://nspirement.com/2026/05/13/brain-rot-iwhat-the-internets-most-viral-content-may-be-doing-to-your-mind.html" target="_blank">Nspirement — Brain Rot viral content effects (13/05/2026)</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12876105/" target="_blank">PMC — Brain Rot Phenomenological Study</a></li>
+</ul>
+<p><strong>Cortisol e cérebro feminino:</strong></p>
+<ul>
+<li><a href="https://www.scientificamerican.com/article/ldquo-stress-hormone-rdquo-cortisol-linked-to-early-toll-on-thinking-ability/" target="_blank">Scientific American — Cortisol toll on thinking ability</a></li>
+<li><a href="https://www.mdpi.com/2073-4409/12/23/2726" target="_blank">MDPI — Cortisol in chronic stress and neurodegenerative disease</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10918173/" target="_blank">PMC — Sex-specific cortisol and Alzheimer's risk</a></li>
+<li><a href="https://www.nature.com/articles/s41598-026-41233-8" target="_blank">Scientific Reports 2026 — Endometrial cortisol infertility</a></li>
+</ul>
+<p><strong>Burnout feminino e saúde mental 2026:</strong></p>
+<ul>
+<li><a href="https://www.southdenvertherapy.com/blog/womens-mental-health-statistics" target="_blank">South Denver Therapy — Women's Mental Health Statistics 2026</a></li>
+<li><a href="https://www.budgetandthebees.com/the-2026-burnout-pattern-why-women-are-reporting-these-5-new-symptoms/" target="_blank">Budget and the Bees — The 2026 Burnout Pattern</a></li>
+<li><a href="https://bleumag.com/lifestyle/5-mental-health-trends-for-2026-closing-the-gap-to-access-and-care" target="_blank">Bleu Mag — Mental Health Trends 2026</a></li>
+</ul>
+<p><strong>Referências de conteúdo (criadores e instituições):</strong></p>
+<ul>
+<li><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></li>
+<li><a href="https://news.stanford.edu/stories/2026/05/gift-knight-brain-resilience-aging-research" target="_blank">Stanford Report — Knight Brain Resilience gift (05/2026)</a></li>
+<li><a href="https://neuroscience.stanford.edu/" target="_blank">Wu Tsai Neurosciences Institute</a></li>
+<li><a href="https://www.inc.com/jessica-stillman/neuroscience-says-you-need-a-personal-curriculum-for-2026/91276869" target="_blank">Inc. — Personal curriculum (Jessica Stillman)</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Gancho:** *"Olha que interessante. O MIT descobriu que 30% das conexões do seu cérebro adulto estão silenciosas — tipo dormentes mesmo, esperando ser ativadas. E isso muda completamente aquela frase que a gente cresceu ouvindo de que 'depois dos 30 a gente não aprende mais como antes'."<br>*Sinapses silenciosas e aprendizado adulto:*<br>*Empatia, orexina, oscilações teta:*<br>*Sono, memória e sleep spindles:*<br>*Brain rot e vídeo curto:*<br>*Cortisol e cérebro feminino:*<br>*Burnout feminino e saúde mental 2026:*<br>*Referências de conteúdo (criadores e instituições):*</p>
+    </div>
+</body>
+</html>
