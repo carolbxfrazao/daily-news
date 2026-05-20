@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 20 de maio de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 20 de maio de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Ansiedade tem assinatura química no cérebro: queda de 8% de colina no córtex pré-frontal</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Scientists find hidden brain nutrient deficit that may fuel anxiety" — meta-análise UC Davis Health, baseada em 25 estudos com 370 pacientes com transtornos de ansiedade vs. 342 controles</li>
+<li><strong>Data de Publicação:</strong> 15 de maio de 2026 (cobertura ScienceDaily), com artigo original em <strong>Molecular Psychiatry</strong> (Nature Portfolio)</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260515234759.htm" target="_blank">ScienceDaily — Hidden brain nutrient deficit that may fuel anxiety</a> | <a href="https://health.ucdavis.edu/news/headlines/low-choline-levels-in-the-brain-associated-with-anxiety-disorders/2025/11" target="_blank">UC Davis Health — Press release oficial</a> | <a href="https://www.eurekalert.org/news-releases/1105383" target="_blank">EurekAlert! — Low choline and anxiety</a> | <a href="https://scitechdaily.com/millions-with-anxiety-share-one-striking-brain-chemistry-difference/" target="_blank">SciTechDaily — Brain chemistry difference</a></li>
+<li><strong>Status:</strong> Revisado por pares (meta-análise — nível mais alto de evidência)</li>
+<li><strong>Achado:</strong> Pela primeira vez foi identificado um padrão químico cerebral consistente em quem tem transtorno de ansiedade: cerca de 8% menos colina no cérebro, principalmente no <strong>córtex pré-frontal</strong> (a área responsável por tomada de decisões, regulação emocional e foco). A colina é nutriente essencial pra membranas das células nervosas e pra produção de acetilcolina, que regula memória, humor e controle muscular. O corpo produz só uma fração — o resto precisa vir da alimentação.</li>
+<li><strong>Implicação prática:</strong> Esse achado tira a ansiedade do plano "psicológico abstrato" e coloca no plano bioquímico verificável. Ovos, fígado, peixe, gergelim e brócolis são fontes ricas em colina. Não é cura — mas é base material que muita mulher exausta ignora enquanto tenta resolver ansiedade só com respiração e mindfulness.</li>
+</ul>
+<h3>2. Reversão de perda de memória ativando mitocôndrias do hipocampo (Nature Neuroscience)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Boosting mitochondrial activity with mitoDREADD-Gs restores recognition memory in mouse models of dementia"</li>
+<li><strong>Data de Publicação:</strong> Maio de 2026 — publicação original em <strong>Nature Neuroscience</strong></li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260515234803.htm" target="_blank">ScienceDaily — Recharging the brain's tiny engines</a> | <a href="https://www.psypost.org/chemogenetic-breakthrough-reverses-cognitive-decline-by-powering-up-brain-mitochondria/" target="_blank">PsyPost — Chemogenetic breakthrough reverses cognitive decline</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Neuroscience)</li>
+<li><strong>Achado:</strong> Equipe do Inserm/Universidade de Bordeaux criou uma ferramenta quimiogenética (mitoDREADD-Gs) que liga seletivamente as mitocôndrias dos neurônios do hipocampo — a região central da memória. Em camundongos com demência inicial, a memória de reconhecimento foi <strong>restaurada</strong>. Conclusão dura: falha de energia dentro do neurônio pode ser causa direta de declínio cognitivo, e não só sintoma de células morrendo.</li>
+<li><strong>Implicação prática:</strong> Mexe na narrativa do "esqueci porque estou cansada". Cansaço crônico não é só sensação — é literalmente queda da produção energética dentro das células do cérebro. Sono, jejum noturno bem feito, exercício de força e cafeína estratégica influenciam diretamente a saúde mitocondrial. É a base biológica do que o público MIB chama de "cabeça cheia".</li>
+</ul>
+<h3>3. Existe um circuito cerebral específico que aumenta resistência depois do treino</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "VMH SF1 neurons drive endurance improvements in response to exercise" — UT Southwestern Medical Center</li>
+<li><strong>Data de Publicação:</strong> Abril de 2026 (estudo original); cobertura ScienceDaily em 15 de maio de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260515233346.htm" target="_blank">ScienceDaily — The real reason exercise makes you stronger</a> | <a href="https://www.utsouthwestern.edu/newsroom/articles/year-2026/april-brain-cells-boost-endurance.html" target="_blank">UT Southwestern Newsroom — Brain cells boost endurance</a> | <a href="https://www.nature.com/articles/d41586-026-00414-1" target="_blank">Nature — Exercise rewires the brain</a> | <a href="https://www.jax.org/news-and-insights/2026/february/brain-cells-drive-endurance-gains-after-exercise" target="_blank">Jackson Lab — Brain cells drive endurance gains</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Neurônios SF1 do hipotálamo ventromedial <strong>continuam ativos por pelo menos uma hora depois do treino</strong> — e essa atividade prolongada é o que de fato constrói resistência ao longo do tempo. Sem esses neurônios, os camundongos não ganham resistência, por mais que treinem. Quando os pesquisadores ativaram artificialmente esses neurônios pós-exercício, o ganho de resistência foi ainda maior.</li>
+<li><strong>Implicação prática:</strong> O treino não termina quando você sai da academia. O cérebro continua trabalhando no "modo construção" por uma hora — e o que você faz nesse intervalo importa. Banho gelado imediato, álcool, telas ou estresse podem cortar parte desse efeito. Mexe diretamente com a rotina de recovery do público MIB.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Colina e ansiedade — a química que ninguém te contou</h3>
+<ul>
+<li><strong>Tema:</strong> Por que sua ansiedade pode estar enraizada em deficiência nutricional, não só em "pensamentos"</li>
+<li><strong>Por que está em alta:</strong> Notícia fresquíssima (cobertura ScienceDaily de 15 de maio, ainda subindo no Reels e Twitter científico). O ângulo "primeiro padrão químico identificado pra ansiedade" é o tipo de manchete que viraliza porque promete causa concreta.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel didático (7–9 slides) + Reel de 60s. Vincular ao pilar de inteligência emocional do MIB. Atenção: traduzir "córtex pré-frontal" como "área de tomada de decisão" e nunca recomendar suplementação sem médico.</li>
+<li><strong>Gancho sugerido:</strong> "Olha só — se você sente ansiedade crônica e já tentou de tudo, presta atenção: pesquisadores acabaram de descobrir uma alteração química no cérebro de quem tem ansiedade. E não tem nada a ver com pensamento positivo."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260515234759.htm" target="_blank">ScienceDaily — Hidden brain nutrient deficit that may fuel anxiety</a> | <a href="https://health.ucdavis.edu/news/headlines/low-choline-levels-in-the-brain-associated-with-anxiety-disorders/2025/11" target="_blank">UC Davis Health</a></li>
+</ul>
+<h3>2. A hora dourada pós-treino — onde a resistência é realmente construída</h3>
+<ul>
+<li><strong>Tema:</strong> O cérebro continua "treinando" por 60 minutos depois que o corpo para</li>
+<li><strong>Por que está em alta:</strong> Publicação dupla na ScienceDaily (15/maio) e na Nature (cobertura editorial). Casa perfeitamente com o boom de conteúdo sobre "recovery feminino" no Instagram.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube curto (6–8 min) ou Reel didático em 3 partes. Conecta com a Leadfit (academia), com biohacking feminino e com a tese MIB de alta performance sustentável.</li>
+<li><strong>Gancho sugerido:</strong> "Tá? Vou te contar uma coisa que pode mudar como você pensa exercício: o seu cérebro continua trabalhando o treino por uma hora depois que você termina. E o que você faz nessa hora vale tanto quanto o treino em si."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260515233346.htm" target="_blank">ScienceDaily — The real reason exercise makes you stronger</a> | <a href="https://www.nature.com/articles/d41586-026-00414-1" target="_blank">Nature — Exercise rewires the brain</a></li>
+</ul>
+<h3>3. Cansaço mental como falência energética celular</h3>
+<ul>
+<li><strong>Tema:</strong> "Cabeça cheia" não é metáfora — é mitocôndria do hipocampo em baixa rotação</li>
+<li><strong>Por que está em alta:</strong> Publicação Nature Neuroscience desta semana com ferramenta que <strong>reverte</strong> perda de memória. Discussão viral no Twitter científico e em canais de Huberman/Peter Attia tipo.</li>
+<li><strong>Ângulo para Carol:</strong> Reel (45–60s) com tese "esqueci porque tô cansada — e tem ciência atrás disso". Provocativo, ancora no MIB direitinho.</li>
+<li><strong>Gancho sugerido:</strong> "Gente, presta atenção nisso: quando você fala 'tô esquecendo as coisas porque tô esgotada', você não tá inventando desculpa. Pesquisadores acabaram de mostrar que cansaço mental crônico é literalmente falta de energia dentro dos neurônios."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/05/260515234803.htm" target="_blank">ScienceDaily — Memory loss reversed by recharging the brain's tiny engines</a> | <a href="https://www.psypost.org/chemogenetic-breakthrough-reverses-cognitive-decline-by-powering-up-brain-mitochondria/" target="_blank">PsyPost — Chemogenetic breakthrough</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Episódio Huberman + Dr. Nick Epley (18/maio)</strong> — sobre como pequenas interações sociais regulam o sistema nervoso. Recortes virais saindo agora em formato Reel. <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a> | <a href="https://www.hubermanlab.com/all-episodes" target="_blank">All Episodes</a></p>
+<p>2. <strong>"Brain cells behind depression" (McGill, abril/2026)</strong> — pesquisa identificando dois tipos de células ligadas à depressão continua sendo recortada em criadores de neurociência. Bom contraponto pra desmistificar "depressão é só na cabeça". <a href="https://www.sciencedaily.com/releases/2026/04/260423022010.htm" target="_blank">ScienceDaily — Brain cells behind depression</a> | <a href="https://scitechdaily.com/brain-cells-behind-depression-identified-for-the-first-time/" target="_blank">SciTechDaily</a></p>
+<p>3. <strong>Padrões de fala e função executiva</strong> — estudo de Baycrest/UofT/York mostra que pausas, "um", "ah" e dificuldade de achar a palavra refletem função executiva. Conteúdo "espera, isso me explica" gerando muito save. <a href="https://neurosciencenews.com/speech-cognitive-decline-29922/" target="_blank">Neuroscience News — Everyday speech reveals early cognitive decline</a> | <a href="https://www.psypost.org/the-rhythm-of-your-speech-may-offer-clues-to-your-cognitive-health/" target="_blank">PsyPost — The rhythm of your speech</a></p>
+<p>4. <strong>"Clean Look" e neurociência da organização</strong> — tendência viral no Brasil em maio: reels de organização acalmam porque cérebro lê ambiente ordenado como segurança e baixa estado de alerta. Tema perfeito pra rotina feminina. <a href="https://terrabrasilnoticias.com/2026/05/por-que-o-reels-de-organizacao-te-acalma-a-psicologia-por-tras-do-clean-look" target="_blank">Terra Brasil — Por que o Reels de organização te acalma</a></p>
+<p>5. <strong>Próximo robô cirúrgico do Neuralink (anunciado 7/maio)</strong> — debate público intenso sobre "ler pensamentos" continua. Carol pode entrar com voz crítica e cristã, contrabalançando hype. <a href="https://yourstory.com/2026/05/neuralink-surgical-robot-brain-interface-2026" target="_blank">YourStory — Neuralink next robot</a> | <a href="https://thedebrief.org/neuralink-set-to-launch-high-volume-brain-implant-production-as-competitors-weigh-in/" target="_blank">The Debrief — High-volume production</a></p>
+<p><strong>Da biblioteca de referências:</strong></p>
+<ul>
+<li>@hubermanlab — episódio com Nick Epley (18/maio) ainda sendo recortado em PT-BR. Janela aberta pra Carol entrar com voz feminina no tema "introversão x microinteração".</li>
+<li>@reservatoriodedopamina e @neurovox — terreno fértil pra Carol responder com tese MIB.</li>
+<li>@tay.ldantas (referência audiovisual principal) — observar últimos posts antes de gravar pra calibrar ritmo e estética.</li>
+<li>@forbesbr e @auvpcapital — debate sobre cognição e performance vem ganhando espaço editorial; conteúdo de Carol sobre energia mental tem chance de cross-over.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Coma colina pra curar ansiedade"</strong> — risco enorme de viralização simplificada. O estudo mostrou <strong>correlação populacional</strong>, não relação causal direta. Carol deve marcar essa diferença e jamais recomendar suplemento sem médico. (<a href="https://www.sciencedaily.com/releases/2026/05/260515234759.htm" target="_blank">ScienceDaily fonte</a>)</li>
+<li><strong>Hype Neuralink "robô que acessa qualquer parte do cérebro"</strong> — manchetes muito infladas. Realidade: ainda em fase pré-clínica massiva, aprovação comercial mantida pra 2028–2030. (<a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News — Neuralink vision vs reality</a>)</li>
+<li><strong>"Dopamine detox" como receita pronta</strong> — segue circulando em PT-BR como solução universal. Os estudos da KCC2 (dezembro/25) já mostraram que hábito é mais sofisticado que abstinência de tela. Cuidado com endossar a versão simplificada.</li>
+<li><strong>Listas genéricas "10 tendências de Reels 2026"</strong> — muitas contas brasileiras empurrando fórmula. Público da Carol não responde a fórmula viral, responde a profundidade. Evitar formato listão. (<a href="https://rafaelterra.com.br/como-viralizar-reels-em-2026/" target="_blank">Exemplo do tipo a não copiar</a>)</li>
+<li><strong>Biohacking feminino genérico (banho gelado, jejum prolongado)</strong> — segue empurrado sem considerar fase do ciclo. Em mulheres em fase lútea ou em segundo trimestre de gestação (caso pessoal da Carol com a Serena), pode subir cortisol e atrapalhar progesterona. Se Carol entrar no tema, marcar essa diferença. (<a href="https://www.biohackers.world/blog/biohacking-for-women" target="_blank">Biohackers World — Biohacking for women</a>)</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Formato:</strong> Reel 60s</p>
+<p><strong>Tema:</strong> A descoberta que muda como entendemos ansiedade</p>
+<p><strong>Gancho:</strong> "Olha que interessante — pesquisadores da UC Davis acabaram de identificar pela primeira vez uma assinatura química da ansiedade no cérebro. Quem sofre com transtorno de ansiedade tem cerca de 8% menos de um nutriente chamado <strong>colina</strong> numa área específica: o córtex pré-frontal — que é a região responsável por tomada de decisões e regulação emocional."</p>
+<p><strong>Desenvolvimento (MAS / PORTANTO):</strong> Mas — isso não é uma sentença, é uma pista. A colina é um nutriente que o corpo produz pouco; quase tudo vem da comida. Ovos, fígado, peixe e gergelim são fontes ricas. Portanto — antes da próxima crise de "minha cabeça não para", vale conversar com o seu médico sobre o que está no seu prato. Não é mágica, é base material.</p>
+<p><strong>CTA:</strong> "Marca uma amiga que vive com ansiedade e precisa ler isso. E me conta nos comentários: você sabia disso? Até a próxima."</p>
+<p><strong>Hashtags:</strong> #neurociencia #ansiedade #saudemental #mentalidadeinabalavel #colina</p>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Fontes consultadas (consolidado)</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><a href="https://www.sciencedaily.com/releases/2026/05/260515234759.htm" target="_blank">ScienceDaily — Hidden brain nutrient deficit that may fuel anxiety (15/mai/2026)</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/05/260515234803.htm" target="_blank">ScienceDaily — Memory loss reversed by recharging brain's tiny engines (15/mai/2026)</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/05/260515233346.htm" target="_blank">ScienceDaily — The real reason exercise makes you stronger (15/mai/2026)</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/04/260423022010.htm" target="_blank">ScienceDaily — Brain cells behind depression (23/abr/2026)</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2026/03/260312020107.htm" target="_blank">ScienceDaily — Depression may start with energy problem (12/mar/2026)</a></li>
+<li><a href="https://health.ucdavis.edu/news/headlines/low-choline-levels-in-the-brain-associated-with-anxiety-disorders/2025/11" target="_blank">UC Davis Health — Low choline levels and anxiety disorders</a></li>
+<li><a href="https://www.eurekalert.org/news-releases/1105383" target="_blank">EurekAlert! — Low choline levels linked to anxiety</a></li>
+<li><a href="https://scitechdaily.com/millions-with-anxiety-share-one-striking-brain-chemistry-difference/" target="_blank">SciTechDaily — Brain chemistry difference in anxiety</a></li>
+<li><a href="https://www.healio.com/news/psychiatry/20251125/anxiety-disorders-linked-to-low-choline-levels-in-the-brain" target="_blank">Healio — Anxiety disorders and low choline</a></li>
+<li><a href="https://theaggie.org/2026/1/19/lower-choline-levels-in-the-brain-linked-to-anxiety-disorders" target="_blank">The Aggie — Choline levels linked to anxiety</a></li>
+<li><a href="https://www.psypost.org/chemogenetic-breakthrough-reverses-cognitive-decline-by-powering-up-brain-mitochondria/" target="_blank">PsyPost — Chemogenetic breakthrough reverses cognitive decline</a></li>
+<li><a href="https://www.utsouthwestern.edu/newsroom/articles/year-2026/april-brain-cells-boost-endurance.html" target="_blank">UT Southwestern Newsroom — Brain cells boost endurance benefits of exercise</a></li>
+<li><a href="https://www.nature.com/articles/d41586-026-00414-1" target="_blank">Nature — Exercise rewires the brain</a></li>
+<li><a href="https://www.jax.org/news-and-insights/2026/february/brain-cells-drive-endurance-gains-after-exercise" target="_blank">Jackson Lab — Brain cells drive endurance gains after exercise</a></li>
+<li><a href="https://medicalxpress.com/news/2026-02-brain-sf1-neuron.html" target="_blank">Medical Xpress — Brain SF1 neuron and endurance</a></li>
+<li><a href="https://neurosciencenews.com/speech-cognitive-decline-29922/" target="_blank">Neuroscience News — Everyday speech may reveal early cognitive decline</a></li>
+<li><a href="https://www.psypost.org/the-rhythm-of-your-speech-may-offer-clues-to-your-cognitive-health/" target="_blank">PsyPost — Rhythm of your speech and cognitive health</a></li>
+<li><a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a></li>
+<li><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All episodes</a></li>
+<li><a href="https://yourstory.com/2026/05/neuralink-surgical-robot-brain-interface-2026" target="_blank">YourStory — Neuralink surgical robot 2026</a></li>
+<li><a href="https://thedebrief.org/neuralink-set-to-launch-high-volume-brain-implant-production-as-competitors-weigh-in/" target="_blank">The Debrief — Neuralink high-volume production</a></li>
+<li><a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News — Neuralink vision vs reality</a></li>
+<li><a href="https://terrabrasilnoticias.com/2026/05/por-que-o-reels-de-organizacao-te-acalma-a-psicologia-por-tras-do-clean-look" target="_blank">Terra Brasil — Por que o Reels de organização te acalma</a></li>
+<li><a href="https://www.biohackers.world/blog/biohacking-for-women" target="_blank">Biohackers World — Biohacking for women 2026</a></li>
+<li><a href="https://outliyr.com/future-biohacking-trends" target="_blank">Outliyr — Future biohacking trends</a></li>
+<li><a href="https://www.salk.edu/science/2026-the-salk-institutes-year-of-brain-health-research/" target="_blank">Salk Institute — Year of Brain Health Research 2026</a></li>
+<li><a href="https://www.technologynetworks.com/neuroscience/news/deep-sleep-may-break-the-usual-link-between-brain-waves-and-breathing-410305" target="_blank">Technology Networks — Deep sleep, brain waves and breathing</a></li>
+<li><a href="https://www.nature.com/articles/s41593-025-02091-1" target="_blank">Nature Neuroscience — Falling asleep follows a bifurcation dynamic</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Da biblioteca de referências:*</p>
+    </div>
+</body>
+</html>
