@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 21 de maio de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 21 de maio de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Burnout tem assinatura neuroquímica: dopamina embotada no núcleo accumbens</h3>
+<ul>
+<li><strong>Título do estudo:</strong> The Dopamine Deficit in Burnout: A Motivation and Reward Problem</li>
+<li><strong>Data de Publicação:</strong> Revisão 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.wombat.health/journal/the-dopamine-deficit-in-burnout-a-motivation-and-reward-problem" target="_blank">Wombat Health — The Dopamine Deficit in Burnout</a></li>
+<li><strong>Status:</strong> Revisão de literatura baseada em estudos revisados por pares</li>
+<li><strong>Achado:</strong> Pessoas em burnout apresentam atividade dopaminérgica embotada no núcleo accumbens — área crucial para sensibilidade à recompensa. Não é "preguiça" nem "falta de força de vontade": o sistema de recompensa está literalmente menos responsivo. Isso explica por que mulheres exaustas perdem prazer em coisas que antes amavam e ficam presas em ciclos de autossabotagem.</li>
+<li><strong>Implicação prática:</strong> Reduzir a carga antes de tentar "se motivar". O sistema dopaminérgico precisa de descanso real, sono, exposição à luz natural e pequenas recompensas previsíveis para voltar a responder. Tentar "atacar a procrastinação" com mais esforço só aprofunda o embotamento.</li>
+</ul>
+<h3>2. Cérebro tem 5 grandes eras estruturais — adolescência neural vai até os 32</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Brain development may continue into your 30s</li>
+<li><strong>Data de Publicação:</strong> Fevereiro de 2026 (replicado e discutido em maio/2026)</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/02/260218031606.htm" target="_blank">ScienceDaily — Brain development continues into your 30s</a></li>
+<li><strong>Status:</strong> Estudo da University of Cambridge — análise de quase 4.000 escaneamentos cerebrais</li>
+<li><strong>Achado:</strong> O cérebro humano tem quatro grandes pontos de virada estrutural: aos 9, 32, 66 e 83 anos. A "adolescência neural" — fase de imaturidade do córtex pré-frontal — só termina por volta dos 32, não aos 25 como se acreditava. O argumento viral "seu lobo frontal ainda não está pronto" usado para justificar impulsividade não tem base: o que muda na faixa dos 20-30 é a eficiência de rede, não a "imaturidade".</li>
+<li><strong>Implicação prática:</strong> Para as mulheres da MIB entre 25-35: o cérebro ainda está em formação ativa de rede. Cada hábito construído nessa fase tem peso desproporcional. É a janela de maior plasticidade adulta — e desperdiçar com rolagem infinita custa mais do que parece.</li>
+</ul>
+<h3>3. Ansiedade está ligada a baixos níveis de colina cerebral</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Major analysis of brain scans — anxiety disorders and choline levels</li>
+<li><strong>Data de Publicação:</strong> Maio de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/news/mind_brain/neuroscience/" target="_blank">ScienceDaily — Neuroscience News</a></li>
+<li><strong>Status:</strong> Meta-análise de escaneamentos cerebrais</li>
+<li><strong>Achado:</strong> Pessoas com transtornos de ansiedade têm níveis notavelmente mais baixos de colina cerebral — nutriente essencial para neurotransmissão saudável (acetilcolina, foco, memória). Não significa que tomar suplemento "cura" ansiedade, mas reforça que ansiedade tem substrato nutricional, não é só "cabeça".</li>
+<li><strong>Implicação prática:</strong> Alimentos ricos em colina (ovos inteiros, fígado, peixes, soja, brócolis) entram no protocolo de mulheres que cuidam da regulação emocional. Mais um argumento contra o discurso de "é só pensar positivo".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Mito do "lobo frontal não está pronto"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Frase viral no TikTok/Instagram usada para justificar impulsividade aos 20+. A nova pesquisa de Cambridge desmonta o argumento e mostra que o cérebro tem 4 viradas, não uma.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60s — desconstrução de mito viral com base científica.</li>
+<li><strong>Gancho sugerido:</strong> "Você ouviu por aí que seu cérebro só amadurece aos 25, né? Olha que interessante: a ciência mudou de ideia. E o que ela descobriu pode mudar a forma como você olha pra próxima década da sua vida."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/02/260218031606.htm" target="_blank">ScienceDaily / Cambridge</a></li>
+</ul>
+<h3>2. Burnout não é fraqueza — é dopamina embotada</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Discurso "produtividade tóxica" continua quente, mas a leitura neuroquímica do burnout ainda é pouco traduzida no Brasil. Conecta direto com o público MIB.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 7 telas — "O que acontece no seu cérebro quando você está em burnout".</li>
+<li><strong>Gancho sugerido:</strong> "Se você acorda cansada antes mesmo do dia começar, e nada do que você gostava antes te empolga mais, não é frescura. Tem nome, tem mecanismo, e tem caminho de volta."</li>
+<li><strong>Fonte:</strong> <a href="https://www.wombat.health/journal/the-dopamine-deficit-in-burnout-a-motivation-and-reward-problem" target="_blank">Wombat Health</a></li>
+</ul>
+<h3>3. Neuralink chega no debate público — o que isso muda pra mente humana</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Neuralink anunciou em 07/05/2026 robô cirúrgico capaz de implantar eletrodos em qualquer região do cérebro. Manchete grande, debate aberto sobre ética, autonomia e o que significa ser "você" quando o cérebro vira interface.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 6-8 min — leitura crítica, sóbria, com lente de fé e neurociência. Sem alarmismo, sem entusiasmo cego.</li>
+<li><strong>Gancho sugerido:</strong> "Esta semana o Neuralink anunciou que o robô deles consegue implantar eletrodos em qualquer parte do cérebro. E eu quero conversar com você sobre o que isso significa de verdade — não a manchete, o que está por trás."</li>
+<li><strong>Fonte:</strong> <a href="https://www.techtimes.com/articles/316912/20260520/neuralink-robot-reaches-any-brain-region-parkinsons-epilepsy-depression-now-within-surgical.htm" target="_blank">TechTimes — Neuralink Robot</a> | <a href="https://applyingai.com/2026/04/transforming-brain-computer-interfaces-neuralinks-2026-breakthroughs-and-market-dynamics/" target="_blank">Applying AI — 2026 Breakthroughs</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>"Brain rot" e atenção destruída pelo short-form</strong> — pesquisa recente em <em>Frontiers in Human Neuroscience</em> mostra alterações mensuráveis no controle executivo de quem consome muito vídeo curto. Tema sendo abordado por <strong>@hubermanlab</strong> e <strong>@nicolesneuroscience</strong>. Fonte: <a href="https://nspirement.com/2026/05/13/brain-rot-iwhat-the-internets-most-viral-content-may-be-doing-to-your-mind.html" target="_blank">Nspirement — Brain Rot</a> | <a href="https://sqmagazine.co.uk/tiktok-brain-statistics/" target="_blank">SQ Magazine — TikTok Brain Statistics</a></p>
+<p>2. <strong>Saúde do sistema nervoso como nova ideia central de wellness</strong> — Global Wellness Institute pôs "regulação do sistema nervoso" como tendência principal de 2026. Movimento puxado por <strong>@emonthebrain</strong> e <strong>@wendy.suzuki</strong>. Fonte: <a href="https://globalwellnessinstitute.org/global-wellness-institute-blog/2026/03/30/mental-wellness-initiative-trends-for-2026/" target="_blank">Global Wellness Institute</a> | <a href="https://wellityglobal.com/2026/05/07/mental-wellness-trends-we-are-seeing-in-2026-a-more-integrated-model-of-human-health/" target="_blank">Wellity Global</a></p>
+<p>3. <strong>Dopamina "reset" / detox dopaminérgico</strong> — narrativa muito vendida no IG/TikTok, principalmente em contas tipo <strong>@habitsforsuccess</strong>, <strong>@reservatoriodedopamina</strong>. Há ciência por trás (ultradian cycles, recompensa), mas muito conteúdo banaliza. Espaço enorme para Carol fazer a leitura correta. Fonte: <a href="https://www.leanwisdom.com/blog/productivity-hacks-for-professionals/" target="_blank">LeanWisdom — 2026 Productivity Paradigm</a></p>
+<p>4. <strong>Rachel the Neuroscientist e a onda de neurocientistas-criadoras</strong> — perfil viral (>2M no TikTok) traduzindo cérebro para o feminino jovem. Confirma o vetor que <strong>@tay.ldantas</strong> vem ocupando no Brasil. Carol está no nicho certo. Fonte: <a href="https://thelavinagency.com/speakers/rachel-barr/" target="_blank">The Lavin Agency — Rachel Barr</a></p>
+<p>5. <strong>Emotional fitness como nova categoria de saúde</strong> — 2026 traz "fitness emocional" como categoria autônoma, separada de saúde mental clínica. Conceito sob medida para o público MIB. Fonte: <a href="https://www.bettendorfcounselingcenter.com/journal/top-mental-wellness-trends-in-2026-nervous-system-health-longevity-amp-resilience" target="_blank">Bettendorf Counseling</a> | <a href="https://draxe.com/health/wellness-trends-2026/" target="_blank">DrAxe — Wellness Trends 2026</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Detox de dopamina" de 7 dias / 24h</strong> — circula como receita milagrosa. A neurociência não fala em "zerar dopamina"; fala em reduzir gatilhos de alta recompensa intermitente. Se Carol abordar, precisa corrigir o conceito, não validar.</li>
+<li><strong>"Frontal não está pronto até os 25"</strong> — argumento viral já desatualizado pela pesquisa de Cambridge. Quem repetir agora vai parecer atrasada.</li>
+<li><strong>Discurso "burnout é só descansar"</strong> — entra em conflito direto com a evidência neuroquímica. Burnout precisa de mais que pausa: precisa de reorganização de carga, sono profundo, regulação dopaminérgica.</li>
+<li><strong>Hype Neuralink "leitura de pensamentos"</strong> — manchetes exageram. O dispositivo ainda é cirúrgico, invasivo, em fase 3 de ensaios. Carol não precisa surfar a manchete pela manchete; pode pegar o ângulo de princípios.</li>
+<li><strong>Vocabulário a evitar (regra interna):</strong> transformação, jornada, ressignificar, potencializar — embora muito comuns nas matérias, ficam fora dos roteiros.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> O que o burnout faz no seu cérebro (e por que descansar não basta)</p>
+<p><strong>Formato:</strong> Carrossel de 7 telas — Instagram</p>
+<p><strong>Gancho:</strong> "Se você acorda cansada antes do dia começar, presta atenção: não é preguiça. É o seu sistema de recompensa pedindo socorro — e tem uma área específica do cérebro envolvida."</p>
+<p><strong>Estrutura sugerida:</strong></p>
+<p>1. Tela 1 — Gancho (acima)</p>
+<p>2. Tela 2 — Apresentar o núcleo accumbens em linguagem simples ("a área que faz você sentir prazer pelas coisas")</p>
+<p>3. Tela 3 — O que acontece no burnout: dopamina embotada, prazer desligado</p>
+<p>4. Tela 4 — Por que descansar 1 fim de semana não resolve</p>
+<p>5. Tela 5 — 3 passos baseados em ciência (sono profundo, luz natural pela manhã, recompensas pequenas e previsíveis)</p>
+<p>6. Tela 6 — "Não é preguiça. É biologia. E tem caminho de volta."</p>
+<p>7. Tela 7 — CTA: salva esse post pra revisitar quando o cansaço bater</p>
+<p><strong>Fonte de respaldo:</strong> <a href="https://www.wombat.health/journal/the-dopamine-deficit-in-burnout-a-motivation-and-reward-problem" target="_blank">Wombat Health — Dopamine Deficit in Burnout</a></p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Estrutura sugerida:*</p>
+    </div>
+</body>
+</html>
