@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 11 de junho de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 11 de junho de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Como o cérebro se isola dos sentidos durante o sono — descoberta no tálamo e córtex visual</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Cortical suppression of visual signals during sleep at the thalamocortical interface</li>
+<li><strong>Data de Publicação:</strong> 11 de junho de 2026</li>
+<li><strong>Fonte:</strong> Nature Communications — <a href="https://www.nature.com/neuro/articles?year=2026" target="_blank">Nature Neuroscience — Articles 2026</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Durante o sono, os sinais visuais ainda chegam ao tálamo (a "central de triagem" do cérebro), mas são ativamente suprimidos antes de chegarem ao córtex visual. Ou seja, o cérebro tem um mecanismo cortical específico que "fecha a porta" da percepção sensorial durante o sono — não é só "desligar", é um bloqueio ativo e seletivo.</li>
+<li><strong>Implicação prática:</strong> Sono não é ausência de atividade cerebral, é trabalho ativo de filtragem. Isso fortalece a tese de que dormir bem é função executiva — o cérebro precisa do sono para limpar, organizar e consolidar. Ângulo direto para o MIB: por que mulheres exaustas dormem e ainda acordam cansadas? Talvez porque interrompem esse processo de supressão com luz, notificação, ruminação.</li>
+</ul>
+<h3>2. Circuito da ansiedade na amígdala identificado — e pode ser "desligado"</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Identification of a GRIK4-mediated amygdala microcircuit modulating anxiety states</li>
+<li><strong>Data de Publicação:</strong> Junho de 2026</li>
+<li><strong>Fonte:</strong> Instituto de Neurociências (Espanha) — <a href="https://www.medicaldaily.com/anxiety-brain-circuit-amygdala-discovery-2026-grik4-treatment-475587" target="_blank">Medical Daily — Anxiety brain circuit discovery 2026</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pesquisadores identificaram um circuito pequeno e específico de neurônios na amígdala (o "centro do medo") que pode tanto causar ansiedade quanto eliminá-la — depende do equilíbrio do circuito. Esse circuito envolve o receptor GRIK4 e abre portas para tratamentos mais precisos.</li>
+<li><strong>Implicação prática:</strong> A ansiedade não é um "estado geral do cérebro" — é um circuito específico, mensurável, ajustável. Conteúdo poderoso para Carol falar sobre a diferença entre lidar com ansiedade pela neurociência (entender o circuito) vs. pela narrativa motivacional ("pense positivo"). Cruzar com práticas de regulação concretas.</li>
+</ul>
+<h3>3. Proteína KCC2 reescreve como o cérebro liga pistas a recompensas (hábitos)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> New research reveals how everyday cues secretly shape your habits — KCC2 protein dynamics</li>
+<li><strong>Data de Publicação:</strong> Dezembro de 2025 (resultados em circulação contínua em 2026)</li>
+<li><strong>Fonte:</strong> ScienceDaily — <a href="https://www.sciencedaily.com/releases/2025/12/251210223635.htm" target="_blank">How everyday cues secretly shape your habits</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Quando os níveis da proteína KCC2 caem, os neurônios dopaminérgicos disparam com mais intensidade, fortalecendo novas associações entre pistas (cues) e recompensas — exatamente o mesmo mecanismo dos comportamentos viciantes. Ou seja: a química do hábito saudável e do vício é a mesma; o que muda é o contexto.</li>
+<li><strong>Implicação prática:</strong> Pistas ambientais não são detalhe — são o motor químico do hábito. Para o MIB: organizar o ambiente físico (o que você vê primeiro de manhã, o que está na sua mesa, o que aparece no celular) não é estética, é neuroquímica aplicada.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Currículo pessoal" — a trend do TikTok que a neurociência aprova</h3>
+<ul>
+<li><strong>Tema:</strong> Definir um tema específico (1 livro, 1 área, 1 pergunta) e estudar fundo por 30 dias.</li>
+<li><strong>Por que está em alta:</strong> Trend viralizou no TikTok global em maio/junho de 2026 como reação à hiperestimulação e ao consumo raso. Neurocientistas apoiam porque ativa o "efeito recomeço" — o cérebro responde a novos ciclos com mais motivação e foco.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel no Instagram + reel curto. Conectar com a rotina de mulheres MIB que se sentem dispersas — em vez de tentar "consumir tudo", escolher uma coisa por mês.</li>
+<li><strong>Gancho sugerido:</strong> "A trend que tá bombando no TikTok é, sem querer, uma das melhores ferramentas de neurociência aplicada que existe pra quem se sente disperso."</li>
+<li><strong>Fonte:</strong> <a href="https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/" target="_blank">HR Portugal — Tendência currículo pessoal 2026</a></li>
+</ul>
+<h3>2. "Detox de dopamina" — o nome está errado, mas a prática tem ciência por trás</h3>
+<ul>
+<li><strong>Tema:</strong> A diferença entre o mito do "detox" e o que de fato funciona quando você reduz hiperestimulação.</li>
+<li><strong>Por que está em alta:</strong> A expressão voltou ao topo no Brasil em 2026 (Revista Oeste, mídia popular). Mas pesquisadores apontam: você não "limpa" dopamina — ela é produzida o tempo todo. O que se ajusta é a relação com gratificação instantânea.</li>
+<li><strong>Ângulo para Carol:</strong> Reel desmontando o termo + carrossel explicando o que realmente acontece no cérebro. Posição: "Não é detox, é higiene de estímulos." Tom firme + didático.</li>
+<li><strong>Gancho sugerido:</strong> "Detox de dopamina não existe. Mas tem uma coisa que existe sim, e que tá te deixando exausta sem você perceber."</li>
+<li><strong>Fonte:</strong> <a href="https://www.crisistextline.org/blog/2026/03/26/dopamine-detox/" target="_blank">Crisis Text Line — The truth about dopamine detox</a> | <a href="https://revistaoeste.com/oestegeral/2026/03/06/detox-de-dopamina-ajuda-a-reduzir-o-vicio-em-telas-no-dia-a-dia/" target="_blank">Revista Oeste — Detox dopamina 2026</a></li>
+</ul>
+<h3>3. De "biohacking" para "bioharmony" — o wellness feminino mudou de chave em 2026</h3>
+<ul>
+<li><strong>Tema:</strong> A virada cultural do otimizar tudo ao extremo para uma escuta mais inteligente do próprio corpo. Mulheres liderando.</li>
+<li><strong>Por que está em alta:</strong> Global Wellness Summit 2026 nomeou: "Women finally getting their own lanes in longevity." O Biohacking Index de março/2026 foi inteiramente dedicado a fundadoras, clínicas e cientistas mulheres. É reação direta ao burnout do "produtividade a qualquer custo".</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 5–8 min ou carrossel grande. Conectar com a tese MIB (alta performance sustentável) — performance sem destruir o corpo, com base em ciência feminina.</li>
+<li><strong>Gancho sugerido:</strong> "Por anos a gente foi vendida como projeto de otimização. Em 2026 a ciência tá mudando isso — e mulheres tão liderando."</li>
+<li><strong>Fonte:</strong> <a href="https://myotahealth.com/blogs/news/from-biohacking-to-bioharmony-the-softer-wellness-trend-of-2026" target="_blank">Myota Health — From Biohacking to Bioharmony</a> | <a href="https://nationaltoday.com/us/ny/new-york/news/2026/04/03/the-biohacking-index-releases-march-2026-report/" target="_blank">Biohacking Index — March 2026 report</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab — Sono, hormônios da fome e ganho de peso (08/06/2026)</strong></p>
+<p>Dr. Marie-Pierre St-Onge sobre como a privação de sono dispara grelina e leptina. Episódio recentíssimo, vai gerar conteúdo derivado por semanas. Ângulo Carol: mulher exausta + compulsão alimentar = neurociência, não falta de força de vontade. <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab Podcast</a></p>
+<p>2. <strong>Huberman Lab — Tratamentos de depressão e PTSD (04/06/2026)</strong></p>
+<p>Dr. Nolan Williams sobre TMS e psicodélicos. Tema delicado, mas em alta. Não é tema natural Carol, citar com cuidado.</p>
+<p>3. <strong>Neuralink em produção em massa — Musk anuncia automação cirúrgica em 2026</strong></p>
+<p>Notícia quente em todas as mídias internacionais. Não é tema central do MIB, mas dá excelente ponte: "Enquanto a tecnologia tenta ler o cérebro, a gente ainda não aprendeu a escutar o nosso." <a href="https://neuralink.com/updates/" target="_blank">Neuralink Updates</a> | <a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News — Neuralink reality check</a></p>
+<p>4. <strong>"Regra dos 2 minutos" voltou a viralizar no Brasil</strong></p>
+<p>Conteúdo de neurociência comportamental aplicada — começar a tarefa por 2 minutos para vencer a procrastinação. Está em sites populares (NDMais), reels e TikTok. Tema natural Carol — pode entrar como reel curto com base científica. <a href="https://ndmais.com.br/comportamento/a-regra-dos-2-minutos-que-esta-ajudando-pessoas-a-combater-a-procrastinacao/" target="_blank">NDMais — Regra dos 2 minutos</a></p>
+<p>5. <strong>"Currículo pessoal" — primeiro nicho do Brasil (Anabeatriz11, Anagestaodetempo)</strong></p>
+<p>Tema da seção anterior está ganhando tração nos perfis de produtividade BR. Carol pode chegar antes da curva — virou trend semana passada nos perfis internacionais, ainda não saturado no Brasil.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Cuidado com o termo "detox de dopamina":</strong> está em alta, mas é cientificamente impreciso. Carol pode usar como gancho desde que reposicione corretamente — nunca legitimar o termo como técnico. O risco é parecer mais um perfil que repete buzzwords.</li>
+<li><strong>Evitar reposts diretos sobre Neuralink/Musk:</strong> tema controverso, polariza, sai do eixo MIB. Se usar, fica apenas como ponte conceitual ("a tecnologia tenta ler o cérebro, mas a maioria de nós não sabe nem ler o próprio cansaço").</li>
+<li><strong>Conteúdo motivacional sobre "alta performance":</strong> o mercado tá saturado e o público feminino com sinais claros de fadiga do discurso. A virada para "bioharmony" mostra isso. Reforçar o diferencial Carol: ciência > motivação.</li>
+<li><strong>Termo "transformação":</strong> continua dominando feeds de coaching — Carol não usa, e essa é uma vantagem competitiva. Manter coerência.</li>
+<li><strong>Trend do "currículo pessoal":</strong> chegar antes do pico, mas sem replicar literal. Trazer ângulo próprio (neurociência + rotina feminina realista, não monástica).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> Por que você dorme 8h e acorda exausta — não é frescura, é neurociência.</p>
+<p><strong>Formato:</strong> Reel de 60–75s (vertical) + carrossel desdobrado depois.</p>
+<p><strong>Gancho:</strong> "Você dorme as oito horas inteiras, acorda e parece que não dormiu nada. Antes de achar que é só estresse, escuta isso aqui."</p>
+<p><strong>Desenvolvimento (estrutura MAS/PORTANTO):</strong></p>
+<p>1. Pesquisa publicada essa semana (Nature) mostra que durante o sono o cérebro não desliga — ele suprime ativamente os sinais sensoriais.</p>
+<p>2. MAS quando você dorme com TV ligada, luz acesa, celular ao lado ou em estado de ruminação, esse mecanismo de supressão é interrompido constantemente.</p>
+<p>3. PORTANTO o cérebro fica parcialmente "ligado" a noite inteira, mesmo que você esteja dormindo no relógio. A solução não é dormir mais horas — é proteger o ambiente das horas que você já dorme.</p>
+<p><strong>Fonte para citar:</strong> Pesquisa Nature Communications, junho 2026.</p>
+<p><strong>Hashtags sugeridas:</strong> #neurociência #sonoreparador #mentalidadeinabalável #altaperformance #saudefeminina</p>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Referências Cruzadas (todos os links consultados)</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Eixo 1 — Neurociência:</strong></p>
+<ul>
+<li><a href="https://www.nature.com/subjects/neuroscience" target="_blank">Nature — Neuroscience</a></li>
+<li><a href="https://www.nature.com/neuro/articles?year=2026" target="_blank">Nature Neuroscience — Articles 2026</a></li>
+<li><a href="https://www.nature.com/articles/s41583-025-01019-9" target="_blank">Nature Reviews Neuroscience — Psilocybin and neural plasticity</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2025/04/250417144912.htm" target="_blank">ScienceDaily — How the brain learns</a></li>
+</ul>
+<p><strong>Eixo 2 — Neurotecnologia:</strong></p>
+<ul>
+<li><a href="https://neuralink.com/updates/" target="_blank">Neuralink Updates</a></li>
+<li><a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT — Neuralink vs reality</a></li>
+<li><a href="https://tech4impactsummit.com/blog/brain-computer-interfaces-promise-perils-2026/" target="_blank">Tech for Impact Summit — BCIs 2026</a></li>
+<li><a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">Fierce Biotech — Neuralink high-volume production</a></li>
+</ul>
+<p><strong>Eixo 3 — Hábitos, dopamina, performance:</strong></p>
+<ul>
+<li><a href="https://www.sciencedaily.com/releases/2025/12/251210223635.htm" target="_blank">ScienceDaily — Cues shape habits (KCC2)</a></li>
+<li><a href="https://gwork.io/blog/science-of-habit-formation-workplace/" target="_blank">GWork — Habit formation 2026 guide</a></li>
+<li><a href="https://blog.adrianalacyconsulting.com/neuroscience-deep-work-strategies-productivity/" target="_blank">Adriana Lacy — Neuroscience of deep work</a></li>
+<li><a href="https://www.crisistextline.org/blog/2026/03/26/dopamine-detox/" target="_blank">Crisis Text Line — Dopamine detox</a></li>
+</ul>
+<p><strong>Eixo 4 — Saúde mental e regulação emocional:</strong></p>
+<ul>
+<li><a href="https://www.medicaldaily.com/anxiety-brain-circuit-amygdala-discovery-2026-grik4-treatment-475587" target="_blank">Medical Daily — Anxiety circuit GRIK4</a></li>
+<li><a href="https://www.nature.com/articles/s41598-026-40371-3" target="_blank">Scientific Reports — Social media and emotion regulation</a></li>
+<li><a href="https://globalwellnessinstitute.org/global-wellness-institute-blog/2026/03/30/mental-wellness-initiative-trends-for-2026/" target="_blank">Global Wellness Institute — Mental wellness 2026</a></li>
+<li><a href="https://wellityglobal.com/2026/05/07/mental-wellness-trends-we-are-seeing-in-2026-a-more-integrated-model-of-human-health/" target="_blank">Wellity Global — Mental wellness trends 2026</a></li>
+</ul>
+<p><strong>Eixo 5 — Tendências de conteúdo:</strong></p>
+<ul>
+<li><a href="https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/" target="_blank">HR Portugal — Currículo pessoal TikTok 2026</a></li>
+<li><a href="https://ndmais.com.br/comportamento/a-regra-dos-2-minutos-que-esta-ajudando-pessoas-a-combater-a-procrastinacao/" target="_blank">NDMais — Regra dos 2 minutos</a></li>
+<li><a href="https://portalpublicitario.com.br/tendencias-redes-sociais-2026-fim-viralizacao/" target="_blank">Portal Publicitário — Fim da viralização</a></li>
+<li><a href="https://revistaoeste.com/oestegeral/2026/03/06/detox-de-dopamina-ajuda-a-reduzir-o-vicio-em-telas-no-dia-a-dia/" target="_blank">Revista Oeste — Detox de dopamina</a></li>
+</ul>
+<p><strong>Eixo 6 — Wellness baseado em ciência:</strong></p>
+<ul>
+<li><a href="https://myotahealth.com/blogs/news/from-biohacking-to-bioharmony-the-softer-wellness-trend-of-2026" target="_blank">Myota Health — Bioharmony 2026</a></li>
+<li><a href="https://nationaltoday.com/us/ny/new-york/news/2026/04/03/the-biohacking-index-releases-march-2026-report/" target="_blank">Biohacking Index — March 2026</a></li>
+<li><a href="https://sociallifemagazine.com/health/women-biohacking-longevity-trend/" target="_blank">Social Life Magazine — Women biohacking longevity</a></li>
+<li><a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab Podcast</a></li>
+</ul>
+<p><strong>Eixo 7 — Sono e cognição:</strong></p>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S0028393225002556" target="_blank">ScienceDirect — Sleep and memory consolidation</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/40875205/" target="_blank">PubMed — Sleep's contribution to memory</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12713818/" target="_blank">NCBI — Sleep, learning and memory</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Desenvolvimento (estrutura MAS/PORTANTO):*<br>*Eixo 1 — Neurociência:*<br>*Eixo 2 — Neurotecnologia:*<br>*Eixo 3 — Hábitos, dopamina, performance:*<br>*Eixo 4 — Saúde mental e regulação emocional:*<br>*Eixo 5 — Tendências de conteúdo:*<br>*Eixo 6 — Wellness baseado em ciência:*<br>*Eixo 7 — Sono e cognição:*</p>
+    </div>
+</body>
+</html>
