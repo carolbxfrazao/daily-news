@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 25 de junho de 2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 25 de junho de 2026</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Falhas de atenção após privação de sono têm assinatura cérebro-corpo coordenada</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Attentional failures after sleep deprivation are locked to joint neurovascular, pupil and cerebrospinal fluid flow dynamics</em></li>
+<li><strong>Data de Publicação:</strong> 19 de junho de 2026</li>
+<li><strong>Fonte:</strong> Nature Neuroscience — <a href="https://www.nature.com/articles/s41593-025-02098-8" target="_blank">artigo</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Quando a pessoa dorme mal, as falhas de atenção durante o dia não são "aleatórias". Os pesquisadores mostraram que elas acontecem em sincronia com mudanças neuronais, constrição da pupila e pulsações do líquido cefalorraquidiano. Ou seja: o cérebro entra em micromodos de quase-sono mesmo de olhos abertos, e isso está acoplado a um sistema mais amplo de regulação cérebro-corpo.</li>
+<li><strong>Implicação prática:</strong> Aquela sensação de "travei agora" depois de uma noite ruim não é falta de força de vontade — é o cérebro alternando estados involuntariamente. Trabalhar exigindo foco com dívida de sono não é só ineficiente, é fisiologicamente inviável.</li>
+</ul>
+<h3>2. Tryptamina identificada como sinal endógeno de sono</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Tryptamine as a sleep signal</em> (Cao et al.)</li>
+<li><strong>Data de Publicação:</strong> 19 de junho de 2026</li>
+<li><strong>Fonte:</strong> Nature Neuroscience — <a href="https://www.nature.com/neuro/" target="_blank">índice da revista</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Identificação de uma molécula (tryptamina, parente próxima da serotonina) que funciona como sinal biológico de "hora de dormir" em camundongos. É uma peça nova no quebra-cabeça de como o corpo decide entrar em sono.</li>
+<li><strong>Implicação prática:</strong> Reforça que o sono é regulado por sistemas químicos muito específicos — não por "vontade de descansar". Higiene de sono não é firula, é trabalhar a favor desses sinais.</li>
+</ul>
+<h3>3. Plasticidade cerebral usa rotas separadas (não compartilhadas) para mudar</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Plasticity uses distinct transmission sites — University of Pittsburgh</li>
+<li><strong>Data de Publicação:</strong> Junho de 2025 (atualização e cobertura de 2026)</li>
+<li><strong>Fonte:</strong> Science Advances — <a href="https://www.sciencedaily.com/releases/2025/06/250603172903.htm" target="_blank">resumo na ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Derrubou uma suposição antiga: o cérebro usa locais de transmissão <em>distintos</em> — não um único compartilhado — para diferentes tipos de plasticidade. Isso explica como ele consegue ao mesmo tempo manter estabilidade (manter o que já sabe) e seguir flexível (aprender coisas novas).</li>
+<li><strong>Implicação prática:</strong> Aprender algo novo não significa apagar o anterior. O cérebro tem "salas separadas" para isso. Argumento bom contra a ideia de que mudar hábito é "destruir quem você era".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Foco em tarefa única (single-tasking) como cuidado, não como produtividade</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> A imprensa BR está virando a chave do "bem-estar de performance" para "bem-estar sustentável" em 2026 — saída da lógica de fazer tudo ao mesmo tempo e entrada do foco intencional. (<a href="https://www.em.com.br/emfoco/2026/02/06/adeus-ao-estresse-a-nova-tendencia-de-2026-para-viver-melhor-e-produzir-mais/" target="_blank">Estado de Minas</a>, <a href="https://silviascigliano.com.br/principais-tendencias-de-comportamento-para-2026/" target="_blank">Silvia Scigliano</a>)</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel — "Por que single-tasking não é sobre produzir mais, é sobre parar de te machucar"</li>
+<li><strong>Gancho sugerido:</strong> "Olha só: parar de fazer mil coisas ao mesmo tempo não é preguiça nem desistência. É o que sua amígdala vinha implorando."</li>
+<li><strong>Fonte:</strong> <a href="https://www.em.com.br/emfoco/2026/02/06/adeus-ao-estresse-a-nova-tendencia-de-2026-para-viver-melhor-e-produzir-mais/" target="_blank">Estado de Minas — tendência 2026</a></li>
+</ul>
+<h3>2. "Brain rot" — quando o vídeo curto vira moeda de troca da atenção</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Pesquisa peer-reviewed associa uso pesado de vídeos curtos a déficits de atenção e maior pontuação de ansiedade/depressão. Tema entrou no Correio Braziliense, NSC Total, Olhar Digital — segue rendendo no BR. (<a href="https://www.correiobraziliense.com.br/aqui/2026/02/03/cerebro-viciado-em-reels-como-assistir-videos-curtos-sabota-sua-mente/" target="_blank">Correio Braziliense</a>, <a href="https://olhardigital.com.br/2025/12/08/medicina-e-saude/brain-rot-pesquisas-apontam-riscos-ligados-ao-uso-excessivo-de-videos-curtos/" target="_blank">Olhar Digital</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11939997/" target="_blank">PMC review 2025</a>)</li>
+<li><strong>Ângulo para Carol:</strong> Reel de até 60s — confronto direto com o público que está rolando Reels enquanto assiste.</li>
+<li><strong>Gancho sugerido:</strong> "Você não tá com TDAH. Você passou 4 horas no Reels hoje. Existe diferença, e a ciência mostra qual é."</li>
+<li><strong>Fonte:</strong> <a href="https://www.correiobraziliense.com.br/aqui/2026/02/03/cerebro-viciado-em-reels-como-assistir-videos-curtos-sabota-sua-mente/" target="_blank">Correio Braziliense</a></li>
+</ul>
+<h3>3. Dívida de sono cobra na atenção — mesmo quando você "está acordada"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Estudo recém-publicado na Nature Neuroscience (19/jun/2026) explica o porquê do "apaguei agora" durante o dia, com mecanismo neurovascular fechado. (<a href="https://www.nature.com/articles/s41593-025-02098-8" target="_blank">Nature Neuroscience</a>)</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel didático no Instagram — "O que acontece no cérebro quando você dorme 5h e tenta render"</li>
+<li><strong>Gancho sugerido:</strong> "Você não tá desfocada. Seu cérebro tá literalmente entrando em micromodos de sono enquanto você tenta trabalhar."</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-025-02098-8" target="_blank">Nature Neuroscience — junho 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Layne Norton no Huberman Lab (25/jun/2026)</strong> — episódio sobre perda de gordura, construção muscular e metabolismo, com discussão de proteína, óleos vegetais e adoçantes. Vai bombar como referência em discussões de "saúde feminina baseada em ciência" nos próximos dias. <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></p>
+<p>2. <strong>Andy Stumpf / Paul Eastwick no Huberman</strong> — episódios recentes sobre "frame mental para suceder" (15/jun) e "ciência da atração e compatibilidade" (22/jun). Tema "rotina mental antes de rotina de skincare" segue rendendo no Brasil. <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Hubermanlab.com</a></p>
+<p>3. <strong>"Brain rot" continua na pauta editorial BR</strong> — Correio Braziliense, NSC Total, Olhar Digital e Lunetas vêm rodando o assunto há meses. Janela aberta para um ângulo <em>novo</em> (não denúncia, mas neurobiologia da recompensa). <a href="https://www.correiobraziliense.com.br/aqui/2026/02/03/cerebro-viciado-em-reels-como-assistir-videos-curtos-sabota-sua-mente/" target="_blank">Correio Braziliense</a>, <a href="https://www.nsctotal.com.br/noticias/sente-que-seu-foco-derreteu-a-culpa-pode-ser-do-brain-rot-o-efeito-dos-videos-curtos-no-seu-cerebro" target="_blank">NSC Total</a>, <a href="https://lunetas.com.br/o-vicio-em-videos-curtos-e-o-fenomeno-do-cerebro-podre/" target="_blank">Lunetas</a></p>
+<p>4. <strong>Carga invisível e burnout feminino</strong> — phys.org publicou em abril/2026 dados sobre o trabalho não remunerado como gatilho de saúde mental piorada em mulheres. Conversa direta com público MIB. <a href="https://phys.org/news/2026-04-hidden-workload-burnout-unpaid-worsen.html" target="_blank">phys.org</a></p>
+<p>5. <strong>Cortisol "silencioso" no cérebro</strong> — matéria do UAI (25/abr/2026) com especialistas explicando dano cerebral silencioso por cortisol cronicamente alto. Tema rendendo em perfis brasileiros de neurociência aplicada. <a href="https://www.uai.com.br/diversao/2026/04/25/hormonio-do-estresse-pode-danificar-o-cerebro-em-silencio-e-especialistas-explicam-o-risco/" target="_blank">UAI Notícias</a></p>
+<p>Criadores da BIBLIOTECA para monitorar hoje: @hubermanlab (lançou episódio novo), @reservatoriodedopamina e @neurovox (cobrem brain rot regularmente), @giutessitore (público feminino + rotina), @anagestaodetempo (single-tasking).</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Detox dopamina de 7 dias resolve tudo"</strong> — circulando forte. A pesquisa fala em recuperação parcial de atenção, <em>não</em> em reset hormonal milagroso. Se for falar, use a moderação: 32% de melhora em métricas específicas, não panaceia. (<a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank">dados</a>)</li>
+<li><strong>"Brain rot é só preguiça"</strong> — narrativa moralizante que ignora a base neurobiológica de recompensa. Carol pode confrontar, mas sem moralismo: o problema é arquitetura de plataforma, não fraqueza pessoal.</li>
+<li><strong>"Neuralink agora lê pensamentos"</strong> — leitura sensacionalista da expansão de produção em 2026. Na prática é interface motora/de fala para pessoas com paralisia severa. (<a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News</a>, <a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">FierceBiotech</a>)</li>
+<li><strong>"Dorme 8 horas e pronto"</strong> — o estudo de junho/2026 mostra que a relação sono-atenção é mais complexa (envolve fluxo de LCR, pupila, modulação neuronal). Evitar receita simplista.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> Por que você "trava" no meio da tarde mesmo dormindo 7 horas</p>
+<p><strong>Formato:</strong> Reel de 45-60s (vertical), com Carol explicando direto na câmera</p>
+<p><strong>Gancho:</strong> "Você não tá desfocada à toa. Saiu agora na Nature Neuroscience: quando você dorme mal, seu cérebro literalmente entra em micromodos de sono durante o dia — de olho aberto. E não é sobre força de vontade."</p>
+<p><strong>Desenvolvimento (MAS / PORTANTO):</strong> Mas isso não significa que você precisa dormir 9h por dia para funcionar. <strong>Portanto</strong> — o ponto não é só a duração, é a <em>coerência</em> do sono com os ciclos que o cérebro tá rodando.</p>
+<p><strong>CTA:</strong> "Salva esse aqui pra lembrar quando te chamarem de desfocada."</p>
+<p><strong>Fonte para teleprompter:</strong> <a href="https://www.nature.com/articles/s41593-025-02098-8" target="_blank">Nature Neuroscience, 19/jun/2026</a></p>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Fontes consultadas</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><a href="https://www.nature.com/articles/s41593-025-02098-8" target="_blank">Nature Neuroscience — Sleep deprivation and attentional failures (jun/2026)</a></li>
+<li><a href="https://www.nature.com/neuro/" target="_blank">Nature Neuroscience — índice</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2025/06/250603172903.htm" target="_blank">ScienceDaily — Decades-old assumptions about brain plasticity upended</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2025/11/251105050720.htm" target="_blank">ScienceDaily — Reverse memory loss in aging brains</a></li>
+<li><a href="https://www.sciencedaily.com/releases/2025/12/251210223635.htm" target="_blank">ScienceDaily — Everyday cues shape habits</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11939997/" target="_blank">PMC — Demystifying brain rot</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12329480/" target="_blank">PMC — Neurocognitive impact of social media</a></li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11741407/" target="_blank">PMC — Striatal dopamine and habit formation</a></li>
+<li><a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — All Episodes</a></li>
+<li><a href="https://www.statnews.com/2026/01/05/neuralink-brain-computer-interface-medical-device-vs-transhumanism/" target="_blank">STAT News — Neuralink reality check (jan/2026)</a></li>
+<li><a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">FierceBiotech — Neuralink high-volume production</a></li>
+<li><a href="https://www.em.com.br/emfoco/2026/02/06/adeus-ao-estresse-a-nova-tendencia-de-2026-para-viver-melhor-e-produzir-mais/" target="_blank">Estado de Minas — Tendência 2026 antiestresse</a></li>
+<li><a href="https://silviascigliano.com.br/principais-tendencias-de-comportamento-para-2026/" target="_blank">Silvia Scigliano — Tendências comportamento 2026</a></li>
+<li><a href="https://www.correiobraziliense.com.br/aqui/2026/02/03/cerebro-viciado-em-reels-como-assistir-videos-curtos-sabota-sua-mente/" target="_blank">Correio Braziliense — Cérebro viciado em Reels</a></li>
+<li><a href="https://olhardigital.com.br/2025/12/08/medicina-e-saude/brain-rot-pesquisas-apontam-riscos-ligados-ao-uso-excessivo-de-videos-curtos/" target="_blank">Olhar Digital — Brain rot e vídeos curtos</a></li>
+<li><a href="https://www.nsctotal.com.br/noticias/sente-que-seu-foco-derreteu-a-culpa-pode-ser-do-brain-rot-o-efeito-dos-videos-curtos-no-seu-cerebro" target="_blank">NSC Total — Brain rot foco</a></li>
+<li><a href="https://lunetas.com.br/o-vicio-em-videos-curtos-e-o-fenomeno-do-cerebro-podre/" target="_blank">Lunetas — Vício em vídeos curtos</a></li>
+<li><a href="https://phys.org/news/2026-04-hidden-workload-burnout-unpaid-worsen.html" target="_blank">phys.org — Workload burnout women</a></li>
+<li><a href="https://www.uai.com.br/diversao/2026/04/25/hormonio-do-estresse-pode-danificar-o-cerebro-em-silencio-e-especialistas-explicam-o-risco/" target="_blank">UAI — Cortisol dano silencioso no cérebro</a></li>
+<li><a href="https://wellhub.com/en-us/blog/wellness-and-benefits-programs/burnout-in-women/" target="_blank">Wellhub — Burnout em mulheres EUA</a></li>
+<li><a href="https://sqmagazine.co.uk/tiktok-brain-statistics/" target="_blank">SQ Magazine — TikTok brain statistics 2026</a></li>
+<li><a href="https://www.meioemensagem.com.br/womentowatch/o-comportamento-feminino-diante-das-tendencias-para-2026" target="_blank">Meio & Mensagem — Comportamento feminino 2026</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
