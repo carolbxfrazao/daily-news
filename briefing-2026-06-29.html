@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-06-29</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-06-29</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Cientistas revertem ansiedade ao corrigir um circuito minúsculo da amígdala</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Restoring Grik4 expression in basolateral amygdala reverses anxiety and social deficits"</li>
+<li><strong>Data de Publicação:</strong> 3 de junho de 2026 (divulgação ScienceDaily); artigo em <em>iScience</em>, volume 28, edição 6</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/06/260603015356.htm" target="_blank">ScienceDaily — Scientists reverse anxiety by fixing a tiny brain circuit</a> | DOI: <a href="https://doi.org/10.1016/j.isci.2025.112649" target="_blank">10.1016/j.isci.2025.112649</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>iScience</em>, Cell Press)</li>
+<li><strong>Instituição:</strong> Instituto de Neurociências (IN) — CSIC + Universidade Miguel Hernández (Espanha), grupo de Juan Lerma</li>
+<li><strong>Achado:</strong> Os pesquisadores identificaram um circuito específico entre a amígdala basolateral (neurônios com alta expressão do receptor de glutamato GluK4) e a amígdala centrolateral (neurônios inibitórios de disparo regular). Ao normalizar a expressão do gene Grik4, restauraram a comunicação entre essas duas regiões e reverteram comportamentos ansiosos e déficits sociais em camundongos.</li>
+<li><strong>Implicação prática:</strong> Reforça a tese de que ansiedade não é "fraqueza" nem "falta de fé" — é um circuito que pode ser desregulado e re-regulado. Abre espaço para falar com a audiência MIB sobre por que práticas de regulação (respiração, sono, exposição gradual) funcionam: elas atuam diretamente sobre esse tipo de microcircuito.</li>
+</ul>
+<h3>2. Maior estudo genético de ansiedade já feito identifica 58 loci e aponta o sistema GABA</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Genome-wide association study of major anxiety disorders in 122,341 European-ancestry cases identifies 58 loci and highlights GABAergic signaling"</li>
+<li><strong>Data de Publicação:</strong> Junho de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41588-025-02485-8" target="_blank">Nature Genetics — s41588-025-02485-8</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Nature Genetics</em>)</li>
+<li><strong>Achado:</strong> Meta-análise GWAS com 122.341 casos europeus mapeou 58 loci de risco independentes para transtornos de ansiedade maior e mostrou que a sinalização GABAérgica (o "freio" químico do cérebro) é um dos principais eixos por trás do risco genético. Sustenta a hipótese de que ansiedade nasce da desregulação dos circuitos de resposta à ameaça.</li>
+<li><strong>Implicação prática:</strong> Material denso para defender, com base científica sólida, que ansiedade tem componente biológico real — não é "frescura". Ótimo para um carrossel didático sobre "por que respiração, sono e magnésio ajudam: você está literalmente apoiando seu sistema GABA".</li>
+</ul>
+<h3>3. Vídeo curto e cognição: revisão sistemática com 98 mil participantes</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "The Impact of Short-Form Video Use on Cognitive and Mental Health Outcomes: A Systematic Review"</li>
+<li><strong>Data de Publicação:</strong> Pré-print atualizado em 2025-2026, com seguimento em revisão sistemática de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.medrxiv.org/content/10.1101/2025.08.27.25334540.full.pdf" target="_blank">medRxiv pré-print</a> | <a href="https://www.nbcnews.com/health/health-news/brain-rot-research-short-form-video-consumption-rcna245739" target="_blank">Cobertura NBC News — "Brain rot" emerging risks</a> | <a href="https://www.tandfonline.com/doi/full/10.1080/02673843.2026.2623337" target="_blank">Tandfonline — Short video addiction & cognitive functioning</a></li>
+<li><strong>Status:</strong> Revisão sistemática (71 estudos, 98.299 participantes) + revisão sistemática complementar em periódico revisado por pares</li>
+<li><strong>Achado:</strong> Uso pesado de vídeos curtos (TikTok, Reels, Shorts) associado a piora em atenção, controle inibitório, autorregulação, linguagem e raciocínio. Estudos com EEG mostram aumento de gama em momentos de alta recompensa e queda da variabilidade de ondas beta no córtex pré-frontal (marcador de controle de impulso) em quem rola feed mais de 2h/dia. Pontos de virada começam acima de 3h/dia. <strong>Notícia boa:</strong> após 30 dias de abstinência houve recuperação parcial das ondas alfa — evidência de neuroplasticidade reversível.</li>
+<li><strong>Implicação prática:</strong> Conteúdo extremamente forte para a audiência MIB, que vive na rede social como ferramenta de trabalho. Ângulo: não é demonização — é dose-resposta. Existe um limiar de uso a partir do qual o estrago aparece, e existe um caminho de volta.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Currículo Pessoal" — a trend do TikTok que a neurociência aprova</h3>
+<ul>
+<li><strong>Tema:</strong> Adultos montando o próprio "currículo escolar" do mês (tema escolhido + livro + podcast + projeto entregue).</li>
+<li><strong>Por que está em alta:</strong> Iniciada pela criadora Elizabeth Jean, virou febre em maio-junho de 2026. A neurocientista do King's College Anne-Laure Le Cunff endossou publicamente: <em>"o cérebro prospera em ciclos de desafio, feedback e progresso, e a vida adulta raramente oferece espaço para esse tipo de experimentação"</em>. Pesquisa citada mostra que adultos em aulas recreativas estruturadas tiveram ganho cognitivo equivalente a um rejuvenescimento de 30 anos.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 7 telas (Instagram) + Reel de 60s mostrando a Carol montando o próprio currículo do mês. Pilar <strong>mentalidade estruturada</strong> + <strong>neurociência prática</strong>.</li>
+<li><strong>Gancho sugerido:</strong> <em>"Tem uma trend nova no TikTok que parece bobagem — mas é a coisa mais alinhada com neurociência que apareceu esse ano. Olha só."</em></li>
+<li><strong>Fonte:</strong> <a href="https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/" target="_blank">HR Portugal / Sapo — Currículo pessoal, a trend do TikTok que a ciência apoia</a></li>
+</ul>
+<h3>2. Brain rot: o que a ciência diz, agora com dado de reversibilidade</h3>
+<ul>
+<li><strong>Tema:</strong> Vídeos curtos prejudicam atenção e controle de impulso — mas o cérebro volta.</li>
+<li><strong>Por que está em alta:</strong> A revisão sistemática com quase 100 mil pessoas saiu na imprensa internacional há poucas semanas. O termo "brain rot" deixou de ser meme e virou objeto de pesquisa séria. A audiência MIB sente o sintoma (foco curto, irritação, exaustão) e quer entender.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 6-8 min explicando o estudo, com seções claras: o que acontece no cérebro, qual é o limiar de dano (acima de 2h-3h/dia), o que a abstinência de 30 dias devolve. Pilar <strong>alta performance sustentável</strong>.</li>
+<li><strong>Gancho sugerido:</strong> <em>"Eu queria conversar com vocês sobre uma coisa que tá saindo agora na ciência e que muda a forma como a gente olha pra esse celular aqui na mão. Vamos lá."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.nbcnews.com/health/health-news/brain-rot-research-short-form-video-consumption-rcna245739" target="_blank">NBC News — Brain rot research short-form video</a> | <a href="https://www.medrxiv.org/content/10.1101/2025.08.27.25334540.full.pdf" target="_blank">medRxiv — Revisão sistemática</a></li>
+</ul>
+<h3>3. Ansiedade tem circuito — e tem freio</h3>
+<ul>
+<li><strong>Tema:</strong> A descoberta do circuito Grik4 na amígdala como prova fisiológica de que ansiedade é regulação, não caráter.</li>
+<li><strong>Por que está em alta:</strong> Estudo publicado há menos de 4 semanas (3/jun). Tira o peso moral de cima de mulheres que carregam culpa por sentirem ansiedade.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 75s — começa com a frase de impacto, mostra a imagem mental do circuito (pode ser ilustração simples), termina com 3 práticas que atuam justamente nele (respiração 4-7-8, exposição gradual, sono regular). Pilar <strong>neurociência prática</strong>.</li>
+<li><strong>Gancho sugerido:</strong> <em>"Olha que interessante: cientistas conseguiram desligar a ansiedade mexendo num grupinho minúsculo de neurônios. Isso muda tudo na forma como a gente olha pra essa palavra."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/06/260603015356.htm" target="_blank">ScienceDaily</a> | <a href="https://doi.org/10.1016/j.isci.2025.112649" target="_blank">iScience DOI</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>"Currículo pessoal"</strong> está bombando entre criadoras de produtividade feminina internacional — chega ao Brasil nas próximas 2-3 semanas (padrão TikTok→BR). Já tem cobertura em <a href="https://hrportugal.sapo.pt/a-mais-recente-tendencia-do-tiktok-para-2026-chama-se-curriculo-pessoal-a-neurociencia-apoia-e-os-especialistas-em-produtividade-tambem/" target="_blank">HR Portugal</a>. Vale chegar antes da onda.</p>
+<p>2. <strong>Debate "brain rot" no YouTube/Reels</strong> — criadoras como <a href="https://www.instagram.com/nicolesneuroscience/" target="_blank">@nicolesneuroscience</a> e <a href="https://www.instagram.com/emonthebrain/" target="_blank">@emonthebrain</a> já vinham tratando do tema; com a publicação da revisão sistemática a discussão ganhou tração nova. <a href="https://www.instagram.com/hubermanlab/" target="_blank">@hubermanlab</a> puxou recentemente o assunto de "dopamine reset" em conexão direta.</p>
+<p>3. <strong>Conteúdo de regulação emocional baseado em circuito</strong>, não em "mindset". <a href="https://www.instagram.com/reservatoriodedopamina/" target="_blank">@reservatoriodedopamina</a> e <a href="https://www.instagram.com/bruna.dimantas/" target="_blank">@bruna.dimantas</a> estão na onda do "ansiedade é fisiologia, não fraqueza". A descoberta do Grik4 fortalece esse discurso com fonte primária.</p>
+<p>4. <strong>TikTok como laboratório de trends que chega ao BR em 2-3 semanas</strong> — vale acompanhar <a href="https://www.tiktok.com/@emonthebrain" target="_blank">@emonthebrain</a> (809K+) e <a href="https://www.tiktok.com/@rhodeslovesneuroscience" target="_blank">@rhodeslovesneuroscience</a>, que aceleraram conteúdo sobre vícios em dopamina e curating do próprio aprendizado.</p>
+<p>5. <strong>"Diary of a CEO" e Huberman Lab</strong> continuam puxando o formato YouTube-conversa-longa. Vale observar primeiros 30s — modelo de gancho que segura quem tem atenção fragmentada. <a href="https://www.hubermanlab.com/" target="_blank">Huberman Lab</a> | <a href="https://www.instagram.com/tay.ldantas/" target="_blank">Tay Dantas no Instagram</a> como referência estética e de comunicação direta feminina.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Ansiedade é só falta de fé / é só falta de gratidão / é só falta de organização"</strong> — narrativa cristã e produtividade tradicional vão pegar a notícia do circuito Grik4 e simplificar pro lado oposto ("é tudo química, não tem nada de espiritual"). Evitar os dois extremos. O ângulo correto é integrativo: ansiedade tem base de circuito, e práticas de regulação (incluindo oração, sono, respiração) atuam sobre esse circuito.</li>
+<li><strong>"TikTok faz mal, deletem tudo"</strong> — narrativa fácil e moralizante que vai aparecer na esteira da revisão sistemática. O dado real é dose-resposta (acima de 2-3h/dia) e reversível. Evitar a versão alarmista sem citação numérica.</li>
+<li><strong>"Currículo pessoal = vida produtiva"</strong> — vai aparecer versão romantizada estilo "morning routine" sem base. Não embarcar. O valor neurocientífico está no ciclo desafio→feedback→progresso, não na estética.</li>
+<li><strong>Trends de IA do TikTok ("novelas das frutas", currículo gerado por IA)</strong> — viralização rápida, mas sem ângulo de neurociência sério. Pular.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Formato:</strong> Reel de 60-75s (Instagram + TikTok)</p>
+<p><strong>Tema:</strong> "Cientistas acabaram de desligar a ansiedade num grupinho minúsculo de neurônios — e isso muda tudo"</p>
+<p><strong>Gancho (3s):</strong> <em>"Olha que interessante: tem uma descoberta de menos de um mês atrás que devia estar em todo lugar e ninguém tá falando."</em></p>
+<p><strong>Desenvolvimento (MAS / PORTANTO):</strong></p>
+<ul>
+<li><strong>Setup:</strong> "A ciência sempre falou que ansiedade é multifatorial — genética, ambiente, comportamento."</li>
+<li><strong>MAS:</strong> "Em junho desse ano, pesquisadores espanhóis identificaram exatamente o circuito da amígdala que controla isso. E ao normalizar a expressão de um gene chamado Grik4, eles literalmente reverteram comportamentos ansiosos."</li>
+<li><strong>PORTANTO:</strong> "Isso significa duas coisas. Primeiro: ansiedade não é fraqueza, não é falta de fé, não é frescura. É um circuito que está desregulado. Segundo: se é circuito, ele responde a estímulo. Respiração lenta, sono regular, exposição gradual ao que assusta — tudo isso atua exatamente nessa região. Não é coincidência que funciona. Tem mecanismo."</li>
+</ul>
+<p><strong>CTA:</strong> <em>"Salva esse vídeo se você precisava ouvir isso hoje. E me conta nos comentários: o que você faz quando a ansiedade aperta?"</em></p>
+<p><strong>Fonte para fixar na descrição:</strong> ScienceDaily, 03/jun/2026 — estudo publicado em <em>iScience</em>, DOI 10.1016/j.isci.2025.112649.</p>
+<p><strong>Hashtags:</strong> #neurociência #ansiedade #saúdemental #mentalidadeinabalavel #cérebro</p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Gancho (3s):** *"Olha que interessante: tem uma descoberta de menos de um mês atrás que devia estar em todo lugar e ninguém tá falando."<br>*Desenvolvimento (MAS / PORTANTO):*<br>*CTA:** *"Salva esse vídeo se você precisava ouvir isso hoje. E me conta nos comentários: o que você faz quando a ansiedade aperta?"</p>
+    </div>
+</body>
+</html>
