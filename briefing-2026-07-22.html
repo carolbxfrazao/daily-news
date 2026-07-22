@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-07-22</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-07-22</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Dormir demais (8,5h+) está associado a biomarcador de Alzheimer no sangue</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Long sleep duration is associated with elevated plasma p-tau181 (Framingham Heart Study)</li>
+<li><strong>Data de Publicação:</strong> 16 de julho de 2026 (divulgação); estudo publicado em <em>Alzheimer's & Dementia</em></li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1002/alz.71499" target="_blank">10.1002/alz.71499</a> — via <a href="https://neurosciencenews.com/sleep-duration-p-tau181-alzheimers-31060/" target="_blank">Neuroscience News</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Em 2.410 participantes do Framingham Heart Study (idade média 70 anos, 55% mulheres), dormir regularmente 8,5 horas ou mais se associou a níveis elevados de p-tau181 no sangue — proteína usada como biomarcador precoce de Alzheimer. O risco sobe acentuadamente acima de 10 horas, e a associação se mantém mesmo ajustando para apneia, depressão e genética (APOE ε4). Os autores frisam: sono longo <strong>não causa</strong> Alzheimer — provavelmente é um sinal comportamental de neurodegeneração precoce e silenciosa.</li>
+<li><strong>Implicação prática:</strong> A conversa pública é quase toda sobre dormir pouco. Esse estudo vira o jogo: sono consistentemente muito longo em adultos mais velhos pode ser alerta, não descanso. Quantidade não substitui qualidade — e mudança persistente no padrão de sono merece atenção médica.</li>
+</ul>
+<h3>2. Exercício "liga" o sistema de limpeza do cérebro (sistema glinfático)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Exercise as a regulator of glymphatic function</li>
+<li><strong>Data de Publicação:</strong> 15 de julho de 2026, <em>Trends in Neurosciences</em></li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1016/j.tins.2026.06.002" target="_blank">10.1016/j.tins.2026.06.002</a> — via <a href="https://medicalxpress.com/news/2026-07-brains-healthy-age.html" target="_blank">Medical Xpress</a></li>
+<li><strong>Status:</strong> Revisão publicada em periódico revisado por pares</li>
+<li><strong>Achado:</strong> Revisão de estudos em animais e humanos mostra que atividade física regula o sistema glinfático — a "faxina" que o cérebro faz durante o sono para eliminar resíduos metabólicos ligados ao declínio cognitivo. O exercício melhora os processos que sustentam essa limpeza: reduz pressão arterial e rigidez vascular, aumenta ativação neuronal, diminui inflamação cerebral e melhora a qualidade do sono profundo.</li>
+<li><strong>Implicação prática:</strong> Treino e sono não são pilares separados — o exercício de hoje melhora a limpeza cerebral desta noite. Movimento regular que eleva os batimentos é proteção de longo prazo contra declínio cognitivo, e começar cedo importa.</li>
+</ul>
+<h3>3. Sono ruim bagunça a comunicação do cérebro — de um jeito diferente em cada idade</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Poor sleep quality alters brain network communication differently across adulthood</li>
+<li><strong>Data de Publicação:</strong> 14 de julho de 2026 (divulgação); estudo publicado em <em>Neurobiology of Aging</em></li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1016/j.neurobiolaging.2026.05.002" target="_blank">10.1016/j.neurobiolaging.2026.05.002</a> — via <a href="https://neurosciencenews.com/sleep-quality-brain-networks-aging-31047/" target="_blank">Neuroscience News</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Usando ressonância funcional em dois conjuntos de dados (N=95 e N=1.244), pesquisadores viram que sono ruim gera hiperconectividade em redes motoras nos adultos jovens, enquanto nos idosos (65+) gera hiperconectividade anormal entre a Default Mode Network e a rede frontoparietal — padrão que espelha o Alzheimer pré-clínico.</li>
+<li><strong>Implicação prática:</strong> Não existe solução única de sono: o cérebro jovem precisa "desligar a ativação" antes de dormir (rotina pré-sono, desaceleração), enquanto o cérebro mais velho precisa de estratégias que fortaleçam a integridade das redes. Idade muda a prescrição.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Dormir demais também é sinal" — o outro lado da conversa sobre sono</h3>
+<ul>
+<li><strong>Tema:</strong> Sono longo como alerta do cérebro, não troféu de descanso</li>
+<li><strong>Por que está em alta:</strong> Estudo do Framingham Heart Study (16/07) circulando na imprensa científica na mesma semana em que o "sleepmaxxing" domina as redes — o contraste é perfeito.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de quebra de expectativa + carrossel explicando p-tau181 em linguagem simples ("proteína que sinaliza sofrimento neuronal").</li>
+<li><strong>Gancho sugerido:</strong> "Todo mundo fala de dormir pouco. Mas você sabia que dormir DEMAIS pode ser o cérebro pedindo socorro?"</li>
+<li><strong>Fonte:</strong> <a href="https://neurosciencenews.com/sleep-duration-p-tau181-alzheimers-31060/" target="_blank">Neuroscience News</a></li>
+</ul>
+<h3>2. Chip cerebral comercial: China implanta o primeiro BCI fora de pesquisa</h3>
+<ul>
+<li><strong>Tema:</strong> A Neuracle realizou o primeiro implante de interface cérebro-computador comercial do mundo (dispositivo NEO, do tamanho de uma moeda) em paciente com lesão medular.</li>
+<li><strong>Por que está em alta:</strong> Marco de julho/2026 — o BCI saiu do laboratório e virou produto, reacendendo o debate sobre privacidade mental.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou reel informativo — "o que isso significa (e o que ainda é ficção)". Neurotecnologia traduzida, sem sensacionalismo.</li>
+<li><strong>Gancho sugerido:</strong> "Enquanto você assistia reels, a China implantou o primeiro chip cerebral comercial do mundo. Calma — deixa eu te explicar o que isso é de verdade."</li>
+<li><strong>Fonte:</strong> <a href="https://gizmodo.com/china-just-performed-the-worlds-first-implant-of-a-commercial-brain-computer-interface-2000785981" target="_blank">Gizmodo</a> + <a href="https://neurotechnology.substack.com/p/notables-58" target="_blank">Neurotech Notables #58</a></li>
+</ul>
+<h3>3. Atenção em queda livre: a discussão dos "7,97 segundos"</h3>
+<ul>
+<li><strong>Tema:</strong> Levantamentos de 2026 apontam atenção média em torno de 8 segundos em consumo de vídeo, com doomscrolling ligado a fadiga cognitiva em estudos recentes.</li>
+<li><strong>Por que está em alta:</strong> "Brain rot" e doomscrolling seguem no centro do debate público; pesquisas novas conectam uso problemático de celular a declínio de atenção e fadiga mental.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "o que a ciência realmente mostra sobre sua atenção" + prática de recuperação de foco (tédio intencional, blocos sem tela).</li>
+<li><strong>Gancho sugerido:</strong> "Sua atenção não está 'acabando'. Ela está sendo treinada — todos os dias — para durar 8 segundos."</li>
+<li><strong>Fonte:</strong> <a href="https://nen.wfglobal.org/highlights/shrinking-human-attention-span-statistics-2026-749199" target="_blank">WF Global (estatísticas 2026)</a> + <a href="https://www.researchsquare.com/article/rs-8899242/v1" target="_blank">estudo sobre doomscrolling e fadiga cognitiva (Research Square, pré-print)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Sleepmaxxing</strong> — mais de 125 milhões de posts acumulados; stack de hábitos e produtos para "sono perfeito" (magnésio, cortina blackout, sleepy girl mocktail). Especialistas alertam para exageros. Fonte: <a href="https://sleep.me/post/sleepmaxxing-trend" target="_blank">Sleep.me</a> / <a href="https://www.emarketer.com/content/gen-z-s-latest-wellness-trend-on-tiktok-concerns-medical-experts" target="_blank">eMarketer</a></p>
+<p>2. <strong>"Cortisol cocktails"</strong> — bebidas virais que prometem "regular o cortisol"; a ciência por trás é fraca e o tema está sendo desconstruído publicamente. Fonte: <a href="https://www.forwardpathway.us/deconstructing-social-media-wellness-trends-the-science-and-risks-behind-cortisol-cocktails-sleepmaxxing-and-more-building-sustainable-habits" target="_blank">Forward Pathway</a></p>
+<p>3. <strong>Curiosidade ativa como novo algoritmo</strong> — relatório TikTok Next 2026: plataforma recompensa exploração ativa e comunidades fortes; consumo passivo e "piloto automático" em queda. Fonte: <a href="https://www.meioemensagem.com.br/midia/tiktok-elege-curiosidade-e-realidade-como-tendencias-de-2026" target="_blank">Meio & Mensagem</a> / <a href="https://newsroom.tiktok.com/apresentamos-o-tiktok-next-2026?lang=pt" target="_blank">TikTok Newsroom</a></p>
+<p>4. <strong>Doomscrolling e "brain rot"</strong> — segue gerando conteúdo de especialistas (Mayo Clinic entre eles) sobre a armadilha da atenção. Fonte: <a href="https://gulfbusiness.com/en/2026/tech/mayo-clinic-psychologist-craig-n-sawchuk-on-doomscrolling-and-attention-trap/" target="_blank">Gulf Business — entrevista Mayo Clinic</a></p>
+<p>5. <strong>Chip cerebral chinês (NEO)</strong> — o implante comercial repercute em tech e ciência; espaço aberto para quem traduzir sem alarmismo. Fonte: <a href="https://gizmodo.com/china-just-performed-the-worlds-first-implant-of-a-commercial-brain-computer-interface-2000785981" target="_blank">Gizmodo</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Respiração no sono é a descoberta da semana"</strong> — sites de baixa credibilidade estão recirculando como novidade um estudo de dezembro/2024 sobre respiração e consolidação de memória. O estudo original é sério (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11670218/" target="_blank">PNAS, via PMC</a>), mas não é novo. Se usar, tratar como ciência estabelecida, não "acabou de sair".</li>
+<li><strong>Sleepmaxxing extremo</strong> — mouth taping e rotinas obsessivas de sono sem evidência; especialistas já associam a piora de insônia e ansiedade (ortossonia). Abordar como análise crítica, nunca como tutorial. Fonte: <a href="https://malaymail.com/news/life/2025/08/08/obsessed-with-perfect-sleep-experts-warn-viral-sleepmaxxing-craze-may-worsen-insomnia-anxiety/186760" target="_blank">Malay Mail — alerta de especialistas</a></li>
+<li><strong>"Cortisol cocktail" como solução hormonal</strong> — não há evidência de que a bebida "regule cortisol"; cuidado para não legitimar ao criticar sem dados.</li>
+<li><strong>Números virais sem fonte primária</strong> — o "7,97 segundos de atenção" vem de levantamento de mercado, não de estudo revisado por pares. Usar como retrato da discussão, citando a natureza da fonte.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Seu treino de hoje é a faxina do seu cérebro esta noite"</li>
+<li><strong>Formato:</strong> Reel 60-90s</li>
+<li><strong>Gancho:</strong> "Você acha que exercício é sobre corpo? Uma revisão publicada este mês mostrou que o treino regula o sistema de limpeza do seu cérebro — e essa faxina acontece enquanto você dorme."</li>
+<li><strong>Desenvolvimento:</strong> Explicar o sistema glinfático como "equipe de limpeza noturna" que remove resíduos ligados ao declínio cognitivo. MAS essa equipe só trabalha bem com sono profundo de qualidade. PORTANTO exercício + sono não são dois hábitos separados: são um sistema — treinar de dia melhora a limpeza da noite.</li>
+<li><strong>CTA:</strong> "Salva esse vídeo e me conta: qual dos dois você tem negligenciado?"</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1016/j.tins.2026.06.002" target="_blank">Trends in Neurosciences, DOI 10.1016/j.tins.2026.06.002</a> via <a href="https://medicalxpress.com/news/2026-07-brains-healthy-age.html" target="_blank">Medical Xpress</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-07-22 conforme protocolo em `memory/protocolo-briefing.md`. Todas as fontes verificadas na data.</p>
+    </div>
+</body>
+</html>
