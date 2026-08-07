@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-07</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-07</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Motivação tem um "medidor de esforço" no cérebro — e ele não é infinito</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Orexin neuron activity scales with effort demand in goal-directed behavior</li>
+<li><strong>Data de Publicação:</strong> 3 de agosto de 2026 (divulgação); estudo da Universidade de Nagoya (Japão)</li>
+<li><strong>Fonte:</strong> <a href="https://neurosciencenews.com/orexin-neurons-motivation-31173/" target="_blank">Neuroscience News</a> — estudo publicado em periódico revisado por pares (PNAS, conforme a matéria)</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pesquisadores mostraram que os neurônios de orexina — células do hipotálamo ligadas a vigília e energia — aumentam a atividade proporcionalmente à dificuldade da tarefa: quanto maior o esforço exigido, mais eles disparam. Suprimir esses neurônios derruba a motivação para tarefas difíceis. Mas o dado mais interessante é o contrário: superestimular esses neurônios <strong>não</strong> aumenta a motivação além do normal. O sistema é necessário, mas opera dentro de um teto fisiológico.</li>
+<li><strong>Implicação prática:</strong> "Se esforçar mais" tem limite biológico. O cérebro calibra a motivação ao custo da tarefa — e não existe atalho de estimulação que crie disposição infinita. Isso conversa direto com alta performance sustentável: gerenciar o custo do esforço (dividir tarefas, reduzir atrito) funciona; tentar "forçar motivação" não.</li>
+</ul>
+<h3>2. Postura ereta melhora o humor e a disposição para agir — sem a pessoa perceber</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Covert postural manipulation increases risk-taking and positive affect</li>
+<li><strong>Data de Publicação:</strong> 3 de agosto de 2026 (divulgação); <em>British Journal of Psychology</em></li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1111/bjop.70083" target="_blank">10.1111/bjop.70083</a> — via <a href="https://neurosciencenews.com/posture-mood-risk-psychology-31172/" target="_blank">Neuroscience News</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pesquisadores da McGill University manipularam a postura dos participantes de forma encoberta (via ambiente, não instrução) e mediram o ângulo cervical objetivamente por vídeo. Quem ficou em postura ereta relatou mais sentimentos positivos (especialmente orgulho) e tomou decisões com mais disposição a agir em tarefa de risco calibrado — tudo sem saber que a postura era o alvo do estudo. A metodologia encoberta evita os vieses que derrubaram os estudos antigos de "power pose".</li>
+<li><strong>Implicação prática:</strong> Não é sobre pose de vencedora antes da reunião — é sobre ergonomia cotidiana. A posição do corpo ao longo do dia (mesa, celular, sofá) influencia continuamente humor e prontidão para decisão. Ajustar o ambiente físico de trabalho é intervenção emocional, não estética.</li>
+</ul>
+<h3>3. Memórias "esquecidas" não somem — ficam silenciosas e podem voltar (ou virar memória falsa)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Creating true and false memories from forgotten information in Drosophila</li>
+<li><strong>Data de Publicação:</strong> 30 de julho de 2026, <em>Nature Neuroscience</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-026-02381-2" target="_blank">Nature Neuroscience</a> — via <a href="https://medicalxpress.com/news/2026-07-forgotten-memories-silent-brain.html" target="_blank">Medical Xpress</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Equipe do Friedrich Miescher Institute (Suíça) mostrou em moscas que memórias aparentemente esquecidas persistem como traços silenciosos no cérebro e podem ser reativadas por lembretes. O detalhe surpreendente: quando o lembrete era "sugestivo" (um estímulo parecido, mas que nunca esteve ligado ao evento original), o cérebro criava uma memória <strong>falsa</strong> — e usava circuitos neurais diferentes dos da memória verdadeira recuperada.</li>
+<li><strong>Implicação prática:</strong> Lembrar não é dar play num arquivo — é reconstruir. O cérebro mistura o que foi guardado com o contexto do momento, e lembretes enviesados podem literalmente reescrever o que "aconteceu". Vale para discussões de casal, autocrítica retroativa e a história que a gente conta sobre si mesma.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Brainergy": saúde do cérebro virou a tendência nº 1 de wellness — cheia de exagero</h3>
+<ul>
+<li><strong>Tema:</strong> Stacks de suplementos e protocolos para "energia mental" (Lion's Mane, ashwagandha, L-theanine, nootrópicos) dominando TikTok e Instagram.</li>
+<li><strong>Por que está em alta:</strong> "Brain health" é apontada como a maior tendência de wellness de 2026; o nicho de saúde e fitness gerou 180M+ de views em 30 dias, com testemunhos de suplementos como formato recorrente.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel ou reel de desconstrução — "o que realmente melhora a energia do seu cérebro (spoiler: não está numa cápsula)". Contrapor stack de suplemento vs. sono, movimento e regulação de estímulos, com ciência.</li>
+<li><strong>Gancho sugerido:</strong> "Tá todo mundo tomando suplemento pra 'energia mental'. Mas ninguém quer ouvir o que a neurociência diz que funciona de verdade."</li>
+<li><strong>Fonte:</strong> <a href="https://www.socialgrowthengineers.com/health-fitness-well-being-august-2026-niche-guide" target="_blank">Social Growth Engineers — Niche Guide agosto/2026</a> + <a href="https://www.sganalytics.com/blog/latest-current-tiktok-trends/" target="_blank">SG Analytics — TikTok Trends 2026</a></li>
+</ul>
+<h3>2. IA lendo seu sono: exame de rotina revela riscos que o médico não via</h3>
+<ul>
+<li><strong>Tema:</strong> Modelo de IA da Cleveland Clinic extrai sinais ocultos de exames de sono comuns (polissonografia) e estratifica risco de declínio cognitivo, doença cardiovascular e mortalidade — com precisão igual para homens e mulheres.</li>
+<li><strong>Por que está em alta:</strong> Publicado em 3/8 na <em>Nature Communications</em>, circulando na imprensa científica; cruza dois temas quentes (IA + sono) e mexe com a pergunta "o que seus dados de sono dizem sobre você".</li>
+<li><strong>Ângulo para Carol:</strong> Reel informativo — "seu sono é um exame de sangue que você faz toda noite". Traduzir por que a qualidade do sono prevê saúde futura, sem alarmismo.</li>
+<li><strong>Gancho sugerido:</strong> "Uma IA olhou exames de sono comuns e encontrou o que nenhum médico conseguia ver. Olha que interessante o que isso revela sobre o seu sono."</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1038/s41467-026-75326-9" target="_blank">Nature Communications, DOI 10.1038/s41467-026-75326-9</a> — via <a href="https://neurosciencenews.com/ai-sleep-cognitive-decline-31171/" target="_blank">Neuroscience News</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+</ul>
+<h3>3. Burnout Report 2026: 91% relatam pressão alta ou extrema — e a conversa mudou de tom</h3>
+<ul>
+<li><strong>Tema:</strong> O relatório da Mental Health UK mostra 1 em cada 5 trabalhadores afastados por saúde mental (39% entre 18-24 anos) e só 1 em 4 sentindo que a empresa prioriza saúde mental de verdade. Novo ingrediente: 13% citam medo do impacto da IA no emprego como fator de burnout.</li>
+<li><strong>Por que está em alta:</strong> Números fortes circulando em veículos de RH e negócios; o ângulo "ansiedade de IA como combustível de burnout" é novo e pouco explorado no Brasil.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou carrossel — burnout não é falta de resiliência individual, é sistema + autogestão. Conectar com o pilar de alta performance sustentável: o que está sob seu controle e o que não está.</li>
+<li><strong>Gancho sugerido:</strong> "9 em cada 10 pessoas dizem estar sob pressão extrema. E tem um motivo novo nessa lista que ninguém tá falando: medo da IA."</li>
+<li><strong>Fonte:</strong> <a href="https://mentalhealth-uk.org/news-and-insights/burnout-report-2026-high-stress-pushing-workers-into-sick-leave-as-just-one-in-four-feel-mental-health-is-genuinely-prioritised-and-supported-in-the-workplace/" target="_blank">Mental Health UK — Burnout Report 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Stacks de "brainergy" e nootrópicos</strong> — testemunhos de suplementos para foco e memória são o formato que mais cresce no nicho wellness; terreno fértil para quem desconstrói com ciência. Fonte: <a href="https://www.socialgrowthengineers.com/health-fitness-well-being-august-2026-niche-guide" target="_blank">Social Growth Engineers</a></p>
+<p>2. <strong>Desafio "75 dias" com antes/depois gerado por IA</strong> — apps de fitness usando imagens de IA como projeção de resultado; engajamento alto e ética questionável. Fonte: <a href="https://www.socialgrowthengineers.com/health-fitness-well-being-august-2026-niche-guide" target="_blank">Social Growth Engineers</a></p>
+<p>3. <strong>Caminhada como "hack de renda"</strong> — apps que pagam por passos reposicionam a caminhada como lifestyle + recompensa; a mecânica de recompensa imediata é um gancho de neurociência pronto (sistema de recompensa aplicado a hábito). Fonte: <a href="https://www.socialgrowthengineers.com/health-fitness-well-being-august-2026-niche-guide" target="_blank">Social Growth Engineers</a></p>
+<p>4. <strong>Foco em tarefa única e "horário fixo de rede social"</strong> — no Brasil, cresce o conteúdo sobre reduzir interrupções voluntárias e monotarefa como proteção emocional, não só produtividade. Fonte: <a href="https://www.em.com.br/emfoco/2026/02/06/adeus-ao-estresse-a-nova-tendencia-de-2026-para-viver-melhor-e-produzir-mais/" target="_blank">Estado de Minas</a> + <a href="https://www.scielo.br/j/eb/a/xmNSkzDZ4887VzHKsLQWTkd/?format=html&lang=pt" target="_blank">SciELO — impactos cognitivos do uso excessivo de redes</a></p>
+<p>5. <strong>Formatos Instagram agosto/2026</strong> — tendências de áudio e formato da semana mapeadas para adaptação rápida. Fonte: <a href="https://www.ramd.am/blog/trends-instagram" target="_blank">Ramdam — Instagram Trends August 2026</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Nootrópicos como solução de foco</strong> — a onda "brainergy" empurra Lion's Mane, ashwagandha e afins com testemunhos, não com evidência clínica robusta em pessoas saudáveis. Se abordar, tratar como análise crítica; nunca validar stack de suplemento como caminho de performance. Fonte: <a href="https://www.sganalytics.com/blog/latest-current-tiktok-trends/" target="_blank">SG Analytics</a></li>
+<li><strong>Cuidado ao citar o estudo de postura como "power pose comprovada"</strong> — o estudo da McGill é justamente o oposto: manipulação encoberta e medição objetiva, longe do clichê de pose de poder de palestra (cuja replicação falhou). Diferenciar as duas coisas é o que separa conteúdo sério de clickbait. Fonte: <a href="https://neurosciencenews.com/posture-mood-risk-psychology-31172/" target="_blank">Neuroscience News</a></li>
+<li><strong>Antes/depois gerado por IA</strong> — usar imagem sintética como "prova" de resultado é o novo terreno escorregadio do fitness; não replicar o formato nem citar sem contextualizar. Fonte: <a href="https://www.socialgrowthengineers.com/health-fitness-well-being-august-2026-niche-guide" target="_blank">Social Growth Engineers</a></li>
+<li><strong>Estatísticas de burnout de fontes de mercado</strong> — números como "75% dos trabalhadores em burnout" vêm de levantamentos de empresas, não de estudos revisados por pares. Usar o Burnout Report 2026 (metodologia declarada) como âncora e tratar os demais como retrato de discussão, não como dado científico.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Seu corpo decide seu humor antes de você" — o estudo da postura</li>
+<li><strong>Formato:</strong> Reel 60-90s (fácil de gravar: a própria postura é o recurso visual)</li>
+<li><strong>Gancho:</strong> "Um estudo mudou sua postura sem você saber — e mudou também suas emoções e suas decisões. Deixa eu te explicar."</li>
+<li><strong>Desenvolvimento:</strong> Pesquisadores da McGill ajustaram a postura das pessoas de forma disfarçada e mediram o efeito: postura ereta aumentou sentimentos positivos e a disposição para agir — sem ninguém perceber. MAS isso não é a velha "pose de poder" de palestra, que a ciência já derrubou. PORTANTO o pulo do gato não é posar por 2 minutos: é o ambiente — a altura da tela, a cadeira, o jeito que você segura o celular — moldando seu estado emocional o dia inteiro, em silêncio.</li>
+<li><strong>CTA:</strong> "Olha sua postura agora, nesse exato segundo. Me conta nos comentários: como você tava?"</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1111/bjop.70083" target="_blank">British Journal of Psychology, DOI 10.1111/bjop.70083</a> via <a href="https://neurosciencenews.com/posture-mood-risk-psychology-31172/" target="_blank">Neuroscience News</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-08-07 conforme protocolo em `memory/protocolo-briefing.md`. Todas as fontes verificadas na data. Temas do briefing anterior (22/07 — sono longo/p-tau181, sistema glinfático, chip NEO, sleepmaxxing) não repetidos.</p>
+    </div>
+</body>
+</html>
