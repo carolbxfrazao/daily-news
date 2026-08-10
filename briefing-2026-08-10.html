@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-10</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Cortisol embaralha o "GPS interno" do cérebro — estresse literalmente te deixa perdida</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Cortisol treatment impairs path integration and alters grid-like representations in the male human entorhinal cortex</li>
+<li><strong>Data de Publicação:</strong> 12 de março de 2026 (<em>PLOS Biology</em>); divulgação ampla em 7 de agosto de 2026</li>
+<li><strong>Fonte:</strong> DOI <a href="https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.3003661" target="_blank">10.1371/journal.pbio.3003661</a> — via <a href="https://www.sciencedaily.com/releases/2026/08/260807035151.htm" target="_blank">ScienceDaily</a> e <a href="https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html" target="_blank">Medical Xpress</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pesquisadores da Ruhr University Bochum (Alemanha) deram cortisol a voluntários antes de uma tarefa de navegação virtual dentro do ressonância magnética. Resultado: o padrão de atividade das <em>grid cells</em> — as células do córtex entorrinal que funcionam como sistema de coordenadas do cérebro — ficou indistinto, e o desempenho de orientação caiu, principalmente em ambientes sem pontos de referência. O cérebro tentou compensar ativando o núcleo caudado (região de hábito/resposta automática).</li>
+<li><strong>Implicação prática:</strong> Aquela sensação de "não sei nem por onde começar" sob estresse tem base física: o hormônio do estresse degrada o mapa mental que organiza o espaço — e, por extensão, o planejamento. Sob cortisol alto, o cérebro troca navegação flexível por piloto automático. Regular o estresse antes de decidir não é frescura, é pré-requisito de funcionamento.</li>
+</ul>
+<h3>2. Por volta dos 50 anos, o cérebro troca suas células de defesa — e começa aí a inflamação do envelhecimento</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Remodelação imune do hipocampo humano na meia-idade (publicado na <em>Science</em>, financiado pelo NIH)</li>
+<li><strong>Data de Publicação:</strong> divulgação em 6 de agosto de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.nih.gov/news-events/news-releases/brain-immunity-may-undergo-major-midlife-overhaul" target="_blank">NIH — comunicado oficial</a> + <a href="https://neurosciencenews.com/midlife-genetics-hippocampus-31115/" target="_blank">Neuroscience News</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260806050700.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Entre os 50 e 75 anos, grande parte das microglias — as células imunes residentes do hipocampo, centro de memória e aprendizagem — vai sendo substituída por células vindas do sangue, com perfil bem mais inflamatório. Ou seja: o envelhecimento cerebral não é um declínio lento e passivo, é uma reforma biológica ativa, com data aproximada de início — e que pode virar alvo de tratamento no futuro.</li>
+<li><strong>Implicação prática:</strong> A "janela dos 40" ganha peso científico: os hábitos que controlam inflamação sistêmica (sono, movimento, alimentação, gestão de estresse crônico) são construídos <em>antes</em> dessa troca começar. Cuidar do cérebro aos 35-45 não é exagero — é chegar preparada na reforma que vem depois.</li>
+</ul>
+<h3>3. Sete dias de retiro de meditação mudaram sangue, imunidade e sinais de plasticidade — em estudo pequeno</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Neural and molecular changes during a mind-body reconceptualization, meditation, and open label placebo healing intervention</li>
+<li><strong>Data de Publicação:</strong> divulgação em 7 de agosto de 2026 (<em>Communications Biology</em>, UC San Diego)</li>
+<li><strong>Fonte:</strong> <a href="https://today.ucsd.edu/story/meditation-retreat-rapidly-reprograms-body-and-mind" target="_blank">UC San Diego Today</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260807235243.htm" target="_blank">ScienceDaily</a> + <a href="https://www.psypost.org/researchers-find-surprising-biological-changes-after-just-7-days-of-meditation-and-healing-rituals/" target="_blank">PsyPost</a></li>
+<li><strong>Status:</strong> Revisado por pares (amostra pequena: 20 adultos saudáveis, sem grupo controle)</li>
+<li><strong>Achado:</strong> Após um retiro intensivo de 7 dias (meditação guiada + práticas mente-corpo), o plasma sanguíneo dos participantes, aplicado em neurônios cultivados em laboratório, fez essas células criarem ramificações mais longas e mais conexões — indício de ambiente bioquímico favorável à plasticidade. Também houve mudança em sinalização imune (inflamatória e anti-inflamatória subiram juntas, sugerindo resposta adaptativa) e em metabolismo celular.</li>
+<li><strong>Implicação prática:</strong> Prática contemplativa intensiva mexe no corpo inteiro, não só "na cabeça" — e rápido. MAS: 20 pessoas, sem controle, intervenção mista. O dado honesto é "sinal biológico promissor", não "meditação reprograma seu cérebro em uma semana". Ótimo material para ensinar a diferença entre achado e manchete.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "How My Brain Sounds" — a trend que virou o retrato da carga mental</h3>
+<ul>
+<li><strong>Tema:</strong> Trend dominante do TikTok em agosto: texto na tela "como meu cérebro soa tentando dar conta de..." + lista caótica e hiperespecífica de tudo que a pessoa está equilibrando na semana.</li>
+<li><strong>Por que está em alta:</strong> É a estética da sobrecarga — funciona porque nomeia algo que todo mundo sente e ninguém estrutura. Marcas de bem-estar e produtividade estão surfando exatamente no ângulo "reduzir carga mental".</li>
+<li><strong>Ângulo para Carol:</strong> Entrar na trend com o formato dela: fazer a lista caótica E terminar com a ciência — o custo de alternância de tarefas e por que o cérebro da mulher que gerencia casa + trabalho + filhos vive em "abas abertas". Reel com corte para explicação.</li>
+<li><strong>Gancho sugerido:</strong> "Isso aqui é o som do cérebro de uma mulher com 47 abas abertas. E tem um motivo neurológico pra você se sentir exatamente assim."</li>
+<li><strong>Fonte:</strong> <a href="https://www.takema-studio.com/marques/trends-tiktok-aout-2026" target="_blank">Takema Studio — Trends TikTok agosto/2026</a> + <a href="https://www.ramd.am/blog/trends-tiktok" target="_blank">Ramdam — TikTok Trends August 2026</a></li>
+</ul>
+<h3>2. Adesivo de ultrassom que acelera o sono REM — a nova fronteira (e o novo hype) do sono</h3>
+<ul>
+<li><strong>Tema:</strong> Engenheiros da UT Austin criaram um adesivo vestível (NEUSLeeP) que combina ultrassom focalizado + eletrodos: participantes chegaram ao REM 43 minutos mais rápido e ficaram ~16 minutos a mais nesse estágio, sem remédio.</li>
+<li><strong>Por que está em alta:</strong> Publicado na <em>Nature Communications</em>, circulando forte na imprensa de tecnologia desde 6/8. Cruza dois temas quentes: sleep tech + regulação emocional (REM é o estágio ligado a processamento de emoções, e disrupções de REM aparecem em depressão, ansiedade e TEPT).</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou YouTube — usar o gadget como porta de entrada para explicar <em>por que</em> o REM importa: é nele que o cérebro processa emoção. A pergunta provocativa: antes de comprar tecnologia de sono, você já protege o sono que tem?</li>
+<li><strong>Gancho sugerido:</strong> "Criaram um adesivo que te faz sonhar mais rápido. Antes de você querer um, deixa eu te contar o que o sono REM faz que nenhum gadget substitui."</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41467-026-73787-6" target="_blank">Nature Communications</a> + <a href="https://news.utexas.edu/2026/07/07/get-better-sleep-with-ultrasound-patch-that-boosts-rem-rest/" target="_blank">UT Austin News</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260806050709.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares (estudo com 28 pessoas — fase inicial)</li>
+</ul>
+<h3>3. Lo-fi venceu: conteúdo de take único e bastidores está batendo produção polida</h3>
+<ul>
+<li><strong>Tema:</strong> Levantamentos de agosto apontam que vídeos de baixa produção (luz natural, take único, edição mínima) e o "hiper-realismo documental" — mostrar o processo, não só o resultado — estão com retenção e engajamento superiores a produções de estúdio no Brasil e fora.</li>
+<li><strong>Por que está em alta:</strong> Saturação de conteúdo perfeito + IA generativa em tudo elevaram o valor percebido do que parece humano e não roteirizado. Microeducação em Reels ("pílulas de conhecimento") segue dominando o nicho de comportamento.</li>
+<li><strong>Ângulo para Carol:</strong> Menos tese de conteúdo, mais decisão de produção: gravar mais reels de take único, direto ao ponto, com cara de conversa — o formato que o algoritmo e o público estão premiando é exatamente o registro "amiga explicando".</li>
+<li><strong>Gancho sugerido:</strong> (aplicação interna de formato — testar 2-3 reels de take único esta semana e comparar retenção)</li>
+<li><strong>Fonte:</strong> <a href="https://www.posuscs.com.br/tendencias-do-instagram-2026-o-guia-estrategico-de-conteudo/noticia/3826" target="_blank">Pós USCS — Tendências Instagram 2026</a> + <a href="https://newengen.com/insights/instagram-trends/" target="_blank">New Engen — Instagram Trends August 2026</a> + <a href="https://rafaelterra.com.br/26-tendencias-marketing-instagram-2026/" target="_blank">Rafael Terra — 26 tendências 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Trend "How My Brain Sounds"</strong> — carga mental como humor identificável; janela aberta para quem explica a ciência por trás. Fonte: <a href="https://www.takema-studio.com/marques/trends-tiktok-aout-2026" target="_blank">Takema Studio</a></p>
+<p>2. <strong>Áudios absurdistas + carrosséis-tributo + take único</strong> — o trio de formatos da semana no Instagram; conteúdo cru superando conteúdo polido. Fonte: <a href="https://newengen.com/insights/instagram-trends/" target="_blank">New Engen</a> + <a href="https://lightreel.ai/blogs/whats-trending-on-instagram" target="_blank">Lightreel — Weekly Report</a></p>
+<p>3. <strong>Retiro de meditação "reprograma corpo em 7 dias"</strong> — o estudo da UCSD virou manchete em veículos generalistas e deve chegar aos perfis de wellness BR nos próximos dias; quem contextualizar primeiro, ganha. Fonte: <a href="https://fox5sandiego.com/news/health/meditation-rewires-brain-study/" target="_blank">Fox 5 San Diego</a></p>
+<p>4. <strong>Saúde mental segue entre os nichos que mais crescem no Instagram BR</strong> — junto com finanças pessoais e parentalidade; espaço confirmado para o recorte neurociência + rotina feminina. Fonte: <a href="https://blog.hypeauditor.com/pt/os-temas-que-mais-crescem-no-instagram-brasileiro/" target="_blank">HypeAuditor — temas em crescimento no Instagram brasileiro</a> + <a href="https://nikau.com.br/blog/nichos-lucrativos-instagram-guide-2026/" target="_blank">Nikau — nichos 2026</a></p>
+<p>5. <strong>A própria dopamina está sendo "repensada"</strong> — a <em>Nature</em> publicou análise sobre como a neurociência está revendo a fama de "molécula do prazer"; munição de primeira para desconstruir o clichê de "detox de dopamina". Fonte: <a href="https://www.nature.com/articles/d41586-026-00836-x" target="_blank">Nature — Dopamine takes a hit</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Meditação reconfigura seu cérebro em 7 dias"</strong> — a manchete vai circular sem as ressalvas: 20 participantes, sem grupo controle, intervenção mista (meditação + palestras + placebo aberto). Usar o estudo, sim — mas como aula de leitura crítica, nunca como promessa. Fonte: <a href="https://www.sciencedaily.com/releases/2026/08/260807235243.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>Adesivo de REM como "solução de sono"</strong> — estudo de fase inicial com 28 pessoas; não é produto à venda nem substitui higiene de sono. Cuidado para não alimentar a lógica sleepmaxxing (gadget antes de comportamento), já mapeada em briefings anteriores. Fonte: <a href="https://www.nature.com/articles/s41467-026-73787-6" target="_blank">Nature Communications</a></li>
+<li><strong>"Quiet burnout" / "quiet cracking"</strong> — termos em alta vindos de blogs de terapia e RH, não de literatura clínica (burnout no ICD-11 é síndrome ocupacional definida). Se tocar no assunto, ancorar no que é ciência (regulação emocional e burnout têm literatura sólida) e nomear o resto como vocabulário de internet. Fontes: <a href="https://www.resiliencetherapypllc.com/blog/quiet-burnout-2026-symptoms" target="_blank">Resilience Therapy — Quiet Burnout 2026</a> vs. <a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1873483/full" target="_blank">Frontiers in Psychiatry — perfis de regulação emocional e desfechos de trabalho</a></li>
+<li><strong>"Dopamina = prazer" e o eterno "detox de dopamina"</strong> — a revisão da própria <em>Nature</em> mostra que o campo está abandonando essa simplificação; repetir o clichê agora é ficar atrás da ciência. Fonte: <a href="https://www.nature.com/articles/d41586-026-00836-x" target="_blank">Nature</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Por que o estresse te deixa perdida — literalmente" (estudo do cortisol e as células de grade)</li>
+<li><strong>Formato:</strong> Reel 60-90s, take único (aproveitando a tendência lo-fi da semana)</li>
+<li><strong>Gancho:</strong> "Sabe quando você tá estressada e não consegue nem decidir por onde começar? Um estudo mostrou que isso não é drama: é o cortisol apagando o mapa do seu cérebro."</li>
+<li><strong>Desenvolvimento:</strong> Cientistas na Alemanha deram cortisol — o hormônio do estresse — a voluntários e observaram o cérebro deles no ressonância: as células que funcionam como GPS interno perderam a nitidez, e as pessoas passaram a se orientar pior. MAS o cérebro não desliga: ele troca o mapa flexível pelo piloto automático — a região de hábitos assume. PORTANTO, sob estresse, você não pensa pior por fraqueza: você navega a vida no modo repetição. O pulo do gato é esse: primeiro regula o corpo — respiração, pausa, sono —, depois decide. Decidir com cortisol alto é dirigir sem mapa.</li>
+<li><strong>CTA:</strong> "Me conta aqui: qual decisão você tomou no automático essa semana e só percebeu depois?"</li>
+<li><strong>Legenda (sugestão):</strong> Estresse não é só sensação — é química mudando o modo como seu cérebro se orienta. O estudo saiu na PLOS Biology e explica por que decidir cansada sai caro. Antes da próxima decisão importante: corpo primeiro, escolha depois.</li>
+</ul>
+<p>#neurociencia #cortisol #estresse #rotina #mentalidade</p>
+<ul>
+<li><strong>Thumbnail:</strong> Carol olhando para os lados, texto "seu cérebro SEM GPS"</li>
+<li><strong>Fonte:</strong> <a href="https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.3003661" target="_blank">PLOS Biology, DOI 10.1371/journal.pbio.3003661</a> via <a href="https://www.sciencedaily.com/releases/2026/08/260807035151.htm" target="_blank">ScienceDaily</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-08-10 conforme protocolo em `memory/protocolo-briefing.md`. Todas as fontes verificadas na data, com link em cada item. Sem repetição dos temas do briefing de 07/08 (orexina/motivação, postura e humor, memórias silenciosas, brainergy, IA e sono, Burnout Report 2026).</p>
+    </div>
+</body>
+</html>
