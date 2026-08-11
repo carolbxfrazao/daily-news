@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-11</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-11</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. O cérebro tem um "interruptor de aprendizagem" — e é ele que explica por que você empaca</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Remodelação cíclica da matriz extracelular regula platôs de aprendizagem no córtex auditivo adulto (divulgado como "Researchers Discover the Brain's Hidden Learning Switch")</li>
+<li><strong>Data de Publicação:</strong> 3 de agosto de 2026 (<em>Proceedings of the National Academy of Sciences</em> — PNAS)</li>
+<li><strong>Fonte:</strong> <a href="https://neurosciencenews.com/extracellular-matrix-learning-neuroplasticity-31189/" target="_blank">Neuroscience News</a> — estudo da University of Maryland publicado na PNAS</li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> A matriz extracelular — a estrutura de sustentação que envolve os neurônios — não é um andaime fixo: ela afrouxa em questão de horas depois da prática (abrindo espaço para mudanças nas conexões) e se reconstrói em cerca de 24 horas para consolidar o que foi aprendido. Quando a habilidade se aproxima da maestria, esse ciclo desacelera até parar, "selando" o circuito para proteger a habilidade de ser apagada ou sobrescrita. Quando os pesquisadores degradaram essa matriz com enzimas, o aprendizado inicial piorou e habilidades já dominadas perderam qualidade.</li>
+<li><strong>Implicação prática:</strong> O cérebro não só armazena o que você aprende — ele decide <em>quando</em> dá pra aprender e quando deve travar para proteger o que já foi construído. Dois recados diretos: (1) o platô não é fracasso, é o cérebro consolidando; (2) o ciclo de reconstrução leva ~24 horas — ou seja, prática espaçada e sono entre as sessões não são detalhe, são parte do mecanismo.</li>
+</ul>
+<h3>2. O cérebro tem um "cronômetro" químico do sono — que rastreia quanto você dormiu e prevê a hora de acordar</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Sinal químico no cérebro funciona como timer do sono, registrando duração e interrupções (cobertura: "'Timer' in the brain tracks sleep — and predicts awakening")</li>
+<li><strong>Data de Publicação:</strong> 27-28 de julho de 2026 (<em>Nature</em>)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/d41586-026-02294-x" target="_blank">Nature — matéria original</a> + <a href="https://medicine.washu.edu/news/timer-in-the-brain-tracks-sleep-and-predicts-awakening/" target="_blank">WashU Medicine</a> + <a href="https://positron.today/posts/2026-07-28-timer-in-the-brain-tracks-sleep-and-predicts-awakening/" target="_blank">Positron Today</a></li>
+<li><strong>Status:</strong> Revisado por pares (estudo em camundongos)</li>
+<li><strong>Achado:</strong> Pesquisadores identificaram um sinal químico no cérebro de camundongos que funciona como cronômetro do sono: registra quanto tempo o animal dormiu <em>e</em> quantas interrupções houve, e prevê a probabilidade de despertar a cada momento. Marcações químicas em proteínas podem virar biomarcador objetivo de privação de sono — medir déficit de sono no corpo, não só em questionário.</li>
+<li><strong>Implicação prática:</strong> Reforça algo que o público sente mas não sabe nomear: sono interrompido "conta menos" — o cérebro registra as interrupções, não só o total de horas. Também abre caminho para medir fadiga de forma objetiva em profissões críticas. Ressalva honesta: estudo em camundongos, fase inicial — vale como ciência do funcionamento, não como teste disponível.</li>
+</ul>
+<h3>3. Treinar a memória com estímulos emocionais reduziu o "radar de ameaça" de pessoas com ansiedade social</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Impact of emotional working memory training on threat-related attentional bias in social anxiety: Evidence from eye movement</li>
+<li><strong>Data de Publicação:</strong> Janeiro de 2026 (<em>Journal of Affective Disorders</em>); divulgação ampla em agosto de 2026</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1016/j.jad.2025.120358" target="_blank">10.1016/j.jad.2025.120358</a> — via <a href="https://www.psypost.org/new-study-suggests-memory-games-with-emotional-cues-can-reduce-anxiety-driven-focus/" target="_blank">PsyPost</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Pessoas com ansiedade social tendem a fixar o olhar primeiro em rostos bravos — o viés atencional de ameaça. Depois de 20 sessões de treino de memória de trabalho (dual n-back) usando rostos e palavras emocionais, estudantes ansiosos passaram a fixar menos o olhar em faces de raiva, medido por rastreamento ocular. O grupo que treinou com números e formas neutras não teve o mesmo efeito.</li>
+<li><strong>Implicação prática:</strong> O cérebro ansioso não muda só "pensando positivo" — ele precisa <em>praticar</em> processar informação emocional para recalibrar a atenção. Regulação emocional como habilidade treinável, com dado de laboratório. Limitações: estudantes com ansiedade elevada (não pacientes diagnosticados) e sem avaliação de longo prazo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Brain health" é a maior tendência de wellness de 2026 — e virou vitrine de suplemento</h3>
+<ul>
+<li><strong>Tema:</strong> Saúde cerebral assumiu o posto de tendência número 1 do wellness no TikTok em 2026: foco, memória e clareza mental viraram parte da rotina de autocuidado — e, junto, explodiram os vídeos vendendo cápsula, pó e tintura como atalho para "pensar melhor".</li>
+<li><strong>Por que está em alta:</strong> A lógica é forte: "se eu não consigo focar, não realizo nada". O público quer cuidar do cérebro — mas o algoritmo entrega quem vende produto, não quem explica comportamento.</li>
+<li><strong>Ângulo para Carol:</strong> Posicionamento perfeito para o MIB: "o wellness descobriu o cérebro — e a primeira coisa que te ofereceram foi uma cápsula". Carrossel ou reel separando o que tem evidência (sono, movimento, gestão de estresse, alimentação) do que é marketing. Autoridade sem precisar atacar ninguém.</li>
+<li><strong>Gancho sugerido:</strong> "Saúde do cérebro virou a maior tendência de bem-estar do ano. E eu preciso te falar uma coisa antes de você comprar qualquer suplemento."</li>
+<li><strong>Fonte:</strong> <a href="https://mezha.net/eng/bukvy/tiktok-health-and-wellness-trends-for-2026/" target="_blank">Mezha — TikTok Health and Wellness Trends 2026</a> + <a href="https://www.bannerhealth.com/healthcareblog/advise-me/tiktok-and-performance-and-brain-supplement-trends" target="_blank">Banner Health — TikTok e suplementos de performance cerebral</a></li>
+</ul>
+<h3>2. "Dopamine menu" voltou ao noticiário como ferramenta contra procrastinação</h3>
+<ul>
+<li><strong>Tema:</strong> O "cardápio de dopamina" — lista pré-montada de atividades divididas em "petiscos" (rápidas), "pratos principais" (mais longas), "acompanhamentos" (tornar tarefa chata mais atraente) e "sobremesas" (recompensas com moderação) — voltou a circular na imprensa internacional como estratégia contra a dificuldade de iniciar tarefas.</li>
+<li><strong>Por que está em alta:</strong> Matéria de 6 de agosto reacendeu o tema; a ferramenta é visual, prática e fácil de compartilhar — o tipo de conteúdo que viraliza em nicho de produtividade.</li>
+<li><strong>Ângulo para Carol:</strong> Usar o formato <em>e</em> corrigir a ciência: o cardápio funciona não porque "recarrega dopamina", mas porque decide <em>antes</em> — tira a escolha do momento de menor energia, reduzindo a carga sobre a área responsável por tomada de decisões. Reel mostrando o cardápio dela na prática.</li>
+<li><strong>Gancho sugerido:</strong> "Esse cardápio de dopamina que tá circulando por aí funciona — mas não pelo motivo que estão te contando."</li>
+<li><strong>Fonte:</strong> <a href="https://en.iz.ru/en/node/2110512" target="_blank">Izvestia (en) — Scientists have proposed a dopamine menu, 06/08/2026</a></li>
+</ul>
+<h3>3. TikTok aponta 2026 como o ano da "curiosidade + realidade" — conteúdo educativo autêntico em vantagem</h3>
+<ul>
+<li><strong>Tema:</strong> O relatório TikTok Next 2026 e a cobertura da imprensa de mídia BR apontam curiosidade e realidade como os dois eixos do ano: o público troca escapismo passivo por descoberta ativa, e cresce a confiança em criadores que explicam e dão contexto, em vez de discurso de venda.</li>
+<li><strong>Por que está em alta:</strong> Com IA generativa em todo lugar, o valor percebido migrou para o que é real, humano e verificável — e o formato "me faz entender algo" retém mais que o formato "me distrai".</li>
+<li><strong>Ângulo para Carol:</strong> Validação estratégica do posicionamento dela: professora com autoridade científica e cara de conversa real é exatamente o perfil que a plataforma está premiando. Decisão prática: dobrar aposta em conteúdo que responde uma curiosidade específica ("por que meu cérebro faz X?") com fonte.</li>
+<li><strong>Gancho sugerido:</strong> (direção editorial — priorizar ganchos em formato de pergunta curiosa nas próximas semanas)</li>
+<li><strong>Fonte:</strong> <a href="https://www.meioemensagem.com.br/midia/tiktok-elege-curiosidade-e-realidade-como-tendencias-de-2026" target="_blank">Meio & Mensagem — TikTok elege curiosidade e realidade como tendências de 2026</a> + <a href="https://ads.tiktok.com/business/library/TikTok_Next_2026_Trend_Report_PT_BR.pdf" target="_blank">TikTok Next 2026 Trend Report (PT-BR)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Saúde cerebral como pauta dominante do wellness</strong> — foco, memória e "clareza mental" na rotina de autocuidado; janela aberta para quem separa ciência de marketing. Fonte: <a href="https://mezha.net/eng/bukvy/tiktok-health-and-wellness-trends-for-2026/" target="_blank">Mezha — TikTok Wellness Trends 2026</a></p>
+<p>2. <strong>"Exercise snacks"</strong> — mini treinos encaixados entre tarefas (agachamento depois de escovar os dentes, mobilidade ao acordar); formato simples, altamente replicável, com base real em ciência do movimento. Fonte: <a href="https://mezha.net/eng/bukvy/tiktok-health-and-wellness-trends-for-2026/" target="_blank">Mezha — TikTok Wellness Trends 2026</a></p>
+<p>3. <strong>Interfaces cérebro-máquina saindo do laboratório</strong> — o debate sobre BCIs (Neuralink e concorrentes) e "privacidade mental" está esquentando na imprensa de tecnologia; tema de curiosidade forte para YouTube. Fonte: <a href="https://tech4impactsummit.com/blog/brain-computer-interfaces-promise-perils-2026/" target="_blank">Tech for Impact Summit — BCIs 2026: mercado e privacidade mental</a> + <a href="https://3zebras.com/science/brain-computer-interface-2026-neuralink-synchron-update/15397/" target="_blank">3zebras — Neuralink, Synchron e o progresso real</a></p>
+<p>4. <strong>Cardápio de dopamina de volta ao feed</strong> — a ferramenta prática contra procrastinação voltou a circular internacionalmente; deve reaparecer nos perfis BR de produtividade nos próximos dias. Fonte: <a href="https://en.iz.ru/en/node/2110512" target="_blank">Izvestia (en)</a></p>
+<p>5. <strong>Criador-educador ganhando terreno sobre criador-vendedor</strong> — relatórios de tendência apontam confiança e contexto como a nova moeda de influência no Brasil. Fonte: <a href="https://www.meioemensagem.com.br/midia/quais-sao-as-principais-tendencias-de-midia-para-2026" target="_blank">Meio & Mensagem — Tendências de mídia 2026</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Suplementos "para o cérebro" virais</strong> — a onda de brain health vem embalada em nootrópico sem evidência: vídeos curtos convencendo milhões de que cápsula é o segredo do foco. Suplementos interagem com medicamentos, têm efeitos colaterais e frequentemente não entregam o prometido. Tocar no tema sempre pelo lado do comportamento, nunca endossando produto. Fontes: <a href="https://www.bannerhealth.com/healthcareblog/advise-me/tiktok-and-performance-and-brain-supplement-trends" target="_blank">Banner Health</a> + <a href="https://www.lung.org/blog/health-tiktok-trends" target="_blank">American Lung Association — perigos do wellness viral</a></li>
+<li><strong>Estatísticas de atenção infladas circulando em blogs de marketing</strong> — números como "atenção média de 47 segundos", "queda de 43,6% na capacidade de atenção" e cifras de bilhões em produtividade perdida estão sendo replicados por páginas de SEO sem link para estudo primário verificável (ex.: <a href="https://sqmagazine.co.uk/social-media-attention-span-statistics/" target="_blank">SQ Magazine</a>, <a href="https://speakwiseapp.com/blog/attention-span-statistics" target="_blank">SpeakWise</a>). O dado de ~47 segundos existe na literatura (pesquisa de Gloria Mark, UC Irvine), mas as variações e "estudos de 2026" citados nessas páginas não têm fonte rastreável. Se usar, citar apenas a pesquisa original — nunca o agregador.</li>
+<li><strong>"Dopamine menu" vendido como tratamento</strong> — é ferramenta de organização comportamental útil, não intervenção clínica nem "reset de dopamina". O erro comum é explicar como se o cardápio "reabastecesse" o neurotransmissor da motivação — não é isso que a ciência descreve. Fonte do conceito em circulação: <a href="https://en.iz.ru/en/node/2110512" target="_blank">Izvestia (en)</a></li>
+<li><strong>"Timer do sono" pode virar manchete exagerada</strong> — o estudo da Nature é em camundongos e fase inicial; se aparecer como "cientistas descobriram como programar sua hora de acordar", é distorção. Fonte: <a href="https://www.nature.com/articles/d41586-026-02294-x" target="_blank">Nature</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Por que você empaca quando está aprendendo algo novo" (o interruptor de aprendizagem da PNAS)</li>
+<li><strong>Formato:</strong> Reel 60-90s, take único</li>
+<li><strong>Gancho:</strong> "Se você tá empacada tentando aprender alguma coisa, eu preciso te contar o que a ciência descobriu esse mês: o platô não é você falhando."</li>
+<li><strong>Desenvolvimento:</strong> Um estudo publicado agora em agosto na PNAS mostrou que existe uma estrutura no cérebro — uma espécie de andaime que envolve os neurônios — que afrouxa quando você pratica e se reconstrói em 24 horas pra guardar o que você aprendeu. MAS olha que interessante: quando você começa a dominar a habilidade, esse ciclo desacelera de propósito — o cérebro trava o circuito pra <em>proteger</em> o que você construiu de ser sobrescrito. PORTANTO, o platô não é estagnação: é consolidação. O pulo do gato: o ciclo leva um dia inteiro — então praticar um pouco hoje e dormir bem vale mais do que maratonar tudo de uma vez e repetir cansada.</li>
+<li><strong>CTA:</strong> "Me conta: o que você tá aprendendo agora que parece que não sai do lugar?"</li>
+<li><strong>Legenda (sugestão):</strong> Seu cérebro decide quando dá pra aprender e quando é hora de proteger o que você já construiu. O estudo saiu na PNAS em agosto e muda a forma de encarar o platô: não é falta de esforço, é consolidação em curso. Prática espaçada + sono = o protocolo que a biologia já usava antes de virar dica.</li>
+</ul>
+<p>#neurociencia #aprendizagem #habitos #rotina #mentalidade</p>
+<ul>
+<li><strong>Thumbnail:</strong> Carol com expressão de "calma, deixa eu te explicar", texto "o platô NÃO é fracasso"</li>
+<li><strong>Fonte:</strong> <a href="https://neurosciencenews.com/extracellular-matrix-learning-neuroplasticity-31189/" target="_blank">Neuroscience News — PNAS, 03/08/2026</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-08-11 conforme protocolo em `memory/protocolo-briefing.md`. Todas as fontes verificadas na data, com link em cada item. Sem repetição dos temas do briefing de 10/08 (cortisol/grid cells, microglia na meia-idade, retiro de meditação, adesivo REM, trend "How My Brain Sounds", lo-fi).</p>
+    </div>
+</body>
+</html>
