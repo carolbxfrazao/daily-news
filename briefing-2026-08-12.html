@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-12</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-12</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. O cérebro raciocina sem palavras — lógica e linguagem são sistemas separados</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Dissociating language and thought: evidence from patients with global aphasia (divulgado como "Separating logic and language" / "MIT neuroscientists discover the brain can reason without words")</li>
+<li><strong>Data de Publicação:</strong> 6 de julho de 2026 (<em>Proceedings of the National Academy of Sciences</em> — PNAS); voltou ao noticiário em 11/08/2026 via ScienceDaily</li>
+<li><strong>Fonte:</strong> <a href="https://news.mit.edu/2026/separating-logic-and-language-0708" target="_blank">MIT News</a> + <a href="https://mcgovern.mit.edu/2026/07/06/separating-logic-and-language/" target="_blank">MIT McGovern Institute</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260811011140.htm" target="_blank">ScienceDaily, 11/08/2026</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Neurocientistas do MIT estudaram pacientes que perderam quase toda a capacidade de entender e produzir linguagem após AVC — e descobriram que eles resolvem quebra-cabeças lógicos (inferir regras escondidas entre conjuntos de números) tão bem quanto pessoas sem lesão, comunicando as regras por gestos e desenhos. Exames de imagem confirmaram: durante o raciocínio, as regiões de linguagem do cérebro ficam praticamente em silêncio. Lógica e linguagem rodam em sistemas separados.</li>
+<li><strong>Implicação prática:</strong> Aquela "voz na cabeça" não é o pensamento em si — é uma camada por cima dele. Isso muda a conversa sobre ruminação: repetir a frase do problema mentalmente não é o mesmo que raciocinar sobre ele. E explica por que às vezes a solução aparece quando a gente para de "conversar" com o problema e desenha, rabisca ou simplesmente caminha.</li>
+</ul>
+<h3>2. Medicamentos tipo Ozempic apontaram um possível "centro de desejo" no cérebro</h3>
+<ul>
+<li><strong>Título do estudo:</strong> An inhibitory GLP-1 circuit in the lateral septum modulates reward processing and alcohol intake in rodents (contexto de divulgação: "Ozempic may have revealed the brain's hidden 'craving center'")</li>
+<li><strong>Data de Publicação:</strong> estudo em <em>eBioMedicine</em> (2025); síntese e repercussão em 11/08/2026</li>
+<li><strong>Fonte:</strong> DOI <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12044336/" target="_blank">10.1016/j.ebiom.2025.105684</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260811011138.htm" target="_blank">ScienceDaily, 11/08/2026</a> + <a href="https://theconversation.com/weight-loss-drugs-like-ozempic-could-work-for-addiction-too-and-we-finally-know-how-285227" target="_blank">The Conversation</a></li>
+<li><strong>Status:</strong> Revisado por pares (estudos em roedores; efeitos em humanos ainda em investigação)</li>
+<li><strong>Achado:</strong> Pesquisadores vêm rastreando por que medicamentos GLP-1 (como o Ozempic) reduzem não só a fome, mas também o desejo por álcool e outras substâncias. A pista converge para o septo lateral — região cheia de receptores GLP-1 que conecta memórias e contexto a experiências de recompensa. Ativar esses receptores ali reduziu consumo de comida e álcool em animais; o mecanismo parece ser um "abaixar o volume" da comunicação entre essa região e o resto do circuito de recompensa.</li>
+<li><strong>Implicação prática:</strong> O desejo intenso não é falha de caráter — é um circuito específico, com endereço no cérebro, que conecta contexto e memória à compulsão. Dois recados: (1) evitar o <em>contexto</em> do hábito (o corredor do mercado, o celular na mesa) age exatamente sobre esse elo memória-ambiente-recompensa; (2) ressalva honesta: dados em roedores, não é receita nem endosso de medicamento para hábito.</li>
+</ul>
+<h3>3. Dormir mal leva ao esgotamento — e o mecanismo passa pelo estresse percebido</h3>
+<ul>
+<li><strong>Título do estudo:</strong> The mechanism of sleep quality's effect on academic burnout: examining the mediating role of perceived stress</li>
+<li><strong>Data de Publicação:</strong> 2025 (<em>BMC Medical Education</em>); em circulação nas coberturas de sono e burnout de 2026</li>
+<li><strong>Fonte:</strong> DOI <a href="https://link.springer.com/article/10.1186/s12909-025-07617-6" target="_blank">10.1186/s12909-025-07617-6</a> + <a href="https://pubmed.ncbi.nlm.nih.gov/40624657/" target="_blank">PubMed PMID 40624657</a></li>
+<li><strong>Status:</strong> Revisado por pares (estudo transversal, 476 participantes, 66% mulheres)</li>
+<li><strong>Achado:</strong> Em 476 estudantes avaliados com escalas validadas (Pittsburgh para sono, PSS para estresse), a qualidade ruim do sono se associou a mais burnout — e o efeito passou de forma significativa pelo estresse percebido: dormir mal aumenta a percepção de estresse, e é esse estresse ampliado que alimenta o esgotamento.</li>
+<li><strong>Implicação prática:</strong> O esgotamento não começa na agenda cheia — muitas vezes começa na noite anterior. Quando o sono cai, o mesmo dia <em>parece</em> mais pesado, porque o cérebro avalia as demandas como maiores do que os recursos. Antes de cortar compromissos, vale auditar a cama: a percepção de sobrecarga pode estar sendo inflada pela privação de sono. Limitação: estudo transversal (associação, não prova de causa).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Friction-maxxing" — escolher o caminho mais difícil virou tendência de atenção</h3>
+<ul>
+<li><strong>Tema:</strong> A prática de escolher de propósito a opção menos conveniente (ir a pé, escrever à mão, cozinhar em vez de pedir) para treinar tolerância ao desconforto e recuperar atenção. Termo cunhado em ensaio de Kathryn Jezer-Morton no The Cut (janeiro/2026), agora com página na Wikipedia e cobertura de lifestyle.</li>
+<li><strong>Por que está em alta:</strong> É a resposta cultural ao excesso de conveniência e ao "brainrot" — o público jovem está tratando atrito como treino, não como defeito.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel traduzindo a trend para a neurociência: o cérebro consolida hábito e capacidade de foco justamente no esforço — conveniência demais atrofia o músculo da autorregulação. Carol pode validar a trend e dar o critério: atrito <em>intencional</em> em áreas escolhidas, não dificuldade gratuita em tudo.</li>
+<li><strong>Gancho sugerido:</strong> "A internet descobriu agora o que a neurociência já sabia: facilitar tudo está custando o seu foco."</li>
+<li><strong>Fonte:</strong> <a href="https://en.wikipedia.org/wiki/Friction-maxxing" target="_blank">Wikipedia — Friction-maxxing</a> + <a href="https://www.nssgclub.com/en/lifestyle/44254/friction-maxxing-meaning-trend-2026" target="_blank">nss G-Club — Friction-maxxing: why choosing the harder way is trending in 2026</a></li>
+</ul>
+<h3>2. "75 Smart" — o desafio intelectual que substituiu o 75 Hard</h3>
+<ul>
+<li><strong>Tema:</strong> Versão "cognitiva" do desafio 75 Hard circulando no TikTok: 75 dias com sessões diárias de foco profundo, leitura de não-ficção, criação intelectual e corte de conteúdo de "dopamina barata".</li>
+<li><strong>Por que está em alta:</strong> Faz parte da onda anti-brainrot de 2026 — a plataforma que dispersa atenção virou palco de desafios para recuperá-la. Formato de desafio gera adesão, comunidade e prova social.</li>
+<li><strong>Ângulo para Carol:</strong> Analisar o desafio com carinho e ciência: o que funciona (prática espaçada, redução de interrupção, identidade de "pessoa que estuda") e o que é armadilha (regra demais quebra no primeiro imprevisto — e o tudo-ou-nada é o padrão clássico de autossabotagem do público MIB). Proposta: a versão sustentável do 75 Smart para mulheres com rotina real.</li>
+<li><strong>Gancho sugerido:</strong> "Tem um desafio de 75 dias pro cérebro viralizando. Eu li as regras — e tem uma que ia te derrubar na primeira semana."</li>
+<li><strong>Fonte:</strong> <a href="https://www.bhnet.org/45206/how-tiktok-actually-improved-my-mental-health/" target="_blank">BHN — How TikTok actually improved my mental health</a></li>
+</ul>
+<h3>3. Ozempic reabriu o debate público sobre desejo e "força de vontade"</h3>
+<ul>
+<li><strong>Tema:</strong> A repercussão dos achados sobre GLP-1 e o septo lateral (ver Descoberta 2) está alimentando a conversa cultural: se um remédio consegue desligar a compulsão, o que isso diz sobre "falta de disciplina"?</li>
+<li><strong>Por que está em alta:</strong> Matéria nova no ScienceDaily (11/08) + cobertura contínua do The Conversation; Ozempic segue sendo um dos assuntos mais buscados do ano em saúde.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou reel mais denso: "o que o Ozempic ensinou à ciência sobre o seu desejo por doce". Desmonta a moralização (desejo é circuito, não caráter) sem endossar atalho farmacológico — e devolve o protagonismo ao comportamento: contexto, memória e recompensa são gerenciáveis.</li>
+<li><strong>Gancho sugerido:</strong> "O Ozempic acabou de provar uma coisa que ninguém queria admitir: o seu desejo por doce nunca foi falta de força de vontade."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/08/260811011138.htm" target="_blank">ScienceDaily, 11/08/2026</a> + <a href="https://theconversation.com/weight-loss-drugs-like-ozempic-could-work-for-addiction-too-and-we-finally-know-how-285227" target="_blank">The Conversation</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Ozempic e o "centro de desejo" do cérebro</strong> — a matéria de 11/08 está circulando forte em páginas de ciência e saúde; janela curta para quem explica primeiro em pt-BR. Fonte: <a href="https://www.sciencedaily.com/releases/2026/08/260811011138.htm" target="_blank">ScienceDaily</a></p>
+<p>2. <strong>Cérebro adulto se reparando melhor do que se pensava</strong> — estudo na <em>Nature Neuroscience</em> (12/08) mostrou astrócitos "regenerativos" reconstruindo redes danificadas em camundongos; curiosidade forte de ciência, ótimo para formato "olha que interessante". Fonte: <a href="https://neurosciencenews.com/regenerative-astrocytes-brain-repair-31204/" target="_blank">Neuroscience News</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260812015158.htm" target="_blank">ScienceDaily</a></p>
+<p>3. <strong>Cortisol matinal alterado em usuários frequentes de cannabis</strong> — estudo divulgado em 08/08 mostrando o "hormônio do estresse" já elevado ao acordar; conversa útil sobre o que mexe no ritmo de estresse do corpo. Fonte: <a href="https://www.sciencedaily.com/releases/2026/08/260808234953.htm" target="_blank">ScienceDaily</a></p>
+<p>4. <strong>Onda anti-brainrot (friction-maxxing, 75 Smart, detox de dopamina barata)</strong> — o movimento de reconquista da atenção segue dominando o nicho de produtividade; deve chegar com força nos perfis BR nas próximas semanas. Fonte: <a href="https://www.nssgclub.com/en/lifestyle/44254/friction-maxxing-meaning-trend-2026" target="_blank">nss G-Club</a></p>
+<p>5. <strong>Memes de equilíbrio vida-trabalho entre Gen Z e millennials</strong> — humor como porta de entrada para conversa séria sobre limites e exaustão; formato leve com retenção alta no BR. Fonte: <a href="https://www.hootsuite.com/pt/research/social-trends" target="_blank">Hootsuite — Social Media Trends 2026</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Azul de metileno como "suplemento cerebral"</strong> — segue viralizando como nootrópico milagroso. É aprovado pela FDA apenas para um distúrbio sanguíneo raro, não como suplemento de foco; tem interações medicamentosas sérias. Não citar como opção, e se o tema aparecer, tratar como exemplo de marketing sem evidência. Fonte: <a href="https://www.bannerhealth.com/healthcareblog/advise-me/tiktok-and-performance-and-brain-supplement-trends" target="_blank">Banner Health</a></li>
+<li><strong>"Ozempic cura vício"</strong> — a manchete tentadora distorce a ciência: os dados do septo lateral são majoritariamente em roedores e os efeitos em humanos ainda estão em ensaios. Usar o tema pelo ângulo do circuito de desejo, nunca como promessa clínica. Fonte: <a href="https://theconversation.com/weight-loss-drugs-like-ozempic-could-work-for-addiction-too-and-we-finally-know-how-285227" target="_blank">The Conversation</a></li>
+<li><strong>"O cérebro se regenera sozinho" como promessa</strong> — o achado dos astrócitos (12/08) é em camundongos com lesão induzida; não vira "seu cérebro conserta qualquer dano". Tratar como ciência do funcionamento, não como esperança clínica imediata. Fonte: <a href="https://neurosciencenews.com/regenerative-astrocytes-brain-repair-31204/" target="_blank">Neuroscience News</a></li>
+<li><strong>Desafios tudo-ou-nada (75 Smart e derivados)</strong> — cuidado ao aderir sem crítica: a estrutura rígida de 75 dias sem margem de erro é exatamente o gatilho de abandono e culpa do público MIB. Abordar sempre com adaptação. Fonte: <a href="https://www.bhnet.org/45206/how-tiktok-actually-improved-my-mental-health/" target="_blank">BHN</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "A voz na sua cabeça não é o seu pensamento" (estudo do MIT sobre lógica sem linguagem)</li>
+<li><strong>Formato:</strong> Reel 60-90s, take único</li>
+<li><strong>Gancho:</strong> "Aquela voz que não para na sua cabeça? A ciência acabou de mostrar que ela não é o seu pensamento."</li>
+<li><strong>Desenvolvimento:</strong> Pesquisadores do MIT estudaram pessoas que perderam a linguagem depois de um AVC — não entendiam nem produziam frases. MAS olha que interessante: elas resolviam desafios de lógica tão bem quanto qualquer pessoa. E nos exames de imagem, a área de linguagem ficava em silêncio enquanto o cérebro raciocinava. Ou seja: pensar e falar por dentro são coisas diferentes. PORTANTO, quando você fica ruminando a mesma frase — "eu não dou conta, eu não dou conta" — isso não é você pensando no problema. É narração em loop. O pulo do gato: pra sair do loop, mude de canal — desenha o problema, escreve as opções, caminha. Você tira o raciocínio do sequestro da narração.</li>
+<li><strong>CTA:</strong> "Me conta aqui: qual é a frase que a sua voz interna mais repete?"</li>
+<li><strong>Legenda (sugestão):</strong> O MIT mostrou que lógica e linguagem rodam em sistemas separados no cérebro — pessoas sem linguagem raciocinam normalmente. Isso muda como a gente encara a ruminação: repetir a frase do problema não é resolver o problema. Sair da narração (papel, desenho, movimento) devolve o comando pra quem pensa de verdade.</li>
+</ul>
+<p>#neurociencia #ansiedade #ruminacao #mentalidade #rotina</p>
+<ul>
+<li><strong>Thumbnail:</strong> Carol apontando para a própria têmpora com expressão provocativa, texto "essa voz NÃO é você pensando"</li>
+<li><strong>Fonte:</strong> <a href="https://news.mit.edu/2026/separating-logic-and-language-0708" target="_blank">MIT News</a> + <a href="https://www.sciencedaily.com/releases/2026/08/260811011140.htm" target="_blank">ScienceDaily, 11/08/2026</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-08-12 conforme protocolo em `memory/protocolo-briefing.md`. Todas as fontes com link verificável em cada item. Sem repetição dos temas dos briefings de 10/08 (cortisol/grid cells, microglia na meia-idade, retiro de meditação de 7 dias, adesivo REM) e 11/08 (matriz extracelular/PNAS, timer do sono, treino de memória emocional, brain health como trend nº 1, dopamine menu, TikTok curiosidade+realidade).</p>
+    </div>
+</body>
+</html>
