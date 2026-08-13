@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-13</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-13</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. O cérebro tem um sistema que sustenta o esforço quando a recompensa fica difícil — os neurônios de orexina</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Reward prediction is encoded by orexin neuron activity during motivated behavior</li>
+<li><strong>Data de Publicação:</strong> junho/2026 (PNAS), com repercussão na imprensa científica em agosto/2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.pnas.org/doi/10.1073/pnas.2520677123" target="_blank">PNAS — DOI 10.1073/pnas.2520677123</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42372152/" target="_blank">PubMed</a> · cobertura: <a href="https://medicalxpress.com/news/2026-08-orexin-neurons-uncover-brain-secret.html" target="_blank">Medical Xpress</a>, <a href="https://scitechdaily.com/the-brain-signal-that-gets-stronger-as-tasks-get-harder/" target="_blank">SciTechDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares (PNAS)</li>
+<li><strong>Achado:</strong> Pesquisadores da Universidade de Nagoya (Japão) mostraram que os neurônios produtores de orexina — uma população pequena de células no hipotálamo — ficam cada vez mais ativos à medida que o esforço para conseguir uma recompensa aumenta. Em ratos, ativar essas células fez os animais trabalharem mais pela comida; silenciá-las derrubou a disposição de continuar. Ou seja: esse sistema converte a expectativa de recompensa em ação persistente, estimando "quanto esforço vale a pena".</li>
+<li><strong>Implicação prática:</strong> A constância não é só questão de caráter — existe um circuito cerebral dedicado a sustentar o esforço quando a tarefa fica difícil. Isso abre conversa sobre por que algumas fases da vida (sono ruim, exaustão) derrubam a disposição: o sistema que calcula "vale a pena continuar" também é biológico e sensível ao estado do corpo.</li>
+</ul>
+<h3>2. Cortisol embaralha o "GPS interno" do cérebro</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Estudo de imagem cerebral (fMRI) sobre cortisol e células de grade, publicado na PLOS Biology (divulgado como "Stress can scramble your brain's internal GPS")</li>
+<li><strong>Data de Publicação:</strong> divulgação em 07/08/2026 (ScienceDaily)</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/08/260807035151.htm" target="_blank">ScienceDaily</a> · <a href="https://neurosciencenews.com/cortisol-navigation-grid-cells-30311/" target="_blank">Neuroscience News</a> · <a href="https://medicalxpress.com/news/2026-03-lost-stress-cortisol-scramble-brain.html" target="_blank">Medical Xpress</a></li>
+<li><strong>Status:</strong> Revisado por pares (PLOS Biology)</li>
+<li><strong>Achado:</strong> Pesquisadores da Ruhr University Bochum (Alemanha) deram 20 mg de cortisol (o hormônio liberado no estresse) ou placebo a 40 participantes e mediram a atividade cerebral durante uma tarefa de navegação virtual no ressonador. Sob cortisol, o padrão de disparo das células de grade — as células que funcionam como um mapa interno de localização — ficou muito menos preciso, e os participantes erraram bem mais o caminho, independente de pontos de referência.</li>
+<li><strong>Implicação prática:</strong> Aquela sensação de "cabeça perdida" sob estresse tem base mensurável: o hormônio do estresse literalmente borra o mapa interno do cérebro. Conexão direta com o dia a dia de mulheres sobrecarregadas — esquecer onde estacionou, se perder em trajeto conhecido, sentir desorientação em semana de pico de pressão.</li>
+</ul>
+<h3>3. Por volta dos 50 anos, o centro de memória do cérebro troca suas células de defesa — e isso pode preparar o terreno da demência</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Epigenetic and 3D genome reprogramming during the aging of the human hippocampus</li>
+<li><strong>Data de Publicação:</strong> agosto/2026 (Science, vol. 393; divulgação em 06/08/2026)</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1126/science.adt8307" target="_blank">Science — DOI 10.1126/science.adt8307</a> · cobertura: <a href="https://www.sciencedaily.com/releases/2026/08/260806050700.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares (Science)</li>
+<li><strong>Achado:</strong> Estudo financiado pelo NIH (com UC San Diego, New York Genome Center e UC Irvine) mapeou o envelhecimento do hipocampo humano e encontrou uma mudança que começa por volta dos 50 anos: as micróglias (células imunes residentes do cérebro) declinam gradualmente entre 50 e 75 anos e vão sendo substituídas por células vindas do sangue, mais inflamatórias. Também há alterações na barreira hematoencefálica e reorganização estrutural do genoma dessas células.</li>
+<li><strong>Implicação prática:</strong> O envelhecimento cerebral não é um evento súbito da velhice — é um processo que começa na meia-idade e envolve inflamação. Reforça o argumento de que os hábitos que regulam inflamação (sono, alimentação, movimento, manejo de estresse) nas décadas de 30 e 40 são investimento direto no cérebro dos 60+.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Assistir tudo em 2x + doomscrolling — a imprensa BR comprou a briga contra a hiperestimulação</h3>
+<ul>
+<li><strong>Tema:</strong> O hábito de acelerar vídeos e áudios para 2x, combinado ao doomscrolling, está sendo tratado pela imprensa brasileira como possível sinal de ciclo de dependência de estímulo — com especialistas explicando o custo para memória de trabalho e consolidação no hipocampo.</li>
+<li><strong>Por que está em alta:</strong> Série de matérias recentes em veículos BR (Correio, TNH1, Olhar Digital, agências universitárias) discutindo o que a velocidade 2x faz com atenção e memória; o tema conversa com o clima anti-"brain rot" do momento.</li>
+<li><strong>Ângulo para Carol:</strong> Reel explicando o mecanismo — o cérebro processa, mas não consolida; a memória de trabalho satura e o hipocampo não grava. Fechamento prático: 1 conteúdo por dia em velocidade normal, com atenção plena, como treino de retenção.</li>
+<li><strong>Gancho sugerido:</strong> "Você assiste tudo em 2x e não lembra de nada do que viu. Isso não é coincidência — é o seu hipocampo pedindo socorro."</li>
+<li><strong>Fonte:</strong> <a href="https://www.tnh1.com.br/variedades/o-que-assistir-videos-e-series-no-2x-faz-com-o-seu-cerebro-segundo-especialistas/" target="_blank">TNH1</a> · <a href="https://www.correio24horas.com.br/em-alta/so-assiste-na-velocidade-2x-por-que-os-jovens-estao-acelerando-videos-e-mensagens-de-voz-0226" target="_blank">Correio 24h</a> · <a href="https://olhardigital.com.br/2025/12/30/medicina-e-saude/vida-em-2x-o-que-acontece-com-seu-cerebro-quando-voce-acelera-videos-e-audios/" target="_blank">Olhar Digital</a> · <a href="https://agenciadenoticias.uniceub.br/saude/assistir-a-videos-acelerados-pode-afetar-a-memoria-e-atencao-alerta-especialista/" target="_blank">Agência CEUB</a></li>
+</ul>
+<h3>2. "De onde vem a disposição" — a ciência da motivação sustentada está rodando a imprensa científica</h3>
+<ul>
+<li><strong>Tema:</strong> A repercussão do estudo dos neurônios de orexina (ver Descoberta 1) colocou em circulação a pergunta "o que faz alguém continuar quando fica difícil?" — com veículos de divulgação tratando motivação como circuito biológico, não traço de personalidade.</li>
+<li><strong>Por que está em alta:</strong> Cobertura simultânea em Medical Xpress, SciTechDaily, News-Medical e BioTechniques na primeira quinzena de agosto.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel ou YouTube — "a diferença entre preguiça e sistema de esforço desregulado". Conectar com sono e exaustão: o mesmo sistema de orexina é central na vigília, então dormir mal derruba a máquina que calcula se o esforço vale a pena.</li>
+<li><strong>Gancho sugerido:</strong> "Não é falta de força de vontade. Existe um grupo de células no seu cérebro que decide se vale a pena continuar — e ele está exausto."</li>
+<li><strong>Fonte:</strong> <a href="https://medicalxpress.com/news/2026-08-orexin-neurons-uncover-brain-secret.html" target="_blank">Medical Xpress</a> · <a href="https://www.news-medical.net/news/20260803/Study-uncovers-brain-mechanism-that-drives-sustained-motivation.aspx" target="_blank">News-Medical</a> · <a href="https://www.biotechniques.com/neuroscience/the-neuroscience-of-motivation-how-does-the-brain-sustain-its-drive/" target="_blank">BioTechniques</a></li>
+</ul>
+<h3>3. Conteúdo cru e de take único está superando o polido no Instagram</h3>
+<ul>
+<li><strong>Tema:</strong> Os relatórios de tendência de agosto/2026 apontam virada clara para conteúdo low-production, gravado em take único, com estética de conversa real — superando posts produzidos em alcance e engajamento.</li>
+<li><strong>Por que está em alta:</strong> Levantamentos semanais de tendências do Instagram (Newengen, Ramdam) registram o movimento; conversa com o eixo "curiosidade + realidade" do relatório TikTok Next 2026, que favorece criadores que explicam com contexto.</li>
+<li><strong>Ângulo para Carol:</strong> Tendência de formato, não de tema — vale testar 1-2 reels por semana em take único, celular na mão, explicando um conceito de neurociência como quem conversa com amiga. Menos edição, mais densidade.</li>
+<li><strong>Gancho sugerido:</strong> (formato) abrir o vídeo já no meio da explicação, sem vinheta: "Deixa eu te contar o que eu li hoje sobre o seu cérebro..."</li>
+<li><strong>Fonte:</strong> <a href="https://newengen.com/insights/instagram-trends/" target="_blank">Newengen — Instagram Trends August 2026</a> · <a href="https://www.ramd.am/blog/trends-instagram" target="_blank">Ramdam</a> · <a href="https://ads.tiktok.com/business/library/TikTok_Next_2026_Trend_Report_PT_BR.pdf" target="_blank">TikTok Next 2026 (PT-BR)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>"Cura do vício em dopamina" e combate ao brain rot</strong> — o TikTok segue obcecado por recuperar atenção: detox de scroll, listas de atividades analógicas e desafios de leitura. Terreno fértil, mas cheio de imprecisão científica (ver Alerta de Ruído). <a href="https://sqmagazine.co.uk/tiktok-brain-statistics/" target="_blank">SQ Magazine — TikTok Brain Statistics</a></p>
+<p>2. <strong>Debate BR sobre velocidade 2x</strong> — além das matérias, o tema está gerando discussão aberta sobre "por que ninguém mais consegue ver nada em velocidade normal". <a href="https://www.correio24horas.com.br/em-alta/so-assiste-na-velocidade-2x-por-que-os-jovens-estao-acelerando-videos-e-mensagens-de-voz-0226" target="_blank">Correio 24h</a></p>
+<p>3. <strong>Áudios absurdistas e carrosséis-tributo</strong> — formatos dominando o Instagram em agosto; o bit "Netflix Documentary" (sentar na cadeira como personagem de documentário) migrou do TikTok e está rodando forte. Adaptável para contar "casos" de neurociência. <a href="https://newengen.com/insights/instagram-trends/" target="_blank">Newengen</a></p>
+<p>4. <strong>Suplementos cognitivos (nootrópicos) em alta</strong> — cápsulas e tinturas prometendo foco e memória seguem ganhando volume, com o azul de metileno como estrela do momento. <a href="https://www.bannerhealth.com/healthcareblog/advise-me/tiktok-and-performance-and-brain-supplement-trends" target="_blank">Banner Health</a></p>
+<p>5. <strong>BCIs saíram da ficção e viraram pauta de "mercado"</strong> — a conversa pública sobre interfaces cérebro-máquina (Neuralink, Synchron) está mudando de "milagre" para infraestrutura em teste clínico + debate sobre privacidade mental. Bom para conteúdo de curiosidade. <a href="https://www.sciencedaily.com/news/mind_brain/brain-computer_interfaces/" target="_blank">ScienceDaily — BCI News</a> · <a href="https://tech4impactsummit.com/blog/brain-computer-interfaces-promise-perils-2026/" target="_blank">Tech for Impact Summit</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Vício em dopamina" como diagnóstico:</strong> o termo domina o TikTok, mas não é categoria clínica — dopamina não é droga e "detox de dopamina" não zera nada. Carol pode usar a onda, mas corrigindo o conceito: o problema é o padrão de reforço rápido, não a molécula. Evitar validar a linguagem de "cura".</li>
+<li><strong>Azul de metileno e nootrópicos virais:</strong> evidência fraca em humanos saudáveis e risco real de interação (especialmente com antidepressivos ISRS). Não citar como opção "natural interessante" — se abordar, que seja para desmontar. <a href="https://www.bannerhealth.com/healthcareblog/advise-me/tiktok-and-performance-and-brain-supplement-trends" target="_blank">Banner Health</a></li>
+<li><strong>Manchetes catastrofistas sobre "o cérebro começa a falhar aos 50":</strong> o estudo da Science (Descoberta 3) descreve um processo gradual e não determinista — cuidado com enquadramento de medo. O ângulo correto é prevenção, não sentença.</li>
+<li><strong>Temas já cobertos nos briefings de 11-12/08:</strong> friction-maxxing, 75 Smart, dopamine menu e o estudo GLP-1/Ozempic — evitar repetir sem ângulo novo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Uma noite dormindo mais já muda seu dia seguinte" — estudo randomizado cruzado mostrou que estender o sono em uma única noite melhorou desempenho físico e cognitivo na manhã seguinte em universitários ativos.</li>
+<li><strong>Formato:</strong> Reel de 60-90s, take único (aproveitando a tendência de formato do dia).</li>
+<li><strong>Gancho:</strong> "Você não precisa de 21 dias pra sentir diferença no seu cérebro. Precisa de uma noite. MAS tem um detalhe que ninguém te conta..."</li>
+<li><strong>Desenvolvimento:</strong> o detalhe = não é dormir até tarde no fim de semana (isso desregula), é antecipar o horário de deitar. PORTANTO: hoje, 40 minutos mais cedo na cama, telas fora, e observar o rendimento de amanhã.</li>
+<li><strong>Fonte:</strong> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12387293/" target="_blank">PMC — Single-Night Sleep Extension Enhances Morning Physical and Cognitive Performance (2025)</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Briefing gerado em 2026-08-13. Todas as fontes verificadas com link. Cruzado com o vault (B02 Resources): células de grade já aparecem em Neuroarquitetura.md — o ângulo estresse/cortisol é inédito; orexina e velocidade 2x não constam no vault.</p>
+    </div>
+</body>
+</html>
