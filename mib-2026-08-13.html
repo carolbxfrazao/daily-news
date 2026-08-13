@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio MIB — 13/08/2026</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+            --red: #D44B4B;
+            --orange: #D4884B;
+            --yellow: #D4B44B;
+            --green: #4B9B6B;
+            --blue: #4B7FD4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .header-logo {
+            height: 60px;
+            margin-bottom: 0.75rem;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        /* Frase motivacional */
+        .card-motivation {
+            border: none;
+            background: linear-gradient(135deg, #FFF5EC, #FFEEE5);
+            box-shadow: none;
+        }
+
+        .motivation-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--accent);
+            line-height: 1.8;
+        }
+
+        /* Checklist */
+        .card-checklist .card-header { background: #F5F0EB; }
+        .card-checklist .card-header h2 { color: var(--accent); }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: #FAFAF8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 0.9rem;
+        }
+
+        .check-item:hover {
+            background: #F0EDE8;
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .check-item input:checked + span {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        /* Card types */
+        .card-overview .card-header { background: #F5F0EB; }
+        .card-alert .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header h2 { color: var(--red); }
+        .card-new .card-header { background: #ECF5FF; border-color: #98BAE8; }
+        .card-new .card-header h2 { color: var(--blue); }
+        .card-birthday .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-birthday .card-header h2 { color: var(--orange); }
+        .card-danger .card-header { background: #FFECEC; border-color: #E89898; }
+        .card-danger .card-header h2 { color: var(--red); }
+        .card-warning .card-header { background: #FFF5EC; border-color: #E8C098; }
+        .card-warning .card-header h2 { color: var(--orange); }
+        .card-caution .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-caution .card-header h2 { color: var(--yellow); }
+        .card-info .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-tasks .card-header { background: #ECFAF0; border-color: #98D4A8; }
+        .card-tasks .card-header h2 { color: var(--green); }
+        .card-success .card-header { background: #ECFAF0; border-color: #98D4A8; }
+        .card-success .card-header h2 { color: var(--green); }
+        .card-leads .card-header { background: #E8F0FF; border-color: #98B8E8; }
+        .card-leads .card-header h2 { color: var(--blue); }
+        .card-results .card-header { background: linear-gradient(135deg, #F5F0EB, #EDE5DB); border-color: var(--accent); }
+        .card-results .card-header h2 { color: var(--accent); }
+
+        /* Stats grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #F5F0EB;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .detail {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .action {
+            margin-top: 0.75rem;
+            padding: 0.6rem 1rem;
+            background: #F5F0EB;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .badge-red { background: var(--red); }
+        .badge-orange { background: var(--orange); }
+        .badge-yellow { background: #B89B3E; color: white; }
+        .badge-green { background: var(--green); }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        thead {
+            background: #F5F0EB;
+        }
+
+        th {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+        }
+
+        td {
+            padding: 0.6rem 0.75rem;
+            border-bottom: 1px solid #F5F0EB;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .status-todo { background: #F0F0F0; color: #666; }
+        .status-progress { background: #E0EDFF; color: #2B5FAD; }
+        .status-adjust { background: #F0E0FF; color: #7B2BAD; }
+
+        .overdue {
+            color: var(--red);
+            font-weight: 600;
+        }
+
+        .today {
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        /* Funil de leads */
+        .funnel {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .funnel-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.4rem 0.75rem;
+            background: #FAFAF8;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .funnel-count {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 1.5rem 1rem; }
+            .header h1 { font-size: 1.4rem; }
+            .container { padding: 0.75rem; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            table { font-size: 0.8rem; }
+            td, th { padding: 0.4rem 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://carolbxfrazao.github.io/daily-news/mib-logo.png" alt="MIB" class="header-logo">
+        <h1>Relatorio do Dia</h1>
+        <div class="subtitle">Quinta, 13/08/2026</div>
+    </div>
+    <div class="container">
+
+    <section class="card card-motivation">
+        <div class="card-body" style="text-align:center; padding:1.5rem;">
+            <p class="motivation-text">Lari, eu sei que nem todo dia é fácil, mas você nunca desiste. Isso é raro e lindo. 🤍✨</p>
+        </div>
+    </section>
+
+    <section class="card card-checklist">
+        <div class="card-header"><h2>Checklist do Dia</h2></div>
+        <div class="card-body">
+            <div class="checklist">
+                <label class="check-item"><input type="checkbox"><span>Responder comentários na plataforma</span></label>
+                <label class="check-item"><input type="checkbox"><span>Responder mensagens do celular do MIB</span></label>
+                <label class="check-item"><input type="checkbox"><span>On-boarding de alunas novas</span></label>
+                <label class="check-item"><input type="checkbox"><span>Disparos (WhatsApp e DM) para captação + atualização do CRM</span></label>
+                <label class="check-item"><input type="checkbox"><span>Postar aula MIB e mandar aviso no grupo</span></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="card card-overview">
+        <div class="card-header"><h2>Resumo do Dia</h2></div>
+        <div class="card-body">
+            <div class="stat-grid">
+                <div class="stat"><span class="stat-number">0</span><span class="stat-label">Vendas hoje</span></div>
+                <div class="stat"><span class="stat-number">0</span><span class="stat-label">Vendas ontem</span></div>
+                <div class="stat"><span class="stat-number">77</span><span class="stat-label">Clientes ativos</span></div>
+                <div class="stat"><span class="stat-number">11</span><span class="stat-label">Tarefas abertas</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card card-tasks">
+        <div class="card-header"><h2>Vendas de Ontem e Hoje</h2></div>
+        <div class="card-body">
+            <p style="color:var(--text-light); font-style:italic;">Nenhuma venda registrada no período.</p>
+        </div>
+    </section>
+
+    <section class="card card-leads">
+        <div class="card-header"><h2>Funil de Oportunidades</h2></div>
+        <div class="card-body">
+            <div class="funnel">
+                <div class="funnel-row"><span class="funnel-label">Em negociação — R$ 1.445,27</span><span class="funnel-count" style="background:#88B8D8">871</span></div>
+                <div class="funnel-row"><span class="funnel-label">Vendida — R$ 1.395,06</span><span class="funnel-count" style="background:#A8D8A8">46</span></div>
+                <div class="funnel-row"><span class="funnel-label">Cancelada — R$ 114,25</span><span class="funnel-count" style="background:#E8D498">40</span></div>
+                <div class="funnel-row"><span class="funnel-label">Perdida — R$ 0,00</span><span class="funnel-count" style="background:#E0E0E0">31</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card card-danger">
+        <div class="card-header"><h2>Tarefas Vencidas (1)</h2></div>
+        <div class="card-body">
+            <ul>
+                <li><strong>Cobrar migração definitiva das alunas MIB que ainda não vieram pra plataforma</strong><span class="badge badge-red">13d de atraso</span></li>
+            </ul>
+            <p class="action">Priorizar essa tarefa hoje</p>
+        </div>
+    </section>
+
+    <section class="card card-tasks">
+        <div class="card-header"><h2>Tarefas Abertas (11)</h2></div>
+        <div class="card-body">
+            <table>
+                <thead><tr><th>Tarefa</th><th>Status</th><th>Prazo</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td>Cobrar migração definitiva das alunas MIB que ainda não vieram pra plataforma</td>
+                        <td><span class="status-tag status-adjust">Em revisão</span></td>
+                        <td class="overdue">31/07</td>
+                    </tr>
+                    <tr>
+                        <td>Carol: passar as indicações de possíveis alunas pra Larissa</td>
+                        <td><span class="status-tag status-todo">Backlog</span></td>
+                        <td>15/08</td>
+                    </tr>
+                    <tr>
+                        <td>META: 10 alunas no Projeto Execução 🎯</td>
+                        <td><span class="status-tag status-todo">Backlog</span></td>
+                        <td>30/09</td>
+                    </tr>
+                    <tr>
+                        <td>Passar os conteudos do notion para comunidade</td>
+                        <td><span class="status-tag status-adjust">Em revisão</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Entrar em Contato: Lead INSTAGRAM</td>
+                        <td><span class="status-tag status-progress">Em andamento</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Revisar a 3º aula</td>
+                        <td><span class="status-tag status-adjust">Em revisão</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Listagem de Leads - INSTAGRAM</td>
+                        <td><span class="status-tag status-adjust">Em revisão</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Passar pra Community os documentos do Notion</td>
+                        <td><span class="status-tag status-adjust">Em revisão</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>PROJETO EXECUÇÃO - Abordagem dos Leads</td>
+                        <td><span class="status-tag status-progress">Em andamento</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Revisar o onboarding</td>
+                        <td><span class="status-tag status-progress">Em andamento</span></td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>PROJETO EXECUÇÃO - ALUNA: Jessica Carvalho</td>
+                        <td><span class="status-tag status-adjust">Em revisão</span></td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="card card-success">
+        <div class="card-header"><h2>Tarefas Concluídas nas Últimas 24h</h2></div>
+        <div class="card-body">
+            <p style="color:var(--text-light); font-style:italic;">Nenhuma tarefa foi concluída nas últimas 24 horas.</p>
+        </div>
+    </section>
+
+    </div>
+    <div class="footer">
+        <p>Gerado automaticamente — MIB Automacoes</p>
+    </div>
+</body>
+</html>
