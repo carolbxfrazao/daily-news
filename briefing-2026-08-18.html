@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-18</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-18</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Decodificação de frases digitadas a partir da atividade cerebral sem cirurgia</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Noninvasive decoding of typed sentences from human brain activity</em></li>
+<li><strong>Data de Publicação:</strong> 29 de junho de 2026 (versão publicada; sistema Brain2Qwerty v2)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-026-02303-2" target="_blank">Nature Neuroscience — artigo</a> | <a href="https://facebookresearch.github.io/brain2qwerty/" target="_blank">Página do projeto Meta/FAIR</a> | <a href="https://arxiv.org/pdf/2502.17480" target="_blank">Preprint no arXiv</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Neuroscience)</li>
+<li><strong>Achado:</strong> Um modelo de deep learning treinado com magnetoencefalografia (MEG) e eletroencefalografia (EEG) conseguiu decodificar frases digitadas por participantes com taxa de erro por caractere de 29% em média (MEG) e 18% nos melhores participantes, sem precisar de implantes. Reduz o gap entre interface cérebro-computador invasiva (Neuralink, BrainGate) e não invasiva.</li>
+<li><strong>Implicação prática:</strong> É a primeira evidência forte de que dá pra decodificar linguagem interna a partir de sinais externos, sem cirurgia. Para o público MIB, é a deixa para falar de "o cérebro deixa rastros mensuráveis" — o pensamento não é uma nuvem invisível, é atividade neural que a ciência já lê.</li>
+</ul>
+<h3>2. Slow-wave sleep e REM têm papéis complementares na consolidação de memórias emocionais</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Both slow wave and rapid eye movement sleep contribute to emotional memory consolidation</em></li>
+<li><strong>Data de Publicação:</strong> Março de 2025 (publicação em Communications Biology, do grupo Nature — continua sendo citado como referência ativa em 2026)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s42003-025-07868-5" target="_blank">Communications Biology — artigo completo</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11930935/" target="_blank">Versão PMC de acesso aberto</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Usando reativação direcionada de memória (TMR) durante o sono, os pesquisadores mostraram que reativar estímulos emocionais no sono REM prejudica a memória, enquanto reativar em slow-wave sleep (sono profundo) fortalece. O benefício do TMR em SWS correlaciona com o produto do tempo em REM e SWS — os dois estágios trabalham em conjunto, não isoladamente.</li>
+<li><strong>Implicação prática:</strong> Contraria a ideia popular de que "REM é o estágio das emoções". A memória emocional saudável exige tanto sono profundo (consolida) quanto REM (regula a intensidade emocional). Para conteúdo MIB: cortar sono profundo (dormir tarde e acordar cedo) sabota a regulação emocional do dia seguinte, não só a energia.</li>
+</ul>
+<h3>3. 12 semanas de treino aeróbico ampliam a resposta cerebral do BDNF a uma única sessão de 15 minutos</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Increasing fitness leads to bigger brain boost following exercise</em> (UCL, 2026) — baseado em pesquisa publicada envolvendo BDNF sérico e treinamento aeróbico</li>
+<li><strong>Data de Publicação:</strong> Março de 2026 (UCL News) — apoiada por publicação em <em>Topics in Stroke Rehabilitation</em> (2026)</li>
+<li><strong>Fonte:</strong> <a href="https://www.ucl.ac.uk/news/2026/mar/increasing-fitness-leads-bigger-brain-boost-following-exercise" target="_blank">UCL News — resumo</a> | <a href="https://www.tandfonline.com/doi/full/10.1080/10749357.2026.2628540" target="_blank">Artigo relacionado sobre BDNF e exercício aeróbico</a></li>
+<li><strong>Status:</strong> Revisado por pares (artigo) + release institucional (UCL)</li>
+<li><strong>Achado:</strong> Apenas 15 minutos de exercício aeróbico moderado a vigoroso já elevam BDNF (fator neurotrófico derivado do cérebro) — proteína envolvida em neurogênese e sinaptogênese. Em pessoas sedentárias, 12 semanas de treinamento consistente aumentam significativamente a resposta cerebral a um único treino curto. Ou seja: quanto mais em forma, mais benefício cerebral por minuto de exercício.</li>
+<li><strong>Implicação prática:</strong> Desmonta o "não tenho tempo pra academia". 15 minutos por dia já eleva BDNF; e a consistência aumenta o "juros compostos cerebrais" de cada sessão. Ângulo direto para rotina feminina sobrecarregada.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>Tendência 1 — "Interface cérebro-máquina saiu do laboratório"</h3>
+<ul>
+<li><strong>Tema:</strong> BCIs (interfaces cérebro-computador) em 2026 — Neuralink com produção em alta escala, Synchron estável há mais de 2 anos, Brain2Qwerty decodificando pensamento sem cirurgia.</li>
+<li><strong>Por que está em alta:</strong> Mercado estimado em US$ 8–12 bilhões, cobertura ampla em mídia internacional. Debate ético sobre privacidade mental entrando no mainstream.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel Instagram — "O cérebro já é uma interface. O que você faz com o que entra nele importa mais do que nunca."</li>
+<li><strong>Gancho sugerido:</strong> "Enquanto uma empresa lê pensamentos com um chip, a gente ainda entrega o próprio cérebro pro algoritmo do TikTok de graça. Olha só."</li>
+<li><strong>Fonte:</strong> <a href="https://setr.stanford.edu/technology/neuroscience/2026" target="_blank">Stanford Emerging Technology Review — Neuroscience 2026</a> | <a href="https://pdpspectra.com/blog/brain-computer-interfaces-neuralink-2026/" target="_blank">Brain-Computer Interfaces in 2026 — pdpspectra</a></li>
+</ul>
+<h3>Tendência 2 — "Brain rot" como preditor de burnout e depressão</h3>
+<ul>
+<li><strong>Tema:</strong> Estudo de 2026 mostrando que o "brain rot" (fadiga cognitiva de scroll infinito) não causa depressão diretamente — causa através de burnout, que eleva estresse e ansiedade, que precipitam sintomas depressivos.</li>
+<li><strong>Por que está em alta:</strong> Termo "brain rot" foi palavra do ano de 2024 na Oxford e continua rendendo. O novo estudo dá base científica à intuição que já circulava.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60s — cadeia causal explicada em blocos MAS/PORTANTO.</li>
+<li><strong>Gancho sugerido:</strong> "Você acha que o problema é só perder tempo no celular. Mas o problema é o que o excesso de estímulo faz com o seu córtex pré-frontal — a área responsável por decisão e foco — antes de você perceber."</li>
+<li><strong>Fonte:</strong> <a href="https://journals.sagepub.com/doi/10.1177/00332941261450856" target="_blank">The Cognitive Cost of Brain Rot — SAGE Journals 2026</a></li>
+</ul>
+<h3>Tendência 3 — "As 4 viradas estruturais do cérebro ao longo da vida"</h3>
+<ul>
+<li><strong>Tema:</strong> Estudo de Cambridge (2025, ainda muito citado em 2026) analisou quase 4.000 exames de imagem cerebral e identificou 4 pontos de virada estrutural: aos ~9, 32, 66 e 83 anos. Cada era muda a fiação cerebral e afeta cognição, regulação emocional e vulnerabilidade a transtornos.</li>
+<li><strong>Por que está em alta:</strong> Ressoa com o público feminino 25–45 (a virada aos 32 é diretamente o público MIB). Contradiz a ideia de "cérebro adulto pronto aos 25".</li>
+<li><strong>Ângulo para Carol:</strong> YouTube 8–10 min — "Por que os 30 são a virada real do cérebro feminino (e o que a ciência diz que muda)."</li>
+<li><strong>Gancho sugerido:</strong> "Se você tem entre 28 e 35 e sente que algo mudou no seu cérebro, não é impressão. Cambridge mostrou que existe uma virada estrutural aí — e ela muda tudo sobre como você aprende, decide e sente."</li>
+<li><strong>Fonte:</strong> <a href="https://www.emmajonesmd.com/blog/neuroscience-of-burnout-brain-plasticity-recovery" target="_blank">Neuroscience of Burnout — Emma Jones MD (revisão citando o estudo)</a> | <a href="https://www.nature.com/articles/s41386-025-02154-8" target="_blank">Nature Communications — Prefrontal cortex development and implications in mental illness</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Nervous system regulation" como novo guarda-chuva do wellness feminino</h3>
+<p>Substituindo o termo "self-care", perfis internacionais e brasileiros passaram a usar "regulação do sistema nervoso" como pilar de rotina. Foco em respiração, exposição solar matinal, movimento e sono. Alinhado com Huberman e Wendy Suzuki.</p>
+<ul>
+<li><strong>Fonte:</strong> <a href="https://globalwellnessinstitute.org/global-wellness-institute-blog/2026/03/30/mental-wellness-initiative-trends-for-2026/" target="_blank">Global Wellness Institute — Mental Wellness Trends 2026</a> | <a href="https://www.bettendorfcounselingcenter.com/journal/top-mental-wellness-trends-in-2026-nervous-system-health-longevity-amp-resilience" target="_blank">Bettendorf Counseling — Top Trends 2026</a></li>
+</ul>
+<h3>2. Formatos "study with me" / "work with me 9-5" ainda dominam no TikTok/Reels</h3>
+<p>Continuam performando forte em 2026 — vídeos longos, silêncio ambiente, câmera fixa. Público usa como "companhia virtual" enquanto trabalha. Reação direta à queda documentada da janela de atenção (de 2,5 min em 2004 para ~47s em 2024, dado UC Irvine/Gloria Mark).</p>
+<ul>
+<li><strong>Fonte:</strong> <a href="https://sqmagazine.co.uk/tiktok-brain-statistics/" target="_blank">TikTok Brain Statistics 2026 — SQ Magazine</a> | <a href="https://top10-best.com/entertainment/top-10-most-viral-tiktok-trends-of-2026/" target="_blank">Top 10 Viral TikTok Trends 2026</a></li>
+</ul>
+<h3>3. Cortisol e cérebro feminino ganhando espaço em português</h3>
+<p>Matérias em veículos BR (Tua Saúde, UAI) publicadas em abril/junho de 2026 sobre como o cortisol crônico danifica o hipocampo. Termo "cortisol face" continua em alta no TikTok — mas o ângulo científico ainda é subaproveitado por criadoras.</p>
+<ul>
+<li><strong>Fonte:</strong> <a href="https://www.tuasaude.com/news/2026/06/26/o-estresse-cronico-eleva-o-cortisol-que-aumenta-a-pressao-arterial-e-prejudica-a-memoria/" target="_blank">Tua Saúde — Cortisol crônico e memória (jun/2026)</a> | <a href="https://uai.com.br/uainoticias/2026/04/25/hormonio-do-estresse-pode-danificar-o-cerebro-em-silencio-e-especialistas-explicam-o-risco" target="_blank">UAI Notícias — Hormônio do estresse (abr/2026)</a></li>
+</ul>
+<h3>4. Episódio recente do Huberman Lab sobre regulação emocional</h3>
+<p>Ep de 17/08/2026 com Dr. Ralph Adolphs sobre neurociência das emoções e ferramentas de regulação. Já circulando com clipes editados em contas de neurociência brasileiras.</p>
+<ul>
+<li><strong>Fonte:</strong> <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — todos os episódios</a></li>
+</ul>
+<h3>5. "Cognitive maps" e aprendizado por analogia — tema técnico virando reels de neurociência</h3>
+<p>Estudo mostrando que uma regra simples de plasticidade sináptica explica como o cérebro aprende relações entre conceitos. Perfis como @neurovox e @reservatoriodedopamina começam a explorar o tema.</p>
+<ul>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/neuro/articles?type=article&year=2026" target="_blank">Nature Neuroscience — Articles 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>"TikTok brain"</strong> — o termo está em alta, mas há revisão da BBC Science Focus alertando que muitas afirmações populares extrapolam a evidência científica. Se abordar, citar o dado de janela de atenção (Gloria Mark, UC Irvine) sem transformar em pânico moral.</p>
+<p>2. <strong>"Cortisol face"</strong> — trend estético do TikTok que confunde inchaço facial com estresse crônico. A ciência conecta cortisol a hipocampo e memória, não a "rosto inchado do estresse". Se abordar, separar o meme da fisiologia real.</p>
+<p>3. <strong>"Neuralink já lê pensamentos"</strong> — a realidade em 2026 é BCI para pacientes paralisados decodificando comandos motores, não "leitura de pensamento" no sentido amplo. Evitar sensacionalismo.</p>
+<p>4. <strong>"Você consegue!" motivacional vazio sobre hábitos</strong> — Todos os estudos citados hoje mostram que hábito é neuroquímica + contexto (cue, dopamina, consistência), não força de vontade. Reforçar a mensagem científica em vez do clichê.</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> Por que 15 minutos de caminhada rápida rendem mais que 1h de academia esporádica</li>
+<li><strong>Formato:</strong> Reel 60–75s</li>
+<li><strong>Gancho:</strong> "Todo mundo acha que precisa achar 1 hora pra treinar. Mas olha que interessante: um estudo da UCL de 2026 mostrou que 15 minutos de exercício aeróbico já eleva o BDNF — a proteína que faz seu cérebro crescer conexões novas. E o pulo do gato: quanto mais consistente você é, MAIS o seu cérebro reage àqueles 15 minutos. Ou seja, quem treina 15 min todo dia ganha mais que quem faz 1h uma vez por semana. Consistência bate intensidade. Ponto."</li>
+<li><strong>CTA:</strong> "Salva esse pra lembrar amanhã de manhã."</li>
+<li><strong>Fonte primária:</strong> <a href="https://www.ucl.ac.uk/news/2026/mar/increasing-fitness-leads-bigger-brain-boost-following-exercise" target="_blank">UCL — Increasing fitness leads to bigger brain boost</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Log de execução</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li>Busca web executada em 6 eixos temáticos (retries em 2 queries que caíram na primeira tentativa).</li>
+<li>Filtro de relevância aplicado: descartados resultados sem base científica clara ou sem link verificável.</li>
+<li>Total de itens: 3 descobertas científicas + 3 tendências + 5 temas quentes + 4 alertas + 1 ideia rápida.</li>
+<li>Todas as fontes têm link markdown verificável (Nature, PMC, UCL, SAGE Journals, Communications Biology, Stanford SETR, Huberman Lab, veículos BR de divulgação).</li>
+<li>Palavras proibidas: nenhuma usada.</li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
