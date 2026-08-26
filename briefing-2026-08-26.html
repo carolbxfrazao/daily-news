@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-08-26</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-08-26</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Cérebro adulto tem astrócitos "regenerativos" que mandam núcleos-filhas para dentro da lesão</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Focal astrocyte loss reveals nuclear translocation during lesion repopulation</li>
+<li><strong>Data de Publicação:</strong> 2026-08-10</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41593-026-02354-5" target="_blank">Nature Neuroscience — DOI 10.1038/s41593-026-02354-5</a> · <a href="https://neurosciencenews.com/regenerative-astrocytes-brain-repair-31204/" target="_blank">Neuroscience News — cobertura</a> · <a href="https://www.news-medical.net/news/20260810/Study-reveals-a-previously-unknown-ability-of-the-brain-to-repair-itself.aspx" target="_blank">News-Medical — release</a> · <a href="https://www.sciencedaily.com/releases/2026/08/260812015158.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Neuroscience, University of Zurich — grupo Marina Herwerth / Matthias Wyss / Bruno Weber)</li>
+<li><strong>Achado:</strong> Usando microscopia de dois fótons em camundongos vivos, os pesquisadores acompanharam o que acontece depois de uma lesão focal ou dano autoimune que apaga astrócitos (o tipo de célula em formato de estrela que sustenta o funcionamento dos neurônios). Descobriram uma população especializada de astrócitos "regenerativos" na borda da lesão que <strong>não migra inteira</strong> — em vez disso, envia núcleos-filhas recém-formados deslizando por longas distâncias pelas próprias extensões celulares até a área danificada, reconstruindo a rede. Também mapearam os genes e vias de sinalização envolvidos.</li>
+<li><strong>Implicação prática:</strong> Muda a narrativa antiga de "cérebro adulto não se recupera". Não se recupera do mesmo jeito que fígado, mas tem mecanismos próprios — e sofisticados — de reparo. Serve pra desmontar fatalismo neurológico e conversa de "tudo o que eu já quebrei na cabeça tá quebrado pra sempre".</li>
+</ul>
+<h3>2. Células imunes do sangue entram no cérebro humano a partir da meia-idade — e viram micróglia</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Somatic mutations reveal the ontogeny of microglia in human aging</li>
+<li><strong>Data de Publicação:</strong> 2026 (release Stanford 2026-08-14; paper em Nature)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41586-026-10939-0" target="_blank">Nature — DOI 10.1038/s41586-026-10939-0</a> · <a href="https://news.stanford.edu/stories/2026/08/aging-brain-immune-system-research" target="_blank">Stanford Report — release</a> · <a href="https://www.nih.gov/news-events/nih-research-matters/immune-cells-cross-blood-brain-barrier-during-human-aging" target="_blank">NIH Research Matters — cobertura</a> · <a href="https://www.sciencedaily.com/releases/2026/08/260814011033.htm" target="_blank">ScienceDaily</a> · <a href="https://medicalxpress.com/news/2026-08-discovery-reveals-aging-human-brains.html" target="_blank">Medical Xpress</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature, grupo de Julia A. Belk, Stanford)</li>
+<li><strong>Achado:</strong> Usando mutações somáticas como "código de barras" natural, o time comparou células imunes do sangue e do cérebro de várias pessoas em idades diferentes. Descobriram que, no ser humano — mas <strong>não</strong> em camundongo nem em primata não-humano — células imunes periféricas começam a atravessar a barreira hematoencefálica já na meia-idade, entram no cérebro e se transformam em micróglia (o "sistema imune residente" do cérebro). Ou seja: o cérebro envelhecido recebe reforços que vêm do resto do corpo.</li>
+<li><strong>Implicação prática:</strong> Explica por que inflamação sistêmica (dieta, sono ruim, estresse crônico) tem impacto tão direto na saúde cerebral com o passar dos anos — o corpo literalmente manda células dele pra dentro do cérebro. Abre a porta pra tratamentos que "editam" essas células antes que elas entrem. Pra conteúdo: dá base científica pra ligar rotina corporal → saúde neural na segunda metade da vida.</li>
+</ul>
+<h3>3. Cérebro raciocina sem linguagem — MIT mostra que lógica e linguagem são sistemas separados</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Evidence from formal logical reasoning reveals that the language of thought is not natural language</li>
+<li><strong>Data de Publicação:</strong> 2026-07-06 (release e cobertura 2026-07-08 a 2026-08-11)</li>
+<li><strong>Fonte:</strong> <a href="https://www.pnas.org/doi/10.1073/pnas.2520095123" target="_blank">PNAS — DOI 10.1073/pnas.2520095123</a> · <a href="https://news.mit.edu/2026/separating-logic-and-language-0708" target="_blank">MIT News — release</a> · <a href="https://mcgovern.mit.edu/2026/07/06/separating-logic-and-language/" target="_blank">MIT McGovern Institute — cobertura</a> · <a href="https://scitechdaily.com/the-brain-can-reason-without-language-mit-study-finds/" target="_blank">SciTechDaily</a> · <a href="https://www.sciencedaily.com/releases/2026/08/260811011140.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>Status:</strong> Revisado por pares (grupo Evelina Fedorenko, MIT; primeira autora Hope Kean)</li>
+<li><strong>Achado:</strong> Dois experimentos combinados. (1) Pessoas com afasia grave por AVC (linguagem muito comprometida) resolveram quebra-cabeças de lógica indutiva e dedutiva no mesmo nível de controles saudáveis. (2) Em fMRI com controles, as áreas clássicas da linguagem ficaram praticamente <strong>silenciosas</strong> durante o raciocínio lógico — o "circuito da linguagem" e o "circuito da lógica" não coincidem. A hipótese de que "pensamos em palavras" perde base neural.</li>
+<li><strong>Implicação prática:</strong> Muda o discurso comum de "articula bem quem pensa bem". A ciência mostra que raciocínio abstrato acontece num sistema próprio — dá pra ter clareza mental sem ter fluência verbal, e vice-versa. Pra rotina: journaling, verbalizar em voz alta e traduzir em palavras <strong>não são</strong> o único caminho pra pensar melhor. Pra conteúdo educativo: desmonta o mito de que "quem não sabe explicar não entendeu".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>Tendência 1 — Motivação, esforço e recompensa: Huberman + Masud Husain viralizou em 24/08</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Episódio novo do Huberman Lab (Ep. 295, 2026-08-24) com Dr. Masud Husain (professor de neurologia e neurociência cognitiva em Oxford, referência mundial em motivação e apatia). O próprio Huberman chamou de "uma verdadeira aula-mestre sobre neurociência humana de motivação, apatia e procrastinação — uma das minhas conversas favoritas". Fala de dopamina, gânglios da base, avaliação esforço x recompensa e ferramentas práticas pra sair da inércia. Tema mata dois coelhos: alto engajamento <strong>e</strong> núcleo do MIB.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60-90s traduzindo o mecanismo "esforço vs. recompensa" + carrossel com 3-4 ferramentas comportamentais que caem bem no público MIB. Entrar antes de virar meme genérico no BR.</li>
+<li><strong>Gancho sugerido:</strong> "Você não é preguiçosa. Seu cérebro tá calculando esforço x recompensa e a matemática tá fechando contra a tarefa. Olha o que a neurologia mostrou agora."</li>
+<li><strong>Fonte:</strong> <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — Dr. Masud Husain (Ep. 295, 2026-08-24)</a> · <a href="https://podscan.fm/podcasts/huberman-lab/episodes/how-to-improve-motivation-amp-overcome-procrastination-dr-masud-husain-1" target="_blank">Podscan — página do episódio</a> · <a href="https://www.shortform.com/podcast/episode/huberman-lab-2026-08-24-episode-summary-how-to-improve-motivation-overcome-procrastination-dr-masud-husain" target="_blank">Shortform — resumo</a></li>
+</ul>
+<h3>Tendência 2 — Exercício "lava" o cérebro: sistema glinfático como novo argumento</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Review em <em>Trends in Neurosciences</em> (junho 2026, DOI 10.1016/j.tins.2026.06.002, grupo James Broatch / Amy Brodtmann) sintetizou evidência de que exercício regular melhora o <strong>sistema glinfático</strong> — a "rede de limpeza" que o cérebro usa principalmente durante o sono pra remover resíduos metabólicos (incluindo proteínas ligadas ao Alzheimer). Cobertura do ScienceDaily em 10/08 puxou o assunto pra fora do meio acadêmico ("exercício ajuda o cérebro envelhecido a levar o lixo pra fora"). Estudo humano de 2025 já tinha mostrado aumento do fluxo glinfático após 12 semanas de treino.</li>
+<li><strong>Ângulo para Carol:</strong> Reel curto explicando o "banho noturno" do cérebro + carrossel didático com 4 mecanismos (pressão arterial, pulsatilidade vascular, sono, inflamação). Alto potencial de salvamento porque conecta rotina de treino com clareza mental de longo prazo — não é "queimar caloria", é "faxinar o cérebro".</li>
+<li><strong>Gancho sugerido:</strong> "Seu cérebro precisa de faxina, e não é metáfora. Uma revisão nova mostrou que exercício regular ativa o sistema que joga fora o 'lixo' que se acumula no neurônio — e sem isso, o cérebro velho mais rápido."</li>
+<li><strong>Fonte:</strong> <a href="https://www.cell.com/trends/neurosciences/fulltext/S0166-2236(26" target="_blank">Trends in Neurosciences — DOI 10.1016/j.tins.2026.06.002</a>00118-9) · <a href="https://www.sciencedaily.com/releases/2026/08/260810015719.htm" target="_blank">ScienceDaily 2026-08-10</a> · <a href="https://www.nature.com/articles/s41467-025-58726-1" target="_blank">Nature Communications 2025 — estudo humano</a> · <a href="https://journals.sagepub.com/doi/10.1177/10738584251404010" target="_blank">Sage Journals — versão espelho</a></li>
+</ul>
+<h3>Tendência 3 — Brain fog na perimenopausa: janela de envelhecimento cerebral feminino</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Publicação em <em>Frontiers in Human Neuroscience</em> (2026, DOI 10.3389/fnhum.2026.1814092) trabalha o "brain fog" da menopausa como <strong>janela crítica</strong> do envelhecimento cerebral feminino — não como sintoma passageiro. Muda a moldura clínica de "reclamação subjetiva" pra "fenômeno mensurável, com marcadores digitais". Conecta com onda que vem desde a publicação em <em>The Lancet Obstetrics</em> em abril (Gurvich, Monash). Tema ainda mal coberto em pt-BR com seriedade científica.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel educativo (8-9 slides) + reel-teaser de 45s. Público MIB (25-45) tá entrando ou já dentro dessa faixa. Diferencial: falar da perimenopausa como janela de investimento na saúde do cérebro, não como declínio a lamentar.</li>
+<li><strong>Gancho sugerido:</strong> "Se você tem entre 35 e 50 anos e sente que perdeu foco, memória, palavra na hora — a ciência de 2026 tá dizendo o seguinte: essa fase não é 'só hormônio'. É uma janela do seu cérebro. E o que você fizer nela conta pros próximos 30 anos."</li>
+<li><strong>Fonte:</strong> <a href="https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2026.1814092/full" target="_blank">Frontiers in Human Neuroscience — brain fog menopausa como janela</a> · <a href="https://menopause.org/press-releases/how-menopause-restructures-a-womans-brain" target="_blank">The Menopause Society — release</a> · <a href="https://medicalxpress.com/news/2026-04-redefining-brain-fog-menopause-pave.html" target="_blank">Medical Xpress — redefinição brain fog</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab #295 — Masud Husain sobre motivação, apatia e procrastinação (2026-08-24).</strong> Nicho internacional de neurociência já tá clipando o episódio. Referência de gancho: Huberman abre falando de "o cérebro que decide o que vale o esforço". Fonte: <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab — all episodes</a>.</p>
+<p>2. <strong>Astrócitos regenerativos — cérebro adulto se repara mais do que se pensava.</strong> Manchetes em várias línguas entre 10 e 14 de agosto (Neuroscience News, News-Medical, Technology Networks). Perfis internacionais de neurociência estão traduzindo o achado. Fonte: <a href="https://www.technologynetworks.com/analysis/news/regenerative-astrocytes-rebuild-damaged-brain-tissue-415484" target="_blank">Technology Networks — regenerative astrocytes</a>.</p>
+<p>3. <strong>Células imunes do sangue no cérebro envelhecido — descoberta Stanford.</strong> Cobertura de 14/08 explodiu em fóruns e canais de biohacking. Conecta muito bem com o discurso de "cuidar do corpo é cuidar do cérebro". Fonte: <a href="https://www.sciencedaily.com/releases/2026/08/260814011033.htm" target="_blank">ScienceDaily 2026-08-14</a>.</p>
+<p>4. <strong>"Cortisol cocktail" continua em alta no TikTok BR — endocrinologistas seguem intervindo.</strong> Wikipedia já tem verbete, o que sinaliza saturação. Boa hora pra conteúdo de contraponto científico com autoridade. Fonte: <a href="https://en.wikipedia.org/wiki/Cortisol_cocktail" target="_blank">Wikipedia — Cortisol cocktail</a> · <a href="https://www.acsh.org/news/2025/06/25/tiktoks-viral-cortisol-cocktail-explained-49577" target="_blank">ACSH — TikTok's Viral Cortisol Cocktail Explained</a>.</p>
+<p>5. <strong>MIT — cérebro raciocina sem linguagem.</strong> Cobertura editorial forte entre 08/07 e 11/08. Base para conteúdo do tipo "quebra de mito" sobre pensar/verbalizar. Fonte: <a href="https://news.mit.edu/2026/separating-logic-and-language-0708" target="_blank">MIT News</a>.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"GLP-1 (semaglutida/Ozempic) protege contra Alzheimer."</strong> Os ensaios de fase 3 <strong>EVOKE</strong> e <strong>EVOKE+</strong> (Lancet 2026, 566 sites, 40 países) mostraram que semaglutida oral 14 mg <strong>não</strong> atrasou a progressão pra demência em pessoas com Alzheimer inicial. A Novo Nordisk descontinuou a extensão dos ensaios com base nos dados negativos. Se for citar o tema, cuidado com o "milagre metabólico" — sinal biológico existe, mas efeito clínico em cognição não se confirmou nos maiores ensaios. Fonte crítica: <a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26" target="_blank">The Lancet — EVOKE/EVOKE+</a>00459-9/fulltext) · <a href="https://www.neurologylive.com/view/ctad-presentation-lays-insights-disappointing-phase-3-evoke-trial-of-glp-1-semaglutide-alzheimers" target="_blank">NeurologyLive — análise CTAD</a>.</li>
+</ul>
+<ul>
+<li><strong>"Cortisol cocktail resolve estresse."</strong> Não existe evidência científica de que suco de laranja + água de coco + sal + magnésio diminua cortisol de forma clinicamente relevante. Endocrinologistas alertam: melhor caminho segue sendo sono, exercício, alimentação e regulação do estresse — não uma bebida. Se abordar, faça pelo ângulo do "por que a gente cai nessa promessa fácil". Fonte crítica: <a href="https://www.wral.com/story/influencers-claim-the-popular-cortisol-cocktail-relieves-stress-a-doctor-weighs-in/22104879/" target="_blank">WRAL — médico explica</a> · <a href="https://www.acsh.org/news/2025/06/25/tiktoks-viral-cortisol-cocktail-explained-49577" target="_blank">ACSH</a>.</li>
+</ul>
+<ul>
+<li><strong>"7 minutos de meditação por dia = mesmo efeito do retiro de 7 dias."</strong> O estudo UCSD que viralizou em agosto foi retiro imersivo de 33h em uma semana — dose alta, controlada, contexto específico. Extrapolar pra prática caseira curta é falso. Fonte crítica: <a href="https://www.nature.com/articles/s42003-025-09088-3" target="_blank">Communications Biology — estudo original</a>.</li>
+</ul>
+<ul>
+<li><strong>"Atenção humana já é menor que a de goldfish, 8 segundos."</strong> Estatística repetida à exaustão. As metodologias por trás (Microsoft, Amsterdam etc.) misturam eye-tracking com engajamento em plataformas — não medem "atenção" no sentido cognitivo estrito. Cuidado ao repetir esse número como fato universal. Fonte crítica: <a href="https://vidico.com/news/average-attention-span-statistics/" target="_blank">Vidico — average attention span stats</a>.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> "Você não é preguiçosa — seu cérebro calcula esforço x recompensa. E dá pra mexer nessa conta." (baseado no episódio Huberman + Husain de 24/08)</p>
+<p><strong>Formato:</strong> Carrossel de 7 slides + reel-teaser de 45s levando pro carrossel.</p>
+<p><strong>Gancho:</strong> "Toda vez que você adia a tarefa 'importante' e vai pro celular, não é falha de caráter. Seu cérebro fez uma conta bem rápida: 'quanto esforço isso vai custar e quanta recompensa eu vou ter?' E o celular ganhou. Agora, olha o que dá pra mudar nessa conta."</p>
+<p><strong>Estrutura:</strong></p>
+<p>1. Gancho + provocação: "não é preguiça, é matemática" (slide 1).</p>
+<p>2. Mecanismo: dopamina + gânglios da base avaliam esforço x recompensa antes de você "decidir" agir (baseado no trabalho de Masud Husain, Oxford).</p>
+<p>3. Por que a tarefa importante quase sempre "perde": recompensa é distante e difusa; celular oferece recompensa imediata e certa.</p>
+<p>4. O que <strong>não</strong> funciona: se forçar por força de vontade repetida vezes (esgota o pré-frontal e reforça o padrão).</p>
+<p>5. Ferramenta 1 — reduzir o custo de esforço percebido: quebrar em passos absurdamente pequenos (10 min de escrita, não "escrever o projeto").</p>
+<p>6. Ferramenta 2 — aumentar a recompensa antecipada: sinalizar visualmente o progresso (lista, tracker, alguém pra reportar).</p>
+<p>7. Encerramento + CTA: "Isso não é dica de produtividade. É neurologia aplicada. Salva pra lembrar quando bater a inércia amanhã."</p>
+<p><strong>Fontes pra citar em stories:</strong> <a href="https://www.hubermanlab.com/all-episodes" target="_blank">Huberman Lab #295 — Masud Husain</a> · <a href="https://podscan.fm/podcasts/huberman-lab/episodes/how-to-improve-motivation-amp-overcome-procrastination-dr-masud-husain-1" target="_blank">Podscan — página do episódio</a></p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Estrutura:*</p>
+    </div>
+</body>
+</html>
