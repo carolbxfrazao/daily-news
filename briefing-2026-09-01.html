@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-09-01</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-09-01</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. A maior meta-análise já feita sobre vídeo curto: quase 100 mil pessoas, e o resultado é preocupante</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Feeds, Feelings, and Focus: A Systematic Review and Meta-Analysis Examining the Cognitive and Mental Health Correlates of Short-Form Video Use</li>
+<li><strong>Data de Publicação:</strong> 2026 (aceito e disponível online no <em>Psychological Bulletin</em> — repercussão forte na última semana de agosto)</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1037/bul0000498" target="_blank">Psychological Bulletin — DOI 10.1037/bul0000498</a> · <a href="https://www.psypost.org/large-meta-analysis-links-tiktok-and-instagram-reels-to-poorer-cognitive-and-mental-health/" target="_blank">Cobertura PsyPost</a> · <a href="https://www.medrxiv.org/content/10.1101/2025.08.27.25334540.full.pdf" target="_blank">Pré-print no medRxiv</a></li>
+<li><strong>Status:</strong> Revisado por pares — meta-análise de 70 estudos, 98.299 participantes (autoras principais: Lan Nguyen, Jared Walters e colegas)</li>
+<li><strong>Achado:</strong> É a maior síntese já feita sobre o efeito de vídeos curtos (TikTok, Reels, Shorts) no cérebro e na saúde mental. Encontraram: (a) associação negativa <strong>moderada</strong> entre uso de vídeo curto e desempenho cognitivo — atenção sustentada, controle de impulso e memória de trabalho pioram com uso frequente; (b) associação negativa pequena, mas consistente e significativa, com ansiedade, depressão e estresse; (c) ligação clara com pior sono; (d) estudos que mediram "vício" (não só duração) mostraram efeitos maiores — sugerindo que o padrão compulsivo importa mais que o tempo bruto; (e) não encontraram associação com problemas de imagem corporal, o que contraria uma parte do senso comum. Complementa o estudo do <em>NeuroImage</em> (janeiro/2026) que mostrou desativação em tempo real das regiões de controle cognitivo durante o consumo.</li>
+<li><strong>Implicação prática:</strong> Isto muda a conversa de "influencer opina" pra "97 mil pessoas em pesquisa dizem a mesma coisa". Não é dano ao caráter — é padrão neuropsicológico mensurável, dose-dependente. A intervenção que a ciência valida não é meditar mais nem "ter força de vontade": é redesenhar contexto (celular fora do quarto, notificações desligadas, feeds monitorados) e distinguir uso ocasional de padrão compulsivo. Pra público MIB, isso ancora reels e carrosséis com dado forte.</li>
+</ul>
+<h3>2. Neurônios novos no hipocampo: adultos com depressão fabricam menos — e isso explica por que a dor não passa</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Dysregulated adult hippocampal neurogenesis in major depressive disorder (título divulgado)</li>
+<li><strong>Data de Publicação:</strong> 2026-08-21 (<em>Nature Medicine</em>)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41591-026-04571-8" target="_blank">Nature Medicine — DOI 10.1038/s41591-026-04571-8</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Nature Medicine</em>)</li>
+<li><strong>Achado:</strong> Estudo grande com tecidos cerebrais post-mortem e neuroimagem em pacientes vivos mostrou que adultos com depressão maior têm <strong>produção reduzida de novos neurônios</strong> no hipocampo — a região do cérebro responsável por memória, aprendizado e separação de experiências. A quebra desse processo (neurogênese adulta) prejudica a capacidade de "separar" experiências novas das dolorosas antigas. Ou seja: a mente fica travada re-visitando a mesma dor porque neurologicamente falta a "fábrica" que gera padrões novos de conexão. É a base biológica pra por que sair da depressão exige mais do que "boa vontade".</li>
+<li><strong>Implicação prática:</strong> Reforça, com evidência dura, tudo o que a neurociência vem construindo: exercício aeróbico, sono profundo, restrição inteligente de estímulo tóxico e certos tratamentos (SSRIs, cetamina, psicoterapia estruturada) atuam justamente aumentando essa neurogênese hipocampal. Para o público MIB: quando a mulher diz "estou presa nas mesmas dores", muitas vezes é literal — está. E o caminho de saída é biológico + comportamental, não motivacional.</li>
+</ul>
+<h3>3. Descoberto o "freio da motivação" — por que começar tarefa difícil é neurologicamente doloroso</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Ventral pallidal neurons controlling the initiation of unpleasant actions in macaques (título divulgado)</li>
+<li><strong>Data de Publicação:</strong> 2026-01-10 (<em>Current Biology</em>) — repercussão internacional forte ao longo de agosto de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://ashbi.kyoto-u.ac.jp/news_research/21584/" target="_blank">ASHBi Kyoto University — nota oficial</a> · <a href="https://www.discovermagazine.com/macaque-monkeys-could-unlock-the-brain-secrets-behind-motivation-and-inspire-new-mental-health-treatments-48531" target="_blank">Discover Magazine</a> · <a href="https://www.smithsonianmag.com/smart-news/cant-get-started-on-a-daunting-task-this-brain-circuit-that-slams-the-brakes-on-motivation-might-be-to-blame-180988007/" target="_blank">Smithsonian Magazine</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Current Biology</em>)</li>
+<li><strong>Achado:</strong> Pesquisadores da Universidade de Kyoto identificaram um circuito cerebral específico — a conexão entre estriado ventral (VS) e pálido ventral (VP) — que funciona como um "freio da motivação". Em macacos, quando a tarefa oferecia só recompensa, o freio ficava desligado e o animal iniciava a ação normalmente. Quando a tarefa combinava recompensa <strong>com uma consequência aversiva</strong> (um jato de ar no rosto), esse circuito acionava e o animal ficava paralisado — o esforço se tornava neurologicamente aversivo, independentemente da recompensa. Quando os cientistas desativaram farmacologicamente o freio (via quimiogenética), o animal voltava a iniciar tarefas difíceis mesmo com a punição embutida. É a primeira demonstração causal desse circuito.</li>
+<li><strong>Implicação prática:</strong> Isso é uma revolução na conversa sobre procrastinação. Não é preguiça, não é falta de disciplina — é um circuito cerebral fazendo o trabalho pra qual foi desenhado (evitar esforço com custo emocional). A intervenção real: reduzir o "custo aversivo" percebido da tarefa (dividir em micro-passos, remover fricção, mudar de ambiente), não "querer mais". Explica por que caderno + celular no bolso + culpa não funciona — o freio já está acionado antes de você tentar.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>Tendência 1 — "97 mil pessoas dizem a mesma coisa sobre TikTok e Reels — e agora tem meta-análise"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O paper do <em>Psychological Bulletin</em> saiu com repercussão em PsyPost, Slashdot e portais de tecnologia na última semana de agosto. Consolida um debate que já estava fervendo com o estudo de MRI de Zhejiang (janeiro/2026). Diferente dos anteriores, este é uma síntese com peso estatístico: 70 estudos, quase 100 mil pessoas.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 8 slides ou YouTube de 6–8min — "não é opinião: 97 mil pessoas em pesquisas mostraram o mesmo padrão sobre TikTok e Reels". Fecha com a pergunta prática: seu uso é ocasional ou compulsivo? A diferença muda tudo.</li>
+<li><strong>Gancho sugerido:</strong> "Sabe quando a gente ouve 'TikTok faz mal pro seu cérebro' e pensa: será mesmo? Acabou de sair a maior pesquisa já feita sobre isso — 97 mil pessoas em 70 estudos diferentes. E o resultado eu preciso te contar."</li>
+<li><strong>Fonte:</strong> <a href="https://doi.org/10.1037/bul0000498" target="_blank">Psychological Bulletin — DOI 10.1037/bul0000498</a> · <a href="https://www.psypost.org/large-meta-analysis-links-tiktok-and-instagram-reels-to-poorer-cognitive-and-mental-health/" target="_blank">PsyPost</a></li>
+</ul>
+<h3>Tendência 2 — "Descobriram o freio da motivação — e explica por que começar é o mais difícil"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O estudo de Kyoto foi publicado em janeiro no <em>Current Biology</em> mas ganhou uma segunda onda de cobertura internacional em agosto (Smithsonian, Discover, Earth.com, Nautilus). É o tipo de "por que meu cérebro faz isso comigo?" que gera identificação imediata. Nicho brasileiro de neurociência ainda não pegou.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 90s + carrossel de 6 slides "não é preguiça — é um circuito cerebral chamado 'freio da motivação'". A virada: se é biologia, a solução não é 'querer mais'. É reduzir o custo aversivo da primeira ação.</li>
+<li><strong>Gancho sugerido:</strong> "Você já reparou que a parte mais difícil de uma tarefa nunca é fazer? É começar. A neurociência acabou de descobrir por quê — e tem nome: freio da motivação."</li>
+<li><strong>Fonte:</strong> <a href="https://ashbi.kyoto-u.ac.jp/news_research/21584/" target="_blank">ASHBi Kyoto University</a> · <a href="https://www.smithsonianmag.com/smart-news/cant-get-started-on-a-daunting-task-this-brain-circuit-that-slams-the-brakes-on-motivation-might-be-to-blame-180988007/" target="_blank">Smithsonian Magazine</a></li>
+</ul>
+<h3>Tendência 3 — "Depressão não é 'sem sentido' — é biologia: a fábrica de neurônios novos está travada"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O paper da <em>Nature Medicine</em> saiu em 21 de agosto, ainda em ciclo de imprensa. Reforça o eixo "psiquiatria biológica" que Huberman e Chris Palmer vêm empurrando o ano inteiro (episódio de 27 de agosto foi sobre isso). Tem repercussão emocional forte — dá base científica pra quem sofre com pensamentos recorrentes que não passam.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 7–10min "por que a mesma dor volta e volta (e o que a ciência descobriu que muda essa conversa)". Ponte com público MIB: se o hipocampo não fabrica neurônios novos, você fica presa reciclando a mesma experiência. Exercício aeróbico, sono profundo e certos tratamentos atuam nisso — não é frescura.</li>
+<li><strong>Gancho sugerido:</strong> "Se você tem a sensação de estar presa na mesma dor há anos, escuta isso: a ciência acabou de mostrar que não é força de vontade que falta. É neurônio."</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41591-026-04571-8" target="_blank">Nature Medicine — DOI 10.1038/s41591-026-04571-8</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Huberman Lab com Dr. Masud Husain — "How to Improve Motivation & Overcome Procrastination"</strong> (2026-08-20, ainda circulando em cortes). Ancora perfeitamente o tema do "freio da motivação" de Kyoto. Ótima referência de autoridade internacional pra citar. <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a></p>
+<p>2. <strong>Huberman Lab Essentials com Dr. Chris Palmer — "Diet & Nutrition for Mental Health"</strong> (2026-08-27) segue circulando em cortes. Ponto de encontro entre nutrição e o achado da neurogênese hipocampal — bom pra ancorar pauta "alimentação e humor". <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — Podcast</a></p>
+<p>3. <strong>Meta-análise de vídeo curto (Psychological Bulletin)</strong> chegou aos portais gerais na última semana (PsyPost, Slashdot, Yahoo, Newsnation). Está pronto pra tradução de "vício em tela" pra "padrão neuropsicológico mensurável em quase 100 mil pessoas". <a href="https://www.psypost.org/large-meta-analysis-links-tiktok-and-instagram-reels-to-poorer-cognitive-and-mental-health/" target="_blank">PsyPost</a></p>
+<p>4. <strong>Creatina como suplemento cognitivo pra mulheres</strong> — tendência de biohacking 2026 dominante, com foco em "brain fog" da perimenopausa e sustentação de ATP no córtex pré-frontal em privação de sono. Encaixa perfeitamente no público MIB. <a href="https://outliyr.com/future-biohacking-trends" target="_blank">Outliyr — Biohacking Trends 2026</a> · <a href="https://www.goddessretreats.com/biohacking-longevity-glossary-2026/" target="_blank">Goddess Retreats — Longevity Glossary 2026</a></p>
+<p>5. <strong>Tony Wyss-Coray na Time — "Measuring Biological Age One Organ at a Time"</strong> (2026-08-24). Pesquisador de Stanford virou destaque em imprensa geral. Reforça pauta "seu cérebro tem idade própria" — bom pra abrir série sobre longevidade cerebral feminina. <a href="https://neuroscience.stanford.edu/news/news-and-press-releases" target="_blank">Wu Tsai Stanford — News & Press</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"TikTok destrói seu cérebro para sempre"</strong> — a meta-análise mostra <strong>associação</strong> (correlação), não causalidade direta, e os efeitos são reversíveis quando o padrão de uso muda. Também não encontrou ligação com imagem corporal, apesar de portais generalistas seguirem afirmando. Ao abordar, precisa da nuance: dose e padrão importam mais que o app em si. <a href="https://doi.org/10.1037/bul0000498" target="_blank">Psychological Bulletin — DOI 10.1037/bul0000498</a></li>
+<li><strong>"Detox de dopamina em 3 dias"</strong> — clichê que continua sem base científica em 2026. O marcador neuroquímico identificado nos estudos recentes de vídeo curto é o <strong>glutamato</strong>, não dopamina. Quem vender "reset de dopamina" está confundindo (ou explorando) o vocabulário. <a href="https://www.sciencedirect.com/science/article/pii/S1053811926000406" target="_blank">NeuroImage — DOI 10.1016/j.neuroimage.2026.121722</a></li>
+<li><strong>"Neuralink está resolvendo tudo"</strong> — em 2026 o trial expandiu pra 26 participantes globais (Canadá — CAN-PRIME; Reino Unido — CONVOY; EUA; Emirados) e demonstrações são reais (Brad, primeiro paciente com ELA, edita vídeos com o cérebro; participante controla cadeira motorizada). Mas <strong>nenhum BCI comercial existe</strong>; tudo é sob protocolo de pesquisa clínica. Cuidado com narrativa "cura garantida". <a href="https://3zebras.com/science/brain-computer-interface-2026-neuralink-synchron-update/15397/" target="_blank">3zebras — BCI 2026 Update</a></li>
+<li><strong>"Meditar 7 dias transforma sua vida"</strong> — o estudo UCSD (Communications Biology, agosto) é promissor, mas open-label, sem grupo controle randomizado forte, e mede efeitos agudos. Quem vender retiro "com base científica" com essa evidência está exagerando. <a href="https://doi.org/10.1038/s42003-025-09088-3" target="_blank">Communications Biology — DOI 10.1038/s42003-025-09088-3</a></li>
+<li><strong>"Sua atenção caiu pra 8 segundos"</strong> — este mito continua circulando. Pesquisa peer-reviewed atual põe o pico contínuo de foco em cerca de 30s pra crianças, 76s pra jovens adultos e 67s pra adultos mais velhos. O número dos "8 segundos" saiu de um relatório da Microsoft de 2015 e nunca teve base científica. <a href="https://vidico.com/news/average-attention-span-statistics/" target="_blank">Vidico — Attention Span Statistics 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> O "freio da motivação" — não é preguiça, é um circuito cerebral fazendo exatamente o que foi desenhado pra fazer.</p>
+<p><strong>Formato:</strong> Reel de 60–75s, câmera fixa, cara na câmera. Ou carrossel de 6 slides.</p>
+<p><strong>Gancho:</strong> "Você já reparou que a parte mais difícil de uma tarefa nunca é fazer? É começar. A neurociência acabou de descobrir por quê — e tem nome."</p>
+<p><strong>Desenvolvimento (MAS/PORTANTO):</strong></p>
+<ul>
+<li>Contexto: pesquisadores da Universidade de Kyoto identificaram, esse ano, um circuito cerebral específico entre duas regiões — estriado ventral e pálido ventral. Batizaram de "freio da motivação".</li>
+<li>Como funciona: em experimento com macacos, quando a tarefa oferecia só recompensa, o freio ficava desligado. Mas quando a tarefa tinha recompensa <strong>junto com uma consequência ruim</strong> — no experimento, um jato de ar no rosto — o freio acionava e o animal ficava paralisado. Não conseguia começar, mesmo querendo a recompensa.</li>
+<li>MAS: quando os cientistas desativaram esse circuito farmacologicamente, o animal voltava a iniciar a tarefa normalmente. Ou seja, o "não conseguir começar" não é falta de vontade — é o freio biológico apertado.</li>
+<li>Traduzindo pra vida real: quando você precisa fazer uma coisa que sabe que vai te trazer um custo emocional junto (ligar pra alguém difícil, começar a planilha, sentar pra estudar depois de exausta), esse freio já está acionado. Não é caráter fraco. É neurologia.</li>
+<li>PORTANTO: a intervenção real não é "ter mais disciplina". É reduzir o custo aversivo da primeira ação. Divide a tarefa em pedaços tão pequenos que o cérebro não aciona o freio: não é "escrever o relatório", é "abrir o documento e escrever uma frase". Não é "ir treinar", é "colocar a roupa de treino". Você desengata o freio pelo tamanho do primeiro passo, não pela força de vontade.</li>
+</ul>
+<p><strong>CTA:</strong> "Salva pra lembrar da próxima vez que ficar travada — e manda pra amiga que se culpa por procrastinar."</p>
+<p><strong>Fonte para citar:</strong> <a href="https://ashbi.kyoto-u.ac.jp/news_research/21584/" target="_blank">ASHBi Kyoto University — Current Biology 2026</a></p>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Desenvolvimento (MAS/PORTANTO):*</p>
+    </div>
+</body>
+</html>
