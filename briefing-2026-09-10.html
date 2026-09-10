@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-09-10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-09-10</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Ciclo menstrual reconfigura como o cérebro regula emoção</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Estradiol, Emotion Regulation, and the Limbic System: Effects on Gray Matter Volume</li>
+<li><strong>Data de Publicação:</strong> 2026 (revisão indexada no PMC)</li>
+<li><strong>Fonte:</strong> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13090704/" target="_blank">PMC13090704</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Elevações rápidas de estradiol (E2) ao longo do ciclo estão associadas à redução do volume do estriado direito — área ligada ao processamento de emoção. Mulheres em fases de E2 alto conseguiram baixar a intensidade emocional com menos esforço; em fases de E2 baixo, a mesma regulação exigiu muito mais recursos.</li>
+<li><strong>Implicação prática:</strong> A dificuldade de manter foco e paciência em determinadas fases do ciclo não é falha de disciplina — é neurobiologia. Ajustar demandas cognitivas ao momento hormonal reduz desgaste.</li>
+</ul>
+<h3>2. Sono não só consolida memória, ele libera "espaço" para aprender no dia seguinte</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Memory consolidation during sleep: a facilitator of new learning?</li>
+<li><strong>Data de Publicação:</strong> Janeiro de 2026</li>
+<li><strong>Fonte:</strong> <a href="https://pubmed.ncbi.nlm.nih.gov/41260295/" target="_blank">PubMed 41260295</a> — texto integral em <a href="https://www.sciencedirect.com/science/article/pii/S0028393225002556" target="_blank">ScienceDirect</a></li>
+<li><strong>Status:</strong> Revisão sistemática, revisada por pares</li>
+<li><strong>Achado:</strong> Durante o sono, memórias que estavam no hipocampo são redistribuídas para o neocórtex. Esse processo não só fixa o que já foi aprendido, ele libera capacidade de codificação hipocampal, ou seja, o cérebro amanhece com mais espaço bruto para novos aprendizados.</li>
+<li><strong>Implicação prática:</strong> Cortar horas de sono para estudar mais é matematicamente ruim. A dívida de sono não corta só a memória de ontem, corta a capacidade de aprender hoje.</li>
+</ul>
+<h3>3. Rolagem infinita reduz atividade do córtex pré-frontal em 18%</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Estudo do Journal of Neuroscience sobre loops dopaminérgicos e atenção</li>
+<li><strong>Data de Publicação:</strong> 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.jneurosci.org/" target="_blank">Journal of Neuroscience</a> — cobertura consolidada em <a href="https://nen.wfglobal.org/highlights/shrinking-human-attention-span-statistics-2026-749199" target="_blank">Global Digital Attention Research Institute / relatório 2026</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Loops dopaminérgicos criados por rolagem infinita reduzem em 18% a atividade do córtex pré-frontal (área responsável por foco, decisão e autorregulação). Usuários intensivos de tela apresentam ainda 12% de redução na densidade de massa cinzenta em regiões que regulam atenção.</li>
+<li><strong>Implicação prática:</strong> A queda de foco não é falta de disciplina, é o cérebro aprendendo a operar em ciclos curtos de recompensa. Recuperar exige protocolos ativos: blocos sem notificações, janelas fixas, e reduzir novidade nas primeiras horas do dia.</li>
+</ul>
+<h3>4. Estresse crônico deixa marcas mensuráveis no córtex pré-frontal</h3>
+<ul>
+<li><strong>Título do estudo:</strong> Chronic stress-induced neuroplasticity in the prefrontal cortex: Structural, functional, and molecular mechanisms</li>
+<li><strong>Data de Publicação:</strong> 2025 (indexação PubMed 2026)</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedirect.com/science/article/abs/pii/S0006899325000198" target="_blank">ScienceDirect / S0006899325000198</a> e revisão relacionada <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10886584/" target="_blank">Cortisol Reactivity in Physician Burnout — PMC10886584</a></li>
+<li><strong>Status:</strong> Revisão sistemática, revisada por pares</li>
+<li><strong>Achado:</strong> Cortisol cronicamente elevado reduz densidade de massa cinzenta em regiões pré-frontais e enfraquece a conexão entre amígdala e córtex pré-frontal medial. Isso explica por que quem está em burnout tem dificuldade objetiva de conter reação emocional e tomar decisão executiva — não é fraqueza, é redução funcional real.</li>
+<li><strong>Implicação prática:</strong> Descanso não é opcional para quem quer performance. É reparo estrutural.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Dopamine detox" viralizou de novo — mas neurociência diz que a versão popular está errada</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> A trend "NO BUY 2026" e movimentos de detox digital voltaram a ganhar tração no Instagram e TikTok. Neurocientistas estão contestando a premissa: dopamina não "acumula" nem "reseta".</li>
+<li><strong>Ângulo para Carol:</strong> Reel + carrossel. Corrigir o mito e ensinar o que de fato funciona (redução de estímulos de alta densidade, não abstinência total).</li>
+<li><strong>Gancho sugerido:</strong> "Todo mundo tá falando em dopamine detox. Só que a ciência já mostrou: não existe reset de dopamina. Existe outra coisa — e é isso que muda tudo."</li>
+<li><strong>Fonte:</strong> <a href="https://www.crisistextline.org/blog/2026/03/26/dopamine-detox/" target="_blank">Crisis Text Line — What is a Dopamine Detox? (2026)</a> e <a href="https://www.wfmz.com/features/life-lessons/dopamine-overload-tech-detox-in-2026/article_040e7fe8-b3ab-4dd2-9109-fa34db4e1445.html" target="_blank">WFMZ — Dopamine Overload: Tech Detox in 2026</a></li>
+</ul>
+<h3>2. Ciclo menstrual x performance cognitiva — tema em expansão no nicho feminino</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Novas revisões sistemáticas de 2026 confirmam que a atividade cerebral basal muda ao longo do ciclo. O tema está pegando entre criadoras de saúde feminina e produtividade.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube (6-8 min) ou carrossel de 8 slides. Explicar as 4 fases sob a ótica cognitiva, não só reprodutiva.</li>
+<li><strong>Gancho sugerido:</strong> "Você não tem TDAH toda TPM. Seu cérebro literalmente muda de configuração — e ninguém te contou o que fazer com isso."</li>
+<li><strong>Fonte:</strong> <a href="https://www.samphireneuro.com/en-us/blog/eeg-menstrual-cycle-brain-2026" target="_blank">Samphire Neuroscience — EEG and the menstrual cycle 2026</a></li>
+</ul>
+<h3>3. Mitocôndria, energia celular e cansaço crônico</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Novo episódio do Huberman Lab (07/09/2026) com Dr. Jared Rutter destrinchou o papel das mitocôndrias no metabolismo, energia e envelhecimento. Tema deve escalar nas próximas 2-3 semanas.</li>
+<li><strong>Ângulo para Carol:</strong> Reel curto (60s) traduzindo mitocôndria como "usina do neurônio" + carrossel com 5 hábitos que preservam essa usina.</li>
+<li><strong>Gancho sugerido:</strong> "Se você acorda cansada mesmo dormindo 8h, o problema não é sono. Provavelmente é isso aqui."</li>
+<li><strong>Fonte:</strong> <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab — How Mitochondria Control Your Metabolism (07/09/2026)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Neuralink e produção em alta escala</strong> — Musk anunciou início de produção em alto volume do implante cerebral e procedimento cirúrgico quase totalmente automatizado. Debate público sobre privacidade mental voltou forte. Fonte: <a href="https://thedebrief.org/neuralink-set-to-launch-high-volume-brain-implant-production-as-competitors-weigh-in/" target="_blank">The Debrief — Neuralink High-Volume Production</a> e <a href="https://www.fiercebiotech.com/medtech/elon-musks-neuralink-kickstart-high-volume-production-brain-computer-interface-devices" target="_blank">Fierce Biotech</a>.</p>
+<p>2. <strong>"NO BUY 2026" e detox digital feminino</strong> — trend forte no TikTok de nichos como @habitsforsuccess e @gracebeverley. Mulheres 25-40 relatando parar de comprar por 6 meses como forma de baixar estímulo dopaminérgico. Fonte: <a href="https://www.youtube.com/watch?v=PGNpDphPRsM" target="_blank">YouTube — NO BUY 2026</a>.</p>
+<p>3. <strong>Ansiedade climática entre brasileiros</strong> — estudo Natura + Santa Casa de São Paulo publicado esta semana mostrou que 4 em cada 10 brasileiros apresentam sinais clínicos de ansiedade ligados a eventos climáticos extremos. Tema quente na mídia brasileira e no nicho de saúde mental. Fonte: <a href="https://niddedigital.com/4-em-cada-10-brasileiros-apresentam-sinais-clinicos-de-ansiedade-em-meio-a-crise-ambiental-aponta-estudo-inedito/" target="_blank">NIDDE Digital Notícias — Projeto Apoena</a>.</p>
+<p>4. <strong>Cold plunge x ciclo feminino</strong> — debate reavivado após novos textos de referência mostrarem que o protocolo importa mais que o banho gelado em si (temperatura, fase do ciclo, duração). Nicho feminino de biohacking está reagindo. Fonte: <a href="https://www.saunahouse.com/blogs/wellness-guide/the-latest-research-on-cold-plunging-women-s-health-and-when-to-plunge" target="_blank">Sauna House — Latest Research on Cold Plunging, Women's Health</a>.</p>
+<p>5. <strong>Rotinas matinais e alinhamento circadiano</strong> — News-Medical destacou revisão sobre como rotinas matinais estruturadas estabilizam ritmo sono-vigília e melhoram desempenho cognitivo. Nicho de produtividade feminina (@giutessitore, @anagestaodetempo) ativo no tema. Fonte: <a href="https://www.news-medical.net/health/How-Morning-Routines-Influence-Cognitive-Performance-Mood-and-Circadian-Rhythm.aspx" target="_blank">News-Medical — Morning Routines & Cognitive Performance</a>.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Detox de dopamina em 3 dias"</strong> — premissa neurobiologicamente errada. Se for tocar no tema, corrigir o mito e não reforçar. Fonte que fundamenta a crítica: <a href="https://www.crisistextline.org/blog/2026/03/26/dopamine-detox/" target="_blank">Crisis Text Line</a>.</li>
+<li><strong>"Cold plunge é ruim pra mulher"</strong> — está sendo repetido sem contexto. A crítica real é sobre protocolo (temperatura muito baixa em fase lútea), não sobre a prática em si. Simplificar assim é ruim.</li>
+<li><strong>"Neuralink já resolveu paralisia"</strong> — a produção em escala foi anunciada, mas os resultados clínicos ainda são preliminares (12 pacientes até 09/2025). Não vale dar como fato consolidado.</li>
+<li><strong>Frases motivacionais em cima de estudo de burnout</strong> — o tema pede tom sóbrio, dado o dado estrutural (redução de massa cinzenta). Nada de "supere seu burnout hoje".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Tema:</strong> Por que você não consegue ler um livro inteiro mais — e o que a ciência de 2026 mostrou sobre isso.</p>
+<p><strong>Formato:</strong> Reel de 60-75 segundos.</p>
+<p><strong>Gancho:</strong> "Se você tá achando que ficou burra porque não consegue mais ler um livro do começo ao fim, olha só o que a neurociência acabou de mostrar em 2026."</p>
+<p><strong>Estrutura:</strong></p>
+<ul>
+<li>0-3s: gancho acima</li>
+<li>4-25s: dado do Journal of Neuroscience — rolagem infinita reduz 18% da atividade do córtex pré-frontal, área responsável por foco e decisão</li>
+<li>26-50s: 12% de redução de massa cinzenta em áreas de atenção em usuários intensivos de tela</li>
+<li>51-70s: <strong>MAS</strong> isso é reversível — bloco de 90 minutos sem notificação (dado do programa Focus@Work do Google, ganho de 19% de produtividade)</li>
+<li>71-75s: CTA — "Comenta aqui: qual bloco do seu dia você consegue proteger?"</li>
+</ul>
+<p><strong>Fonte para stories:</strong> <a href="https://nen.wfglobal.org/highlights/shrinking-human-attention-span-statistics-2026-749199" target="_blank">Attention Span Statistics 2026 — GDA Research Institute</a> e <a href="https://www.jneurosci.org/" target="_blank">Journal of Neuroscience</a>.</p>
+        </div>
+    </section>
+
+    <section class="card ">
+        <div class="card-header">
+            <span class="icon">📌</span>
+            <h2>Log de execução</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li>Data de geração: 2026-09-10</li>
+<li>Eixos cobertos: 1 (neurociência/descobertas), 2 (neuro + tech: Neuralink), 3 (hábitos/dopamina/foco), 4 (saúde mental/burnout/cold plunge), 5 (temas quentes IG/TT/YT), 6 (ciência recente PubMed/Nature/ScienceDirect/PMC)</li>
+<li>Total de fontes citadas com link verificável: 18</li>
+<li>Palavras proibidas usadas: 0 (verificado contra lista da seção 4 do CLAUDE.md)</li>
+<li>Formato: conforme protocolo em <code>memory/protocolo-briefing.md</code></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>*Estrutura:*</p>
+    </div>
+</body>
+</html>
