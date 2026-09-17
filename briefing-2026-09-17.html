@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-09-17</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-09-17</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Ultraprocessados roubam atenção — mesmo em quem come bem</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Ultra‐processed food intake, cognitive function, and dementia risk: A cross‐sectional study of middle‐aged and older Australian adults</em></li>
+<li><strong>Data de Publicação:</strong> Abril de 2026 (Cardoso et al.)</li>
+<li><strong>Fonte:</strong> <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/dad2.70335" target="_blank">Alzheimer's & Dementia: DADM — DOI 10.1002/dad2.70335</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Em 2.192 australianos de 40–70 anos, maior ingestão de ultraprocessados apareceu associada a pior desempenho em testes de atenção e a maior pontuação num índice de risco de demência. O ponto que virou manchete: a relação se manteve <strong>mesmo entre pessoas que seguiam padrão alimentar mediterrâneo</strong>. Ou seja, não é só o que você come de bom que conta — é o quanto de ultraprocessado ainda entra na rotina. Cobertura acessível em <a href="https://www.sciencedaily.com/releases/2026/06/260608040017.htm" target="_blank">ScienceDaily (junho/2026)</a> e <a href="https://www.news-medical.net/news/20260428/Ultra-processed-foods-linked-to-poorer-attention-and-higher-dementia-risk-scores.aspx" target="_blank">News-Medical (abr/2026)</a>.</li>
+<li><strong>Implicação prática:</strong> Foco não é só disciplina — é bioquímica. A qualidade do combustível influencia a estabilidade da atenção ao longo do dia. Vale revisar o café da manhã e os lanches, e não só "a comida principal".</li>
+</ul>
+<h3>2. Atenção visual depende de picos precisos de noradrenalina no córtex pré-frontal</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Visual attention is linked to temporally structured noradrenaline release in the medial prefrontal cortex</em></li>
+<li><strong>Data de Publicação:</strong> 2026</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41386-026-02404-3" target="_blank">Neuropsychopharmacology (Nature) — DOI 10.1038/s41386-026-02404-3</a></li>
+<li><strong>Status:</strong> Revisado por pares</li>
+<li><strong>Achado:</strong> Usando sensor genético em camundongos, pesquisadores mostraram que a liberação de noradrenalina no córtex pré-frontal medial tem picos sub-segundo bem estruturados no tempo, e que essa assinatura temporal se correlaciona com a <strong>precisão</strong> da atenção visual — não é só "estar alerta", é a hora certa da liberação química.</li>
+<li><strong>Implicação prática:</strong> Sono, cafeína e estresse mexem diretamente no sistema noradrenérgico. Isso ajuda a explicar por que mesmo pequenas privações de sono ou excesso de cafeína a hora errada quebram a atenção sustentada.</li>
+</ul>
+<h3>3. Sono seleciona o que consolidar — e prioriza memória emocional</h3>
+<ul>
+<li><strong>Título/Contexto:</strong> Linha de pesquisa recente sobre consolidação seletiva durante o sono, com destaque para o efeito de "troca emocional" (o sono reforça memórias emocionalmente marcantes em detrimento das neutras).</li>
+<li><strong>Data:</strong> Outubro de 2025 (cobertura de estudos publicados em periódicos revisados por pares)</li>
+<li><strong>Fonte:</strong> <a href="https://www.news-medical.net/news/20251010/Sleep-strengthens-memories-we-choose-to-keep.aspx" target="_blank">News-Medical — Sleep strengthens memories we choose to keep (2025-10-10)</a> e revisão em <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12713818/" target="_blank">PMC — Editorial: The role of sleep in learning and memory (2025)</a></li>
+<li><strong>Status:</strong> Revisão da literatura + estudos revisados por pares</li>
+<li><strong>Achado:</strong> Durante o sono, o hipocampo e o córtex conversam de forma coordenada e o cérebro <strong>seleciona</strong> quais traços de memória vai consolidar. Memórias com carga emocional (especialmente negativa) tendem a ser preservadas com prioridade em relação às neutras — efeito observado em adultos jovens e de meia-idade.</li>
+<li><strong>Implicação prática:</strong> O que você levou para a cama emocionalmente carregado é o que o cérebro reforça de madrugada. Rotina de encerramento do dia (não só o sono em si) é intervenção cognitiva, não frescura de bem-estar.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "O ultraprocessado rouba foco — mesmo em quem come saudável"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O estudo australiano (abril/2026) circulou em portais de saúde ao longo de 2026 e voltou a ganhar tração porque contradiz o discurso do "eu como bem no almoço, o resto compensa". Explora tema quente (foco/atenção) com base científica sólida.</li>
+<li><strong>Ângulo para Carol:</strong> Reel curto (45–60s) com dado + reenquadramento. Também rende carrossel de 6 slides ("5 alimentos que estão sabotando sua atenção sem você perceber").</li>
+<li><strong>Gancho sugerido:</strong> <em>"Não é falta de foco. É o que você tomou no café da manhã."</em></li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/06/260608040017.htm" target="_blank">ScienceDaily (2026-06-08)</a> · <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/dad2.70335" target="_blank">DOI do estudo</a></li>
+</ul>
+<h3>2. "Dopamine detox" — a versão que a ciência realmente sustenta</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O termo virou clichê no TikTok/Instagram. Em 2026 saiu material corrigindo o mito (não existe "zerar dopamina") e ancorando o que de fato acontece: o que se recupera com pausas digitais é a <strong>sensibilidade dos receptores D2</strong> ao longo de 2–4 semanas de menor superestímulo.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de "mito x ciência" (formato dela: firme + didática). Alternativa: YouTube de 6–8 min com a diferença entre "dopamine detox" (pop) e "digital reset" (baseado em evidência).</li>
+<li><strong>Gancho sugerido:</strong> <em>"Detox de dopamina não existe. O que existe é isso aqui, e leva 14 dias."</em></li>
+<li><strong>Fonte:</strong> <a href="https://neurosity.co/guides/social-media-brain-dopamine-attention" target="_blank">Neurosity — Social Media and the Brain (2026)</a> · <a href="https://insightlo.com/health/dopamine-detox-the-science-behind-resetting-your-brains-reward-system" target="_blank">InsightLo — Dopamine Detox: The Science (2026)</a></li>
+</ul>
+<h3>3. Rotina matinal com base em circadiano — desmontando o "4h da manhã"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> A rotina 4AM do Ashton Hall segue viral, e junto vem uma onda de neurocientistas em substacks/Instagram desconstruindo os "hábitos que trabalham contra o cérebro". Público-alvo do MIB é exatamente quem tentou "acordar 5h com disciplina" e quebrou.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 8 slides ("Rotina matinal que respeita seu cérebro — não o Instagram do gringo") ou reel comparando o mito da 4AM com o que a neurociência aponta como janela real de ativação do córtex pré-frontal.</li>
+<li><strong>Gancho sugerido:</strong> <em>"Acordar 4h da manhã não é disciplina. Na maioria das mulheres, é sabotagem do córtex pré-frontal."</em></li>
+<li><strong>Fonte:</strong> <a href="https://neuroage.substack.com/p/as-a-neuroscientist-i-quit-these" target="_blank">Neuroage Substack — As a Neuroscientist, I Quit These 7 Morning Habits (2026)</a> · <a href="https://app.routines.club/blogs/routines/ashton-halls-daily-routine" target="_blank">Routines Club — Ashton Hall Morning Routine 2026</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"10/10 Habits" e "Potential-maxxing":</strong> trend de listas rápidas com hábitos que a pessoa considera "nota 10" (sono, produtividade, foco). Formato salvo, não visto — carrossel domina. Referência: <a href="https://socialbee.com/blog/instagram-trends/" target="_blank">SocialBee — Instagram trends 2026-09-10</a>.</li>
+<li><strong>Arthur Brooks no Huberman Lab (14/09/2026):</strong> episódio sobre "os três macronutrientes da felicidade" está gerando recortes e citações em português. Ótimo material para carrossel citando o estudo original. Referência: <a href="https://www.hubermanlab.com/podcast" target="_blank">Huberman Lab podcast page</a>.</li>
+<li><strong>Ultraprocessados x foco:</strong> ainda rodando em portais de saúde e no Instagram de perfis de neurociência (viés BR começa a chegar). Base: <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/dad2.70335" target="_blank">Alzheimer's & Dementia DADM 2026</a>.</li>
+<li><strong>Rotina matinal "que trabalha contra o cérebro":</strong> posts de neurocientistas listando hábitos do 4AM club que a evidência não sustenta. Referência: <a href="https://medium.com/write-a-catalyst/as-a-neuroscientist-i-quit-these-5-morning-habits-that-destroy-your-brain-3efe1f410226" target="_blank">Medium — 5 Morning Habits That Destroy Your Brain</a>.</li>
+<li><strong>Sono e memória emocional:</strong> rende reel curto, formato "sabia que…?", com o achado de que o cérebro consolida preferencialmente o que teve carga emocional. Referência: <a href="https://www.news-medical.net/news/20251010/Sleep-strengthens-memories-we-choose-to-keep.aspx" target="_blank">News-Medical (2025-10)</a>.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Detox de dopamina" no sentido pop:</strong> o termo continua vendendo curso e reel motivacional, mas biologicamente <strong>não é possível "zerar" dopamina</strong> — o neurotransmissor está envolvido em movimento, aprendizado e regulação básica. Se Carol falar disso, deixar claro que o que se recupera é a <strong>sensibilidade dos receptores</strong>, não "níveis de dopamina". Referência: <a href="https://neurosity.co/guides/social-media-brain-dopamine-attention" target="_blank">Neurosity (2026)</a>.</li>
+<li><strong>Rotinas 4h da manhã viralizadas por homens no Instagram:</strong> grande parte ignora ciclos hormonais femininos, cronotipo real e demanda de mães. Reproduzir sem crítica pode reforçar autossabotagem em mulheres MIB.</li>
+<li><strong>"Neurociência das cores" para produtividade:</strong> rodando em portais BR (<a href="https://rhpravoce.com.br/colab/neurociencia-das-cores-pode-estimular-produtividade" target="_blank">RH Pra Você</a>), mas boa parte do que se cita não tem base em estudo robusto. Se for tocar, cruzar com fonte primária antes.</li>
+<li><strong>Frases genéricas tipo "rewire seu cérebro em 21 dias":</strong> o número redondo vem de uma leitura ruim de estudos antigos. A ciência atual (2025–2026) aponta janelas de 8 a 12 semanas para mudanças neuroplásticas sustentadas em atenção — <a href="https://www.nature.com/subjects/attention/neuro" target="_blank">Nature Neuroscience linhas de 2026</a>.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> Ultraprocessados roubam sua atenção — mesmo se você "come bem"</li>
+<li><strong>Formato:</strong> Reel de 45–60s (também vira carrossel de 5 slides)</li>
+<li><strong>Gancho:</strong> <em>"Você não tem déficit de atenção. Você tem excesso de ultraprocessado."</em></li>
+<li><strong>Estrutura:</strong></li>
+</ul>
+<p>1. Gancho (3s): pergunta direta — "Por que você começa focada e às 10h já está dispersa?"</p>
+<p>2. Dado (10s): estudo com 2.192 pessoas, publicado em 2026 no periódico da Alzheimer's Association, mostrou que quem consome mais ultraprocessados tem pior atenção — <strong>mesmo quem segue dieta mediterrânea</strong>.</p>
+<p>3. Reenquadramento (15s): não é sobre ser "saudável no almoço". É sobre o quanto de industrializado entra ao longo do dia (barrinha, iogurte adoçado, biscoito integral, refresco em pó).</p>
+<p>4. Aplicação (10s): auditar o café da manhã e o lanche da tarde. É onde o ultraprocessado costuma se esconder.</p>
+<p>5. CTA: "Salva pra reler amanhã de manhã."</p>
+<ul>
+<li><strong>Fonte para citar em legenda:</strong> <a href="https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/dad2.70335" target="_blank">Alzheimer's & Dementia DADM — Cardoso et al., 2026</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
