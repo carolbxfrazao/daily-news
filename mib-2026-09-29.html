@@ -92,7 +92,9 @@
             font-size: 0.9rem;
         }
 
-        .check-item:hover { background: #F0EDE8; }
+        .check-item:hover {
+            background: #F0EDE8;
+        }
 
         .check-item input[type="checkbox"] {
             width: 18px;
@@ -260,15 +262,8 @@
         .status-progress { background: #E0EDFF; color: #2B5FAD; }
         .status-adjust { background: #F0E0FF; color: #7B2BAD; }
 
-        .overdue {
-            color: var(--red);
-            font-weight: 600;
-        }
-
-        .today {
-            color: var(--orange);
-            font-weight: 600;
-        }
+        .overdue { color: var(--red); font-weight: 600; }
+        .today { color: var(--orange); font-weight: 600; }
 
         .footer {
             text-align: center;
@@ -285,11 +280,10 @@
         }
 
         .funnel-row {
-            display: grid;
-            grid-template-columns: 1fr auto auto;
+            display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.5rem 0.75rem;
+            justify-content: space-between;
+            padding: 0.4rem 0.75rem;
             background: #FAFAF8;
             border-radius: 6px;
             font-size: 0.85rem;
@@ -302,8 +296,12 @@
             font-size: 0.8rem;
             font-weight: 600;
             color: #333;
-            min-width: 42px;
-            text-align: center;
+        }
+
+        .funnel-value {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
         }
 
         @media (max-width: 600px) {
@@ -320,10 +318,10 @@
     <div class="header">
         <img src="https://carolbxfrazao.github.io/daily-news/mib-logo.png" alt="MIB" class="header-logo">
         <h1>Relatorio do Dia</h1>
-        <div class="subtitle">Terca, 29/09/2026</div>
+        <div class="subtitle">Terça, 29/09/2026</div>
     </div>
     <div class="container">
-        
+
     <section class="card card-motivation">
         <div class="card-body" style="text-align:center; padding:1.5rem;">
             <p class="motivation-text">Bom trabalho, Lari! Cada detalhe que você cuida faz o MIB ser o que é. 💪🌟</p>
@@ -332,28 +330,67 @@
 
     <section class="card card-checklist">
         <div class="card-header"><h2>Checklist do Dia</h2></div>
-        <div class="card-body"><div class="checklist"><label class="check-item"><input type="checkbox"><span>Responder comentários na plataforma</span></label><label class="check-item"><input type="checkbox"><span>Responder mensagens do celular do MIB</span></label><label class="check-item"><input type="checkbox"><span>On-boarding de alunas novas</span></label><label class="check-item"><input type="checkbox"><span>Disparos (WhatsApp e DM) para captação + atualização do CRM</span></label></div></div>
-    </section>
-
-    <section class="card card-danger">
-        <div class="card-header"><h2>Z-Teams indisponível nesta execução</h2></div>
-        <div class="card-body"><p style="color:var(--red); font-weight:600;">A API do Z-Teams (api-community.frzgroup.com.br) retornou HTTP 502 (Bad Gateway). Tarefas abertas, vencidas e concluídas não foram coletadas nesta execução.</p><p class="action">Verificar status da API e reprocessar quando estabilizar.</p></div>
+        <div class="card-body">
+            <div class="checklist">
+                <label class="check-item"><input type="checkbox"><span>Responder comentários na plataforma</span></label>
+                <label class="check-item"><input type="checkbox"><span>Responder mensagens do celular do MIB</span></label>
+                <label class="check-item"><input type="checkbox"><span>On-boarding de alunas novas</span></label>
+                <label class="check-item"><input type="checkbox"><span>Disparos (WhatsApp e DM) para captação + atualização do CRM</span></label>
+            </div>
+        </div>
     </section>
 
     <section class="card card-overview">
         <div class="card-header"><h2>Resumo do Dia</h2></div>
-        <div class="card-body"><div class="stat-grid" style="grid-template-columns: repeat(3, 1fr);"><div class="stat"><span class="stat-number">0</span><span class="stat-label">Vendas hoje</span></div><div class="stat"><span class="stat-number">0</span><span class="stat-label">Vendas ontem</span></div><div class="stat"><span class="stat-number">78</span><span class="stat-label">Clientes ativos</span></div></div></div>
+        <div class="card-body">
+            <div class="stat-grid">
+                <div class="stat"><span class="stat-number">R$ 0</span><span class="stat-label">Vendas hoje</span></div>
+                <div class="stat"><span class="stat-number">R$ 0</span><span class="stat-label">Vendas ontem</span></div>
+                <div class="stat"><span class="stat-number">78</span><span class="stat-label">Clientes ativos</span></div>
+                <div class="stat"><span class="stat-number">—</span><span class="stat-label">Tarefas abertas</span></div>
+            </div>
+        </div>
     </section>
 
     <section class="card card-tasks">
-        <div class="card-header"><h2>Vendas de ontem e hoje</h2></div>
-        <div class="card-body"><p style="color:var(--text-light); font-style:italic;">Nenhuma venda registrada no período.</p></div>
+        <div class="card-header"><h2>Vendas de Ontem e Hoje</h2></div>
+        <div class="card-body">
+            <p style="color:var(--text-light); font-style:italic;">Nenhuma venda registrada no período.</p>
+        </div>
     </section>
 
     <section class="card card-leads">
         <div class="card-header"><h2>Funil de Oportunidades</h2></div>
-        <div class="card-body"><div class="funnel"><div class="funnel-row"><span class="funnel-label">Perdida</span><span style="color:var(--text-light); font-size:0.85rem;">R$ 0,00</span><span class="funnel-count" style="background:#E0E0E0">31</span></div><div class="funnel-row"><span class="funnel-label">Cancelada</span><span style="color:var(--text-light); font-size:0.85rem;">R$ 114,25</span><span class="funnel-count" style="background:#E8C9A8">41</span></div><div class="funnel-row"><span class="funnel-label">Em negociação</span><span style="color:var(--text-light); font-size:0.85rem;">R$ 1.445,27</span><span class="funnel-count" style="background:#B8D4E8">884</span></div><div class="funnel-row"><span class="funnel-label">Vendida</span><span style="color:var(--text-light); font-size:0.85rem;">R$ 1.464,96</span><span class="funnel-count" style="background:#98D4A8">47</span></div></div></div>
+        <div class="card-body">
+            <div class="funnel">
+                <div class="funnel-row">
+                    <span class="funnel-label">Em negociação<span class="funnel-value">R$ 1.445,27</span></span>
+                    <span class="funnel-count" style="background:#B8D4E8">884</span>
+                </div>
+                <div class="funnel-row">
+                    <span class="funnel-label">Vendida<span class="funnel-value">R$ 1.464,96</span></span>
+                    <span class="funnel-count" style="background:#A8D4A8">47</span>
+                </div>
+                <div class="funnel-row">
+                    <span class="funnel-label">Cancelada<span class="funnel-value">R$ 114,25</span></span>
+                    <span class="funnel-count" style="background:#E8C9A8">41</span>
+                </div>
+                <div class="funnel-row">
+                    <span class="funnel-label">Perdida<span class="funnel-value">R$ 0,00</span></span>
+                    <span class="funnel-count" style="background:#E8A8A8">31</span>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="card card-alert">
+        <div class="card-header"><h2>Z-Teams indisponível nesta execução</h2></div>
+        <div class="card-body">
+            <p>A API do Z-Teams (Supabase, <code>api-community.frzgroup.com.br</code>) respondeu <strong>502 Bad Gateway</strong> em todas as tentativas. As tarefas abertas, vencidas e concluídas nas últimas 24h não foram coletadas neste relatório.</p>
+            <p class="action">Se persistir, checar status do gateway com o time técnico.</p>
+        </div>
+    </section>
+
     </div>
     <div class="footer">
         <p>Gerado automaticamente — MIB Automacoes</p>
