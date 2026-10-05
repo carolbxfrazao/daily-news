@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-10-05</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-10-05</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Memória depende do metabolismo das células-apoio do cérebro — e serina pode resgatar o déficit</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Astrocytic PI3Kα controls synaptic plasticity and cognitive function via serine metabolism</em></li>
+<li><strong>Data de Publicação:</strong> Setembro 2026 (versão revisada por pares em Nature Communications; pré-print biorxiv desde fev 2025)</li>
+<li><strong>Fonte:</strong> <a href="https://www.biorxiv.org/content/10.1101/2025.02.11.637597v1.full" target="_blank">bioRxiv — pré-print do artigo completo</a> · <a href="https://www.bordeaux-neurocampus.fr/en/article/astrocytic-pi3k%CE%B1-controls-synaptic-plasticity-and-cognitive-function-via-serine-metabolism/" target="_blank">Bordeaux Neurocampus — nota científica</a> · <a href="https://www.nature.com/subjects/learning-and-memory/neuro" target="_blank">Nature — Learning and memory em Nature Neuroscience</a></li>
+<li><strong>Status:</strong> Revisado por pares (modelo animal — camundongos geneticamente modificados)</li>
+<li><strong>Achado:</strong> Durante décadas se tratou astrócitos (as células-apoio do cérebro) como "cola" passiva. Esse estudo mostra que elas são protagonistas da memória. O caminho da enzima PI3Kα nos astrócitos sustenta a glicólise — ou seja, a produção de energia a partir de glicose — e isso é o que garante o fornecimento de L-serina e D-serina para os neurônios. Sem esse suprimento, os receptores NMDA (que são o motor molecular da aprendizagem) não ativam direito. Resultado em camundongos: perda de potenciação de longo prazo (LTP) no hipocampo e falha de memória. O detalhe que impressiona: suplementar L-serina resgatou o déficit comportamental.</li>
+<li><strong>Implicação prática:</strong> Memória não é só "neurônio disparando" — é um sistema metabólico onde a célula-apoio precisa estar bem nutrida. Isso dá base molecular pra prática que todo mundo já sabe mas despreza: cérebro precisa de combustível estável. Dormir pouco, comer mal, pular refeição e ainda assim esperar foco e aprendizagem é pedir pra esse sistema falhar na base. Vale como lembrete pra quem acha que vai hackear concentração com estimulante enquanto quebra o básico.</li>
+</ul>
+<h3>2. O sono não só consolida memória — ele reorganiza a arquitetura do que você aprende</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>Offline generative network reconfiguration guides insight-like accelerated learning by assimilation into schema in rats</em></li>
+<li><strong>Data de Publicação:</strong> 3 de setembro de 2026 (Nature Communications)</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41467-026-77318-1" target="_blank">Nature Communications — artigo completo</a> · <a href="https://www.psychiatrictimes.com/view/hippocampal-generative-processes-during-sleep-support-rapid-learning-of-new-associations" target="_blank">Psychiatric Times — Hippocampal Generative Processes During Sleep Support Rapid Learning of New Associations</a></li>
+<li><strong>Status:</strong> Revisado por pares (modelo animal — ratos com registro eletrofisiológico simultâneo de hipocampo e córtex pré-frontal medial)</li>
+<li><strong>Achado:</strong> O estudo registrou simultaneamente a atividade do hipocampo e do córtex pré-frontal medial em ratos aprendendo novas associações, atravessando exploração-descanso-sono. O que apareceu foi surpreendente: durante o sono e o repouso, essas redes se reconfiguram de forma generativa — não é só repetir o que foi vivido, é remontar essa informação dentro de um esquema maior, prevendo o que ainda não aconteceu. Quando os pesquisadores interromperam as "ondulações" (ripples) do hipocampo logo após a aprendizagem, o animal perdeu a capacidade de aprender rápido por assimilação ao esquema. Em linguagem simples: o sono é o momento em que o cérebro integra o novo ao que você já sabe.</li>
+<li><strong>Implicação prática:</strong> Isso derruba o modelo escolar e corporativo de "aprender dormindo pouco". O que o estudo mostra é que a janela de sono logo depois de uma aula, estudo ou tarefa complexa é quando o cérebro cria os "atalhos" (schemas) que vão permitir aplicar aquilo em contextos novos. Cortar sono depois de aprender = cortar o processo que gera insight. Dormir virou prescrição de aprendizagem acelerada, não luxo.</li>
+</ul>
+<h3>3. Usar múltiplas ferramentas de IA ao mesmo tempo está causando fadiga cognitiva mensurável — e tem nome</h3>
+<ul>
+<li><strong>Título do estudo:</strong> <em>When Using AI Leads to "Brain Fry"</em> (análise de pesquisa BCG + Harvard Business Review com 1.488 trabalhadores)</li>
+<li><strong>Data de Publicação:</strong> Março 2026 (Harvard Business Review), com repercussão ampliada entre jul-out/2026</li>
+<li><strong>Fonte:</strong> <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank">Harvard Business Review — artigo original</a> · <a href="https://www.helpnetsecurity.com/2026/03/09/harvard-business-review-ai-workplace-fatigue-report/" target="_blank">Help Net Security — resumo do estudo HBR/BCG</a> · <a href="https://www.axios.com/2026/03/06/ai-chatgpt-claude-jobs-brain-fry" target="_blank">Axios — AI overuse could spark brain fry</a> · <a href="https://publichealth.gmu.edu/news/2026-03/ai-and-rise-cognitive-overload" target="_blank">George Mason Public Health — AI and the Rise of Cognitive Overload</a></li>
+<li><strong>Status:</strong> Survey industrial em larga escala + revisão qualitativa (não é RCT, mas é dado robusto de n=1.488)</li>
+<li><strong>Achado:</strong> 14% dos trabalhadores pesquisados já relatam "AI brain fry" — fadiga cognitiva aguda por supervisionar ferramentas de IA acima da capacidade cerebral. Sintomas descritos: sensação de "zumbido" na cabeça, névoa mental, dificuldade de foco, decisão mais lenta e dor de cabeça depois de longas sessões. O ponto mais interessante do dado: ir de uma pra duas ferramentas de IA aumenta produtividade; de duas pra três, o ganho desacelera; acima de três, a produtividade cai. Os números do estudo: usuários no estado de brain fry cometem 39% mais erros graves, têm 33% mais fadiga de decisão e 36% mais intenção de pedir demissão.</li>
+<li><strong>Implicação prática:</strong> Delegar pra IA parece infinito, mas a supervisão humana não é. Cada troca de contexto entre ferramentas (ChatGPT, Claude, Perplexity, Gemini, Midjourney) consome recurso cognitivo caro — o mesmo recurso que você usa pra decidir, criar e autorregular. Prescrição direta: menos ferramentas, usadas com profundidade. E janelas de recuperação (deep work sem IA) viram higiene cognitiva, não produtividade "antiquada".</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "AI brain fry" — o esgotamento silencioso de quem passa o dia supervisionando IA</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Tema explodiu em outubro de 2026 em canais de produtividade, saúde mental corporativa e desenvolvimento feminino. É pauta nova, com nome que gruda ("brain fry"), base científica (estudo HBR/BCG) e identificação imediata pro público que trabalha com conhecimento. A audiência MIB vive isso — mulheres que empilham ChatGPT, Claude, Notion AI, assistentes, mídia social — e sentem o custo sem nomear.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60-90s em fala direta + versão carrossel de 7 slides. Nomear o fenômeno pela primeira vez pro público dela.</li>
+<li><strong>Gancho sugerido:</strong> "Se você acorda cansada mesmo sem ter feito 'nada de pesado' e passa o dia pulando entre três, quatro, cinco ferramentas de IA — a ciência de 2026 deu nome pro que você sente. E não é preguiça."</li>
+<li><strong>Fonte:</strong> <a href="https://hbr.org/2026/03/when-using-ai-leads-to-brain-fry" target="_blank">Harvard Business Review — When Using AI Leads to Brain Fry</a> · <a href="https://www.axios.com/2026/03/06/ai-chatgpt-claude-jobs-brain-fry" target="_blank">Axios — AI overuse could spark brain fry</a></li>
+</ul>
+<h3>2. "Dormir pra aprender" — o sono como motor de insight, não só de descanso</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O estudo da Nature Communications (3 set 2026) sobre reconfiguração hipocampo-pré-frontal durante sono virou pauta de divulgadores sérios (Huberman, Psychiatric Times). Encaixa com a onda "sleep optimization" que não para desde 2024 e dá argumento científico fresco pra quem vem brigando com a cultura de "dormir pouco é foco". Oportunidade de contrariar o discurso "quem dorme muito é lento".</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 7-10 min — "O que a ciência de 2026 descobriu sobre dormir depois de aprender algo novo". Formato didático, com narração sobre B-roll científico.</li>
+<li><strong>Gancho sugerido:</strong> "Vou te contar o que a ciência de setembro de 2026 descobriu sobre o sono — e isso muda a forma como você precisa pensar em aprender qualquer coisa nova depois dos 30."</li>
+<li><strong>Fonte:</strong> <a href="https://www.nature.com/articles/s41467-026-77318-1" target="_blank">Nature Communications — artigo original</a> · <a href="https://www.psychiatrictimes.com/view/hippocampal-generative-processes-during-sleep-support-rapid-learning-of-new-associations" target="_blank">Psychiatric Times — resumo clínico</a></li>
+</ul>
+<h3>3. Hormônios femininos como base da performance — a volta do tema com Sara Gottfried</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Em 1º de outubro de 2026, o Huberman Lab publicou episódio "Essentials: How to Optimize Female Hormone Health for Vitality & Longevity" com Dra. Sara Gottfried. Tema voltou a dominar o nicho de wellness feminino. Discute biomarcadores que mulheres deveriam acompanhar em cada fase da vida (cortisol, tireoide, estrogênio, progesterona, testosterona) e como esses hormônios moldam energia, humor, metabolismo e risco de doença.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel de 10 slides — "7 exames que toda mulher deveria pedir e quase nenhum médico oferece" (com base no episódio, não copiando). Didático, direto, prescritivo.</li>
+<li><strong>Gancho sugerido:</strong> "Se você sente que tá sempre cansada, inchada ou com humor instável e todo exame deu 'normal' — tem 7 marcadores que a maioria dos médicos não pede. A ciência mostra que eles são o que explica a diferença."</li>
+<li><strong>Fonte:</strong> <a href="https://www.hubermanlab.com/subtopics/menopause-and-female-hormone-replacement-therapy" target="_blank">Huberman Lab — Essentials: How to Optimize Female Hormone Health</a> · <a href="https://podcastnotes.org/huberman-lab/dr-sara-gottfried-how-to-optimize-female-hormone-health-for-vitality-longevity-huberman-lab/" target="_blank">Podcast Notes — Dr. Sara Gottfried: How To Optimize Female Hormone Health</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Neuralink e o salto para produção em escala em 2026</strong> — Em 01/10/2026, a Neuralink publicou achado de recorde: 11,32 bits/s em controle de cursor, usando modelo pré-treinado em 50.000 horas de dados neurais, sem necessidade de recalibração por semanas. Elon Musk confirmou produção em alto volume ainda em 2026. O tema voltou com força nos perfis internacionais e tabloides brasileiros. <a href="https://interestingengineering.com/innovation/neuralink-brain-chip-cursor-control-record" target="_blank">Interesting Engineering — Neuralink 11.32-bit/s record</a> · <a href="https://teslanorth.com/2026/10/02/neuralink-pretraining-50000-hours-bci-record/" target="_blank">Tesla North — Neuralink pretraining 50,000 hours BCI record</a> · <a href="https://www.mddionline.com/digital-health/elon-musk-s-neuralink-to-ramp-up-bci-device-production-in-2026" target="_blank">MDDI — Neuralink to Ramp Up BCI Device Production in 2026</a></p>
+<p>2. <strong>"KCC2" — a proteína que explica por que hábito emperra ou flui</strong> — Estudo da Georgetown publicado em Nature Communications (dez 2025) mostrou que uma proteína chamada KCC2 regula o quanto os neurônios dopaminérgicos disparam diante de uma pista. Quando KCC2 cai, os neurônios disparam mais rápido e novos vínculos pista-recompensa se formam. Virou pauta em canais de habit-building (@habitsforsuccess, @reservatoriodedopamina). <a href="https://www.sciencedaily.com/releases/2025/12/251210223635.htm" target="_blank">Science Daily — New research reveals how everyday cues secretly shape your habits</a> · <a href="https://nhsjs.com/2026/dopamine-and-the-neural-basis-of-goal-directed-and-habitual-behavior/" target="_blank">NHSJS — Dopamine and the Neural Basis of Goal-Directed and Habitual Behavior</a></p>
+<p>3. <strong>Cold plunge continua dominando a conversa sobre regulação do estresse</strong> — Discussão permanece intensa: imersão em água fria sobe noradrenalina em mais de 300% e dopamina em pico de até 500% acima do normal, mas o efeito no cortisol é bifásico (sobe no momento, cai significativamente até 180 min depois). Perfis como @hubermanlab e @nicolesneuroscience trazem o tema com nuance; aqui no Brasil ainda está sendo vendido como solução única. Oportunidade pra Carol trazer o ângulo "funciona pra quê, pra quem, em que dose". <a href="https://health.yahoo.com/wellness/fitness/exercise/articles/cold-plunges-spike-dopamine-500x-150412064.html" target="_blank">Yahoo Health — Cold Plunges Spike Dopamine 500x</a> · <a href="https://lifestylemedicine.stanford.edu/jumping-into-the-ice-bath-trend-mental-health-benefits-of-cold-water-immersion/" target="_blank">Stanford Lifestyle Medicine — Mental Health Benefits of Cold Water Immersion</a> · <a href="https://icetubs.com/blogs/does-cold-plunge-increase-cortisol" target="_blank">IceTubs — Does Cold Plunge Increase Cortisol?</a></p>
+<p>4. <strong>"Dopamina digital" continua forte no Brasil</strong> — O artigo "Dopamina Digital: o ciclo de recompensa no uso das redes sociais" (UNIVAP, 2025) ganhou tração em canais brasileiros de divulgação ao longo de 2026. Explica como likes, notificações e scroll infinito exploram o sistema de recompensa. Tema que cruza com a pauta recente de "TikTok brain" e pede abordagem didática pt-BR. <a href="https://www.inicepg.univap.br/cd/INIC_2025/anais/arquivos/0252_0662_01.pdf" target="_blank">UNIVAP — Dopamina digital: o ciclo de recompensa</a></p>
+<p>5. <strong>Treinar o cérebro para gostar de estudar</strong> — Matéria do Estado de Minas (abr 2026) sobre dopamina e aprendizagem viralizou entre criadoras de produtividade. Argumento: entender sistema de recompensa, dopamina e neuroplasticidade transforma estudo de atividade pesada em comportamento automático. Ângulo prático que combina com os pilares MIB. <a href="https://www.em.com.br/emgiro/2026/04/7396845-como-treinar-o-cerebro-para-gostar-de-estudar-e-transformar-disciplina-em-recompensa-mental.html" target="_blank">Estado de Minas — Como treinar o cérebro para gostar de estudar</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Suplementar L-serina resolve memória."</strong> O estudo é em camundongos geneticamente modificados. Vai aparecer gente vendendo suplemento com essa pesquisa. Ângulo correto: a descoberta mostra a importância do metabolismo cerebral, não que todo mundo deve suplementar aminoácido.</li>
+<li><strong>"Neuralink vai curar depressão, Alzheimer e dor crônica."</strong> O recorde de BPS é real e importante, mas é controle de cursor por paciente com paralisia — não é "ler pensamento" nem "corrigir o cérebro". Evitar hype e distopia: mostrar o que a tecnologia faz hoje e o que não faz.</li>
+<li><strong>"Pare de usar IA, isso está matando seu cérebro."</strong> O estudo HBR/BCG mostra fadiga por alternância excessiva, não condena IA. Pode virar discurso de pânico anti-tecnologia. O ângulo útil é "menos ferramentas com profundidade" — não "largue tudo".</li>
+<li><strong>"Banho de gelo é a cura."</strong> Virou dieta-milagre do cérebro. Carol pode trazer o fato cientificamente correto (sobe neurotransmissores, baixa cortisol a longo prazo, útil pra humor) sem vender como solução universal.</li>
+<li><strong>"Suas rotinas de produtividade estão todas erradas, exige detox digital radical."</strong> Discurso que pula de modinha em modinha sem base real. A ciência de 2026 aponta pra pequenas mudanças sustentáveis — sono protegido, janelas de deep work, menos alternância, suplemento quando indicado — não revolução total.</li>
+</ul>
+<p>Palavras a manter fora do texto (protocolo, seção 4): transformação, extraordinário, sensacional, plenitude de vida, coaching (pejorativo), abundante, modo reativo, jornada, potencializar, ressignificar, alavancar.</p>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "AI brain fry" — por que trabalhar com cinco agentes de IA ao mesmo tempo está te deixando mais cansada do que ajudando.</li>
+<li><strong>Formato:</strong> Carrossel didático de 8 slides pro Instagram + reel curto (45s) de teaser com fala direta pra câmera.</li>
+<li><strong>Gancho (slide 1 / 0-3s):</strong> "Se você termina o dia com sensação de 'zumbido' na cabeça depois de passar horas delegando pra IA — tem nome pra isso. E a ciência de 2026 explicou por que."</li>
+<li><strong>Desenvolvimento (MAS/PORTANTO):</strong></li>
+<li>Slide 2: O que você provavelmente faz — ChatGPT aberto numa aba, Claude em outra, Notion AI pra tarefa, Perplexity pra pesquisa, Midjourney pra imagem. Parece delegação. É sobrecarga.</li>
+<li>Slide 3: Estudo da Harvard Business Review com 1.488 trabalhadores (março 2026). Chamaram de "AI brain fry". 14% das pessoas já relatam o fenômeno — névoa mental, decisão lenta, dor de cabeça depois de supervisionar IA.</li>
+<li>Slide 4: MAS os números são o que impressiona. Quem está nesse estado comete 39% mais erros graves, tem 33% mais fadiga de decisão e 36% mais vontade de pedir demissão.</li>
+<li>Slide 5: E a curva é clara. De uma ferramenta pra duas, a produtividade sobe. De duas pra três, continua subindo, mais devagar. Acima de três, começa a cair.</li>
+<li>Slide 6: Por quê? Cada troca de contexto consome recurso cognitivo — o mesmo recurso que você usa pra decidir, criar e se autorregular. Supervisionar não é passivo. Cérebro trabalha enquanto a máquina produz.</li>
+<li>Slide 7: PORTANTO — menos ferramentas, mais profundidade. Escolher duas ou três com domínio real, criar janelas de deep work sem IA (sim, você ainda consegue trabalhar sem ChatGPT por 90 min), e tratar supervisão como esforço mental mensurável.</li>
+<li>Slide 8: CTA — "Salva pra lembrar da próxima vez que te oferecerem 'mais uma ferramenta que vai mudar tudo'. E me conta nos comentários: você sente esse zumbido mental? Quantas ferramentas de IA você usa no mesmo dia?"</li>
+<li><strong>Hashtags sugeridas:</strong> #neurociência #produtividade #mentalidadeinabalável #foco #cuidadosemmito</li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
