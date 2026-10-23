@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-10-23</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-10-23</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Depressão não é uma coisa só: o cérebro mostra 5 perfis diferentes dentro do mesmo diagnóstico</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Magnetoencephalography oscillation-based functional connectivity identifies clinically relevant depression phenotypes"</li>
+<li><strong>Data de Publicação:</strong> Outubro/2026 (Nature Mental Health, vol. 4, ed. 10; divulgação em 09/10/2026)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s44220-026-00723-4" target="_blank">10.1038/s44220-026-00723-4</a> · <a href="https://www.sciencedaily.com/releases/2026/10/261008005251.htm" target="_blank">ScienceDaily: resumo do estudo</a></li>
+<li><strong>Status:</strong> Revisado por pares (Nature Mental Health)</li>
+<li><strong>Achado:</strong> A Universidade de Helsinque mediu a atividade elétrica do cérebro, com precisão de milissegundos (magnetoencefalografia), de 263 adultos com depressão maior e 75 pessoas sem o diagnóstico. Saíram 5 padrões distintos de conexão entre regiões do cérebro. Um grupo tem conectividade forte com depressão mais grave, mais ansiedade e mais <strong>ruminação</strong> (o pensamento que fica "dando voltas"). Outro tem conectividade fraca e sintomas mais leves. Um terceiro tem redução espalhada pelo cérebro todo e muitos sintomas de estresse pós-traumático. Os dois últimos aparecem ligados a uso de substâncias. Ou seja: o mesmo nome no laudo esconde cérebros funcionando de formas opostas.</li>
+<li><strong>Implicação prática:</strong> Isso ajuda a explicar por que o que funciona para uma pessoa com depressão não funciona para outra, e por que comparar o próprio processo com o da amiga não faz sentido. Os autores avisam que <strong>ainda não dá pra usar isso na clínica</strong> para escolher tratamento. É pesquisa de base.</li>
+</ul>
+<h3>2. Progesterona alta deixa "embaçado" o sinal cerebral de controle emocional em mulheres</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Endogenous progesterone blurs frontostriatal representations of emotion control in healthy young women"</li>
+<li><strong>Data de Publicação:</strong> Outubro/2026 (Psychological Medicine; repercussão na PsyPost em 22/10/2026)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1017/s0033291726105315" target="_blank">10.1017/s0033291726105315</a> · <a href="https://www.psypost.org/higher-progesterone-is-linked-to-blurrier-brain-signals-for-emotional-control-study-finds/" target="_blank">PsyPost: resumo do estudo</a></li>
+<li><strong>Status:</strong> Revisado por pares, com protocolo pré-registrado</li>
+<li><strong>Achado:</strong> Pesquisadores da Universidade de Barcelona avaliaram 116 mulheres de 18 a 35 anos com ciclo natural (sem anticoncepcional hormonal). Mediram hormônios na saliva e colocaram as participantes na ressonância fazendo uma tarefa em que precisavam ir <strong>contra o instinto</strong> (aproximar-se de um rosto bravo, afastar-se de um rosto feliz). Quanto mais progesterona, menos nítido era o padrão de atividade no polo frontal lateral (parte do córtex pré-frontal, área responsável por tomada de decisões e controle) e no estriado (área ligada a recompensa e ação). Padrões frontais mais nítidos acompanharam um humor melhor na semana anterior. O estrogênio não mostrou essa relação. Detalhe importante: a <strong>fase do ciclo sozinha não previu humor nem desempenho</strong>, e o caminho "progesterona → cérebro → humor" explicou só cerca de 7% da variação do humor.</li>
+<li><strong>Implicação prática:</strong> Hormônio influencia, mas não determina. É um ajuste fino no "freio" emocional, não uma sentença. Serve pra mulher se observar sem se culpar, e também sem se esconder atrás do ciclo. Limitações: uma única medição por participante, amostra menor que a planejada e nenhuma manipulação de hormônio, então não dá pra afirmar causa.</li>
+<li><strong>Cruzamento com o vault:</strong> Conversa com a nota <code>B02 Resources/Neurobiologia/SISTEMA DE RECOMPENSAS/Sistema Dopaminérgico (Sistema de Recompensas).md</code>, que já registra o estudo da PNAS de 2007 sobre o sistema de recompensa mais reativo na fase folicular. O ângulo novo de 2026 é o <strong>controle emocional</strong>, não a recompensa.</li>
+</ul>
+<h3>3. Pacientes "não responsivos" na UTI controlaram um som só com o cérebro</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Clinically unresponsive patients with acute brain injury activate a brain-computer interface"</li>
+<li><strong>Data de Publicação:</strong> 22/10/2026 (Brain, artigo antecipado)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://academic.oup.com/brain/advance-article-abstract/doi/10.1093/brain/awag210/8931697" target="_blank">10.1093/brain/awag210</a> · <a href="https://news-medical.net/news/20261023/Brain-computer-interface-enables-unresponsive-ICU-patients-to-control-sounds.aspx" target="_blank">News-Medical: resumo da Columbia University</a></li>
+<li><strong>Status:</strong> Revisado por pares (Brain, Oxford University Press)</li>
+<li><strong>Achado:</strong> A equipe da Columbia University colocou eletrodos de EEG (na cabeça, sem cirurgia) em 41 pacientes com lesão cerebral aguda que não respondiam a comandos. Eles tinham que <em>tentar</em> abrir e fechar a mão para subir ou descer a frequência de um bipe. 13 dos 41 (32%) conseguiram controlar o som só com o sinal do cérebro. E quem conseguiu teve evolução melhor: 46% chegaram à independência funcional em 12 meses, contra 7% de quem não conseguiu.</li>
+<li><strong>Implicação prática:</strong> Existe consciência escondida em gente que parece "desligada", e uma interface simples, não invasiva, pode ajudar a detectar isso. É neurotecnologia aplicada a cuidado, bem longe do hype de chip no cérebro. Ainda é um primeiro passo (o sinal demora cerca de 50 segundos pra aparecer nesses pacientes).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Depressão não é igual pra todo mundo"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Outubro concentra a conversa de saúde mental por causa do Dia Mundial da Saúde Mental (10/10). A hashtag #worldmentalhealthday aparece como tag do momento no Instagram (levantamento Dash Social, posts de 08/09 a 07/10/2026), e o estudo de Helsinque (Nature Mental Health) chegou na mesma semana com um dado fácil de entender: 5 cérebros diferentes debaixo do mesmo diagnóstico.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel educativo (5 slides, um por perfil, em linguagem simples), com fechamento acolhedor: comparar o seu processo com o de outra pessoa não faz sentido nem para o cérebro. Cuidado: não é conteúdo de diagnóstico. Indicar acompanhamento profissional.</li>
+<li><strong>Gancho sugerido:</strong> "Duas mulheres com o mesmo diagnóstico de depressão podem ter cérebros funcionando de jeitos opostos. A ciência acabou de mostrar isso."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sciencedaily.com/releases/2026/10/261008005251.htm" target="_blank">ScienceDaily: 5 padrões cerebrais da depressão</a> · <a href="https://doi.org/10.1038/s44220-026-00723-4" target="_blank">Nature Mental Health, DOI</a> · <a href="https://www.dashsocial.com/blog/instagram-hashtags" target="_blank">Dash Social: hashtags do Instagram em outubro de 2026</a></li>
+</ul>
+<h3>2. Hormônio e controle emocional: "não é frescura, mas também não é destino"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Ciclo menstrual e cérebro já era pauta forte em 2026 (veio no briefing de 01/10). O estudo de Barcelona, divulgado ontem (22/10), traz um ângulo novo e mais honesto: a progesterona mexe no "freio" emocional, mas o efeito é pequeno.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60s ou YouTube curto. Perfil exato do público MIB (mulheres de 25 a 45 anos). Contraponto às duas narrativas extremas que circulam: "é tudo hormônio" e "hormônio é desculpa".</li>
+<li><strong>Gancho sugerido:</strong> "Tem dia que você não consegue segurar a reação. A ciência descobriu que isso tem a ver com um hormônio, mas não do jeito que te contaram."</li>
+<li><strong>Fonte:</strong> <a href="https://www.psypost.org/higher-progesterone-is-linked-to-blurrier-brain-signals-for-emotional-control-study-finds/" target="_blank">PsyPost: progesterona e controle emocional</a> · <a href="https://doi.org/10.1017/s0033291726105315" target="_blank">Psychological Medicine, DOI</a></li>
+</ul>
+<h3>3. "Exercício do dedinho" contra demência viraliza, mas a caminhada tem a evidência</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O vídeo do "Pinky Time Exercise" passou de 15 milhões de visualizações prometendo neuroplasticidade e proteção contra Alzheimer. Na mesma semana, voltou a circular o estudo de Harvard (Nature Medicine) que liga 3.000 a 7.500 passos por dia a menos acúmulo de proteína tau e a um declínio cognitivo mais lento.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de "mito x ciência". O pulo do gato: ficar boa no exercício do dedinho mostra que o cérebro aprendeu <em>aquele</em> movimento, e isso não passa para memória nem foco. Já caminhar tem dado em humanos.</li>
+<li><strong>Gancho sugerido:</strong> "Quinze milhões de pessoas estão mexendo o dedinho pra proteger o cérebro. Olha o que a neurociência diz sobre isso."</li>
+<li><strong>Fonte:</strong> <a href="https://www.thethreetomatoes.com/social-media-health-trends-truth-of-hype" target="_blank">The Three Tomatoes/HealthyWomen: tendências virais de saúde, hype ou não (22/10/2026)</a> · <a href="https://www.sciencedaily.com/releases/2026/10/261018205058.htm" target="_blank">ScienceDaily: 3.000 passos por dia e Alzheimer (19/10/2026)</a> · <a href="https://www.medicalnewstoday.com/articles/only-3000-steps-day-lower-alzheimers-disease-risk-cognitive-decline/" target="_blank">Medical News Today: resumo do estudo da Nature Medicine</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <blockquote>Observação de método: a busca não encontrou dados de engajamento específicos do Brasil nas últimas 72h. Os temas abaixo vêm de matérias e levantamentos públicos indexados entre 07 e 23/10/2026. A data de cada um está indicada.</blockquote>
+<ul>
+<li><strong>Óleo de peixe "não serve pro cérebro" (22/10):</strong> a manchete "Milhões tomam óleo de peixe para a saúde do cérebro. Um estudo de dois anos não achou benefício" voltou a circular. É o ensaio da USC (365 adultos, 2.000 mg de DHA por dia): o ômega-3 chegou ao cérebro (+17% no líquor), mas não melhorou memória nem freou a atrofia ligada ao Alzheimer. <strong>Atenção:</strong> o estudo original é de <strong>junho/2026</strong> (eBioMedicine) e o que está rodando agora é a republicação. Referência: <a href="https://www.sciencedaily.com/releases/2026/10/261020085427.htm" target="_blank">ScienceDaily (22/10/2026)</a> · <a href="https://www.powershealth.org/about-us/newsroom/health-library/2026/06/19/fish-oil-supplements-may-be-a-bust-for-alzheimers-prevention" target="_blank">Powers Health: cobertura original de junho/2026</a></li>
+<li><strong>Desafio de caminhada 6-6-6 (22/10):</strong> 6 minutos de aquecimento, 60 de caminhada rápida e 6 de desaceleração, 6 dias por semana. Especialistas consideram válido para quem é sedentário e recomendam somar treino de força para mulheres na meia-idade. Combina com o estudo dos passos (tendência 3). Referência: <a href="https://www.thethreetomatoes.com/social-media-health-trends-truth-of-hype" target="_blank">The Three Tomatoes/HealthyWomen</a></li>
+<li><strong>Carrossel "Coisas que eu diria pra minha versão mais nova" (14/10):</strong> formato reflexivo em alta no Instagram, com uma lição por slide. Encaixa no tom Sábia da Carol. Dá pra fazer a versão "o que a neurociência me ensinou que eu queria ter sabido aos 20". Referência: <a href="https://socialbee.com/blog/latest-instagram-trends/" target="_blank">SocialBee: tendências do Instagram (atualizado em 21/10/2026)</a></li>
+<li><strong>"Gold Star Behavior" (07/10):</strong> criadoras listam hábitos que "merecem estrelinha", com uma estrela na tela para cada um. É um formato de reforço positivo de hábito. Um ângulo neurocientífico possível: por que comemorar pequenas vitórias ativa o sistema de recompensa. Referência: <a href="https://socialbee.com/blog/latest-instagram-trends/" target="_blank">SocialBee</a></li>
+<li><strong>Envelhecer como fase de desenvolvimento, não só de perda (20/10):</strong> um artigo teórico da Universidade do Arizona propõe que o cérebro que envelhece troca a memória de detalhes por uma leitura de padrões e de significado, o que favorece mentoria e transmissão de experiência. É hipótese, não experimento. Referência: <a href="https://www.sciencedaily.com/releases/2026/10/261019093357.htm" target="_blank">ScienceDaily</a> · <a href="https://doi.org/10.1177/17456916261469175" target="_blank">Perspectives on Psychological Science, DOI</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Exercício do dedinho previne demência":</strong> sem estudo que sustente a promessa. A neurocientista Erin Venza (Center for BrainHealth) explica que nenhuma rotina isolada previne demência, porque o risco se forma ao longo de décadas, e que o ganho no exercício não se transfere para memória e foco. Se Carol abordar, que seja como desmistificação. Fonte: <a href="https://www.thethreetomatoes.com/social-media-health-trends-truth-of-hype" target="_blank">The Three Tomatoes/HealthyWomen</a></li>
+<li><strong>Manchetes "republicadas" como se fossem novas:</strong> nesta semana o ScienceDaily repostou estudos antigos com data de outubro. Exemplos: o estudo de Yale sobre cortisol e memória emocional é de <strong>dezembro/2025</strong> (<a href="https://doi.org/10.1126/sciadv.adz4143" target="_blank">Science Advances, DOI 10.1126/sciadv.adz4143</a>); o de sono profundo e hormônio do crescimento é de <strong>2025</strong> e foi feito em camundongos (<a href="https://doi.org/10.1016/j.cell.2025.05.039" target="_blank">Cell, DOI 10.1016/j.cell.2025.05.039</a>); o dos 3.000 passos é de <strong>novembro/2025</strong> (<a href="https://www.lboro.ac.uk/news-events/news/2025/november/a-few-thousand-steps-can-reduce-risk-of-alzheimers/" target="_blank">Loughborough University</a>). Se usar, citar o ano certo e nunca chamar de "estudo novo".</li>
+<li><strong>"Tratamento revolucionário de TEPT com 68% de remissão":</strong> os números são da própria empresa (Wave Neuroscience). Os resultados completos ainda estão sendo preparados para divulgação e ainda não há artigo revisado por pares. Não usar como dado científico por enquanto. Fonte: <a href="https://www.sciencedaily.com/releases/2026/10/261022081309.htm" target="_blank">ScienceDaily (23/10/2026)</a></li>
+<li><strong>Sleepmaxxing / obsessão com a nota do sono:</strong> especialistas em sono alertam para a <strong>ortossonia</strong>, a ansiedade de buscar o sono perfeito que acaba piorando o sono. Fita na boca não tem respaldo e pode ser perigosa para quem tem apneia. É risco direto pro público MIB, que já tende ao perfeccionismo. Fonte: <a href="https://www.theweek.in/news/health/2026/09/08/obsessed-with-your-sleep-score-how-sleepmaxxing-could-be-making-your-nights-worse.amp.html" target="_blank">The Week (08/09/2026)</a> · <a href="https://www.lung.org/blog/health-tiktok-trends" target="_blank">American Lung Association: tendências de saúde do TikTok para evitar</a></li>
+<li><strong>Hormônio como desculpa ou como sentença:</strong> ao usar o estudo da progesterona, evitar as duas leituras extremas. O efeito encontrado é pequeno (cerca de 7% do humor) e a fase do ciclo sozinha não previu nada. Não reduzir a "na TPM você não tem controle".</li>
+<li><strong>Temas já cobertos recentemente</strong> (evitar repetir sem ângulo novo): detox de dopamina (02, 06 e 09/10), cérebro materno (01 e 09/10), AI brain fry (05 e 07/10), circuitos do hábito (29/09 e 06/10).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> Hormônio e controle emocional: "não é frescura, mas também não é destino"</li>
+<li><strong>Formato:</strong> Reel de 60 a 75 segundos, com Carol falando direto pra câmera e texto na tela com os números</li>
+<li><strong>Gancho:</strong> "Tem dia que você não consegue segurar a reação, e não é falta de caráter. Mas também não é desculpa. Deixa eu te mostrar o que a ciência achou essa semana."</li>
+<li><strong>Estrutura:</strong></li>
+</ul>
+<p>1. Gancho (3s)</p>
+<p>2. O estudo: 116 mulheres, ressonância e uma tarefa de ir contra o instinto, na Universidade de Barcelona (12s)</p>
+<p>3. O achado: quanto mais progesterona, menos nítido o sinal na área de controle do cérebro, o córtex pré-frontal, "a área responsável por tomada de decisões, concentração, foco" (15s)</p>
+<p>4. O pulo do gato: o efeito existe, mas é pequeno (cerca de 7%), e a fase do ciclo sozinha não previu o humor. Ou seja, hormônio pesa, não manda (15s)</p>
+<p>5. Aplicação: observar o próprio padrão (anotar humor e ciclo) e planejar as conversas difíceis com estratégia, em vez de se culpar (15s)</p>
+<p>6. CTA: "Salva pra lembrar disso no dia em que você achar que perdeu o controle."</p>
+<ul>
+<li><strong>Legenda sugerida:</strong> "Hormônio influencia o seu controle emocional. A ciência confirmou essa semana. Mas o tamanho do efeito é o que ninguém te conta. Conhecer o seu padrão é o que te devolve a direção. 🧠" + #neurociencia #saudedamulher #cicloMenstrual #inteligenciaemocional #inabalavel</li>
+<li><strong>Thumbnail:</strong> "Não é frescura. Mas também não é destino."</li>
+<li><strong>Fontes:</strong> <a href="https://doi.org/10.1017/s0033291726105315" target="_blank">Psychological Medicine, DOI 10.1017/s0033291726105315</a> · <a href="https://www.psypost.org/higher-progesterone-is-linked-to-blurrier-brain-signals-for-emotional-control-study-finds/" target="_blank">PsyPost: resumo do estudo</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
