@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-10-27</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-10-27</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Treino em excesso deixa o "neurotransmissor da motivação" alto até no descanso (estudo brasileiro, em camundongos)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Excessive training alters hippocampal tyrosine hydroxylase and dopamine homeostasis in mice"</li>
+<li><strong>Data de Publicação:</strong> 2026 (revista <em>Neuroscience</em>, da IBRO); divulgado pela Agência FAPESP em 26/10/2026</li>
+<li><strong>Fonte:</strong> <a href="https://agencia.fapesp.br/excesso-de-treino-afeta-a-regulacao-quimica-do-cerebro-mostra-estudo/59468" target="_blank">Agência FAPESP: "Excesso de treino afeta a regulação química do cérebro, mostra estudo" (26/10/2026)</a> · <a href="https://www.ibroneuroscience.org/article/S0306-4522%2826%2900535-X/" target="_blank">Artigo na revista Neuroscience (PII S0306-4522(26)00535-X), link citado pela FAPESP</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Neuroscience</em>/IBRO). Estudo em <strong>camundongos</strong>.</li>
+<li><strong>Achado:</strong> Pesquisadores da USP de Ribeirão Preto (EEFERP-USP), da Unicamp (Limeira) e da Universidade de Michigan compararam dois grupos de camundongos. No primeiro, uma corrida única até a exaustão: a dopamina (o neurotransmissor da motivação) subiu na hora, como esperado. No segundo, oito semanas de treino progressivo simulando <strong>sobretreino</strong>, com duas sessões por dia na última semana e só 4 horas de intervalo. Nesse grupo, a dopamina e a enzima que a fabrica (tirosina hidroxilase) continuavam <strong>elevadas no hipocampo 48 horas depois do teste</strong>, ou seja, já na fase de descanso. A serotonina não mudou. O primeiro autor, Alisson Luiz da Rocha, resume: "o excesso de exercício físico não afeta apenas o músculo esquelético". E reforça que a dopamina não é vilã: o problema é ela estar alta na hora de dormir e desequilibrada em relação aos outros neurotransmissores.</li>
+<li><strong>Implicação prática:</strong> Treinar faz bem pro cérebro, mas sem recuperação o corpo não "desliga" quimicamente. Isso dá base para uma hipótese que muita mulher que treina pesado reconhece: cansaço sem conseguir dormir, agitação, ansiedade. <strong>Atenção:</strong> o estudo não mediu sono nem ansiedade, e a relação com insônia em humanos ainda é hipótese a ser testada. A FAPESP diz isso de forma explícita.</li>
+<li><strong>Cruzamento com o vault:</strong> Não há nota sobre sobretreino em <code>B02 Resources/</code>. A nota <code>Neurobiologia/SISTEMA LÍMBICO/Hipocampo.md</code> trata do hipocampo como estrutura da memória. O ângulo novo é o hipocampo também como "termômetro" químico do excesso de treino.</li>
+</ul>
+<h3>2. Idosos mais ativos têm hipocampo maior: revisão brasileira de 19 estudos</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Physical activity and the volume of different brain regions and structures in older adults: A systematic review and meta-analysis"</li>
+<li><strong>Data de Publicação:</strong> Publicação online antecipada no <em>Journal of Aging and Physical Activity</em>; divulgado pela Agência FAPESP em 21/10/2026</li>
+<li><strong>Fonte:</strong> DOI <a href="https://journals.humankinetics.com/view/journals/japa/aop/article-10.1123-japa.2025-0053/article-10.1123-japa.2025-0053.xml" target="_blank">10.1123/japa.2025-0053</a> · <a href="https://agencia.fapesp.br/idosos-mais-ativos-tem-volume-cerebral-preservado-em-areas-de-memoria-e-raciocinio-mostra-estudo/59432" target="_blank">Agência FAPESP: "Idosos mais ativos têm volume cerebral preservado em áreas de memória e raciocínio" (21/10/2026)</a></li>
+<li><strong>Status:</strong> Revisão sistemática com meta-análise, revisada por pares (de estudos observacionais)</li>
+<li><strong>Achado:</strong> A equipe da Unesp de Rio Claro (orientação de Lucas Melo Neves) juntou 19 estudos com 2.684 pessoas acima de 60 anos (média de 70) e analisou 76 regiões do cérebro em ressonância magnética. Quem era mais ativo tinha maior volume cerebral total e maior volume em regiões ligadas à cognição, incluindo o <strong>hipocampo</strong> (área central da memória). Em alguns estudos, quem cumpria a recomendação da OMS, de cerca de <strong>150 minutos de atividade por semana</strong>, tinha o hipocampo <strong>7% a 10% maior</strong> do que os menos ativos. A substância branca (as "estradas" de comunicação do cérebro) também estava mais preservada.</li>
+<li><strong>Implicação prática:</strong> Movimento é investimento de longo prazo em memória. Mas o próprio autor avisa: como os estudos são observacionais, "não é possível afirmar causalidade". Pode ser que um cérebro mais preservado facilite continuar ativo. A equipe prepara uma revisão de estudos de intervenção para testar a causa.</li>
+<li><strong>Cruzamento com o vault:</strong> Combina com o estudo dos passos e da proteína tau que apareceu no briefing de 23/10. O ângulo novo é o dado de volume (7% a 10%) e o fato de ser pesquisa brasileira.</li>
+</ul>
+<h3>3. As células que deveriam proteger os "cabos" do cérebro podem acelerar o declínio cognitivo</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Oligodendrocyte dysfunction in human age-related cognitive decline"</li>
+<li><strong>Data de Publicação:</strong> Outubro/2026 (<em>Nature Medicine</em>, vol. 32, ed. 10, p. 3661); divulgado pelo ScienceDaily em 17/10/2026</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41591-026-04608-y" target="_blank">10.1038/s41591-026-04608-y</a> · <a href="https://www.sciencedaily.com/releases/2026/10/261015073222.htm" target="_blank">ScienceDaily: resumo da Universidade de Edimburgo</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Nature Medicine</em>). Dados em humanos e experimentos em camundongos.</li>
+<li><strong>Achado:</strong> A Universidade de Edimburgo, com o UK Dementia Research Institute e parceiros no Canadá e nos EUA, usou a coorte Lothian Birth Cohort 1936 (1.091 pessoas, 866 com testes cognitivos depois dos 70 anos) e tecido cerebral doado após a morte por parte dos participantes. Quem teve declínio cognitivo mais rápido tinha <strong>menos fibras nervosas grandes e acúmulo anormal de mielina</strong> (a capa que isola os "cabos" do cérebro). Os oligodendrócitos, células que produzem essa mielina, tinham menos de uma proteína protetora chamada NRF2. Em camundongos, reduzir a NRF2 nessas células reproduziu o mesmo quadro.</li>
+<li><strong>Implicação prática:</strong> O envelhecimento do cérebro não é só "perder neurônio". A manutenção da fiação também conta. A via da NRF2 já é alvo de um remédio usado em esclerose múltipla, mas o uso contra o declínio da idade <strong>ainda não foi testado</strong>. É pesquisa de base, sem recomendação prática imediata.</li>
+<li><strong>Cruzamento com o vault:</strong> Nenhuma nota sobre mielina ou oligodendrócitos em <code>B02 Resources/</code>. Tema inédito no vault.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Treinar demais também cansa o cérebro"</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> O estudo da USP/Unicamp saiu ontem (26/10) pela Agência FAPESP e conversa direto com a cultura do treino sem dia de descanso, muito presente no fitness feminino. Une duas pautas do público MIB: exercício e sono.</li>
+<li><strong>Ângulo para Carol:</strong> Reel de 60s ou carrossel. Encaixa com a Leadfit. O pulo do gato: o descanso não é preguiça, é a parte do treino em que o cérebro volta ao equilíbrio. Deixar claro que o estudo é em camundongos.</li>
+<li><strong>Gancho sugerido:</strong> "Você treina pra ter mais energia, mas deita e não desliga? Um estudo brasileiro acabou de mostrar o que o excesso de treino faz dentro do cérebro."</li>
+<li><strong>Fonte:</strong> <a href="https://agencia.fapesp.br/excesso-de-treino-afeta-a-regulacao-quimica-do-cerebro-mostra-estudo/59468" target="_blank">Agência FAPESP (26/10/2026)</a></li>
+</ul>
+<h3>2. Burnout no Brasil: 59% dos profissionais em nível alto</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Levantamento da Robert Half divulgado em outubro (1.000 entrevistados no Brasil, nove países no total): 59% dos brasileiros deram nota de 6 a 10 para o próprio esgotamento, contra 48% na média dos países. As causas mais citadas foram sobrecarga de trabalho (52%), sensação de carreira estagnada (43%) e mais tempo de deslocamento (37%).</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "não é falta de disciplina": mostrar que os três fatores são de contexto, não de caráter, e o que dá para ajustar na rotina sem romantizar a exaustão. Ressalva: é pesquisa de consultoria de RH com autoavaliação, não estudo científico. Usar como termômetro, não como dado clínico.</li>
+<li><strong>Gancho sugerido:</strong> "Seis em cada dez brasileiros estão no limite do esgotamento. E a causa número um não é falta de força de vontade."</li>
+<li><strong>Fonte:</strong> <a href="https://viva.com.br/carreira-e-educacao/estudo-revela-que-carga-de-trabalho-e-estagnacao-elevam-burnout-no-brasil.html" target="_blank">Viva: pesquisa Robert Half sobre burnout no Brasil (13/10/2026)</a> · <a href="https://www.seudinheiro.com/2026/carreiras/saude-mental-no-trabalho-pesquisa-da-robert-half-mostra-os-4-fatores-que-mais-geram-burnout-no-pais-giov/" target="_blank">Seu Dinheiro: os 4 fatores que mais geram burnout no país</a></li>
+</ul>
+<h3>3. Implante cerebral que devolve a fala avança nos EUA</h3>
+<ul>
+<li><strong>Por que está em alta:</strong> Ontem (26/10) a FDA aprovou ampliar o estudo do Connexus, da Paradromics, para pacientes de todo o território continental dos EUA. O implante sem fio lê neurônios individuais e traduz a fala pretendida em comunicação digital. O primeiro participante, implantado em junho/2026 na Universidade de Michigan, já se comunica por voz sintetizada, mensagens e ligações. No mesmo mês, a <em>Nature Neuroscience</em> dedicou a edição de outubro à neurotecnologia, com foco em ética de implantes.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube de 6 a 8 minutos ou carrossel "o que é real e o que é exagero em chip no cérebro": separar estudo clínico com autorização regulatória de promessa de empresa. Fecha com a pergunta ética: quem protege os dados do seu cérebro?</li>
+<li><strong>Gancho sugerido:</strong> "Um homem que tinha perdido a fala está fazendo ligações usando só a atividade do cérebro. E isso levanta uma pergunta que ninguém está fazendo."</li>
+<li><strong>Fonte:</strong> <a href="https://biospace.com/press-releases/paradromics-receives-fda-approval-to-expand-connexus-brain-computer-interface-clinical-study-recruitment-nationwide" target="_blank">BioSpace: comunicado da Paradromics sobre a aprovação da FDA (26/10/2026)</a> · <a href="https://www.nature.com/neuro/volumes/29/issues/10" target="_blank">Nature Neuroscience, vol. 29, ed. 10 (outubro/2026)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <blockquote>Observação de método: a busca não encontrou dados de engajamento específicos do Brasil nas últimas 72h. Os temas abaixo vêm de matérias de divulgação científica publicadas entre 19 e 27/10/2026. Vários são <strong>republicações</strong> de estudos mais antigos, e isso está indicado em cada item.</blockquote>
+<ul>
+<li><strong>Açúcar nos primeiros 1.000 dias e demência (27/10):</strong> a PsyPost voltou a destacar o estudo que usou o fim do racionamento de açúcar no Reino Unido (1953) como experimento natural. Entre 64.737 pessoas do UK Biobank, quem viveu o racionamento da gestação até os 2 anos teve risco 23% menor de demência e 28% menor de Alzheimer, com início cerca de 2,5 anos mais tarde. É associação, não causa, e o consumo de açúcar não foi medido individualmente. <strong>O estudo é de julho/2026</strong> (<em>Neurology</em>, publicado em 29/07). Ângulo para maternidade. No vault, a nota <code>B02 Resources/Comportamentos/Alimentação.md</code> já traz o estudo da PNAS sobre dieta rica em açúcar e gordura e o sistema de recompensa em crianças. Referência: <a href="https://www.psypost.org/limiting-sugar-in-the-first-1000-days-of-life-is-associated-with-later-dementia-onset-study-finds/" target="_blank">PsyPost (27/10/2026)</a> · <a href="https://doi.org/10.1212/wnl.0000000000218313" target="_blank">Neurology, DOI 10.1212/wnl.0000000000218313</a> · <a href="https://www.news-medical.net/news/20260729/Early-life-sugar-restriction-may-reduce-dementia-risk-later.aspx" target="_blank">News-Medical: cobertura original (29/07/2026)</a></li>
+<li><strong>Ciclo menstrual e sintomas de TDAH em mulheres medicadas (25/10):</strong> estudo piloto com 30 mulheres que tomam anfetamina e anotaram sintomas e humor por 35 dias. Os sintomas foram piores na menstruação e mais leves no meio da fase folicular. Humor e sintomas oscilaram juntos. Amostra pequena, autorrelato e sem medição de hormônios. <strong>Não é novo:</strong> a PsyPost já tinha coberto o mesmo estudo em março/2026. Conversa com a pauta de hormônio e cérebro do briefing de 23/10. Referência: <a href="https://www.psypost.org/how-the-menstrual-cycle-alters-adhd-symptoms-in-women-taking-stimulants/" target="_blank">PsyPost (25/10/2026)</a> · <a href="https://doi.org/10.1177/10870547251400038" target="_blank">Journal of Attention Disorders, DOI 10.1177/10870547251400038</a></li>
+<li><strong>Feed do celular, e não busca, é o que mais expõe adolescentes a conteúdo de autolesão (26/10):</strong> pesquisa de Oxford com 32.102 estudantes ingleses de 11 a 18 anos: 34,5% viram esse tipo de conteúdo no último mês, e 66% deles pelo feed ou por sugestão do algoritmo. Só 8% procuraram. Ângulo para mães: o problema não é só tempo de tela, é o que o algoritmo entrega. <strong>O estudo foi divulgado em julho/2026.</strong> Tema sensível: se usar, incluir orientação de ajuda (CVV 188). Referência: <a href="https://www.psypost.org/feed-recommendations-are-the-most-common-way-teens-encounter-self-harm-content/" target="_blank">PsyPost (26/10/2026)</a> · <a href="https://doi.org/10.1038/s44220-026-00682-w" target="_blank">Nature Mental Health, DOI 10.1038/s44220-026-00682-w</a> · <a href="https://www.ox.ac.uk/news/2026-07-21-new-study-reveals-a-third-of-adolescents-have-seen-self-harm-content-online-despite" target="_blank">Universidade de Oxford: comunicado (21/07/2026)</a></li>
+<li><strong>Sono e Alzheimer: as células de defesa do cérebro "roubam" o sono profundo (19/10):</strong> na Universidade de Kentucky, camundongos com alterações tipo Alzheimer recuperaram mais de 2 horas de sono por dia quando a maior parte da micróglia (células imunes do cérebro) foi removida temporariamente, mesmo com as placas continuando lá. O Alzheimer afetou o sono profundo (não REM); o envelhecimento normal reduziu mais o REM. <strong>Só em camundongos</strong>, e remover micróglia não é tratamento possível em humanos. Referência: <a href="https://www.sciencedaily.com/releases/2026/10/261018084421.htm" target="_blank">ScienceDaily (19/10/2026)</a> · <a href="https://doi.org/10.1002/alz.71579" target="_blank">Alzheimer's & Dementia, DOI 10.1002/alz.71579</a></li>
+<li><strong>Ansiedade tem caminhos genéticos diferentes em mulheres e homens (19/10):</strong> meta-análise genética com dados do UK Biobank e do All of Us achou 21 variantes ligadas à ansiedade em mulheres contra 5 em homens. A herdabilidade foi maior nas mulheres. A maior parte do risco genético, porém, é compartilhada entre os sexos. <strong>O artigo é de junho/2026.</strong> Referência: <a href="https://www.psypost.org/men-and-women-show-distinct-genetic-pathways-for-anxiety/" target="_blank">PsyPost (19/10/2026)</a> · <a href="https://www.ukbiobank.ac.uk/publications/unravelling-sex-differences-in-the-genetic-architecture-of-anxiety/" target="_blank">UK Biobank: página da publicação (Psychological Medicine)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Treino demais causa insônia e ansiedade":</strong> o estudo da USP/Unicamp é em camundongos e <strong>não mediu sono nem ansiedade</strong>. A ligação com insônia em humanos é hipótese dos próprios autores. Dizer "pode ajudar a explicar", nunca "a ciência provou". E não virar discurso contra treino: a mesma semana trouxe a revisão da Unesp mostrando hipocampo maior em quem se exercita. Fonte: <a href="https://agencia.fapesp.br/excesso-de-treino-afeta-a-regulacao-quimica-do-cerebro-mostra-estudo/59468" target="_blank">Agência FAPESP</a></li>
+<li><strong>"Açúcar na gravidez dá Alzheimer no filho":</strong> leitura errada e cruel com as mães. O estudo é observacional, o consumo individual não foi medido, a amostra é mais de 96% branca e os próprios autores falam em "associações, não causalidade definitiva". Se usar, o foco é hábito alimentar da família, nunca culpa. Fonte: <a href="https://www.psypost.org/limiting-sugar-in-the-first-1000-days-of-life-is-associated-with-later-dementia-onset-study-finds/" target="_blank">PsyPost</a></li>
+<li><strong>Manchete "Mind-blowing" sobre sono e Alzheimer:</strong> o título do ScienceDaily fala em "avanço revolucionário", mas o resultado é em camundongos e o método (eliminar 87% das células imunes do cérebro com remédio) não é aplicável em pessoas. Fonte: <a href="https://www.sciencedaily.com/releases/2026/10/261018084421.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>"Burnout dispara 823%":</strong> número que circula em portais regionais sem fonte primária clara (INSS/Previdência não é citado de forma verificável). Não usar até achar o dado oficial. Para burnout, preferir o levantamento da Robert Half, com a ressalva de que é autoavaliação. Fonte do número sem verificação: <a href="https://regionalzao.com.br/noticias-saude/burnout-dispara-823-e-amplia-desafios-para-empresas-revela-pesquisa/" target="_blank">Regionalzão</a></li>
+<li><strong>Recordes de implante cerebral divulgados por empresas:</strong> números de velocidade de cursor e afins publicados em blogs de empresas (Neuralink e outras) não passaram por revisão por pares. Ao falar de interface cérebro-máquina, citar só o que tem estudo publicado ou decisão regulatória, como a da FDA. Fonte de contexto: <a href="https://theconversation.com/how-long-until-wearable-brain-computer-interfaces-become-mainstream-281806" target="_blank">The Conversation: quanto falta para interfaces vestíveis virarem comuns (22/10/2026)</a></li>
+<li><strong>Republicações como se fossem novidade:</strong> nesta semana, PsyPost e ScienceDaily recolocaram em destaque estudos de março (TDAH e ciclo), junho (genética da ansiedade) e julho (açúcar e demência; feed e autolesão). Se usar, citar o ano e o mês certos e nunca chamar de "estudo novo".</li>
+<li><strong>Temas já cobertos recentemente</strong> (evitar repetir sem ângulo novo): 5 perfis cerebrais da depressão, progesterona e controle emocional, interface cérebro-máquina na UTI, óleo de peixe, 3.000 passos e tau, "exercício do dedinho", sleepmaxxing (todos em 23/10); detox de dopamina (02, 06 e 09/10); cérebro materno (01 e 09/10).</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Treinar demais também cansa o cérebro": o descanso faz parte do treino</li>
+<li><strong>Formato:</strong> Reel de 60 a 75 segundos, Carol falando direto pra câmera, com texto na tela para os números</li>
+<li><strong>Gancho:</strong> "Você treina pra ter mais energia, mas deita e não desliga? Um estudo brasileiro acabou de olhar o que o excesso de treino faz dentro do cérebro."</li>
+<li><strong>Estrutura:</strong></li>
+</ul>
+<p>1. Gancho (3s)</p>
+<p>2. O estudo: USP e Unicamp, camundongos, oito semanas de treino cada vez mais pesado, com duas sessões por dia no fim (12s)</p>
+<p>3. O achado: 48 horas depois, já no descanso, a dopamina, o neurotransmissor da motivação, continuava alta no hipocampo, a área ligada à memória (15s)</p>
+<p>4. MAS: o próprio pesquisador diz que dopamina não é vilã. O problema é ela estar alta na hora em que o corpo devia desacelerar. E é estudo em animal: em humanos, a ligação com insônia ainda é hipótese (15s)</p>
+<p>5. PORTANTO: treino é ótimo para o cérebro (uma revisão da Unesp desta mesma semana mostrou hipocampo 7% a 10% maior em idosos ativos), mas recuperação é parte do plano, não prêmio (15s)</p>
+<p>6. CTA: "Manda pra amiga que treina todo dia e reclama que não dorme."</p>
+<ul>
+<li><strong>Legenda sugerida:</strong> "Exercício protege o cérebro. Isso a ciência já mostrou. Mas um estudo brasileiro desta semana sugere que treino sem recuperação deixa a química do cérebro ligada até no descanso (por enquanto, em camundongos). Descansar também é disciplina. 🧠" + #neurociencia #treino #sono #altaperformance #inabalavel</li>
+<li><strong>Thumbnail:</strong> "Seu treino está te tirando o sono?"</li>
+<li><strong>Fontes:</strong> <a href="https://agencia.fapesp.br/excesso-de-treino-afeta-a-regulacao-quimica-do-cerebro-mostra-estudo/59468" target="_blank">Agência FAPESP: excesso de treino e dopamina (26/10/2026)</a> · <a href="https://agencia.fapesp.br/idosos-mais-ativos-tem-volume-cerebral-preservado-em-areas-de-memoria-e-raciocinio-mostra-estudo/59432" target="_blank">Agência FAPESP: atividade física e volume cerebral (21/10/2026)</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+</body>
+</html>
