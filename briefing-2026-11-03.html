@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-11-03</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-11-03</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. O cérebro decide no primeiro contato o que você vai lembrar: a amígdala funciona como "filtro" da memória</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success"</li>
+<li><strong>Data de Publicação:</strong> comunicado oficial do Cedars-Sinai e cobertura da News-Medical em 27/10/2026 (<em>Nature Neuroscience</em>). A data exata da versão online na revista não ficou visível nas páginas consultadas.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41593-026-02493-9" target="_blank">10.1038/s41593-026-02493-9</a> · <a href="https://www.cedars-sinai.org/newsroom/research-reveals-small-brain-area-has-a-giant-role-in-memory/" target="_blank">Cedars-Sinai: comunicado (27/10/2026)</a> · <a href="https://www.news-medical.net/news/20261027/Study-identifies-the-amygdala-as-target-for-treating-memory-disorders.aspx" target="_blank">News-Medical (27/10/2026)</a> · <a href="https://www.biorxiv.org/content/10.1101/2025.10.29.685162.full.pdf" target="_blank">Pré-print no bioRxiv</a></li>
+<li><strong>Status:</strong> Revisado por pares (<em>Nature Neuroscience</em>). Estudo de associação: mostra que a atividade dos neurônios prevê a memória, não que a causa.</li>
+<li><strong>Achado:</strong> A equipe de Ueli Rutishauser (Cedars-Sinai, com a primeira autora Jiayang Xiao) registrou a atividade de neurônios individuais em <strong>112 pacientes</strong> com epilepsia que já tinham eletrodos implantados para monitorar crises. Eles viam imagens novas e, mais tarde no mesmo dia, precisavam dizer do que lembravam. Na amígdala (o "centro de medo e ansiedade", que também participa de dar peso às experiências), há neurônios que respondem a categorias específicas: rostos, animais, paisagens. <strong>Quanto mais forte esses neurônios disparavam diante da imagem "da sua categoria", maior a chance de a pessoa lembrar dela depois.</strong> O resultado se repetiu em dois conjuntos de dados. Ou seja: a decisão do que vai ficar guardado começa no momento em que a gente vê, não só depois.</li>
+<li><strong>Implicação prática:</strong> Memória não é só "repetir até grudar". A qualidade do primeiro contato conta. Isso dá base para falar de atenção na hora de aprender (estudar sem celular do lado, ouvir a aula sem dividir a tela). <strong>Ressalvas:</strong> amostra de pacientes com epilepsia, só estímulos visuais (sons e cheiros ainda não foram testados) e as aplicações clínicas que os autores citam (Alzheimer, epilepsia do lobo temporal) são hipóteses, não tratamento.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurobiologia/SISTEMA DE RECOMPENSAS/Sistema Dopaminérgico (Sistema de Recompensas).md</code> já fala do complexo amígdala-hipocampo dando "tempero emocional" à memória. O ângulo novo é que a amígdala também filtra experiências neutras (rosto, paisagem), não só as emocionais.</li>
+</ul>
+<h3>2. "Dormi mal" nem sempre é o que o relógio de pulso mostra: neuroticismo muda a <em>percepção</em> do sono, não a duração</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Neuroticism is associated with self-reported, but not actigraphy-assessed, sleep duration" (título conforme citado pela PsyPost; não foi possível abrir a página do artigo)</li>
+<li><strong>Data de Publicação:</strong> matéria da PsyPost em 30/10/2026. Artigo em <em>Personality and Individual Differences</em> (data exata não confirmada).</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1016/j.paid.2026.113954" target="_blank">10.1016/j.paid.2026.113954</a> · <a href="https://www.psypost.org/people-high-in-neuroticism-report-sleeping-less-but-wrist-monitors-tell-a-different-story/" target="_blank">PsyPost (30/10/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares. Estudo observacional.</li>
+<li><strong>Achado:</strong> Derick DeCamp e Elizabeth Pantesco (Villanova University) acompanharam <strong>134 universitários</strong> (95 mulheres, idade média de 19 anos, sem distúrbio do sono diagnosticado) com um actígrafo de pulso por <strong>5 noites</strong> e questionários. Quem tinha mais neuroticismo (tendência a preocupação, ansiedade e emoções negativas) <strong>relatava dormir menos</strong>: cerca de <strong>15 a 20 minutos a menos por ponto</strong> na escala de 5 pontos. <strong>Mas o aparelho não mostrou diferença real na duração do sono.</strong> A ligação se manteve mesmo controlando depressão, ansiedade, IMC e regularidade do sono. Os autores interpretam que o traço mexe com a forma como a pessoa percebe, lembra e relata a própria noite.</li>
+<li><strong>Implicação prática:</strong> Para quem vive ansiosa, a sensação de "não dormi nada" pode ser maior do que a perda real. Isso não diminui o sofrimento, mas muda a conversa: parte do cuidado é com a ruminação na cama, não só com as horas. <strong>Ressalvas:</strong> efeito pequeno, amostra jovem de uma universidade só, apenas 5 noites medidas, e o actígrafo pode confundir "deitada acordada parada" com sono, justamente o que os autores suspeitam acontecer com pessoas mais ansiosas. Os números vêm da matéria da PsyPost.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Comportamentos/SONO/Sono.md</code> cobre insônia, privação de sono e indica a TCC-I como padrão-ouro para insônia crônica. Não há nota sobre sono <em>percebido</em> vs. sono <em>medido</em>: ângulo novo. Faz ponte com <code>Neurociências/Dispositivos Vestíveis (wearables).md</code>.</li>
+</ul>
+<h3>3. Multitarefa não falha por falta de memória: o cérebro mistura as "abas" quando não sabe o que importa</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Feature interference underlies a neuronal basis for the behavioral cost of task uncertainty"</li>
+<li><strong>Data de Publicação:</strong> 10/09/2026 (<em>Nature Neuroscience</em>). Está fora da janela de 30 dias do protocolo, mas entrou porque voltou a circular em outubro (<a href="https://news.uchicago.edu/story/what-goes-your-brain-when-youre-trying-multitask" target="_blank">UChicago News</a> e <a href="https://medicalxpress.com/news/2026-10-irrelevant-visual-decisions-uncertainty-brain.html" target="_blank">Medical Xpress, 04/10/2026</a>) e conversa direto com o público MIB.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41593-026-02430-w" target="_blank">10.1038/s41593-026-02430-w</a> · <a href="https://www.news-medical.net/news/20260910/Brain-interference-explains-why-multitasking-becomes-difficult.aspx" target="_blank">News-Medical (10/09/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares. Experimentos com humanos (mais de 200 participantes) e registro neural em 2 macacos rhesus.</li>
+<li><strong>Achado:</strong> O grupo de Marlene Cohen (Universidade de Chicago, primeiro autor Cheng Xue) pediu que as pessoas julgassem mudanças em uma imagem listrada (girou? as listras mudaram?) sem avisar qual regra valia, e a regra mudava de tempos em tempos. Quando não sabiam o que importava, <strong>erravam mais</strong>, e o detalhe que deveriam ignorar puxava as escolhas. Nos macacos, os neurônios do córtex visual passaram a misturar as duas informações. Os pesquisadores chamaram isso de <strong>"interferência entre atributos"</strong>. Nas palavras de Cohen: não é que a informação some, é que "você não consegue mais manter as coisas separadas".</li>
+<li><strong>Implicação prática:</strong> O custo da multitarefa aparece quando a prioridade não está clara. Definir antes "o que importa agora" e terminar uma tarefa antes de pular para outra é a saída que os próprios autores sugerem. <strong>Ressalvas:</strong> tarefa visual de laboratório; a ponte para a vida real (casa, trabalho, filhos) é interpretação, não resultado do estudo.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurociências/Neurociência da Atenção e do Foco.md</code> já tem o "mito da multitarefa" (alternância de tarefas esgota e aumenta erros) e <code>Mentalidade/Atenção.md</code> trata atenção como recurso finito. O ângulo novo é o <em>mecanismo</em>: incerteza sobre a prioridade é o que faz o cérebro misturar tudo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. "Brainstacking": a pilha de atividades analógicas contra o "brain rot"</h3>
+<ul>
+<li><strong>Tema:</strong> Trocar a rolagem por uma "pilha" de atividades offline (diário, palavras cruzadas, sudoku, leitura, colorir, ouvir um álbum inteiro).</li>
+<li><strong>Por que está em alta:</strong> A tendência ganhou força no TikTok no fim de outubro e chegou à imprensa dos EUA (rede NewsNation/The Hill em 26-27/10; InsideHook em 01/11). Pelo padrão do protocolo, o TikTok antecipa em 2-3 semanas o que chega ao Brasil.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "o que a ciência diz e o que ainda é promessa" (ex.: escrever à mão tem respaldo para memória; "reverter o brain rot" não tem estudo). Ou Reel: a pilha não funciona se virar mais uma performance para filmar.</li>
+<li><strong>Gancho sugerido:</strong> "Trocar o celular por um sudoku não vai salvar o seu cérebro. MAS o que acontece na hora em que você troca, sim."</li>
+<li><strong>Fonte:</strong> <a href="https://www.insidehook.com/mental-health/brain-stacking-analog-trend" target="_blank">InsideHook (01/11/2026)</a> · <a href="https://thehill.com/policy/technology/6173723-brainstacking-tiktok-trend-reverse-brain-rot/" target="_blank">The Hill / NewsNation (26-27/10/2026)</a> <em>(manchete e resumo confirmados via busca; a página bloqueou a leitura completa)</em></li>
+</ul>
+<h3>2. Enem nos dias 8 e 15 de novembro: sono, memória e ansiedade na reta final</h3>
+<ul>
+<li><strong>Tema:</strong> O que o cérebro precisa na semana da prova (e o que atrapalha).</li>
+<li><strong>Por que está em alta:</strong> O Enem 2026 é aplicado nos próximos dois domingos, 8 e 15/11, nas 27 unidades da Federação. É assunto nacional por duas semanas, com pais e estudantes buscando orientação.</li>
+<li><strong>Ângulo para Carol:</strong> Reel para mães de vestibulandos e para quem estuda: "virar a noite revisando" contra dormir. Base no vault (privação de sono e controle de pensamentos intrusivos, em <code>Sono.md</code>) + o estudo da amígdala de hoje (atenção no primeiro contato).</li>
+<li><strong>Gancho sugerido:</strong> "Na véspera do Enem, a revisão mais importante acontece com a luz apagada."</li>
+<li><strong>Fonte:</strong> <a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/inscricoes-para-o-enem-2026-estao-abertas" target="_blank">Inep: notícia oficial das inscrições, com as datas 8 e 15/11</a> · <a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/enem-2026-confira-o-passo-a-passo-para-visualizar-o-local-de-prova" target="_blank">Inep: como ver o local de prova</a></li>
+</ul>
+<h3>3. Black Friday (27/11): o "neurotransmissor da motivação" e a contagem regressiva</h3>
+<ul>
+<li><strong>Tema:</strong> Por que o cronômetro de "oferta acaba em 10 minutos" mexe tanto com a decisão de compra.</li>
+<li><strong>Por que está em alta:</strong> Black Friday cai em 27/11 e, no Brasil, as promoções começam já no início do mês. Bancos e veículos de marketing já falam de compras por impulso e da sensação de urgência criada por contadores regressivos.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "seu cérebro na Black Friday": sistema de recompensa reage à <em>antecipação</em> (não à compra) + plano simples antes de abrir o app (lista, teto de gasto, 24h de espera). Liga com <code>Sistema Dopaminérgico (Sistema de Recompensas).md</code> do vault. Evitar repetir o enquadramento de "detox de dopamina", já coberto em outubro.</li>
+<li><strong>Gancho sugerido:</strong> "O pico do seu cérebro não vem quando o produto chega. Vem quando o cronômetro aparece."</li>
+<li><strong>Fonte:</strong> <a href="https://www.santander.com.br/blog/para-voce/black-friday" target="_blank">Santander: guia Black Friday 2026 (urgência e contadores)</a> · <a href="https://www.meioemensagem.com.br/marketing/em-meio-as-datas-duplas-black-friday-ainda-gera-expectativas" target="_blank">Meio & Mensagem: levantamento do Google sobre datas de desconto</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Vida analógica / "brainstacking"</strong>: formato "minha pilha de hoje" (foto da mesa com livro, diário, palavra cruzada) circula no TikTok e está chegando a matérias de comportamento. Bom para Stories e carrossel. <a href="https://www.insidehook.com/mental-health/brain-stacking-analog-trend" target="_blank">InsideHook (01/11/2026)</a></p>
+<p>2. <strong>Contagem regressiva do Enem</strong>: conteúdos de "reta final", rotina da véspera e controle da ansiedade dominam o nicho de estudo nesta e na próxima semana. <a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/inscricoes-para-o-enem-2026-estao-abertas" target="_blank">Inep</a></p>
+<p>3. <strong>"Você dorme melhor do que acha"</strong>: o estudo sobre neuroticismo e percepção do sono saiu na PsyPost em 30/10 e conversa com a onda de anéis e relógios que medem sono. <a href="https://www.psypost.org/people-high-in-neuroticism-report-sleeping-less-but-wrist-monitors-tell-a-different-story/" target="_blank">PsyPost (30/10/2026)</a></p>
+<p>4. <strong>Implantes cerebrais para visão</strong>: Elon Musk disse em 01/11 que o Blindsight, da Neuralink, está pronto "do ponto de vista de engenharia" e aguarda aprovação regulatória; no mesmo período, a chinesa Nanochap anunciou captação de RMB 500 milhões e diz ter 3 participantes implantados em teste clínico de interface de retina. Tema forte em tecnologia, mas pede cautela (ver Alerta de Ruído). <a href="https://tomshardware.com/peripherals/wearable-tech/elon-musk-says-neuralink-is-ready-to-cure-blindness-says-blindsight-will-enable-even-those-who-are-completely-blind-or-have-never-seen-to-see" target="_blank">Tom's Hardware</a> · <a href="https://technode.com/2026/11/03/visual-brain-computer-interface-developer-nanochap-raises-rmb-500-million" target="_blank">TechNode (03/11/2026)</a></p>
+<p>5. <strong>Memória e amígdala</strong>: o estudo do Cedars-Sinai repercute em sites de divulgação científica em inglês desde 27/10 e ainda não chegou ao nicho BR: chance de sair na frente. <a href="https://www.cedars-sinai.org/newsroom/research-reveals-small-brain-area-has-a-giant-role-in-memory/" target="_blank">Cedars-Sinai</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Brainstacking reverte o brain rot"</strong>: não existe estudo testando a "pilha" em si. Há evidência pontual para algumas atividades (escrever à mão, leitura), não para a promessa de "reverter" nada. O próprio editor da InsideHook reconhece que a tendência "é um pouco performática". Se filmar a pausa do celular vira o objetivo, a pausa deixa de existir.</li>
+<li><strong>"Neuralink vai curar a cegueira"</strong>: é declaração do próprio Musk, sem aprovação regulatória e sem resultado publicado em revista revisada por pares. Falar de interface cérebro-máquina, sim; prometer cura, não.</li>
+<li><strong>Amígdala = "só lembramos do que dá medo"</strong>: o estudo de hoje usou imagens de rostos, animais e paisagens, não trauma nem emoção forte. Não usar como prova de que "emoção grava memória". O achado é mais amplo: a amígdala ajuda a selecionar o que fica.</li>
+<li><strong>"Ansiosa dorme menos" como verdade absoluta</strong>: o estudo do neuroticismo é pequeno, com universitários, e mostra diferença na <em>percepção</em>. Não usar para dizer que a insônia de alguém "é coisa da cabeça". Insônia crônica continua pedindo avaliação e TCC-I.</li>
+<li><strong>Número de burnout sem fonte primária</strong>: o dado de "burnout cresceu 823%" circula com a estimativa de "R$ 400 bilhões por ano" sem metodologia clara. Se usar, citar a ANAMT/INSS (dados de afastamento), não o valor em reais. Burnout no Brasil (pesquisa Robert Half, 59%) já entrou no briefing de 27/10.</li>
+<li><strong>Já coberto recentemente</strong>: detox de dopamina, mito dos 21 dias para hábito, "mommy brain", AI brain fry. Evitar repetir sem ângulo novo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Você não é ruim de multitarefa. Seu cérebro mistura as abas quando você não sabe o que é prioridade."</li>
+<li><strong>Formato:</strong> Reel de 45-60s (falando para a câmera, com corte para uma lista escrita à mão no final).</li>
+<li><strong>Estrutura (MAS / PORTANTO):</strong> Gancho → cena real (fazendo almoço, respondendo mensagem do trabalho e ajudando a filha na tarefa) → <strong>MAS</strong> um estudo da Universidade de Chicago, publicado na <em>Nature Neuroscience</em>, mostrou que o problema não é falta de memória: quando a gente não sabe qual tarefa importa agora, o cérebro mistura as informações e erra mais → <strong>PORTANTO</strong> antes de começar o bloco do dia, decida uma prioridade e termine antes de trocar → CTA: "Escreve aqui embaixo qual é a sua UMA prioridade de hoje."</li>
+<li><strong>Gancho:</strong> "Você não esqueceu. Seu cérebro só não sabia o que era pra lembrar primeiro."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41593-026-02430-w" target="_blank">10.1038/s41593-026-02430-w</a> · <a href="https://news.uchicago.edu/story/what-goes-your-brain-when-youre-trying-multitask" target="_blank">UChicago News</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Nenhuma publicação específica dos perfis da BIBLIOTECA sobre esses temas foi localizada via busca aberta nas últimas 72h, por isso não há link de perfil nesta edição.</p>
+    </div>
+</body>
+</html>
