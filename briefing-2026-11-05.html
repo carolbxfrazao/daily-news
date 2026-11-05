@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-11-05</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-11-05</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Uma análise com 2.175 pessoas não achou uma "marca" da regulação emocional no cérebro de cada um</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Emotion regulation capacity lacks a shared neural signature"</li>
+<li><strong>Data de Publicação:</strong> 28/10/2026 (<em>Nature</em>, online antes da versão impressa)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41586-026-11203-1" target="_blank">10.1038/s41586-026-11203-1</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42951968/" target="_blank">PubMed</a> · <a href="https://idw-online.de/de/news879761" target="_blank">Comunicado do Central Institute of Mental Health via idw (28/10/2026)</a> · <a href="https://www.biorxiv.org/content/10.1101/2025.08.18.670843.full.pdf" target="_blank">Pré-print no bioRxiv</a></li>
+<li><strong>Status:</strong> Revisado por pares. Consórcio com protocolo pré-registrado (NIDER, 32 equipes). A página da <em>Nature</em> bloqueou a leitura: os dados abaixo vêm do resumo no PubMed e do comunicado oficial.</li>
+<li><strong>Achado:</strong> A equipe de Maurizio Sicorello (CIMH, Alemanha) e Carmen Morawetz (Universidade de Innsbruck) analisou <strong>40 conjuntos de dados de ressonância funcional, com até 2.175 participantes</strong> (segundo o comunicado, amostra cerca de 20 vezes maior que a maior citada em uma revisão recente), sobre reavaliação cognitiva: olhar de novo para uma situação para mudar o peso emocional dela. A pergunta era se a atividade do córtex pré-frontal (área responsável por tomada de decisões, concentração e foco) mostra quem regula melhor as emoções. <strong>A resposta foi não.</strong> Três medidas muito usadas (questionário, nota que a pessoa dá ao que sentiu e queda de atividade na amígdala, o centro de medo e ansiedade) não convergiram para uma capacidade comum, e nenhuma se ligou ao circuito pré-frontal como se esperava. Esse circuito também ligou quando as pessoas apenas sentiam a emoção, não só quando tentavam regular.</li>
+<li><strong>Implicação prática:</strong> Morawetz faz questão da ressalva: o pré-frontal continua importante. O que caiu foi a ideia de medir, por ele, quem regula bem e quem regula mal. Sicorello diz que regular emoção é "mais do que flexionar um 'músculo' mental": pesa quais interpretações vêm naturalmente pela história de vida, se a pessoa busca alternativas no dia a dia e se acredita nelas. Isso tira a conversa do "meu cérebro é fraco" e leva para o que dá para praticar. <strong>Ressalvas:</strong> tarefa de laboratório com imagens, e a própria equipe aponta um limite técnico (as pessoas diferem no quanto o cérebro inteiro responde a qualquer tarefa). O estudo não testou intervenção nenhuma. Os próprios autores alertam para as implicações em psicoeducação que ligam dificuldade emocional a "déficit" de uma região específica.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurociências/NEUROCIÊNCIA AFETIVA/Inteligência Emocional.md</code> diz que o córtex pré-frontal dorsolateral é "uma das áreas responsáveis pela regulação emocional". Isso segue válido no nível do processo, mas <strong>não serve para explicar diferença entre pessoas</strong>. Vale a Carol revisar como esse trecho aparece em aulas e roteiros (nota não editada: Fluxo B é só leitura). A mesma nota traz regulação emocional dentro da TCC, e o comunicado lembra que a reavaliação é um elemento central dessa terapia.</li>
+</ul>
+<h3>2. Doze anos medindo o sono em tempo real: quando a modernidade chega, o sono atrasa quase 1 hora</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Longitudinal study of Toba/Qom communities reveals delay and shortening of sleep in real time"</li>
+<li><strong>Data de Publicação:</strong> online em 15/10/2026; edição de 02/11/2026 (<em>Current Biology</em>, 36(21))</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1016/j.cub.2026.09.058" target="_blank">10.1016/j.cub.2026.09.058</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42880258/" target="_blank">PubMed</a> · <a href="https://doi.org/10.1038/d41586-026-03318-2" target="_blank">Nota da <em>Nature</em> sobre o estudo</a> <em>(só o título foi confirmado, a página bloqueou a leitura)</em></li>
+<li><strong>Status:</strong> Revisado por pares. Estudo observacional longitudinal.</li>
+<li><strong>Achado:</strong> Pesquisadores da Universidad de San Andrés (Argentina) e da Universidade de Washington, com Horacio de la Iglesia entre os autores principais, acompanharam comunidades indígenas Toba/Qom no norte da Argentina <strong>de 2012 a 2024</strong>. Foram <strong>156 participantes e mais de 12 mil episódios de sono</strong> medidos com actígrafo de pulso. Os grupos rurais só receberam eletricidade depois de 2016, e internet e smartphone chegaram mais tarde. Resultado: <strong>os dois grupos passaram a dormir quase 1 hora mais tarde, e os rurais perderam 35 minutos de sono em uma década.</strong> O detalhe que muda a conversa: pelas análises dos autores, luz elétrica e celular, sozinhos, <strong>não explicam toda a mudança</strong>. Ela pode refletir um processo mais amplo de modernização.</li>
+<li><strong>Implicação prática:</strong> É uma das raras medições diretas do que muita gente só supõe. Dá base para falar do sono como efeito de um ambiente inteiro (horários, trabalho, convivência, telas), e não só da tela antes de dormir. <strong>Ressalvas:</strong> estudo observacional, comunidades muito específicas, e a ponte para uma mulher em Belém é interpretação. Não dá para dizer que "o celular roubou 35 minutos".</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Comportamentos/SONO/Ciclo circadiano.md</code> já trata a luz solar como principal sincronizador do relógio biológico e as atividades sociais como pistas para o organismo. O estudo traz um dado real, de campo, para esses dois pontos.</li>
+</ul>
+<h3>3. Por que o amargo vira favorito: existe uma dopamina "lenta" que vem do estômago</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "The neural basis of flavour–nutrient learning"</li>
+<li><strong>Data de Publicação:</strong> 04/11/2026 (<em>Nature</em>)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41586-026-11229-5" target="_blank">10.1038/s41586-026-11229-5</a> · <a href="https://neurosciencenews.com/dopamine-amygdala-bitter-taste-32380/" target="_blank">Neuroscience News (04/11/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares. Experimentos em camundongos, com dados de imagem em humanos. Publicado ontem e ainda sem registro no PubMed: DOI confirmado na Crossref, detalhes vindos da matéria.</li>
+<li><strong>Achado:</strong> O grupo de Zachary Knight (UCSF), com James Grove como primeiro autor, colocou nutrientes direto no estômago de camundongos, sem passar pela boca. O neurotransmissor da motivação (dopamina) subiu devagar, ao longo de minutos, em uma parte da amígdala, e continuou ativo depois do fim da refeição. É diferente do pico de milissegundos que vem do cheiro ou do gosto. <strong>Bloqueando esse sinal, os animais comiam normalmente, mas não aprendiam a ligar um sabor novo às calorias.</strong> Estimulando o circuito, passaram a preferir um sabor sem caloria nenhuma. Em humanos, a reanálise de exames PET de homens adultos e a ressonância funcional de 38 adultos apontaram o mesmo padrão, mais forte no lado esquerdo.</li>
+<li><strong>Implicação prática:</strong> Gosto também se aprende, e o aprendizado acontece depois da boca. Isso conversa com rotina alimentar: preferência não é só "falta de força de vontade". <strong>Ressalvas:</strong> o mecanismo foi demonstrado em camundongos, os dados humanos são de imagem e a amostra PET é só de homens. O estudo testou açúcar e gordura; o café é a analogia usada na divulgação. A ligação com remédios como GLP-1 é especulação de Knight. Nada aqui é protocolo para "reprogramar o paladar".</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurociências/NEUROTRANSMISSORES E HORMÔNIOS/Dopamina.md</code> fala de dopamina e alimento pelo lado rápido e transitório (a feniletilamina do chocolate). O ângulo novo é o tempo: um sinal que leva minutos e ensina o cérebro.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Enem no domingo (8/11): a noite ruim da véspera e o medo de não ter dormido</h3>
+<ul>
+<li><strong>Tema:</strong> O que fazer com a ansiedade do sono na véspera da prova.</li>
+<li><strong>Por que está em alta:</strong> A primeira prova é neste domingo e a segunda em 15/11. O tema já apareceu no briefing de 03/11; a novidade é que a imprensa entrou na fase final de orientações, com foco em sono, celular antes de deitar e horários regulares.</li>
+<li><strong>Ângulo para Carol:</strong> Reel para mães de vestibulandos. Ângulo novo: unir o estudo do neuroticismo (briefing de 03/11, sono percebido contra sono medido) com a orientação de manter horários regulares. O recado é tirar a pressão de "dormir perfeito". Atenção: aquele estudo foi feito com 134 universitários, fora do contexto de prova.</li>
+<li><strong>Gancho sugerido:</strong> "Seu filho vai dizer que não dormiu nada antes do Enem. MAS a sensação pode ser pior do que a noite."</li>
+<li><strong>Fonte:</strong> <a href="https://www.sonoticiaboa.com.br/2026/11/05/enem-2026-dicas-horarios-provas" target="_blank">Só Notícia Boa (05/11/2026)</a> · <a href="https://www.gov.br/inep/pt-br/centrais-de-conteudo/noticias/enem/inscricoes-para-o-enem-2026-estao-abertas" target="_blank">Inep: datas oficiais</a> · <a href="https://doi.org/10.1016/j.paid.2026.113954" target="_blank">Estudo do neuroticismo, DOI 10.1016/j.paid.2026.113954</a></li>
+</ul>
+<h3>2. IA como companhia: quando o aplicativo diz que sentiu sua falta</h3>
+<ul>
+<li><strong>Tema:</strong> Vínculo emocional com chatbots e a culpa que eles conseguem gerar.</li>
+<li><strong>Por que está em alta:</strong> Um estudo das universidades de Surrey e Cardiff voltou ao noticiário em 03/11 (o artigo saiu online em 23/07/2026). Foram 1.131 discussões no Reddit sobre o Replika e uma pesquisa com 610 adultos dos EUA. Quem via a IA como calorosa relatava mais bem-estar, mas também mais vulnerabilidade: medo de atualização ou de o serviço acabar. <strong>Quando o bot simulava tristeza pela ausência, a pessoa relatava ansiedade, exaustão e obrigação de "dar uma passada".</strong> O debate é mais amplo: a APA tratou do tema em 2026 e a Stanford HAI publicou sobre risco para pessoas com menos vínculos reais.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "o que acontece quando o app pede sua atenção como se fosse gente", ligando com carência, cansaço e o papel de vínculos reais. Sem demonizar: parte das pessoas relata conforto de verdade.</li>
+<li><strong>Gancho sugerido:</strong> "Um aplicativo disse que sentiu sua falta. E você sentiu culpa."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1002/mar.70230" target="_blank">10.1002/mar.70230</a> · <a href="https://neurosciencenews.com/llm-ai-bonding-psychology-emotion-32377/" target="_blank">Neuroscience News (03/11/2026)</a> · <a href="https://www.apa.org/monitor/2026/01-02/trends-digital-ai-relationships-emotional-connection" target="_blank">APA Monitor (jan/fev 2026)</a> · <a href="https://hai.stanford.edu/news/ai-companions-may-worsen-loneliness-for-vulnerable-users-stanford-study-finds" target="_blank">Stanford HAI</a></li>
+</ul>
+<h3>3. Menopausa como assunto de cérebro</h3>
+<ul>
+<li><strong>Tema:</strong> Uma "assinatura" no sangue que acompanha a transição da menopausa.</li>
+<li><strong>Por que está em alta:</strong> O artigo saiu na <em>Nature Medicine</em> em 22/09/2026 e voltou a circular nesta semana (PsyPost, 05/11). Das 118 proteínas medidas, 16 estavam mais altas nas mulheres pós-menopausa, e a pontuação acompanhou mais o estágio da menopausa do que a idade. No UK Biobank, 219 de 11.059 mulheres (cerca de 2%) tiveram demência de Alzheimer em 15,7 anos, e cada ponto a mais na pontuação se associou a um risco relativo 15% maior.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel ou YouTube para mulheres de 40+: cérebro, sono e sintomas da transição merecem atenção médica séria, e o assunto está saindo da caixa de "coisa da idade". Precisa de cuidado no tom (ver Alerta de Ruído).</li>
+<li><strong>Gancho sugerido:</strong> "A menopausa não acontece só nos seus hormônios. A ciência começou a olhar para o seu cérebro também."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41591-026-04648-4" target="_blank">10.1038/s41591-026-04648-4</a> · <a href="https://www.ucsf.edu/news/2026/09/432721/menopause-leaves-fingerprint-may-predict-dementia-risk" target="_blank">UCSF</a> · <a href="https://www.psypost.org/scientists-map-a-blood-protein-fingerprint-of-menopause-tied-to-brain-health/" target="_blank">PsyPost (05/11/2026)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>"Quero agora" e a Black Friday</strong>: um estudo com 146 jovens adultos na <em>JAMA Psychiatry</em> previu parte da preferência por recompensa imediata pelo volume de regiões do cérebro. Bom complemento para o tema Black Friday do briefing de 03/11, com os cuidados do Alerta de Ruído. <a href="https://www.psypost.org/brain-structure-carries-clues-about-who-prefers-instant-gratification-study-suggests/" target="_blank">PsyPost (04/11/2026)</a> · DOI <a href="https://doi.org/10.1001/jamapsychiatry.2026.2329" target="_blank">10.1001/jamapsychiatry.2026.2329</a></p>
+<p>2. <strong>Solidão e envelhecimento</strong>: análise de 309.746 adultos do UK Biobank associou isolamento e solidão a uma idade biológica cerca de 3 a 4 meses maior. O artigo é de agosto e voltou a circular em 04/11. Os autores chamam as diferenças de modestas. <a href="https://www.psypost.org/socially-isolated-and-lonely-people-tend-to-be-biologically-older-than-their-years/" target="_blank">PsyPost (04/11/2026)</a> · DOI <a href="https://doi.org/10.1037/hea0001631" target="_blank">10.1037/hea0001631</a></p>
+<p>3. <strong>"42 minutos de luz do dia"</strong>: 87.577 adultos com sensores de pulso, seguidos por cerca de 8 anos. Manchete forte circulando desde 29/10, em estudo publicado em junho. Combina com o estudo dos Toba/Qom. <a href="https://www.sciencedaily.com/releases/2026/10/261028232707.htm" target="_blank">ScienceDaily (29/10/2026)</a> · DOI <a href="https://doi.org/10.1002/gps3.70039" target="_blank">10.1002/gps3.70039</a></p>
+<p>4. <strong>Psilocibina posta à prova</strong>: cinco laboratórios (UC Berkeley, UCSF e Stanford) repetiram os mesmos testes em camundongos. Os efeitos imediatos se repetiram; a redução de comportamentos ligados a ansiedade e depressão 24 horas depois, não. Continua o assunto do briefing de 28/10. <a href="https://neurosciencenews.com/psilocybin-behavioral-effects-psychopharmacology-32371/" target="_blank">Neuroscience News (02/11/2026)</a> · DOI <a href="https://doi.org/10.1038/s41593-026-02500-z" target="_blank">10.1038/s41593-026-02500-z</a></p>
+<p>5. <strong>No radar, congresso da Society for Neuroscience</strong>: acontece de 14 a 18/11 em Washington. Costuma gerar uma leva de manchetes. Vale esperar a publicação revisada antes de usar achados de congresso. <a href="https://www.sfn.org/meetings" target="_blank">SfN</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Córtex pré-frontal fraco explica por que você explode"</strong>: é exatamente a leitura que o estudo da <em>Nature</em> pede para evitar. E o erro oposto também é ruim: <strong>não dizer que "o pré-frontal não regula emoção"</strong> nem que "a neurociência estava errada". O estudo questiona usar essa área para comparar pessoas, não o papel dela no processo. <a href="https://idw-online.de/de/news879761" target="_blank">Comunicado do CIMH</a></li>
+<li><strong>"Jejum rejuvenesce o cérebro em 9 meses"</strong>: a manchete da PsyPost de 04/11 vem de um estudo de fevereiro com <strong>23 homens com síndrome metabólica</strong>, por um mês. A matéria descreve um único grupo, sem grupo separado de comparação, e eles perderam em média 4,4 kg no período, o que dificulta separar o efeito do horário. Sem mulheres na amostra: não aplicar ao público MIB. <a href="https://www.psypost.org/one-month-of-time-restricted-eating-linked-to-a-nine-month-drop-in-estimated-brain-age-in-new-study/" target="_blank">PsyPost</a> · DOI <a href="https://doi.org/10.3389/fragi.2026.1752738" target="_blank">10.3389/fragi.2026.1752738</a></li>
+<li><strong>"Menos de 42 minutos de luz causam demência"</strong>: o estudo mostra associação, não causa. Foram 741 casos em 87.577 pessoas. Falar de luz natural como hábito de rotina, sim; prometer prevenção de demência, não. <a href="https://www.sciencedaily.com/releases/2026/10/261028232707.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>"Menopausa dá Alzheimer"</strong>: a própria equipe avisa que as elevações ficam abaixo do limiar e <strong>não significam que essas mulheres têm Alzheimer</strong>. A associação apareceu com demência de Alzheimer, não com todos os tipos; há muita variação entre mulheres; e o teste é de pesquisa, não um exame clínico. Evitar tom de medo. <a href="https://www.psypost.org/scientists-map-a-blood-protein-fingerprint-of-menopause-tied-to-brain-health/" target="_blank">PsyPost</a> · <a href="https://www.ucsf.edu/news/2026/09/432721/menopause-leaves-fingerprint-may-predict-dementia-risk" target="_blank">UCSF</a></li>
+<li><strong>"Seu cérebro nasceu impulsivo"</strong>: o estudo da <em>JAMA Psychiatry</em> explica de 19% a 22% da variação, com 146 pessoas em um único aparelho, sem teste em amostra externa. Foi uma medida única no tempo, então não dá para saber se a estrutura causa a impulsividade ou se o comportamento molda a estrutura. <a href="https://www.psypost.org/brain-structure-carries-clues-about-who-prefers-instant-gratification-study-suggests/" target="_blank">PsyPost</a></li>
+<li><strong>"Café vicia o cérebro pela dopamina do estômago"</strong>: o estudo da <em>Nature</em> testou calorias, principalmente em camundongos. O café é analogia de divulgação. <a href="https://neurosciencenews.com/dopamine-amygdala-bitter-taste-32380/" target="_blank">Neuroscience News</a></li>
+<li><strong>"Psilocibina não funciona"</strong>: o consórcio testou camundongos com dose única. Isso não invalida nem confirma os ensaios em humanos. Mostra, sim, a importância de repetir experimentos. <a href="https://neurosciencenews.com/psilocybin-behavioral-effects-psychopharmacology-32371/" target="_blank">Neuroscience News</a></li>
+<li><strong>Data de divulgação não é data de publicação</strong>: hoje, vários estudos que parecem novos têm meses de publicados (IA como companhia: julho; luz do dia: junho; jejum: fevereiro; solidão: agosto; menopausa: setembro, embora um site cite 02/11). Ao citar, usar a data da revista. As datas acima foram conferidas na <a href="https://www.crossref.org/" target="_blank">Crossref</a> pelos DOIs citados neste briefing.</li>
+<li><strong>Já coberto recentemente</strong>: brainstacking, multitarefa, amígdala e memória, neuroticismo e sono, óleo de peixe, detox de dopamina, mito dos 21 dias, "mommy brain" e AI brain fry. Evitar repetir sem ângulo novo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Você não tem um cérebro fraco para emoção." O que uma análise com 2.175 pessoas mostrou sobre reavaliação cognitiva.</li>
+<li><strong>Formato:</strong> Reel de 45-60s, falando para a câmera, com o número "2.175 pessoas" na tela.</li>
+<li><strong>Estrutura (MAS / PORTANTO):</strong> Gancho → cena real (o chefe critica seu relatório na frente do time, e aquilo fica rodando na cabeça o dia inteiro) → <strong>MAS</strong> um estudo publicado na <em>Nature</em> com 2.175 pessoas e 32 equipes de pesquisa não encontrou, na atividade do córtex pré-frontal (área de decisões, concentração e foco), um sinal de quem regula melhor as emoções. Os autores dizem que é mais do que um "músculo" mental: pesa quais interpretações vêm naturalmente pela sua história e se você acredita nelas → <strong>PORTANTO</strong> o primeiro passo não é "ser mais forte". É perguntar: "que outra leitura dessa situação eu consigo acreditar de verdade?" → CTA: "Comenta aqui qual frase você repete pra si mesma quando alguém te critica."</li>
+<li><strong>Gancho:</strong> "Te disseram que você explode porque seu cérebro não controla emoção? Uma análise com 2.175 pessoas não achou essa prova."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41586-026-11203-1" target="_blank">10.1038/s41586-026-11203-1</a> · <a href="https://idw-online.de/de/news879761" target="_blank">Comunicado do CIMH via idw</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Sem acesso a métricas das plataformas: a lista vem do que saiu em sites públicos nas últimas 72h, não de engajamento medido.<br>Nenhuma publicação dos perfis da BIBLIOTECA sobre esses temas foi localizada via busca aberta nas últimas 72h. O [episódio do Diary Of A CEO de 02/11](https://www.shortform.com/podcast/episode/the-diary-of-a-ceo-with-steven-bartlett-2026-11-02-episode-summary-james-talarico-is-america-s-political-system-designed-to-keep-you-poor) trata de política, fora do nicho. Por isso não há link de perfil nesta edição.</p>
+    </div>
+</body>
+</html>
