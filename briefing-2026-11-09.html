@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-11-09</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-11-09</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Conversa boa não é a que concorda o tempo todo: o ritmo por trás de um papo que flui</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Pink noise in dyads' semantic similarity trajectories predicts conversation enjoyment"</li>
+<li><strong>Data de Publicação:</strong> 06/11/2026 (<em>Science Advances</em>)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1126/sciadv.aeb2684" target="_blank">10.1126/sciadv.aeb2684</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42993848/" target="_blank">PubMed</a> · <a href="https://neurosciencenews.com/pink-noise-conversation-cognition-32390/" target="_blank">Neuroscience News (06/11/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares. Análise de conversas já gravadas. Li o resumo no PubMed e a matéria, não o artigo completo.</li>
+<li><strong>Achado:</strong> A equipe de Kathryn O'Nell e Emily Finn (Dartmouth) mediu como o assunto de duas pessoas se aproxima e se afasta ao longo de uma conversa. O ponto de partida do resumo é simples: falar só com quem pensa exatamente igual acaba ficando chato. <strong>Nas conversas mais bem avaliadas, apareceu um ritmo chamado "ruído rosa": as pessoas ficam alinhadas por um tempo, uma traz algo novo, a outra pega e desenvolve.</strong> Quanto mais forte esse padrão, maiores o prazer e a conexão relatados. Segundo o resumo, <strong>o padrão aumenta com a prática</strong>. A matéria acrescenta que ele apareceu em encontros de speed dating e em podcasts com dois apresentadores. Ela também conta que o modelo de IA Claude Sonnet 3.7 (da Anthropic, a mesma empresa do assistente que montou este briefing) reproduziu o padrão ao escrever diálogos "agradáveis", sem receber essa instrução.</li>
+<li><strong>Implicação prática:</strong> Duas armadilhas ficam visíveis: a conversa em que todo mundo só concorda e a conversa em que cada um fala do seu assunto sem pegar o que o outro trouxe. Isso vale para casamento, amizade e equipe. <strong>Ressalvas:</strong> o estudo mostra associação. Ninguém testou se tentar seguir esse ritmo melhora uma relação. Os dados são de duplas em contextos específicos, e a matéria fala de encontros românticos curtos, não de casais de longa data. O "ruído rosa" aqui é uma medida estatística do sentido das falas, <strong>não é som</strong>.</li>
+<li><strong>Cruzamento com o vault:</strong> Em <code>B02 Resources/Relacionamentos/</code> só há <code>Divórcio.md</code> e <code>Infidelidade.md</code>, e a busca por "conversa" e "comunicação" nessa pasta não retornou nada. É um ângulo novo para o foco Família e Relacionamentos.</li>
+</ul>
+<h3>2. Chatbot de IA para gestantes e mães: 12 meses depois, ansiedade e depressão não mudaram</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Generative Artificial Intelligence and Maternal Health Outcomes in Pregnant and Postpartum Individuals: A Randomized Clinical Trial"</li>
+<li><strong>Data de Publicação:</strong> novembro de 2026 (<em>JAMA Network Open</em>; o PubMed registra 02/11 e a Crossref, 04/11)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1001/jamanetworkopen.2026.41062" target="_blank">10.1001/jamanetworkopen.2026.41062</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42981095/" target="_blank">PubMed</a></li>
+<li><strong>Status:</strong> Revisado por pares. Ensaio clínico randomizado. Li só o resumo, e não localizei matéria de divulgação sobre ele.</li>
+<li><strong>Achado:</strong> A Universidade de Maryland acompanhou <strong>400 participantes</strong> dos EUA, gestantes ou com bebê de até 6 meses, todas de grupos raciais ou étnicos minorizados. Metade teve acesso a um chatbot de saúde materna, e a outra metade recebeu livros infantis todo mês. <strong>Depois de 12 meses, não houve diferença em ansiedade (diferença de 0,10; IC 95% -0,77 a 0,96) nem em depressão (-0,23; IC 95% -1,05 a 0,59).</strong> Também não houve diferença em idas à emergência, consultas pós-parto, uso de contraceptivo ou horas de sono. Quem estava grávida no início relatou mais complicações na análise de 12 meses, mas isso não se repetiu na análise ao longo do tempo. Em uma análise exploratória, usar mais o chatbot andou junto com mais sono e mais ansiedade. Os autores pedem cautela com esses resultados secundários.</li>
+<li><strong>Implicação prática:</strong> Ter um aplicativo à mão não melhorou, por si só, a saúde mental dessas mulheres ao longo de um ano. Para quem usa IA para tirar dúvida de madrugada, o recado é claro: ela não substitui pré-natal, consulta nem rede de apoio. <strong>Ressalvas:</strong> o estudo testou um chatbot específico, com inscrições entre 2023 e 2024, então não vale para toda IA nem para os modelos de hoje. A amostra é só dos EUA, em inglês. <strong>O estudo também não mostra que a IA faz mal.</strong></li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Maternidade/Maternidade.md</code> reúne referências sobre o cérebro na gravidez e no pós-parto, e não encontrei nada sobre IA nessa nota. Conversa com o tema de IA como companhia, do briefing de 05/11, e abre um ângulo próprio para mães.</li>
+</ul>
+<h3>3. Dificuldade no trabalho: terapia em grupo de 7 semanas aumentou a flexibilidade psicológica</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "An intervention based on acceptance and commitment therapy for people experiencing work- or career-related difficulties: A randomized controlled trial"</li>
+<li><strong>Data de Publicação:</strong> online em 29/10/2026, segundo o PubMed (<em>Journal of Counseling Psychology</em>)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1037/cou0000900" target="_blank">10.1037/cou0000900</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42956238/" target="_blank">PubMed</a> · Meta-análise complementar: DOI <a href="https://doi.org/10.1080/13548506.2026.2746789" target="_blank">10.1080/13548506.2026.2746789</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42992692/" target="_blank">PubMed</a></li>
+<li><strong>Status:</strong> Revisado por pares. Ensaio randomizado, com grupo em lista de espera. Li só os resumos.</li>
+<li><strong>Achado:</strong> A equipe da Universidade do Québec em Montreal recrutou <strong>164 pessoas</strong> com dificuldades de trabalho ou carreira, como perda de emprego e burnout. Metade fez 7 encontros online de 2h30 de terapia de aceitação e compromisso (ACT), que trabalha agir pelo que importa mesmo com pensamentos e emoções difíceis. A outra metade ficou na lista de espera. <strong>A flexibilidade psicológica subiu (d = 0,64), o bem-estar subiu (d = 0,32), o senso de sentido na vida subiu (d = 0,42) e o sofrimento psicológico caiu (d = -0,36)</strong>: efeitos de pequenos a moderados, mantidos 17 semanas depois. O engajamento com a carreira não mudou. Uma meta-análise publicada em 06/11 aponta na mesma direção, com ressalvas: maior flexibilidade psicológica se associou a menos estresse e burnout (r = -0,46) e a mais resiliência (r = 0,51).</li>
+<li><strong>Implicação prática:</strong> Flexibilidade psicológica é, em uma frase, conseguir notar o que está sentindo e ainda escolher o próximo passo. O dado é interessante porque ela mudou com um treino de poucas semanas. Isso reforça a nota do vault: resiliência se desenvolve. <strong>Ressalvas:</strong> a comparação foi com lista de espera, não com outro tratamento. Os resultados vêm de questionários, e o efeito variou conforme o nível inicial de sofrimento e precariedade. Na meta-análise, só 8 dos 39 estudos entraram na conta, a variação entre eles foi muito alta (I² de cerca de 91% em estresse e burnout) e os autores dizem que não dá para concluir causa. Não é tratamento de burnout pronto para indicar.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Mentalidade/Mentalidade de Resiliência.md</code> já diz que a resiliência envolve flexibilidade cognitiva e "não é traço fixo". O estudo acrescenta dado de intervenção. A busca não localizou nota sobre terapia de aceitação e compromisso no B02: tema novo no vault.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Enem: metade já foi, e a semana até domingo importa</h3>
+<ul>
+<li><strong>Tema:</strong> Por que o sono desta semana pode pesar mais do que a noite de sábado.</li>
+<li><strong>Por que está em alta:</strong> A primeira prova foi ontem, com redação sobre "A valorização do Sistema Único de Saúde (SUS) como direito universal". A segunda é em 15/11, com ciências da natureza e matemática, em 5 horas. Mais de 5 milhões de pessoas se inscreveram. Os briefings de 05 e 06/11 falaram da véspera; a novidade de hoje é a semana inteira entre as provas.</li>
+<li><strong>Ângulo para Carol:</strong> Reel curto para as mães, publicado até quarta-feira. Um estudo do MIT deu monitores de atividade a 100 alunos de química (88 terminaram). <strong>O sono da noite anterior à prova não teve relação com a nota. O sono da semana e do mês anteriores teve</strong>, e as medidas de sono explicaram quase 25% da variação no desempenho. Isso tira o peso de uma noite ruim e coloca a atenção na rotina. <strong>Ressalvas:</strong> o estudo é de 2019, com universitários dos EUA, e mostra correlação. Não usar para dizer que tanto faz dormir na véspera. Combina com a fórmula QQRT e o pilar da regularidade em <code>B02 Resources/Comportamentos/SONO/Sono.md</code>.</li>
+<li><strong>Gancho sugerido:</strong> "Ontem foi só metade do Enem. E o sono desta semana pode pesar mais do que a noite de sábado."</li>
+<li><strong>Fonte:</strong> <a href="https://www.cnnbrasil.com.br/educacao/enem-2026-tema-da-redacao-e-divulgado-veja/" target="_blank">CNN Brasil (08/11/2026)</a> · <a href="https://www.dgabc.com.br/Noticia/4366299/enem-2026-veja-horarios-e-o-que-levar-nos-dois-dias-de-provas" target="_blank">Diário do Grande ABC: horários</a> · DOI <a href="https://doi.org/10.1038/s41539-019-0055-z" target="_blank">10.1038/s41539-019-0055-z</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/31583118/" target="_blank">PubMed</a></li>
+</ul>
+<h3>2. Looksmaxxing: quando cuidar da aparência deixa de ser cuidado</h3>
+<ul>
+<li><strong>Tema:</strong> O que mães precisam saber sobre a tendência de "maximizar a aparência" entre meninos.</li>
+<li><strong>Por que está em alta:</strong> Um comentário clínico no <em>Journal of Adolescent Health</em>, com data de 06/11 no PubMed, pede que profissionais de saúde aprendam a reconhecer o fenômeno. O texto cita dieta extrema, anabolizantes e peptídeos sem controle e autolesão. No Brasil, o tema já saiu em <em>O Povo</em> em julho, com reportagem da Agência Einstein, e ligado à chamada "machosfera". <strong>É um comentário de especialistas, não uma pesquisa com dados novos.</strong> O registro no PubMed não traz resumo, então os detalhes vêm da matéria.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "cuidado x obsessão", voltado às mães. O centro é a frase do autor, Kyle Ganson (Universidade de Toronto): não se deve tratar como doença o cuidado normal com a aparência, mas é preciso reconhecer quando vira algo extremo, inseguro ou ligado a sofrimento importante. Vale falar de comparação constante e de nota numérica para o rosto, ponte com <code>B02 Resources/Mentalidade/Distorções Cognitivas.md</code>. <strong>Cuidados:</strong> não descrever técnicas de autolesão nem usar foto de antes e depois. Ao citar autolesão, incluir orientação de ajuda: <a href="https://cvv.org.br/" target="_blank">CVV, telefone 188</a>. Não localizei pesquisa brasileira sobre a frequência disso entre adolescentes, então não falar em "epidemia".</li>
+<li><strong>Gancho sugerido:</strong> "Seu filho começou a cuidar da pele. Isso é bom. O sinal de alerta é outro."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1016/j.jadohealth.2026.07.034" target="_blank">10.1016/j.jadohealth.2026.07.034</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42993115/" target="_blank">PubMed</a> · <a href="https://neurosciencenews.com/looksmaxxing-body-dysmorphia-mental-health-32392/" target="_blank">Neuroscience News (06/11/2026)</a> · <a href="https://www.opovo.com.br/noticias/saude/2026/07/22/amp/looksmaxxing-e-os-perigos-da-busca-por-beleza-masculina.html" target="_blank">O Povo (22/07/2026)</a></li>
+</ul>
+<h3>3. Implante no cérebro: quem entende o que está aceitando?</h3>
+<ul>
+<li><strong>Tema:</strong> A distância entre o que o paciente acha que sabe e o que o médico sabe sobre neurotecnologia.</li>
+<li><strong>Por que está em alta:</strong> Esta é mais uma aposta editorial do que um assunto viral. Empresas como Neuralink, Paradromics e Synchron seguem em disputa pelos implantes, e a conversa pública costuma parar no que a tecnologia consegue fazer. Um estudo na <em>BMC Medicine</em> (06/08/2026, entrado há pouco no PubMed) olhou para o outro lado com 327 pacientes e 161 profissionais de estimulação cerebral profunda, implante já usado em distúrbios do movimento. <strong>Os pacientes acertaram em média 2,67 de 8 perguntas sobre o tratamento, e os profissionais, 6,84. Nos 6 centros auditados, a conversa de consentimento durou em média 14 minutos, raramente falou de segurança de dados e nunca avaliou se o paciente tinha entendido.</strong></li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou carrossel para quem acompanha tecnologia e cérebro. A pergunta é: quando a atividade do seu cérebro vira dado, quem cuida dele? Vai bem com <code>B02 Resources/Neurociências/Neurotecnologia.md</code>, que explica o "ler e escrever" no cérebro, e com a menção a neurodireitos em <code>Neurociências/CONCEITOS BÁSICOS/Neurociência.md</code>. <strong>Ressalvas:</strong> o estudo é observacional, feito principalmente na China, e trata de estimulação cerebral profunda, não de interfaces cérebro-máquina. A extensão para outros implantes é proposta dos autores. Evitar tom de medo: esse tratamento é padrão para distúrbios do movimento.</li>
+<li><strong>Gancho sugerido:</strong> "Antes de uma cirurgia no cérebro, a conversa durou em média 14 minutos. E ninguém conferiu se o paciente tinha entendido."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1186/s12916-026-05116-z" target="_blank">10.1186/s12916-026-05116-z</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42983501/" target="_blank">PubMed</a> · <a href="https://thenextweb.com/news/paradromics-first-clinical-brain-chip-implant-speech" target="_blank">The Next Web: Paradromics</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Ozempic protege a memória?</strong>: uma revisão na <em>Science</em> (05/11) avaliou os remédios da classe GLP-1 e a cognição. Dados de registros de saúde mostram menos demência em pessoas com diabetes que usam esses remédios, mas os ensaios EVOKE e EVOKE+ não conseguiram frear a progressão no Alzheimer inicial. A busca não localizou nota sobre GLP-1 no B02. <a href="https://neurosciencenews.com/glp1-brain-health-neuropharmacology-32389/" target="_blank">Neuroscience News (06/11/2026)</a> · DOI <a href="https://doi.org/10.1126/science.aek9987" target="_blank">10.1126/science.aek9987</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42986976/" target="_blank">PubMed</a></p>
+<p>2. <strong>Distúrbios do sono e o "filtro" do cérebro</strong>: uma meta-análise com 57 estudos de imagem voltou a circular em 07/11. Ela encontrou redução do tálamo no conjunto dos distúrbios. A nota <code>Neurobiologia/ENCÉFALO/CÉREBRO/Tálamo.md</code> já descreve o tálamo como filtro do que chega à consciência. O artigo é de 26/02/2026. <a href="https://www.sciencedaily.com/releases/2026/11/261104012303.htm" target="_blank">ScienceDaily</a> · DOI <a href="https://doi.org/10.1038/s41598-026-40818-7" target="_blank">10.1038/s41598-026-40818-7</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41748813/" target="_blank">PubMed</a></p>
+<p>3. <strong>Atenção e "sublime" no Huberman Lab</strong>: da BIBLIOTECA, um episódio de 05/11 com Robert Greene trata de atenção e do que ele chama de sublime. Li só a chamada, não o episódio. Em 08/11 saiu uma edição Essentials sobre frio e calor com Susanna Søberg. As datas vêm de um site de notas, não do canal oficial. <a href="https://podcastnotes.org/category/huberman-lab/" target="_blank">Podcast Notes</a></p>
+<p>4. <strong>"Névoa mental" e estresse celular</strong>: um estudo em camundongos na <em>PNAS</em> (27/10) mostrou que a proteína WASF3, ligada ao estresse das células, reduz a produção de energia no hipocampo e atrapalha o aprendizado. Tirar a proteína preservou a cognição sob estresse. O trabalho busca pistas para a encefalomielite miálgica/síndrome da fadiga crônica. Serve mais de pano de fundo do que de reel. DOI <a href="https://doi.org/10.1073/pnas.2617198123" target="_blank">10.1073/pnas.2617198123</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42945241/" target="_blank">PubMed</a></p>
+<p><em>Não localizei publicação dos perfis de Instagram ou TikTok da BIBLIOTECA sobre esses temas nas últimas 72h, nem episódio do Diary Of A CEO de novembro. Em neurotecnologia, a novidade mais recente sobre a Neuralink (atualização de outubro) apareceu só em um guia comparativo, sem fonte primária confirmada, e por isso ficou fora. Também saiu um estudo da Universidade de Pittsburgh em que o implante de dois participantes continuou funcionando bem com a atenção dividida, mas a amostra é pequena demais para virar pauta sozinha:</em> <a href="https://pubmed.ncbi.nlm.nih.gov/42956410/" target="_blank">PubMed</a>.</p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Ruído rosa melhora suas conversas"</strong>: é fácil confundir com o áudio de ruído rosa vendido para dormir ou focar. O estudo da <em>Science Advances</em> mediu o padrão no sentido das falas. Ninguém ouviu som nenhum. <a href="https://pubmed.ncbi.nlm.nih.gov/42993848/" target="_blank">PubMed</a></li>
+<li><strong>"IA faz mal na gravidez"</strong>: o aumento de complicações relatadas foi um achado secundário, não se repetiu na análise ao longo do tempo, e os autores pedem cautela. O exagero oposto, "chatbot cuida da saúde mental da mãe", também não se sustenta neste estudo. <a href="https://pubmed.ncbi.nlm.nih.gov/42981095/" target="_blank">PubMed</a></li>
+<li><strong>"2 a 3 cafés por dia reduzem dramaticamente a demência"</strong>: a matéria do ScienceDaily (07/11) destaca 141 contra 330 casos por 100 mil pessoas por ano. Na medida ajustada do estudo, o risco foi <strong>18% menor</strong> (razão de risco 0,82), em uma pesquisa observacional. A melhora em testes de cognição foi modesta, e a medida global não foi significativa. O artigo saiu na <em>JAMA</em> na edição de 17/03/2026. Café não é prescrição, e cafeína tarde ainda atrapalha o sono. <a href="https://pubmed.ncbi.nlm.nih.gov/41661604/" target="_blank">PubMed</a> · <a href="https://www.sciencedaily.com/releases/2026/11/261105224550.htm" target="_blank">ScienceDaily</a></li>
+<li><strong>"Distúrbios do sono encolhem o cérebro"</strong>: a meta-análise não mostra causa, como a própria matéria avisa. E o detalhe que importa para quem tem insônia: <strong>no grupo de insônia e apneia, analisado sozinho, não houve alteração convergente</strong>. A redução do tálamo apareceu no conjunto de todos os distúrbios. Não usar como ameaça para quem já dorme mal. <a href="https://pubmed.ncbi.nlm.nih.gov/41748813/" target="_blank">PubMed</a></li>
+<li><strong>"Ozempic protege o cérebro"</strong>: a hipótese de proteção antes do dano é dos autores da revisão, não um resultado de ensaio. Em Alzheimer inicial, o ensaio não atingiu o objetivo. Remédio é decisão médica, não estratégia de prevenção. <a href="https://neurosciencenews.com/glp1-brain-health-neuropharmacology-32389/" target="_blank">Neuroscience News</a></li>
+<li><strong>"O segredo para lidar com o estresse começa no café da manhã"</strong>: é uma pesquisa por questionário anônimo com cerca de 400 universitários. Mostra associação, e o artigo saiu online em 30/12/2025. Até vale citar a flexibilidade psicológica como ponte, sem prometer efeito da refeição. <a href="https://www.sciencedaily.com/releases/2026/10/261012185023.htm" target="_blank">ScienceDaily</a> · DOI <a href="https://doi.org/10.1080/07448481.2025.2597907" target="_blank">10.1080/07448481.2025.2597907</a></li>
+<li><strong>"Planejar os obstáculos não funciona"</strong>: dois ensaios poloneses não acharam efeito de uma versão online de contraste mental com plano de ação (método parecido com o WOOP) sobre atividade física. Foram amostras pequenas (59 e 112), de pessoas já ativas, com duas semanas de acompanhamento. Isso mostra um limite desse formato, não derruba o método. A busca não localizou nota sobre o tema no B02. <a href="https://pubmed.ncbi.nlm.nih.gov/42959890/" target="_blank">PubMed</a> · DOI <a href="https://doi.org/10.5114/cipp/225999" target="_blank">10.5114/cipp/225999</a></li>
+<li><strong>Congresso à vista</strong>: o encontro anual da Society for Neuroscience será de 14 a 18/11, em Washington. Nas próximas semanas, tende a surgir manchete baseada em apresentação de congresso. Antes de usar, procurar o artigo publicado. <a href="https://www.sfn.org/meetings" target="_blank">SfN</a></li>
+<li><strong>Data de divulgação não é data de publicação</strong>: parecem novos, mas são mais antigos: distúrbios do sono (26/02/2026), café (edição de 17/03/2026), café da manhã (online em 30/12/2025) e cortisol e memória emocional da Yale (12/12/2025, já avisado nos briefings de 23 e 28/10). Datas conferidas na <a href="https://www.crossref.org/" target="_blank">Crossref</a> pelos DOIs.</li>
+<li><strong>Já coberto recentemente</strong>: cansaço mental e glutamato, hormônios e pequenos vasos do cérebro, cannabis para insônia, memória do medo, horário de verão, "ondas solitárias" no sono, ultraprocessados em crianças, ambiente estimulante, véspera do Enem, IA como companhia, dopamina lenta do estômago. Evitar repetir sem ângulo novo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Vocês só falam de boleto e escola." O que a ciência mediu sobre o ritmo de uma conversa boa.</li>
+<li><strong>Formato:</strong> Reel de 45-60s, falando para a câmera, com a frase "alinha, traz algo novo, o outro pega" na tela.</li>
+<li><strong>Estrutura (MAS / PORTANTO):</strong> Gancho → cena real (jantar de terça, vocês dois cansados: quem busca a criança, se pagou a conta, o que falta no mercado. Ninguém brigou, e mesmo assim você levanta da mesa sentindo que não conversou) → <strong>MAS</strong> um estudo publicado na sexta-feira na <em>Science Advances</em> analisou conversas e viu que as mais prazerosas têm um ritmo: as pessoas se alinham, uma traz algo novo, a outra pega e desenvolve. Concordar o tempo todo acaba ficando chato. E esse padrão aumenta com a prática → <strong>PORTANTO</strong> hoje à noite faz duas coisas simples: traz um assunto que não seja a logística da casa e, quando a outra pessoa trouxer algo, pergunta mais sobre aquilo antes de falar de você → CTA: "Comenta aqui qual foi a última conversa que te fez perder a hora."</li>
+<li><strong>Gancho:</strong> "Conversa boa não é a que vocês concordam em tudo."</li>
+<li><strong>Cuidado ao gravar:</strong> o estudo mostra associação. As duas sugestões são uma aplicação, não um resultado testado, e a pesquisa não acompanhou casais de longa data. Vale dizer "pode ajudar", não "vai salvar o casamento". E evitar o nome "ruído rosa" no vídeo, para não confundir com o áudio.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1126/sciadv.aeb2684" target="_blank">10.1126/sciadv.aeb2684</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42993848/" target="_blank">PubMed</a> · <a href="https://neurosciencenews.com/pink-noise-conversation-cognition-32390/" target="_blank">Neuroscience News (06/11/2026)</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Sem acesso a métricas das plataformas: a lista vem do que saiu em sites públicos, não de engajamento medido. Alguns itens têm mais de 72h, e a data está marcada em cada um.</p>
+    </div>
+</body>
+</html>
