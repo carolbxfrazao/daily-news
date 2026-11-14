@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-11-13</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-11-13</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Uma hora a menos de sono, mais cliques em e-mail de golpe</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Modest loss of sleep increases susceptibility to cybersecurity threats"</li>
+<li><strong>Data de Publicação:</strong> online em 11/11/2026, segundo a Crossref e o PubMed (<em>PNAS</em>, edição de 17/11). A Universidade da Califórnia em Irvine divulgou em 09/11.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1073/pnas.2622467123" target="_blank">10.1073/pnas.2622467123</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43013551/" target="_blank">PubMed</a> · <a href="https://news.uci.edu/2026/11/09/tired-brains-take-the-phishing-bait/" target="_blank">UC Irvine News (09/11/2026)</a></li>
+<li><strong>Status:</strong> Revisado por pares. Experimento em ambiente real, com sorteio de grupos e sem que os participantes soubessem. Li o resumo no PubMed e a nota da universidade, não o artigo completo.</li>
+<li><strong>Achado:</strong> Eitan Schechtman, neurocientista da UC Irvine, aproveitou o início do horário de verão nos EUA, quando quase todo mundo dorme uma hora a menos. <strong>Um e-mail falso de phishing (golpe que tenta fazer a pessoa clicar num link) foi enviado a 11.218 funcionários da universidade</strong>, por sorteio: metade recebeu na segunda-feira logo depois da mudança de horário, e a outra metade, uma semana antes. <strong>Depois da noite mais curta, a chance de clicar no link suspeito subiu cerca de 13%.</strong> A nota da universidade dá os números: 17,76% de cliques contra 15,56%. Ou seja, são uns 2 pontos percentuais a mais. O que não mudou: a chance de abrir o e-mail e a de denunciá-lo como spam. Para o autor, é sinal de impulsividade, e não de distração: "Mesmo sem perceber, a falta de sono leva a escolhas impulsivas", disse ele à universidade.</li>
+<li><strong>Implicação prática:</strong> Não foi preciso uma noite em claro. Uma hora a menos, numa segunda-feira comum, já mudou o comportamento. Isso conversa com o que o vault diz sobre a área responsável por tomada de decisões, concentração e foco (o córtex pré-frontal): ela é a que mais sente o sono ruim. <strong>Ressalvas:</strong> a amostra é de uma universidade dos EUA, e o efeito absoluto é pequeno. Pela minha conta com os números da nota, a alta relativa daria uns 14%, e não 13%; o resumo do artigo fala em "~13%", então vale usar "cerca de 13%" ou os percentuais brutos. O Brasil não tem horário de verão em 2026/2027, então a comparação aqui tem que ser com a noite curta, não com o relógio.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Comportamentos/SONO/Sono.md</code> tem a seção "Privação de Sono" e uma tabela em que madrugar "desregula o eixo entre o Córtex Pré-frontal (seu filtro racional) e a Amígdala (impulsividade)", com "busca por recompensas imediatas". O estudo é um exemplo real e recente disso. A busca por "golpe", "phishing" e "fraude" no B02 não trouxe nada sobre o tema: ângulo novo.</li>
+</ul>
+<h3>2. TPM grave (TDPM): a ansiedade aparece antes e puxa os outros sintomas</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Temporal dynamics of premenstrual dysphoric disorder revealed through predictive symptom networks"</li>
+<li><strong>Data de Publicação:</strong> 10/11/2026 (<em>Nature Communications</em>)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1038/s41467-026-78590-x" target="_blank">10.1038/s41467-026-78590-x</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43009501/" target="_blank">PubMed</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13751610/" target="_blank">Texto completo no PMC</a></li>
+<li><strong>Status:</strong> Revisado por pares. Estudo observacional com registro diário de sintomas. Li o resumo e parte do texto completo; a seção de limitações chegou a mim só resumida.</li>
+<li><strong>Achado:</strong> O transtorno disfórico pré-menstrual (TDPM) é a forma grave da TPM, com sintomas de humor que voltam a cada ciclo. A equipe da Universidade de Uppsala (Suécia) acompanhou <strong>90 mulheres com TDPM e 44 sem o transtorno</strong>, que anotaram os sintomas todos os dias por dois ciclos. Dois achados chamam atenção. Primeiro, <strong>o padrão muda de uma mulher para outra</strong>: houve três perfis (sintomas graves por toda a fase pré-menstrual, graves só no fim dela, ou moderados no fim), e em 98% das participantes os sintomas não seguiram todos o mesmo padrão. Segundo, <strong>a ansiedade apareceu como sintoma central</strong>: ela antecedeu e previu a piora dos outros três sintomas principais (depressão, oscilação emocional e irritabilidade). A depressão teve as relações de previsão mais fortes com a gravidade dos outros sintomas, e a irritabilidade previu a depressão no intervalo de tempo mais longo.</li>
+<li><strong>Implicação prática:</strong> Para quem sofre todo mês, a mensagem é dupla. Não é "frescura", e também não é igual para todas. Anotar os sintomas dia a dia ajuda a enxergar o próprio padrão e a levar dado concreto para a consulta. <strong>Ressalvas:</strong> o estudo é sueco, pequeno, e a ovulação foi estimada, não confirmada por exame. Os autores dizem que as relações entre sintomas não provam causa. E TDPM é diagnóstico médico: não serve para rotular toda TPM, e tratamento é decisão do ginecologista ou psiquiatra.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurobiologia/SISTEMA DE RECOMPENSAS/Sistema Dopaminérgico (Sistema de Recompensas).md</code> já traz um estudo da <em>PNAS</em> de 2007 sobre como o ciclo menstrual muda a resposta do sistema de recompensa. O tema hormônio e controle emocional saiu no briefing de 23/10 (progesterona). O ângulo novo é a ordem dos sintomas, e o vault não tem nota específica sobre TPM/TDPM.</li>
+</ul>
+<h3>3. Tristeza tira o sentido da vida? Depende de quanto a sua cultura cobra felicidade</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Cultural variability in the link between affect and meaning in life: Evidence from 69 countries"</li>
+<li><strong>Data de Publicação:</strong> online em 12/11/2026 (<em>Emotion</em>, da Associação Americana de Psicologia)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1037/emo0001732" target="_blank">10.1037/emo0001732</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43019484/" target="_blank">PubMed</a></li>
+<li><strong>Status:</strong> Revisado por pares. Estudo transversal, por questionário. Li só o resumo e não localizei matéria de divulgação.</li>
+<li><strong>Achado:</strong> Entre 2022 e 2024, pesquisadores coletaram dados de <strong>18.672 pessoas em 69 países</strong>, no maior estudo do tipo até agora. Em geral, quem sente mais emoções positivas avalia a vida como mais cheia de sentido: isso apareceu em 62 países. Mais emoções negativas andaram junto com menos sentido em 57. <strong>A virada está no detalhe: essa ligação foi mais forte nos países que mais idealizam a felicidade</strong>, mesmo depois de descontar riqueza, religiosidade e satisfação com a vida. As maiores diferenças entre culturas apareceram nas emoções negativas, como medo, vergonha, tristeza e raiva. O amor foi a única emoção em que a cultura não mudou a relação com o sentido da vida.</li>
+<li><strong>Implicação prática:</strong> Onde ser feliz vira obrigação, um dia triste pesa mais na sensação de que a vida tem sentido. Dá para conversar sobre isso com a mulher que se cobra estar bem o tempo todo: sentir tristeza ou medo não quer dizer que a vida perdeu o rumo. <strong>Ressalvas:</strong> é associação, medida por questionário, e não mostra que baixar a cobrança aumenta o sentido. Não conferi se o Brasil está entre os 69 países: antes de dizer "no Brasil", precisa abrir o artigo.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Inteligência Espiritual/Espiritualidade.md</code> diz que "uma espiritualidade não emocionalmente saudável impede você de expressar suas emoções". O estudo dá uma base de dados próxima dessa ideia, sem precisar forçar a ponte. <code>Mentalidade/Propósito.md</code> é a nota de apoio sobre sentido.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Black Friday chegando: o golpe mais perigoso é o que pega você cansada</h3>
+<ul>
+<li><strong>Tema:</strong> Por que a noite mal dormida deixa a gente mais vulnerável ao link falso da promoção.</li>
+<li><strong>Por que está em alta:</strong> A Black Friday é em 27/11, e os alertas de golpe já começaram. O portal Viva lembra que as promoções já circulam e alerta para lojas falsas e pagamento por Pix. Segundo a mesma matéria, a Serasa Experian registrou alta de 147% em anúncios falsos na Black Friday de 2025, mas esse número é do ano passado. Não abri o levantamento original. O estudo da <em>PNAS</em> desta semana dá a peça de neurociência que faltava nessas matérias, que só falam de tecnologia.</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel "antes de clicar, pergunta se você dormiu". A cena é o celular às 23h, depois de um dia longo, com a oferta "acaba em 10 minutos". O ponto não é só "confira o link": é <strong>não decidir compra cansada</strong>. Combina com o tema do cronômetro de oferta, do briefing de 03/11, e com a seção de privação de sono do vault. <strong>Ressalvas:</strong> o estudo mediu clique em e-mail falso, não compra em site falso. A ponte é uma aplicação, não um resultado testado.</li>
+<li><strong>Gancho sugerido:</strong> "Uma hora a menos de sono já fez gente clicar mais em link de golpe. E você vai encarar a Black Friday dormindo quanto?"</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1073/pnas.2622467123" target="_blank">10.1073/pnas.2622467123</a> · <a href="https://news.uci.edu/2026/11/09/tired-brains-take-the-phishing-bait/" target="_blank">UC Irvine News (09/11/2026)</a> · <a href="https://viva.com.br/dinheiro/black-friday-saiba-identificar-sinais-de-fraudes-e-aproveite-as-ofertas.html" target="_blank">Viva: sinais de fraude na Black Friday</a> · <a href="https://forbes.com.br/forbes-tech/2026/10/black-friday-como-se-proteger-de-golpes-digitais-e-evitar-prejuizos/" target="_blank">Forbes Brasil (outubro/2026)</a></li>
+</ul>
+<h3>2. TDAH: mais tempo e pausas na escola não melhoraram o desempenho</h3>
+<ul>
+<li><strong>Tema:</strong> O que um ensaio publicado hoje mostrou sobre as adaptações escolares para crianças com TDAH.</li>
+<li><strong>Por que está em alta:</strong> O ensaio saiu hoje (13/11) no <em>JAMA Pediatrics</em> e mexe com algo que muitas famílias pedem à escola. <strong>255 crianças com TDAH</strong>, do 1º ao 6º ano, num programa de férias nos EUA, passaram por todas as combinações: quatro adaptações (tempo extra, pausas frequentes, espaço com menos distração e poder ficar de pé), terapia comportamental em sala e remédio estimulante (metilfenidato) ou placebo. <strong>Nenhuma das adaptações melhorou comportamento ou desempenho, sozinha ou combinada.</strong> Remédio e terapia comportamental reduziram as quebras de regra em sala, e o remédio aumentou a produção nas tarefas em 22%.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou carrossel para mães: "ajuda que parece ajuda x ajuda que funciona". O centro não é o remédio, e sim a diferença entre acomodar e ensinar: a terapia comportamental, que ensina e reforça comportamento em sala, foi o que mais reduziu as quebras de regra. Ponte com <code>B02 Resources/Mentalidade/Hiperfoco.md</code>, que cita o TDAH. <strong>Cuidados:</strong> não dizer para tirar adaptações já combinadas com a escola nem para começar ou parar remédio; isso é decisão com médico e escola. O estudo foi num programa de férias, não na sala de aula do ano letivo, e 79% eram meninos. O resumo do artigo e uma tabela trocam os percentuais de redução de comportamento (37% e 61%) entre remédio e terapia. Até conferir, não citar esses dois números.</li>
+<li><strong>Gancho sugerido:</strong> "Tempo extra na prova parece ajuda. Um estudo com 255 crianças com TDAH não encontrou melhora."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1001/jamapediatrics.2026.5973" target="_blank">10.1001/jamapediatrics.2026.5973</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43023970/" target="_blank">PubMed</a> · <a href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/10.1001/jamapediatrics.2026.5973" target="_blank">JAMA Pediatrics</a></li>
+</ul>
+<h3>3. Um anel que "lê" o estresse: medir não é a mesma coisa que regular</h3>
+<ul>
+<li><strong>Tema:</strong> Wearables de estresse e o risco de terceirizar a percepção do próprio corpo.</li>
+<li><strong>Por que está em alta:</strong> Saiu hoje (13/11) na <em>Science Advances</em> um anel com inteligência artificial que usa luz, sem eletrodos, para acompanhar a ativação das glândulas de suor, um sinal clássico de estresse. Nos testes, ele acertou 92,3% das classificações de "estressado ou não", contra 77,95% do método tradicional com eletrodos. No mesmo dia, a STAT noticiou que a Synchron, rival da Neuralink em implantes cerebrais, pausou os testes da segunda geração do seu implante. Segundo a empresa, o motivo não é de segurança.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou carrossel na linha neurotecnologia + autogestão. O aparelho pode avisar que o corpo está em alerta, mas não diz o porquê nem o que fazer. A pergunta é: você precisa de um anel para saber que está no limite? Vai bem com <code>B02 Resources/Neurociências/Neurobem-estar (Neurowellness).md</code> e com <code>Neurociências/Neurotecnologia.md</code>. <strong>Ressalvas:</strong> li só o resumo, que não informa quantas pessoas foram testadas nem em que situação. É protótipo de laboratório, não produto à venda. Suor também sobe com exercício, calor e empolgação: o anel mede ativação do corpo, não a emoção.</li>
+<li><strong>Gancho sugerido:</strong> "Já existe anel que avisa quando você está estressada. A pergunta é por que você precisa de um."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1126/sciadv.aeh0459" target="_blank">10.1126/sciadv.aeh0459</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43024732/" target="_blank">PubMed</a> · <a href="https://www.statnews.com/2026/11/13/health-news-brain-implant-startup-pauses-trials/" target="_blank">STAT Morning Rounds (13/11/2026)</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>Congresso de neurociência começa amanhã</strong>: o encontro anual da Society for Neuroscience vai de 14 a 18/11, em Washington. Até agora, os releases publicados são só de prêmios, de 02/11. A tendência é chover manchete na semana que vem. <a href="https://www.sfn.org/meetings" target="_blank">SfN</a> · <a href="https://www.eurekalert.org/news-releases/1150065" target="_blank">EurekAlert: prêmios da SfN (02/11/2026)</a></p>
+<p>2. <strong>Celular e adolescentes</strong>: a STAT (13/11) destacou iniciativas, muitas lideradas pelos próprios jovens, para largar o celular. Algumas usam formato parecido com o dos Alcoólicos Anônimos, e outras ensinam como o design dos aplicativos é feito para prender a atenção. No mesmo tema, um estudo no <em>JAMA Pediatrics</em> (09/11) gravou a tela de 1.011 crianças e adolescentes dos EUA, de 8 a 17 anos. <strong>Ele estimou uma mediana de 3.883 exposições a propaganda de comida por ano</strong>, mais entre meninas e adolescentes, e 82,6% delas vieram das redes sociais, com o TikTok à frente. <a href="https://www.statnews.com/2026/11/13/health-news-brain-implant-startup-pauses-trials/" target="_blank">STAT (13/11/2026)</a> · DOI <a href="https://doi.org/10.1001/jamapediatrics.2026.5190" target="_blank">10.1001/jamapediatrics.2026.5190</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43002430/" target="_blank">PubMed</a></p>
+<p>3. <strong>Crianças de 4 anos já defendem a crença do grupo</strong>: um estudo na <em>PNAS</em> (09/11) mostrou que crianças de 4 e 5 anos mantiveram uma ideia errada, mesmo diante de prova contrária, quando fazer parte do grupo dependia daquela crença. Quando a crença não era condição para pertencer, elas revisaram a opinião. Serve de pano de fundo para conversas sobre polarização e viés de confirmação (<code>B02 Resources/Viés de Confirmação.md</code>). DOI <a href="https://doi.org/10.1073/pnas.2622764123" target="_blank">10.1073/pnas.2622764123</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43002682/" target="_blank">PubMed</a></p>
+<p>4. <strong>Ansiedade no Brasil</strong>: um texto de opinião no ESBrasil (13/11) cita alta de 11,7% na compra de remédios para depressão e ansiedade no primeiro semestre de 2026, com dados da Vidalink. Não conferi a fonte primária, então serve de termômetro do debate, não de dado para citar. <a href="https://esbrasil.com.br/ansiedade-no-brasil-uma-marca-da-nossa-era/" target="_blank">ESBrasil (13/11/2026)</a></p>
+<p>5. <strong>Enem domingo (15/11)</strong>: segunda prova, de ciências da natureza e matemática. O tema já foi coberto nos briefings de 05, 06 e 09/11 (véspera e sono da semana). Só vale repostar o que já existe. <a href="https://www.dgabc.com.br/Noticia/4366299/enem-2026-veja-horarios-e-o-que-levar-nos-dois-dias-de-provas" target="_blank">Diário do Grande ABC: horários</a></p>
+<p><em>Na BIBLIOTECA, o episódio mais recente do Huberman Lab que localizei é a edição Essentials de 05/11 (frio e calor), já citada em 09/11. Não encontrei episódio novo do Diary Of A CEO sobre cérebro em novembro, nem publicação dos perfis de Instagram e TikTok da lista sobre os temas acima.</em> <a href="https://podurama.com/podcast/huberman-lab-i1545953110" target="_blank">Podurama: Huberman Lab</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Dormir uma hora a menos te deixa 13% mais burra"</strong>: o estudo não mediu inteligência. Mediu cliques num e-mail falso, e a diferença foi de 15,56% para 17,76%. O efeito é real e interessante, mas pequeno em números absolutos. <a href="https://pubmed.ncbi.nlm.nih.gov/43013551/" target="_blank">PubMed</a> · <a href="https://news.uci.edu/2026/11/09/tired-brains-take-the-phishing-bait/" target="_blank">UC Irvine</a></li>
+<li><strong>"Adaptação escolar para TDAH não serve para nada"</strong>: o ensaio foi num programa de férias, com quatro adaptações específicas, e não testou provas como o Enem nem o ano letivo inteiro. A conclusão dos autores questiona dar ênfase às adaptações. Não diz que a escola deve retirá-las. <a href="https://pubmed.ncbi.nlm.nih.gov/43023970/" target="_blank">PubMed</a></li>
+<li><strong>"Anel detecta suas emoções"</strong>: ele mede ativação das glândulas de suor, que também sobe com calor, exercício e alegria. Classificar estresse em laboratório é diferente de entender o que a pessoa sente. <a href="https://pubmed.ncbi.nlm.nih.gov/43024732/" target="_blank">PubMed</a></li>
+<li><strong>"Toda TPM é TDPM" ou "TPM é só ansiedade"</strong>: o estudo sueco é sobre o transtorno grave e diagnosticado, com 90 pacientes. A ansiedade foi central nessa amostra, mas os perfis variaram muito. <a href="https://pubmed.ncbi.nlm.nih.gov/43009501/" target="_blank">PubMed</a></li>
+<li><strong>"Psilocibina reorganiza o cérebro"</strong>: manchetes de divulgação seguem nessa linha. Na contramão, um estudo na <em>Nature Neuroscience</em> (02/11), com cinco laboratórios repetindo os mesmos testes em cerca de 200 camundongos por experimento, viu efeitos imediatos consistentes, inclusive mais comportamento de ansiedade. <strong>Os efeitos de 24 horas depois sobre ansiedade e depressão não se repetiram.</strong> O assunto da cobertura da mídia sobre psilocibina já saiu no briefing de 28/10. <a href="https://pubmed.ncbi.nlm.nih.gov/42972049/" target="_blank">PubMed</a> · DOI <a href="https://doi.org/10.1038/s41593-026-02500-z" target="_blank">10.1038/s41593-026-02500-z</a> · <a href="https://www.sciencedaily.com/news/mind_brain/neuroscience/" target="_blank">ScienceDaily: neurociência</a></li>
+<li><strong>Remédio para "segurar o nervoso" da prova</strong>: o <em>BMJ</em> (06/11) publicou uma reportagem sobre médicos que tomam propranolol antes de provas e plantões, com preocupação crescente sobre os riscos. Perto do Enem, não sugerir remédio para ansiedade de prova; isso é decisão médica. Li só o título. <a href="https://pubmed.ncbi.nlm.nih.gov/43006923/" target="_blank">PubMed</a></li>
+<li><strong>Congresso SfN</strong>: na próxima semana vão surgir manchetes baseadas em pôsteres e palestras do congresso, que ainda não passaram por revisão por pares. Antes de usar, procurar o artigo publicado. <a href="https://www.sfn.org/meetings" target="_blank">SfN</a></li>
+<li><strong>Golpes de Black Friday com números de anos anteriores</strong>: várias matérias que circulam reaproveitam dados de 2024 e 2025. Conferir o ano do levantamento antes de citar qualquer percentual. <a href="https://forbes.com.br/forbes-tech/2026/10/black-friday-como-se-proteger-de-golpes-digitais-e-evitar-prejuizos/" target="_blank">Forbes Brasil</a></li>
+<li><strong>Já coberto recentemente</strong>: ritmo da conversa boa, chatbot para gestantes, terapia de aceitação e compromisso no trabalho, Enem (véspera e semana), looksmaxxing, consentimento em implantes cerebrais, Ozempic e memória, café e demência, distúrbios do sono e tálamo, cansaço mental e glutamato, horário de verão, IA como companhia. Evitar repetir sem ângulo novo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Não decide compra cansada." O que o sono tem a ver com cair em golpe.</li>
+<li><strong>Formato:</strong> Reel de 45-60s, falando para a câmera, com o celular na mão e os números "15,56% → 17,76%" na tela.</li>
+<li><strong>Estrutura (MAS / PORTANTO):</strong> Gancho → cena real (23h, criança dormiu enfim, você deita, abre o celular e aparece "última chance, 70% off, acaba em 10 minutos") → <strong>MAS</strong> um estudo publicado nesta semana na <em>PNAS</em> mandou um e-mail falso para mais de 11 mil funcionários de uma universidade americana. Quem recebeu logo depois de uma noite com uma hora a menos de sono clicou mais no link do golpe. Abrir o e-mail, todo mundo abriu igual. O que mudou foi o clique, e o autor chama isso de impulsividade. A área responsável por tomada de decisões, concentração e foco é a primeira a sentir uma noite curta → <strong>PORTANTO</strong> regra simples para a Black Friday: link de promoção que chega à noite, você salva e decide de manhã. Golpe que depende de pressa não sobrevive a uma noite de sono → CTA: "Manda esse vídeo para aquela amiga que compra tudo de madrugada."</li>
+<li><strong>Gancho:</strong> "Não foi o golpe que ficou mais esperto. Foi você que dormiu menos."</li>
+<li><strong>Cuidado ao gravar:</strong> o estudo mediu clique em e-mail falso nos EUA, não compra em site falso. A regra "salva e decide de manhã" é uma aplicação, não um resultado testado. Falar "uma hora a menos de sono" em vez de "horário de verão", porque o Brasil não tem horário de verão em 2026/2027.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1073/pnas.2622467123" target="_blank">10.1073/pnas.2622467123</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43013551/" target="_blank">PubMed</a> · <a href="https://news.uci.edu/2026/11/09/tired-brains-take-the-phishing-bait/" target="_blank">UC Irvine News (09/11/2026)</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Sem acesso a métricas das plataformas: a lista vem do que saiu em sites públicos, não de engajamento medido. A data de cada item está marcada.</p>
+    </div>
+</body>
+</html>
