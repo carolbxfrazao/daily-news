@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Diário — 2026-11-17</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #FDF6F0;
+            --card-bg: #FFFFFF;
+            --text: #2D2420;
+            --text-light: #6B5B52;
+            --accent: #6b5548;
+            --accent-light: #8A6C5E;
+            --link: #4A7C6F;
+            --border: #E8DDD5;
+            --shadow: rgba(107, 85, 72, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px var(--shadow);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .card-header .icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .card-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-science .card-header { background: #F0F4F8; border-color: #B8C9D9; }
+        .card-trends .card-header { background: #FFF5EC; border-color: #E8C9A8; }
+        .card-hot .card-header { background: #FFF0EC; border-color: #E8A898; }
+        .card-alert .card-header { background: #FFFAEC; border-color: #E8D498; }
+        .card-idea .card-header { background: #ECFAF0; border-color: #98D4A8; }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        li::before {
+            content: '\203A';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: var(--link);
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent-light);
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            background: var(--bg);
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        code {
+            background: var(--bg);
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 2rem 1rem; }
+            .header h1 { font-size: 1.6rem; }
+            .container { padding: 1rem; }
+            .card-body { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Briefing Diário — 2026-11-17</h1>
+        <div class="subtitle">Pesquisa de tendencias para @carolbxfrazao</div>
+    </div>
+    <div class="container">
+        
+    <section class="card card-science">
+        <div class="card-header">
+            <span class="icon">🔬</span>
+            <h2>Descobertas Científicas Relevantes</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. No dia em que você engole o que sente, o hormônio do estresse fica mais alto à noite</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Social sharing of emotions: Links between emotion regulation strategies and diurnal cortisol"</li>
+<li><strong>Data de Publicação:</strong> online em 16/11/2026 (<em>Emotion</em>, da Associação Americana de Psicologia)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1037/emo0001766" target="_blank">10.1037/emo0001766</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43038082/" target="_blank">PubMed</a></li>
+<li><strong>Status:</strong> Revisado por pares. Estudo observacional, com diário e coleta de saliva por 1 semana. Li só o resumo no PubMed e não localizei matéria de divulgação.</li>
+<li><strong>Achado:</strong> Pesquisadores da Universidade de Ohio acompanharam <strong>153 duplas de amigos</strong> (idade média de 20 anos, 71% mulheres). Por uma semana, cada pessoa anotou como lidou com as emoções ao conversar pessoalmente com alguém próximo e colheu saliva de manhã e à noite para medir o cortisol (hormônio do estresse). Três jeitos de lidar foram comparados: reavaliar a situação, ruminar junto com a outra pessoa e suprimir (segurar o que sente). <strong>Só a supressão teve ligação com o cortisol.</strong> Nos dias em que a pessoa segurou mais do que o costume dela, o cortisol da noite ficou mais alto, e a curva do dia ficou mais "achatada" (o normal é o cortisol cair bastante até a noite). Reavaliar e ruminar junto não mostraram ligação.</li>
+<li><strong>Implicação prática:</strong> A cena é conhecida: você conversa com a amiga ou com o marido, diz "tá tudo bem" e segue. O estudo sugere que esse dia termina com o corpo mais ativado na hora em que deveria desacelerar. <strong>Ressalvas:</strong> a amostra é de universitários dos EUA, jovens e em sua maioria brancos, e durou só uma semana. É associação, não prova de causa. E há um detalhe que não cabe em manchete: na comparação entre pessoas, quem suprime mais no geral teve cortisol noturno médio <em>mais baixo</em>. Ou seja, o efeito aparece no dia fora do padrão de cada um, não em "quem é mais fechado".</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurobiologia/ENCÉFALO/CÉREBRO/Eixo HPA.md</code> explica o caminho do cortisol, e <code>Comportamentos/SONO/Ciclo circadiano.md</code> cita o hormônio. A busca por "supressão emocional" e "reprimir emoções" no B02 não trouxe nada: ângulo novo. O briefing de 13/11 trouxe a nota <code>Inteligência Espiritual/Espiritualidade.md</code> ("uma espiritualidade não emocionalmente saudável impede você de expressar suas emoções"), que conversa direto com este achado.</li>
+</ul>
+<h3>2. Musculação e sintomas de depressão: 80 ensaios, efeito real, tamanho modesto</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "Resistance Exercise Training for Depressive Symptoms: A Meta-Analysis and Meta-Regression Analysis"</li>
+<li><strong>Data de Publicação:</strong> edição de novembro de 2026 do <em>JAMA Network Open</em> (data de citação 02/11/2026); entrou no PubMed nesta semana.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1001/jamanetworkopen.2026.44254" target="_blank">10.1001/jamanetworkopen.2026.44254</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43037982/" target="_blank">PubMed</a></li>
+<li><strong>Status:</strong> Revisado por pares. Meta-análise de ensaios clínicos randomizados. Li o resumo no PubMed, não o artigo completo.</li>
+<li><strong>Achado:</strong> A equipe da Universidade de Limerick (Irlanda) juntou <strong>80 ensaios com 6.123 participantes</strong> (idade média de 57 anos, 67% mulheres). O treino de força reduziu sintomas de depressão em todas as comparações, com efeito pequeno no geral (Δ = 0,32). <strong>O dado novo é a comparação com outras atividades:</strong> contra quem não fazia nada, o efeito foi moderado (Δ = 0,54); contra quem fazia outra coisa ativa, como aeróbico, alongamento, relaxamento ou orientação nutricional, a vantagem da musculação continuou existindo, mas pequena (Δ = 0,21). Ela foi maior em quem já tinha um transtorno mental (Δ = 0,40) do que em quem não tinha (Δ = 0,11). Nos estudos só com mulheres, comparados a não fazer nada, o efeito foi grande (Δ = 0,87).</li>
+<li><strong>Implicação prática:</strong> Para a mulher que "não tem tempo para academia", o recado é que o treino de força entra na conversa sobre humor, e não só sobre corpo. <strong>Ressalvas:</strong> os resultados variaram muito de um estudo para outro. Nos ensaios mais rigorosos (com sorteio oculto), o efeito foi menor (Δ = 0,32 contra 0,54). O número mais chamativo, o de sessões de até 30 minutos (Δ = 1,75), tem margem de erro muito larga (0,97 a 2,54), então não dá para dizer "30 minutos bastam". A conclusão dos autores fala em efeito "moderado"; isso vale para a comparação com quem não fazia nada. E 57 dos 80 ensaios foram com pessoas que tinham alguma doença. Exercício soma ao tratamento da depressão; não substitui médico nem remédio.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Neurociências/NEUROCIÊNCIA AFETIVA/EMOÇÕES/Estresse.md</code> já lista "cardio e musculação" entre as práticas, e <code>Comportamentos/Exercício físico.md</code> é a nota de apoio. Exercício e emoção saíram em briefings anteriores (aeróbico por um ano, BDNF em idosos, estudo SMART Brain na menopausa). O ângulo novo é a comparação direta da musculação com outras atividades.</li>
+</ul>
+<h3>3. Hábito na vida real: 9.416 registros diários mostram a repetição virando automático (e o fim de semana atrapalhando)</h3>
+<ul>
+<li><strong>Título do estudo:</strong> "From Intention to Automaticity: Daily Evidence of Habit Formation in Students' Everyday Lives"</li>
+<li><strong>Data de Publicação:</strong> 05/11/2026 (<em>Educational Psychology Review</em>)</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1007/s10648-026-10235-3" target="_blank">10.1007/s10648-026-10235-3</a> · <a href="https://link.springer.com/article/10.1007/s10648-026-10235-3" target="_blank">Página do artigo (Springer)</a></li>
+<li><strong>Status:</strong> Revisado por pares. Estudo longitudinal com registro diário, sem grupo de comparação. Li o resumo pela Crossref; a página da Springer pediu login e não abri o texto completo.</li>
+<li><strong>Achado:</strong> Ao longo de cinco semestres, <strong>175 estudantes</strong> escolheram um hábito para construir e, por 10 a 12 semanas, responderam todo dia a três perguntas: pretendia fazer hoje? fez? quão automático foi? Foram <strong>9.416 registros</strong>. Eles cumpriram o hábito em <strong>76,1% dos dias em que pretendiam</strong>. Dois resultados principais: quanto mais repetições acumuladas, mais automático o comportamento parecia; e quanto mais automático ele já estava, maior a chance de ser feito no dia planejado. <strong>Fins de semana e a semana de recesso funcionaram como quebras naturais do hábito.</strong> E houve muita diferença de uma pessoa para outra no resultado final.</li>
+<li><strong>Implicação prática:</strong> O estudo põe números numa ideia que a Carol já ensina: planejar e repetir não competem, um alimenta o outro. A parte mais útil para o conteúdo é a do fim de semana. Não é falta de caráter: quando o contexto muda, o hábito perde o apoio. Quem quer manter precisa de um plano próprio para sábado, domingo e férias. <strong>Ressalvas:</strong> são universitários dos EUA, numa disciplina em que o projeto de hábito fazia parte do curso, e tudo foi medido por autorrelato. Não há grupo de comparação. O resumo não diz em quantos dias o hábito "fica pronto", então não usar este estudo para citar prazo.</li>
+<li><strong>Cruzamento com o vault:</strong> <code>B02 Resources/Comportamentos/Hábitos.md</code> é a nota principal, e <code>Mentalidade/Motivação.md</code> tem a seção "Motivação x Formação de Hábitos". <code>Comportamentos/Gatilhos Ambientais.md</code> e <code>Ambiente.md</code> dão a base para falar da mudança de contexto. Os briefings recentes já trouxeram o ensaio de Berkeley (gesto de 20 segundos) e a discussão da "regra dos 21 dias". O ângulo novo é o fim de semana como ponto de quebra.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-trends">
+        <div class="card-header">
+            <span class="icon">📈</span>
+            <h2>Top 3 Tendências para Conteúdo Agora</h2>
+        </div>
+        <div class="card-body">
+            <h3>1. Diminuir o uso de rede social e os sintomas de ansiedade: o que um estudo de ontem mediu</h3>
+<ul>
+<li><strong>Tema:</strong> Jovens adultos que passaram a usar menos as redes tiveram mais chance de melhorar depois.</li>
+<li><strong>Por que está em alta:</strong> Saiu ontem (16/11) no <em>JAMA Pediatrics</em>. O estudo usou uma pesquisa nacional dos EUA (2013 a 2021) e olhou só para quem mais precisa: jovens de 18 a 24 anos com sintomas elevados (depressão, ansiedade, sofrimento psicológico e dificuldade para dormir) e uso de rede social várias vezes por dia. Em 3.788 observações, cerca de 14% passaram a usar uma vez por dia ou menos. <strong>Entre esses, 57% estavam sem sintomas elevados na etapa seguinte, contra 49% de quem manteve o uso frequente</strong> (15% a mais de chance, em termos relativos).</li>
+<li><strong>Ângulo para Carol:</strong> Reel ou carrossel "menos não é zero". O estudo não testou sumir das redes: comparou "várias vezes ao dia" com "uma vez ao dia ou menos". Dá para falar com a mãe de adolescente e com a própria seguidora. Ponte com <code>B02 Resources/Psicologia/TRANSTORNOS MENTAIS/JOY OF MISSING OUT (JOMO).md</code> e <code>Fear of Missing Out (FOMO).md</code>. <strong>Ressalvas:</strong> é estudo de observação, ninguém foi sorteado para reduzir. Pode ser que quem já estava melhorando tenha passado a usar menos. O uso foi informado pela própria pessoa, e os dados vão só até 2021. A diferença é de 8 pontos percentuais (o artigo arredonda para 0,07): real, mas modesta.</li>
+<li><strong>Gancho sugerido:</strong> "Ninguém mandou esses jovens saírem das redes. Eles só passaram a abrir uma vez por dia."</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1001/jamapediatrics.2026.5373" target="_blank">10.1001/jamapediatrics.2026.5373</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43037969/" target="_blank">PubMed</a></li>
+</ul>
+<h3>2. Não é só quanto você dorme: é se você dorme sempre na mesma hora</h3>
+<ul>
+<li><strong>Tema:</strong> Horário irregular de sono andou junto com mais ansiedade, depressão e solidão.</li>
+<li><strong>Por que está em alta:</strong> O Correio Braziliense noticiou em 12/11 um estudo da Universidade da Califórnia (São Francisco e San Diego) publicado na <em>Scientific Reports</em>. Segundo a matéria, cerca de <strong>23 mil pessoas</strong> usaram um anel com sensores por 154 dias em média, e os pesquisadores calcularam um índice de regularidade do sono de 0 a 100. A média foi 84 em quem tinha depressão mínima ou ausente e 75 em quem tinha depressão grave; 84 em ansiedade normal e 79 em ansiedade grave. A primeira autora traduz: 84 equivale a variar cerca de uma hora no horário de dormir ou acordar; 75, a uma hora e meia.</li>
+<li><strong>Ângulo para Carol:</strong> Carrossel "a hora de dormir como âncora da rotina". Encaixa direto no vault: <code>B02 Resources/Comportamentos/SONO/Sono.md</code> tem a seção de <strong>jetlag social</strong> e trata a regularidade como "um dos pilares mais importantes da saúde". E conversa com a descoberta 3 de hoje, sobre o fim de semana quebrar hábitos. <strong>Ressalvas:</strong> não localizei o artigo original nem o DOI; os números vêm da matéria, que informa ter sido produzida com apoio de IA e revisão humana. A manchete diz que o sono irregular "contribui para agravar", mas o texto fala em coincidência, e a autora sênior diz que a relação pode ir nos dois sentidos. Antes de gravar, abrir o artigo na <em>Scientific Reports</em>.</li>
+<li><strong>Gancho sugerido:</strong> "Você dorme 7 horas e acorda cansada? Olha a que horas você deitou em cada dia da semana."</li>
+<li><strong>Fonte:</strong> <a href="https://www.correiobraziliense.com.br/ciencia-e-saude/2026/11/7537596-sono-irregular-contrubui-para-agravar-ansiedade-e-depressao-revela-estudo.html" target="_blank">Correio Braziliense (12/11/2026)</a></li>
+</ul>
+<h3>3. Implantes que devolvem a voz: o que foi mostrado no maior congresso de neurociência</h3>
+<ul>
+<li><strong>Tema:</strong> Interfaces cérebro-computador para fala e texto, em pessoas com paralisia.</li>
+<li><strong>Por que está em alta:</strong> O congresso anual da Society for Neuroscience acontece de 14 a 18/11, em Washington. No dia 14, a entidade divulgou três trabalhos: uma voz sintética com variação de tom, com a qual um participante conseguiu cantar (Maitreyee Wairagkar, UC Davis); uma pessoa totalmente paralisada, sem nenhum movimento voluntário, que se comunicou sozinha por mais de um ano (Daniel Rubin, Mass General); e um sistema que transforma atividade cerebral em texto rodando num iPhone (Chethan Pandarinath, Georgia Tech/Emory). De 19 a 22/11, Pequim recebe uma conferência só sobre o tema.</li>
+<li><strong>Ângulo para Carol:</strong> YouTube ou carrossel de neurotecnologia: "o cérebro continua falando, mesmo quando o corpo não consegue". Apoio em <code>B02 Resources/Neurociências/Neurotecnologia.md</code>. <strong>Ressalvas:</strong> são apresentações de congresso, ainda sem revisão por pares. O release não informa número de participantes além de casos individuais, nem taxa de acerto. A própria divulgação diz que a tecnologia "ainda é em grande parte experimental". O tema implante cerebral saiu nos briefings de 09/11 (consentimento) e 13/11 (pausa da Synchron): só vale com o ângulo da voz.</li>
+<li><strong>Gancho sugerido:</strong> "Um homem que não consegue falar cantou. Usando só a atividade do cérebro."</li>
+<li><strong>Fonte:</strong> <a href="https://medicalxpress.com/news/2026-11-brain-interfaces-voice-people-paralysis.html" target="_blank">Medical Xpress / SfN (14/11/2026)</a> · <a href="https://neurotechguide.org/news/sfn-2026-communication-bci-presentations/" target="_blank">NeuroTechGuide (14/11/2026)</a> · <a href="https://www.sfn.org/meetings" target="_blank">SfN: Neuroscience 2026</a> · <a href="https://english.beijing.gov.cn/latest/news/202611/t20261111_4941292.html" target="_blank">Governo de Pequim: conferência de 19 a 22/11</a></li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-hot">
+        <div class="card-header">
+            <span class="icon">🔥</span>
+            <h2>Temas Quentes no Instagram/YouTube (últimas 72h)</h2>
+        </div>
+        <div class="card-body">
+            <p>1. <strong>A música da sua adolescência puxa uma lembrança parecida com a de todo mundo da sua geração</strong>: estudo da <em>PNAS</em> (online em 16/11) com 233 universitários mostrou que trechos de músicas conhecidas despertam memórias pessoais com conteúdo muito parecido entre ouvintes, variando conforme o gênero e a época da música. Dois grupos de controle (121 e 129 pessoas) indicaram que isso não vem da letra. Bom gancho de nostalgia para reel. DOI <a href="https://doi.org/10.1073/pnas.2536885123" target="_blank">10.1073/pnas.2536885123</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43038463/" target="_blank">PubMed</a></p>
+<p>2. <strong>Huberman Lab (BIBLIOTECA)</strong>: os três episódios mais recentes listados são o #459, sobre cogumelos, mente e sistema imune, com Paul Stamets (16/11, listado como "ontem"); o #458, edição Essentials sobre como emoções e fatores sociais afetam o aprendizado, com Mary Helen Immordino-Yang (12/11); e o #457, sobre vícios e obsessões, com Anna Lembke (09/11). O de Lembke é o que mais cruza com o nicho (<code>B02 Resources/Comportamentos/Vícios.md</code>). <a href="https://podurama.com/podcast/huberman-lab-i1545953110" target="_blank">Podurama: Huberman Lab</a></p>
+<p>3. <strong>The Diary Of A CEO (BIBLIOTECA)</strong>: episódio #909 com David Perlmutter, sobre risco de demência, açúcar no sangue, sono e álcool (12/11), e o trecho "mais revisto" de 13/11, com Chase Hughes, sobre os "roteiros da infância" que continuam rodando na vida adulta. Não ouvi os episódios; os títulos servem de referência de gancho, não de fonte científica. <a href="https://podurama.com/podcast/the-diary-of-a-ceo-with-steven-bartlett-i1291423644" target="_blank">Podurama: The Diary Of A CEO</a></p>
+<p>4. <strong>Sono em alta na imprensa brasileira</strong>: além do Correio Braziliense (12/11), a Forbes Brasil publicou em 07/11 uma matéria ligando sono, saúde mental, pele e humor. <a href="https://forbes.com.br/forbes-saude/2026/11/por-que-o-sono-molda-sua-saude-mental-pele-e-humor/" target="_blank">Forbes Brasil (07/11/2026)</a> · <a href="https://www.correiobraziliense.com.br/ciencia-e-saude/2026/11/7537596-sono-irregular-contrubui-para-agravar-ansiedade-e-depressao-revela-estudo.html" target="_blank">Correio Braziliense (12/11/2026)</a></p>
+<p>5. <strong>Congresso SfN em andamento (até 18/11)</strong>: até a última checagem, a página de notícias da entidade só tinha notas institucionais (nomeações e patrocínios, de 10 a 15/11), além do release de interfaces cérebro-computador do dia 14. <a href="https://www.sfn.org/publications/latest-news" target="_blank">SfN: últimas notícias</a></p>
+        </div>
+    </section>
+
+    <section class="card card-alert">
+        <div class="card-header">
+            <span class="icon">⚠️</span>
+            <h2>Alerta de Ruído</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>"Guardar o que sente adoece"</strong>: o estudo da <em>Emotion</em> mediu cortisol na saliva por uma semana, em jovens de 20 anos. Não mediu doença. E quem suprime mais no geral teve cortisol noturno médio mais baixo; o efeito apareceu só nos dias fora do padrão da própria pessoa. <a href="https://pubmed.ncbi.nlm.nih.gov/43038082/" target="_blank">PubMed</a></li>
+<li><strong>"Musculação cura depressão" ou "30 minutos bastam"</strong>: a meta-análise mostra redução de sintomas, pequena quando comparada a outras atividades. O dado das sessões curtas tem margem de erro larga demais para virar regra. <a href="https://pubmed.ncbi.nlm.nih.gov/43037982/" target="_blank">PubMed</a></li>
+<li><strong>"Sair das redes sociais cura ansiedade"</strong>: o estudo é de observação, comparou usar várias vezes ao dia com usar uma vez ao dia ou menos, e a diferença foi de 49% para 57%. Não testou ficar sem redes. <a href="https://pubmed.ncbi.nlm.nih.gov/43037969/" target="_blank">PubMed</a></li>
+<li><strong>"Sono irregular causa depressão"</strong>: a matéria brasileira usa manchete de causa, mas o estudo é de associação e a autora fala em relação nos dois sentidos. Não localizei o artigo original. <a href="https://www.correiobraziliense.com.br/ciencia-e-saude/2026/11/7537596-sono-irregular-contrubui-para-agravar-ansiedade-e-depressao-revela-estudo.html" target="_blank">Correio Braziliense</a></li>
+<li><strong>"Leva X dias para criar um hábito"</strong>: o estudo de hábitos desta edição não traz prazo no resumo e mostra muita diferença de uma pessoa para outra. Não usar para sustentar número de dias. DOI <a href="https://doi.org/10.1007/s10648-026-10235-3" target="_blank">10.1007/s10648-026-10235-3</a></li>
+<li><strong>"Dormir normal pode esconder problema de memória"</strong>: a manchete do Medical Xpress (07/11) é sobre um estudo em camundongos machos, publicado na <em>Neuron</em>, que identificou um tipo de célula do hipocampo ativa durante o sono. O papel dela em humanos ainda não foi estabelecido. <a href="https://medicalxpress.com/news/2026-11-mask-memory-problems.html" target="_blank">Medical Xpress (07/11/2026)</a> · DOI <a href="https://doi.org/10.1016/j.neuron.2026.09.031" target="_blank">10.1016/j.neuron.2026.09.031</a></li>
+<li><strong>"Mitocôndria define quanto você precisa dormir"</strong>: nota curta na <em>Current Biology</em> (16/11) comparou imagens já publicadas de 51 espécies de mamíferos e viu que as de mitocôndrias cerebrais maiores dormem menos. É comparação entre espécies, com hipótese ainda não testada, e não diz nada sobre diferenças entre pessoas. DOI <a href="https://doi.org/10.1016/j.cub.2026.08.060" target="_blank">10.1016/j.cub.2026.08.060</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43038967/" target="_blank">PubMed</a></li>
+<li><strong>Manchetes do congresso SfN</strong>: o que sai nesta semana vem de pôsteres e palestras, sem revisão por pares. Antes de usar, procurar o artigo publicado. <a href="https://www.sfn.org/meetings" target="_blank">SfN</a></li>
+<li><strong>Já coberto recentemente</strong>: sono e golpe de Black Friday, TDPM, sentido da vida em 69 países, adaptações escolares no TDAH, anel de estresse, pausa da Synchron, Enem, brainstacking, cansaço mental e glutamato, IA como companhia, psilocibina. Evitar repetir sem ângulo novo.</li>
+</ul>
+        </div>
+    </section>
+
+    <section class="card card-idea">
+        <div class="card-header">
+            <span class="icon">💡</span>
+            <h2>Ideia Rápida do Dia</h2>
+        </div>
+        <div class="card-body">
+            <ul>
+<li><strong>Tema:</strong> "Tá tudo bem" tem preço. O que acontece no corpo no dia em que você engole o que sente.</li>
+<li><strong>Formato:</strong> Reel de 45-60s, falando para a câmera, com a frase "tá tudo bem" na tela no começo.</li>
+<li><strong>Estrutura (MAS / PORTANTO):</strong> Gancho → cena real (a amiga pergunta como você está, você responde "tudo bem, só cansada" e muda de assunto) → <strong>MAS</strong> um estudo publicado ontem na revista <em>Emotion</em> acompanhou 153 duplas de amigos por uma semana, medindo na saliva o cortisol, o hormônio do estresse. Nos dias em que a pessoa segurou a emoção mais do que o costume dela, o cortisol da noite ficou mais alto. Repensar a situação ou desabafar junto não teve esse efeito → <strong>PORTANTO</strong> não precisa contar tudo para todo mundo. Mas, com quem é seguro, uma frase verdadeira já tira você do "tá tudo bem": "hoje foi pesado, depois te conto" → CTA: "Manda para a amiga com quem você não precisa fingir."</li>
+<li><strong>Gancho:</strong> "O 'tá tudo bem' que você falou hoje à tarde, seu corpo cobrou à noite."</li>
+<li><strong>Cuidado ao gravar:</strong> o estudo é com universitários dos EUA, de 20 anos em média, e mostra associação, não causa. Não dizer que suprimir "adoece" nem que "faz mal ao sono": o sono não foi medido. A frase sugerida no PORTANTO é uma aplicação, não um resultado testado.</li>
+<li><strong>Fonte:</strong> DOI <a href="https://doi.org/10.1037/emo0001766" target="_blank">10.1037/emo0001766</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43038082/" target="_blank">PubMed</a></li>
+</ul>
+        </div>
+    </section>
+    </div>
+    <div class="footer">
+        <p>Sem acesso a métricas das plataformas: a lista vem do que saiu em sites públicos, não de engajamento medido. A data de cada item está marcada.<br>Não localizei, na web aberta, publicação dos perfis de Instagram e TikTok da BIBLIOTECA sobre os temas de hoje.</p>
+    </div>
+</body>
+</html>
